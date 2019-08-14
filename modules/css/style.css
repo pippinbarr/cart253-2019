@@ -1,0 +1,79 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.hi {
+  background-color: yellow;
+}
+
+.codeHi {
+  color: magenta;
+}
+
+.red {
+  color: red;
+}
+
+img {
+    max-width: 75%;
+}
+
+
+
+
+
+
+
+/* REMARK-SPECIFIC CSS */
+
+.remark-code, .remark-inline-code {
+  font-family: monospace;
+}
+
+.remark-container {
+  background-color: grey;
+  box-shadow: none;
+}
+
+div.remark-slide-content {
+  background-color: white;
+}
+
+div.remark-slide-content.title {
+}
+
+.remark-slide-content h1,h2,h3 {
+  font-weight: bold;
+}
+
+.remark-slide-content h1 {
+  font-size: 3em;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color: cyan;
+}
+
+.remark-slide-content h2 {
+  font-size: 1.2em;
+  border-bottom: 2px solid magenta;
+}
+
+.remark-slide-content h3 {
+  font-size: 30px;
+}
+
+.remark-slide-content li {
+  padding-bottom: 20px;
+}
+
+.remark-slide-content a, a:visited, a:hover {
+  color: black;
+}
+
+.remark-slide-content a:hover {
+  text-decoration: none;
+}
+
+.remark-slide-content {
+  font-size: 1.75em;
+}
