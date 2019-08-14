@@ -108,7 +108,7 @@ Yes, that's right, it's a Pong ball.
 ## Let there be Ball!
 
 ```javascript
-var ball;
+let ball;
 
 function setup() {
   createCanvas(640,480);
@@ -127,7 +127,7 @@ function setup() {
 ## Let there be Ball!
 
 ```javascript
-var ball;
+let ball;
 
 function setup() {
   createCanvas(640,480);
@@ -146,7 +146,7 @@ function setup() {
 ## Let there be Ball! :(
 
 ```javascript
-var ball;
+let ball;
 
 function setup() {
   createCanvas(640,480);
@@ -232,7 +232,7 @@ function Ball() {
 - In fact, we can now see that it's the constructor function `Ball()` we call when we want to make a new ball, e.g.
 
 ```javascript
-var ball = new Ball();
+let ball = new Ball();
 ```
 
 - As we saw, it sets all the Ball's properties to default values right now
@@ -356,7 +356,7 @@ project/
 ## Using the Ball class
 
 ```javascript
-var ball;
+let ball;
 
 function setup() {
   createCanvas(640,480);
@@ -378,7 +378,7 @@ function draw() {
 ## For the record: Accessing objects' properties
 
 ```javascript
-var ball;
+let ball;
 
 function setup() {
   createCanvas(640,480);
@@ -458,7 +458,7 @@ Ball.prototype.reset = function () {
 
 `js/script.js`
 ```javascript
-var ball;
+let ball;
 
 function setup() {
   createCanvas(640,480);
@@ -679,8 +679,8 @@ Ball.prototype.reset = function () {
 ## Multiball action!
 
 ```javascript
-var ball1;
-var ball2;
+let ball1;
+let ball2;
 
 function setup() {
   createCanvas(640,480);
@@ -750,8 +750,8 @@ function Ball(x,y,vx,vy,size,speed) {
 Now we can make our two `Ball` objects and give their constructors __different parameters__ so they behave distinctly...
 
 ```javascript
-var ball1;
-var ball2;
+let ball1;
+let ball2;
 
 function setup() {
   createCanvas(640,480);
@@ -949,9 +949,9 @@ Paddle.prototype.display = function() {
 ## Adding a paddle
 
 ```javascript
-var ball1;
-var ball2;
-var leftPaddle;
+let ball1;
+let ball2;
+let leftPaddle;
 
 function setup() {
   createCanvas(640,480);

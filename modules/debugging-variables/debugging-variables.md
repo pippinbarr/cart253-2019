@@ -20,7 +20,7 @@
 - We can also use it to print out the values of variables
 
 ```javascript
-var meaningOfLife = 42;
+let meaningOfLife = 42;
 console.log(meaningOfLife);
 ```
 --
@@ -33,7 +33,7 @@ console.log(meaningOfLife);
 
 ```javascript
 function setup() {
-  var meaningOfLife;
+  let meaningOfLife;
   console.log(meaningOfLife);
 }
 ```
@@ -52,7 +52,7 @@ function setup() {
 - So it can be good to add a message like this
 
 ```javascript
-var meaningOfLife = 42;
+let meaningOfLife = 42;
 console.log("meaningOfLife: " + meaningOfLife);
 ```
 --

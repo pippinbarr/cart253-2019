@@ -25,7 +25,7 @@
 ## No
 
 ```javascript
-var variableOne = 0;var variableTwo = 0;
+let variableOne = 0;let variableTwo = 0;
 
 function setup() {createCanvas(500,500);}
 
@@ -52,8 +52,8 @@ function draw() {
 ## Yes
 
 ```javascript
-var variableOne = 0;
-var variableTwo = 0;
+let variableOne = 0;
+let variableTwo = 0;
 
 function setup() {
   createCanvas(500,500);

@@ -96,7 +96,7 @@ __See presenter notes__
 ???
 
 ```javascript
-var ship = {
+let ship = {
   angle: 0,
   speed: 0,
   x: 0,
@@ -133,8 +133,8 @@ function handleInput() {
 
 function moveShip() {
   // The magic lines for calculating velocity!
-  var vx = ship.speed * cos(ship.angle);
-  var vy = ship.speed * sin(ship.angle);
+  let vx = ship.speed * cos(ship.angle);
+  let vy = ship.speed * sin(ship.angle);
 
   ship.x += vx;
   ship.y += vy;

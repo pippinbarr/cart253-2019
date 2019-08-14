@@ -85,7 +85,7 @@ window.setTimeout(function() {
 - If we ask the `document` object for a specific __element__ on the current page, we get back a Document Element Object
 
 ```javascript
-var element = document.getElementById("myDiv");
+let element = document.getElementById("myDiv");
 ```
 
 - This, in turn, has its own methods and properties, such as finding out its attributes, retrieving its children or parent or siblings, getting its size on screen, adding and removing sub-elements, and on and on
@@ -146,9 +146,9 @@ function draw() {
 
 ```javascript
 function draw() {
-  var canvas = document.getElementById('canvas');
+  let canvas = document.getElementById('canvas');
   if (canvas.getContext) {
-    var ctx = canvas.getContext('2d');
+    let ctx = canvas.getContext('2d');
     ctx.strokeRect(0, 0, 100, 100);
   }
 }

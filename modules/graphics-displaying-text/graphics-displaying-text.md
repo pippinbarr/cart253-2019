@@ -32,7 +32,7 @@
 - Most fundamentally, to display text on screen we use the `text()` command
 
 ```javascript
-var helloWorld = "Hello, Word!";
+let helloWorld = "Hello, Word!";
 text(helloWorld, width/2, height/2);
 ```
 --
@@ -50,7 +50,7 @@ text(helloWorld, width/2, height/2);
 - And for this we use `textSize()`
 
 ```javascript
-var helloWorld = "Hello, Word!";
+let helloWorld = "Hello, Word!";
 textSize(64);
 text(helloWorld, width/2, height/2);
 ```
@@ -100,7 +100,7 @@ textAlign(LEFT,BOTTOM);
 
 ```javascript
 textAlign(CENTER,CENTER);
-var appropriateText = "Stuck in the middle with you.";
+let appropriateText = "Stuck in the middle with you.";
 text(appropriateText, width/2, height/2);
 ```
 --
@@ -110,7 +110,7 @@ text(appropriateText, width/2, height/2);
 
 ```javascript
 textAlign(RIGHT, BOTTOM);
-var appropriateText = "Stuck in the bottom-right with you.";
+let appropriateText = "Stuck in the bottom-right with you.";
 text(appropriateText, width, height);
 ```
 
@@ -173,7 +173,7 @@ text("Hello, Courier!", 0, height/2);
 - The formats accepted are `.ttf` and `.otf`
 
 ```javascript
-var myFont;
+let myFont;
 
 function preload() {
   myFont = loadFont("assets/fonts/myCoolFont.ttf");
@@ -189,7 +189,7 @@ function preload() {
 - Once we've loaded our font, we can use the variable we saved it in with `textFont()`
 
 ```javascript
-var myFont;
+let myFont;
 
 function preload() {
   myFont = loadFont("assets/fonts/myCoolFont.ttf");

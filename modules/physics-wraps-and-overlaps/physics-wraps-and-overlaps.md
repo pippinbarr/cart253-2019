@@ -16,12 +16,12 @@
 ## Things move
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var radius = 25;
-var speed = 2;
+let x;
+let y;
+let vx;
+let vy;
+let radius = 25;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);
@@ -56,12 +56,12 @@ function draw() {
 ## Detecting going off-screen
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var radius = 25;
-var speed = 2;
+let x;
+let y;
+let vx;
+let vy;
+let radius = 25;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);
@@ -88,12 +88,12 @@ function draw() {
 ## Accounting for size
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var radius = 25;
-var speed = 2;
+let x;
+let y;
+let vx;
+let vy;
+let radius = 25;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);
@@ -151,14 +151,14 @@ else if (y - radius > height) {
 ## Things overlap
 
 ```javascript
-var x;
-var y;
-var vx;
-var x2;
-var y2;
-var vx2;
-var radius = 25;
-var speed = 2;
+let x;
+let y;
+let vx;
+let x2;
+let y2;
+let vx2;
+let radius = 25;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);
@@ -195,7 +195,7 @@ function draw() {
 ---
 
 ```javascript
-var d = dist(x,y,x2,y2);
+let d = dist(x,y,x2,y2);
 
 if (d < radius * 2) {
   console.log("Overlap!");
@@ -222,7 +222,7 @@ if (d < radius * 2) {
 ## Do something with it
 
 ```javascript
-var d = dist(x,y,x2,y2);
+let d = dist(x,y,x2,y2);
 
 if (d < radius * 2) {
   fill(255,0,0);
@@ -242,16 +242,16 @@ if (d < radius * 2) {
 - You could add a __boolean__ variable (one that stores `true` and `false`) to the code:
 
 ```javascript
-var x;
-var y;
-var vx;
-var x2;
-var y2;
-var vx2;
-var y;
-var radius = 25;
-var speed = 2;
-var drawCircles = true;
+let x;
+let y;
+let vx;
+let x2;
+let y2;
+let vx2;
+let y;
+let radius = 25;
+let speed = 2;
+let drawCircles = true;
 
 function setup() {
   createCanvas(500,500);
@@ -268,7 +268,7 @@ function draw() {
   x = x + vx;
   x2 = x2 + vx2;
 
-  var d = dist(x,y,x2,y2);
+  let d = dist(x,y,x2,y2);
 
   if (d < radius * 2) {
     drawCircles = false;

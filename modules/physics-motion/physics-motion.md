@@ -16,8 +16,8 @@
 ## We've seen things move
 
 ```javascript
-var x;
-var y;
+let x;
+let y;
 
 function setup() {
   createCanvas(500,500);
@@ -56,10 +56,10 @@ function draw() {
 ## Velocity
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
+let x;
+let y;
+let vx;
+let vy;
 
 function setup() {
   createCanvas(500,500);
@@ -104,11 +104,11 @@ function draw() {
 ## Velocity and speed
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var speed = 2;
+let x;
+let y;
+let vx;
+let vy;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);
@@ -136,11 +136,11 @@ function draw() {
 ## Acceleration
 
 ```javascript
-var x;
-var y;
-var speed = 2;
-var vx;
-var ax = 0.25;
+let x;
+let y;
+let speed = 2;
+let vx;
+let ax = 0.25;
 
 function setup() {
   createCanvas(500,500);
@@ -168,11 +168,11 @@ function draw() {
 ## Acceleration with a limit
 
 ```javascript
-var x;
-var y;
-var speed = 10;
-var vx;
-var ax = 0.1;
+let x;
+let y;
+let speed = 10;
+let vx;
+let ax = 0.1;
 
 function setup() {
   createCanvas(500,500);

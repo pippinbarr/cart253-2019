@@ -22,7 +22,7 @@
 - Consider an array of dialog lines for a character in a game
 
 ```javascript
-var dialog = [
+let dialog = [
   "I took an arrow to the knee.",
   "I've never been the same since the apocalypse.",
   "Sure is nice to see a friendly face out here.",
@@ -37,7 +37,7 @@ var dialog = [
 ## Choosing a random element
 
 ```javascript
-var dialog = [
+let dialog = [
   "I took an arrow to the knee.",
   "I've never been the same since the apocalypse.",
   "Sure is nice to see a friendly face out here.",
@@ -51,8 +51,8 @@ function setup() {
 
 function mousePressed() {
   background(255);
-  var randomIndex = floor(random(0,dialog.length));
-  var randomLine = dialog[randomIndex];
+  let randomIndex = floor(random(0,dialog.length));
+  let randomLine = dialog[randomIndex];
   text(randomLine,width/2,height/2);
 }
 ```
@@ -112,13 +112,13 @@ dialog[floor(random(0,dialog.length))]
 ## The Song that Doesn't End (Array Mix)
 
 ```javascript
-var lyrics = [
+let lyrics = [
   "This is the song that doesn't end",
   "Yes it goes on and on my friend",
   "Some people started singing it,\nnot knowing what it was",
   "And they'll continue singing it forever,\njust because:"
 ];
-var lyricIndex = 0;
+let lyricIndex = 0;
 
 function setup() {
   createCanvas(640,480);
@@ -141,13 +141,13 @@ function mousePressed() {
 ## The Song that Doesn't End (Slightly Advanced Modulo Mix)
 
 ```javascript
-var lyrics = [
+let lyrics = [
   "This is the song that doesn't end",
   "Yes it goes on and on my friend",
   "Some people started singing it,\nnot knowing what it was",
   "And they'll continue singing it forever,\njust because:"
 ];
-var lyricIndex = 0;
+let lyricIndex = 0;
 
 function setup() {
   createCanvas(640,480);
@@ -177,7 +177,7 @@ function mousePressed() {
 - We've seen we can use `push()` with an array to add an element to the end
 
 ```javascript
-var numbers = [1,2,3,4,5];
+let numbers = [1,2,3,4,5];
 numbers.push(6);
 // numbers === [1,2,3,4,5,6]
 ```
@@ -193,8 +193,8 @@ numbers.push(6);
 - It __removes__ the last element in an array and returns is
 
 ```javascript
-var numbers = [1,2,3,4,5];
-var last = numbers.pop();
+let numbers = [1,2,3,4,5];
+let last = numbers.pop();
 // last === 5
 // numbers === [1,2,3,4]
 ```
@@ -217,11 +217,11 @@ var last = numbers.pop();
 - `unshift()` and `shift()` do their thing at the __start__ of an array
 
 ```javascript
-var numbers = [1,2,3,4,5];
+let numbers = [1,2,3,4,5];
 numbers.unshift(0);
 // numbers === [0,1,2,3,4,5]
 
-var first = numbers.shift();
+let first = numbers.shift();
 // first === 0
 // numbers === [1,2,3,4,5]
 ```

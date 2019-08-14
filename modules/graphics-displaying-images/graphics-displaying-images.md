@@ -41,7 +41,7 @@
 - It is mercifully simple:
 
 ```javascript
-var exampleImage = loadImage("assets/images/exampleImage.png");
+let exampleImage = loadImage("assets/images/exampleImage.png");
 ```
 --
 
@@ -64,7 +64,7 @@ var exampleImage = loadImage("assets/images/exampleImage.png");
 - To avoid this, we __load files inside a special function called `preload()`__
 
 ```javascript
-var exampleImage;
+let exampleImage;
 
 function preload() {
   exampleImage = loadImage("assets/images/exampleImage.png");
@@ -82,7 +82,7 @@ function preload() {
 - The `image()` function allows us to display an image stored in a variable
 
 ```javascript
-var exampleImage;
+let exampleImage;
 
 function preload() {
   exampleImage = loadImage("assets/images/exampleImage.png");
@@ -102,7 +102,7 @@ function setup() {
 ## `image(img, x, y, w, h)`
 
 ```javascript
-var exampleImage;
+let exampleImage;
 
 function preload() {
   exampleImage = loadImage("assets/images/exampleImage.png");
@@ -134,8 +134,8 @@ console.log("The height of the image is " + exampleImage.height);
 - With access to the original width and height of an image, we can scale it and maintain its proportions
 
 ```javascript
-var exampleImage;
-var scale = 0.5;
+let exampleImage;
+let scale = 0.5;
 
 function preload() {
   exampleImage = loadImage("assets/images/exampleImage.png");

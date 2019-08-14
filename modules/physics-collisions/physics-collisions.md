@@ -24,12 +24,12 @@
 ## We've seen things move
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var speed = 2;
-var squareSize = 50;
+let x;
+let y;
+let vx;
+let vy;
+let speed = 2;
+let squareSize = 50;
 
 function setup() {
   createCanvas(500,500);
@@ -75,12 +75,12 @@ function draw() {
 ## Collision detection with canvas edges
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var speed = 2;
-var squareSize = 50;
+let x;
+let y;
+let vx;
+let vy;
+let speed = 2;
+let squareSize = 50;
 
 function setup() {
   createCanvas(500,500);

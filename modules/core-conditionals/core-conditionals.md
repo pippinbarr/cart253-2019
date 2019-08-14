@@ -467,8 +467,8 @@ This is `true` if `a` is `false`, and `false` if it's `true`.
 ## Quiz
 
 ```
-var x = 10;
-var y = 150;
+let x = 10;
+let y = 150;
 ```
 
 - `(x < y && x * y === 1500)` is...
@@ -583,11 +583,11 @@ if (!(10 > 0 && 9 < 10)) {
 ## Changing colours based on position
 
 ```javascript
-var circleX;
-var circleY;
-var circleSpeed = 2;
-var circleVX = circleSpeed;
-var circleSize = 100;
+let circleX;
+let circleY;
+let circleSpeed = 2;
+let circleVX = circleSpeed;
+let circleSize = 100;
 
 function setup() {
   createCanvas(500,500);
@@ -615,9 +615,9 @@ function draw() {
 ## Hover effect
 
 ```javascript
-var circleX;
-var circleY;
-var circleSize = 100;
+let circleX;
+let circleY;
+let circleSize = 100;
 
 function setup() {
   createCanvas(500,500);
@@ -627,7 +627,7 @@ function setup() {
 
 function draw() {
   background(255);
-  var d = dist(mouseX,mouseY,circleX,circleY);
+  let d = dist(mouseX,mouseY,circleX,circleY);
   if (dist < circleSize/2) {
     fill(255,0,0);
   }
@@ -669,10 +669,10 @@ if (avatarX < 0 || avatarX > width || avatarY < 0 || avatarY > height) {
 ---
 
 ```javascript
-var hasEnteredCircle = false;
-var circleX;
-var circleY;
-var circleRadius = 50;
+let hasEnteredCircle = false;
+let circleX;
+let circleY;
+let circleRadius = 50;
 
 function setup() {
   createCanvas(500,500);
@@ -683,7 +683,7 @@ function setup() {
 function draw() {
   background(200);
 
-  var d = dist(mouseX,mouseY,circleX,circleY);
+  let d = dist(mouseX,mouseY,circleX,circleY);
   console.log(d);
   if (d < circleRadius) {
     hasEnteredCircle = true;

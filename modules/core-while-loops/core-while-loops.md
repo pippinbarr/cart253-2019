@@ -22,9 +22,9 @@
 ## Drawing a caterpillar...
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
+let startX;
+let startY;
+let segmentRadius = 20;
 
 function setup() {
   createCanvas(640,480);
@@ -98,10 +98,10 @@ while (theCaterpillarIsNotFinished) {
 ## Caterpillar with a loop
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
 function setup() {
   createCanvas(640,480);
@@ -113,8 +113,8 @@ function setup() {
 
 function draw() {
   background(200,250,200);
-  var segmentsDrawn = 0;
-  var x = startX;
+  let segmentsDrawn = 0;
+  let x = startX;
   while (segmentsDrawn < numSegments) {
     ellipse(x,startY,segmentRadius*2);
     x += segmentRadius * 1.5;
@@ -159,10 +159,10 @@ while (segmentsDrawn < numSegments) {
 - Note how we have the go __back__ by one step for `x` in order to get the right position
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
 function setup() {
   createCanvas(640,480);
@@ -174,8 +174,8 @@ function draw() {
   background(200,250,200);
   fill(80,200,80);
   noStroke();
-  var segmentsDrawn = 0;
-  var x = startX;
+  let segmentsDrawn = 0;
+  let x = startX;
   while (segmentsDrawn < numSegments) {
     ellipse(x,startY,segmentRadius*2);
     x += segmentRadius * 1.5;
@@ -195,10 +195,10 @@ function draw() {
 ## So what does this do?
 
 ```javascript
-var x;
-var y;
-var startRadius = 100;
-var startFill = 0;
+let x;
+let y;
+let startRadius = 100;
+let startFill = 0;
 
 function setup() {
   createCanvas(500,500);
@@ -209,8 +209,8 @@ function setup() {
 
 function draw() {
   background(255);
-  var radius = startRadius;
-  var currentFill = startFill;
+  let radius = startRadius;
+  let currentFill = startFill;
   while (radius > 0) {
     fill(currentFill);
     ellipse(x,y,radius);
@@ -284,7 +284,7 @@ function setup() {
 }
 
 function draw() {
-  var x = 0;
+  let x = 0;
   while (mouseX < 50) {
     rect(x,mouseY,10,10);
     x += 20;
@@ -306,8 +306,8 @@ function draw() {
 ## This is what infinite loops looks like
 
 ```javascript
-var x;
-var y;
+let x;
+let y;
 
 function setup() {
   createCanvas(500,500);
@@ -349,17 +349,17 @@ function mousePressed() {
 ## Star field
 
 ```javascript
-var numStars = 1000;
+let numStars = 1000;
 
 function setup() {
   createCanvas(500,500);
   background(0);
 
-  var starsDrawn = 0;
+  let starsDrawn = 0;
   while (starsDrawn < numStars) {
-    var x = random(0,width);
-    var y = random(0,height);
-    var starSize = random(1,2);
+    let x = random(0,width);
+    let y = random(0,height);
+    let starSize = random(1,2);
     stroke(random(100,255));
     rect(x,y,starSize,starSize);
     starsDrawn += 1;
@@ -391,11 +391,11 @@ function draw() {
 - Don't worry if this is a bit much right now, keep it in your back pocket
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
-var wiggleRange = 20;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
+let wiggleRange = 20;
 
 function setup() {
   createCanvas(640,480);
@@ -407,12 +407,12 @@ function draw() {
   background(200,250,200);
   fill(80,200,80);
   noStroke();
-  var segmentsDrawn = 0;
-  var x = startX;
+  let segmentsDrawn = 0;
+  let x = startX;
   // See in the loop for an explanation of this line - we're doing it here
   // to calculate the starting position of the caterpillar based on sine
-  var y = startY + (sin(theta) * wiggleRange);
-  var theta = 0;
+  let y = startY + (sin(theta) * wiggleRange);
+  let theta = 0;
   while (segmentsDrawn < numSegments) {
     // Calculate y based on a sine wave
     // Remember that sin() gives back a number between -1 and 1

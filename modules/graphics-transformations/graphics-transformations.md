@@ -34,9 +34,9 @@
 - Because p5 can convert for you
 
 ```javascript
-var rightAngleInRadians = radians(90);
+let rightAngleInRadians = radians(90);
 // rightAngleInRadians === π / 2 === 1.5708
-var rightAngleInDegrees = degrees(rightAngleInRadians);
+let rightAngleInDegrees = degrees(rightAngleInRadians);
 // rightAngleInDegrees === 90
 ```
 
@@ -56,8 +56,8 @@ sin(90); // This will now correctly use 90 degrees
 - Functions like __sine__ and __cosine__ oscillate between `-1` and `1` as the angle you give them increases (or decreases)
 
 ```javascript
-var angle = 0;
-var x = 0;
+let angle = 0;
+let x = 0;
 
 function setup() {
   createCanvas(600,600);
@@ -66,7 +66,7 @@ function setup() {
 }
 
 function draw() {
-  var y = height/2 + (sin(angle) * height/2);
+  let y = height/2 + (sin(angle) * height/2);
   ellipse(x,y,10,10);
   x++; // Move to the right
   angle += 0.05; // Increase the angle, causing the sine function to oscillate
@@ -85,8 +85,8 @@ function draw() {
 - You can apply these numbers to something else...
 
 ```javascript
-var angle = 0;
-var radius = 100;
+let angle = 0;
+let radius = 100;
 
 function setup() {
   createCanvas(600,600);
@@ -95,7 +95,7 @@ function setup() {
 }
 
 function draw() {
-  var growth = sin(angle) * (radius/2);
+  let growth = sin(angle) * (radius/2);
   ellipse(width/2,height/2,radius*2 + growth);
   angle += 0.05;
 }
@@ -109,8 +109,8 @@ function draw() {
 - Like colours...
 
 ```javascript
-var angle = 0;
-var radius = 200;
+let angle = 0;
+let radius = 200;
 
 function setup() {
   createCanvas(600,600);
@@ -119,7 +119,7 @@ function setup() {
 }
 
 function draw() {
-  var fillColor = color(map(sin(angle),-1,1,0,255),map(cos(angle),-1,1,0,255,0),200);
+  let fillColor = color(map(sin(angle),-1,1,0,255),map(cos(angle),-1,1,0,255,0),200);
   fill(fillColor);
   ellipse(width/2,height/2,radius*2);
   angle += 0.05;
@@ -133,10 +133,10 @@ function draw() {
 - Or like text sizes...
 
 ```javascript
-var angle = 0;
-var string = "Trick or treat?";
-var minTextSize = 24;
-var maxTextSize = 100;
+let angle = 0;
+let string = "Trick or treat?";
+let minTextSize = 24;
+let maxTextSize = 100;
 
 function setup() {
   createCanvas(600,600);
@@ -146,7 +146,7 @@ function setup() {
 }
 
 function draw() {
-  var fillColor = color(map(sin(angle),-1,1,0,255),map(cos(angle),-1,1,0,255,0),200);
+  let fillColor = color(map(sin(angle),-1,1,0,255),map(cos(angle),-1,1,0,255,0),200);
   fill(fillColor);
   textSize(map(sin(angle),-1,1,minTextSize,maxTextSize));
   text(string,width/2,height/2);
@@ -300,7 +300,7 @@ function draw() {
 ## One more time with feeling...
 
 ```javascript
-var angle = 0;
+let angle = 0;
 
 function setup() {
   createCanvas(500,500);
@@ -334,7 +334,7 @@ function draw() {
 ## Scaling as we go
 
 ```javascript
-var theScale = 1;
+let theScale = 1;
 
 function setup() {
   createCanvas(500,500);
@@ -406,8 +406,8 @@ sphere(100); // Draw a sphere with a radius of 100 at the origin
 ## Whoa, I know 3D...
 
 ```javascript
-var angle = 0;
-var scaleFactor = 1;
+let angle = 0;
+let scaleFactor = 1;
 
 function setup() {
   createCanvas(640,480,WEBGL);
@@ -429,8 +429,8 @@ function draw() {
 ## How about...
 
 ```javascript
-var angleX = 0.0;
-var angleY = 0.0;
+let angleX = 0.0;
+let angleY = 0.0;
 
 function setup() {
   createCanvas(500,500,WEBGL);
@@ -472,8 +472,8 @@ function draw() {
 ## Separate rotations
 
 ```javascript
-var angleX = 0.0;
-var angleY = 0.0;
+let angleX = 0.0;
+let angleY = 0.0;
 
 function setup() {
   createCanvas(500,500,WEBGL);
@@ -518,9 +518,9 @@ Possible solution in slide notes.
 ???
 
 ```javascript
-var sunAngle = 0.0;
-var planetAngle = 0.0;
-var moonAngle = 0.0;
+let sunAngle = 0.0;
+let planetAngle = 0.0;
+let moonAngle = 0.0;
 
 function setup() {
   createCanvas(500,500,WEBGL);
@@ -563,12 +563,12 @@ function draw() {
 ???
 
 ```javascript
-var sunAngle = 0.0;
-var planetAngle = 0.0;
-var moonAngle = 0.0;
-var planetWaveAngle = 0.0;
-var moonWaveAngle = 0.0;
-var totalAngle = 0;
+let sunAngle = 0.0;
+let planetAngle = 0.0;
+let moonAngle = 0.0;
+let planetWaveAngle = 0.0;
+let moonWaveAngle = 0.0;
+let totalAngle = 0;
 
 function setup() {
   createCanvas(windowWidth,windowHeight,WEBGL);
@@ -609,7 +609,7 @@ function draw() {
 
 ```javascript
 // Global angle for rotation
-var angle = 0;
+let angle = 0;
 
 function setup() {
   createCanvas(500,500);
@@ -621,13 +621,13 @@ function draw() {
   // Translate to center of window
   translate(width/2, height/2);
   // Loop from 0 to 360 degrees (2*PI radians)
-  for (var i = 0; i < TWO_PI; i += 0.2) {
+  for (let i = 0; i < TWO_PI; i += 0.2) {
     // Push, rotate and draw a line!
     push();
     rotate(angle + i);
     line(0, 0, width/4, 0);
     // From 0 to 360 degrees (2*PI radians)
-    for (var j = 0; j < TWO_PI; j += 0.5) {
+    for (let j = 0; j < TWO_PI; j += 0.5) {
       // Push, translate, rotate!
       push();
       translate(width/4, 0);

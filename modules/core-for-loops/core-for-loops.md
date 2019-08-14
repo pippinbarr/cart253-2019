@@ -23,7 +23,7 @@
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -37,7 +37,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -51,7 +51,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -65,12 +65,12 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
 
-- The first part of the information here is .hi[`var i = 0`]
+- The first part of the information here is .hi[`let i = 0`]
 - This is the __starting condition__ of our loop
 - In this case we're setting up a __counting variable__ (or __iterator__) that will count the times we've gone through the loop
 - Calling it `i` is very traditional
@@ -81,7 +81,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -96,7 +96,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -112,7 +112,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -125,7 +125,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -141,7 +141,7 @@ for (var i = 0; i < 10; i++) {
 ## `for` what it's worth...
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -160,15 +160,15 @@ for (var i = 0; i < 10; i++) {
 ## Other `for`age
 
 ```javascript
-for (var i = 0; i < 10; i += 2) {
+for (let i = 0; i < 10; i += 2) {
 
 }
 
-for (var i = 10; i > 0; i--) {
+for (let i = 10; i > 0; i--) {
 
 }
 
-for (var i = 0; i <= 100; i += 10) {
+for (let i = 0; i <= 100; i += 10) {
 
 }
 ```
@@ -182,7 +182,7 @@ for (var i = 0; i <= 100; i += 10) {
 ## `for === while`
 
 ```javascript
-var i = 0;
+let i = 0;
 while (i < 10) {
   console.log(i);
   i++;
@@ -190,7 +190,7 @@ while (i < 10) {
 ```
 
 ```javascript
-for (var i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
   console.log(i);
 }
 ```
@@ -208,10 +208,10 @@ for (var i = 0; i < 10; i++) {
 ## Draw that caterpillar with `for`!
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
 function setup() {
   createCanvas(640,480);
@@ -223,9 +223,9 @@ function setup() {
 
 function draw() {
   background(200,250,200);
-  var segmentsDrawn = 0;
-  var x = startX;
-  for (var i = 0; i < numSegments; i++) {
+  let segmentsDrawn = 0;
+  let x = startX;
+  for (let i = 0; i < numSegments; i++) {
     ellipse(x,startY,segmentRadius*2);
     x += segmentRadius * 1.5;
   }
@@ -241,16 +241,16 @@ function draw() {
 ## Star field with `for`
 
 ```javascript
-var numStars = 1000;
+let numStars = 1000;
 
 function setup() {
   createCanvas(500,500);
   background(0);
 
-  for (var i = 0; i < numStars; i++) {
-    var x = random(0,width);
-    var y = random(0,height);
-    var starSize = random(1,2);
+  for (let i = 0; i < numStars; i++) {
+    let x = random(0,width);
+    let y = random(0,height);
+    let starSize = random(1,2);
     stroke(random(100,255));
     rect(x,y,starSize,starSize);
   }
@@ -282,7 +282,7 @@ function draw() {
 ---
 
 ```javascript
-var counter = 0;
+let counter = 0;
 
 function setup() {
   createCanvas(1000,500);

@@ -81,7 +81,7 @@ function timerFinished() {
 ## `clearTimeout()`
 
 ```javascript
-var timer;
+let timer;
 
 function setup() {
   createCanvas(500,500);
@@ -133,7 +133,7 @@ function keyPressed() {
 
 ```javascript
 // A timer object that contains the information it needs to run
-var timer = {
+let timer = {
   startTime: 0,
   running: false,
   duration: 1000,

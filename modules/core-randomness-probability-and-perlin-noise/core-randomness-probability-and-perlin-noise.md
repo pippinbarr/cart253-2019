@@ -34,13 +34,13 @@
 ## Random movement
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var speedChange = 1;
-var maxSpeed = 4;
-var radius = 40;
+let x;
+let y;
+let vx;
+let vy;
+let speedChange = 1;
+let maxSpeed = 4;
+let radius = 40;
 
 function setup() {
   createCanvas(500,500);
@@ -92,7 +92,7 @@ function draw() {
 ## Loot drop!
 
 ```javascript
-var currentText = "";
+let currentText = "";
 
 function setup() {
   createCanvas(500,500);
@@ -105,7 +105,7 @@ function draw() {
 }
 
 function mousePressed() {
-  var r = random();
+  let r = random();
   if (r < 0.01) {
     currentText += "You found the Sword of Rareness!\n"
   }
@@ -163,15 +163,15 @@ function mousePressed() {
 - This will probably make more sense as a graph...
 
 ```javascript
-var t = 0;
-var x = 0;
+let t = 0;
+let x = 0;
 
 function setup() {
   createCanvas(1000,500);
 }
 
 function draw() {
-  var y = height * noise(t);
+  let y = height * noise(t);
   point(x,y);
   x++;
   t += 0.01;
@@ -183,14 +183,14 @@ function draw() {
 - Compare this with the same idea using random()
 
 ```javascript
-var x = 0;
+let x = 0;
 
 function setup() {
   createCanvas(1000,500);
 }
 
 function draw() {
-  var y = height * random();
+  let y = height * random();
   point(x,y);
   x++;
 }
@@ -203,10 +203,10 @@ function draw() {
 - Because we know we will get numbers related to each other in sequence, these numbers could be used to drive motion...
 
 ```javascript
-var x = 0;
-var y = 0;
-var tx = 0;
-var ty = 0;
+let x = 0;
+let y = 0;
+let tx = 0;
+let ty = 0;
 
 function setup() {
   createCanvas(500,500);
@@ -247,10 +247,10 @@ ty = random(0,1000);
 ## Better two dimensional movement
 
 ```javascript
-var x;
-var y;
-var tx;
-var ty;
+let x;
+let y;
+let tx;
+let ty;
 
 function setup() {
   createCanvas(500,500);
@@ -287,13 +287,13 @@ __See slide notes for a script example__
 - We could do the math ourselves, but there's a function called `map()` that is specifically there to convert between different ranges - you can see it in the code below
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var maxSpeed = 2;
-var tx;
-var ty;
+let x;
+let y;
+let vx;
+let vy;
+let maxSpeed = 2;
+let tx;
+let ty;
 
 function setup() {
   createCanvas(500,500);

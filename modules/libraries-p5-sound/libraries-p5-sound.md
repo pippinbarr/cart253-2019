@@ -182,10 +182,10 @@ function setup() {
 
 - `soundFormats()` is used here, so we might investigate it on the main library page to find its [information page](https://p5js.org/reference/#/p5/soundFormats) which explains it is used for cross-browser compatibility (it will choose the right kind of sound file for the browser)
 - In our case, we'll delete it, since we only have a `.wav` right now (see notes for altered code)
-- I've also added `var mySound;` to the top to explicitly declare the sound variable
+- I've also added `let mySound;` to the top to explicitly declare the sound variable
 
 ```javascript
-var mySound;
+let mySound;
 
 function preload() {
   mySound = loadSound('assets/sounds/bark.wav');
@@ -213,7 +213,7 @@ function setup() {
 - Let's also loop the sound by using `mySound.loop()` instead of `mySound.play()`...
 
 ```javascript
-var mySound;
+let mySound;
 
 function preload() {
   mySound = loadSound('assets/sounds/bark.wav');
@@ -233,7 +233,7 @@ function setup() {
 - Let's use `map()` to connect `rate()` to the position of the mouse for some interactivity!
 
 ```javascript
-var mySound;
+let mySound;
 
 function preload() {
   mySound = loadSound('assets/sounds/bark.wav');
@@ -291,7 +291,7 @@ function draw() {
 ## Theramin!
 
 ```javascript
-var osc;
+let osc;
 
 function setup() {
   createCanvas(500,500);
@@ -323,8 +323,8 @@ function draw() {
 - Just for fun
 
 ```javascript
-var osc;
-var frequency = 440;
+let osc;
+let frequency = 440;
 
 function setup() {
   createCanvas(500,500);
@@ -352,11 +352,11 @@ function keyPressed() {
 - We could drive the frequency of an audio oscillator with the output of an oscillating function like `sin()`!
 
 ```javascript
-var osc;
-var freqBase = 440;
-var freqRange = 110;
-var freqChangeRate = 0.1;
-var theta = 0;
+let osc;
+let freqBase = 440;
+let freqRange = 110;
+let freqChangeRate = 0.1;
+let theta = 0;
 
 function setup() {
   osc = new p5.Oscillator();
@@ -367,7 +367,7 @@ function setup() {
 }
 
 function draw() {
-  var newFreq = freqBase + (sin(theta) * freqRange);
+  let newFreq = freqBase + (sin(theta) * freqRange);
   osc.freq(newFreq);
   theta += freqChangeRate;
 }

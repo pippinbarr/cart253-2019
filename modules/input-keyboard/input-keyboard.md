@@ -163,11 +163,11 @@ function keyPressed() {
 ## `keyCode` and arrow keys
 
 ```javascript
-var x;
-var y;
-var vx = 0;
-var vy = 0;
-var speed = 2;
+let x;
+let y;
+let vx = 0;
+let vy = 0;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);
@@ -223,7 +223,7 @@ function keyTyped() {
 ---
 
 ```javascript
-var typedText = "";
+let typedText = "";
 
 function setup() {
   createCanvas(500,500);
@@ -275,11 +275,11 @@ if (keyIsDown(LEFT_ARROW)) {
 ---
 
 ```javascript
-var x;
-var y;
-var vx = 0;
-var vy = 0;
-var speed = 2;
+let x;
+let y;
+let vx = 0;
+let vy = 0;
+let speed = 2;
 
 function setup() {
   createCanvas(500,500);

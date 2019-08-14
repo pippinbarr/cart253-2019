@@ -256,26 +256,26 @@ A simple dodging game with keyboard controls
 ******************************************************/
 
 // The position and size of our avatar circle
-var avatarX;
-var avatarY;
-var avatarSize = 50;
+let avatarX;
+let avatarY;
+let avatarSize = 50;
 
 // The speed and velocity of our avatar circle
-var avatarSpeed = 10;
-var avatarVX = 0;
-var avatarVY = 0;
+let avatarSpeed = 10;
+let avatarVX = 0;
+let avatarVY = 0;
 
 // The position and size of the enemy circle
-var enemyX;
-var enemyY;
-var enemySize = 50;
+let enemyX;
+let enemyY;
+let enemySize = 50;
 
 // The speed and velocity of our enemy circle
-var enemySpeed = 5;
-var enemyVX = 5;
+let enemySpeed = 5;
+let enemyVX = 5;
 
 // How many dodges the player has made
-var dodges = 0;
+let dodges = 0;
 
 // setup()
 //

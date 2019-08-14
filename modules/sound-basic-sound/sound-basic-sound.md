@@ -27,13 +27,13 @@
 
 ---
 
-## `var mySound = new Audio('path/to/audio');`
+## `let mySound = new Audio('path/to/audio');`
 
 - To play a sound we need to load it and store it in a variable
 - It is mercifully simple:
 
 ```javascript
-var exampleSound = new Audio("assets/sounds/exampleSound.mp3");
+let exampleSound = new Audio("assets/sounds/exampleSound.mp3");
 ```
 --
 
@@ -53,7 +53,7 @@ var exampleSound = new Audio("assets/sounds/exampleSound.mp3");
 - As with images, it's a good idea to __load our files inside `preload()`__
 
 ```javascript
-var exampleSound;
+let exampleSound;
 
 function preload() {
   exampleSound = new Audio("assets/sounds/exampleSound.mp3");
@@ -67,7 +67,7 @@ function preload() {
 - The `.play()` function for audio allows us to play a sound file stored in a variable
 
 ```javascript
-var exampleSound;
+let exampleSound;
 
 function preload() {
   exampleSound = new Audio("assets/sounds/exampleSound.mp3");

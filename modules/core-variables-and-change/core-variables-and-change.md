@@ -17,7 +17,7 @@
 - It uses __operators__ you probably already know from calculators and so on
 
 ```javascript
-var meaningOfLife = 21 + 21; // addition
+let meaningOfLife = 21 + 21; // addition
 stroke(meaningOfLife - 2); // subtraction
 fill(meaningOfLife * 5,0,0); // multiplication
 rect(meaningOfLife/2,0,50,50); // division
@@ -43,13 +43,13 @@ https://www.w3schools.com/jsref/jsref_operators.asp
 So:
 
 ```javascript
-var meaningOfLife = (42 + 42) / 2;
+let meaningOfLife = (42 + 42) / 2;
 ```
 
 is not the same as
 
 ```javascript
-var meaningOfLife = 42 + 42 / 2;
+let meaningOfLife = 42 + 42 / 2;
 ```
 
 ???
@@ -68,11 +68,11 @@ var meaningOfLife = 42 + 42 / 2;
 - These are equivalent:
 
 ```javascript
-var meaningOfLife=(42+42)/2;
+let meaningOfLife=(42+42)/2;
 ```
 
 ```javascript
-var meaningOfLife = (42 + 42) / 2;
+let meaningOfLife = (42 + 42) / 2;
 ```
 
 - But the second one is easier to read, right?
@@ -103,14 +103,14 @@ __Change__. We can __change__ the values in variables
 ## Shocked face with variables again!
 
 ```javascript
-var avatarX = 250;
-var avatarY = 250;
-var avatarSize = 300;
-var avatarEyeSize = 50;
-var avatarEyeXOffset = 50;
-var avatarEyeYOffset = 50;
-var avatarMouthYOffset = 50;
-var avatarMouthSize = 100;
+let avatarX = 250;
+let avatarY = 250;
+let avatarSize = 300;
+let avatarEyeSize = 50;
+let avatarEyeXOffset = 50;
+let avatarEyeYOffset = 50;
+let avatarMouthYOffset = 50;
+let avatarMouthSize = 100;
 
 function setup() {
   createCanvas(500,500);
@@ -214,7 +214,7 @@ avatarX += 1;
 - In p5 it works like this:
 
 ```javascript
-var randomNumber = random(n);
+let randomNumber = random(n);
 ```
 
 - This will put a random number between 0 and `n` (not including `n`) into our `randomNumber` variable
@@ -234,15 +234,15 @@ var randomNumber = random(n);
 - You can also specify a __range__ for your random number by giving a low and high value
 
 ```javascript
-var numberBetweenZeroAndTen = random(0,10);
+let numberBetweenZeroAndTen = random(0,10);
 ```
 
 - This is useful if you need numbers in particular ranges, of course
 
 ```javascript
-var red = random(0,255);
-var green = random(0,255);
-var blue = random(0,255);
+let red = random(0,255);
+let green = random(0,255);
+let blue = random(0,255);
 background(red,green,blue);
 ```
 
@@ -305,8 +305,8 @@ avatarY = mouseY;
 
 ```javascript
 // Variables to track the location of our circle
-var x;
-var y;
+let x;
+let y;
 
 // setup()
 //
@@ -325,8 +325,8 @@ function setup() {
 // so it chases the mouse
 function draw() {
   // Calculate the x and y distance between the circle and the mouse
-  var distX = mouseX - x;
-  var distY = mouseY - y;
+  let distX = mouseX - x;
+  let distY = mouseY - y;
   // Add a fraction (a tenth) of that distance on to the circle's location
   x += distX/10;
   y += distY/10;
@@ -340,8 +340,8 @@ function draw() {
 
 ```javascript
 // Variables to track the location of our circle
-var x;
-var y;
+let x;
+let y;
 
 // setup()
 //
@@ -361,7 +361,7 @@ function setup() {
 
 function draw() {
   // Calculate the distance between the circle and the mouse
-  var d = dist(x,y,mouseX,mouseY);
+  let d = dist(x,y,mouseX,mouseY);
   // Use linear interpolation to update the location of the circle
   // based on the distance. When the distance is big, 1/d will be
   // very small, so the circle will move a small fraction of the remaining distance.

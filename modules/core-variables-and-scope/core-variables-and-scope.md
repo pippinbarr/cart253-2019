@@ -21,17 +21,17 @@
 ---
 
 ```javascript
-var x;
-var y;
-var speed;
-var circleSize = 50;
+let x;
+let y;
+let speed;
+let circleSize = 50;
 
 function setup() {
   createCanvas(500,500);
   x = width/2;
   y = height/2;
   speed = random(1,10);
-  var circleColor = random(255);
+  let circleColor = random(255);
   fill(circleColor);
 }
 

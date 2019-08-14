@@ -33,10 +33,10 @@ function reset() {
 ## Drawing a caterpillar is so great!
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
 function setup() {
   createCanvas(640,480);
@@ -48,8 +48,8 @@ function setup() {
 
 function draw() {
   background(200,250,200);
-  var segmentsDrawn = 0;
-  var x = startX;
+  let segmentsDrawn = 0;
+  let x = startX;
   while (segmentsDrawn < numSegments) {
     ellipse(x,startY,segmentRadius*2);
     x += segmentRadius * 1.5;
@@ -63,10 +63,10 @@ function draw() {
 ## We should make it a function!
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
 function setup() {
   createCanvas(640,480);
@@ -82,8 +82,8 @@ function draw() {
 }
 
 function drawCaterpillar() {
-  var segmentsDrawn = 0;
-  var x = startX;
+  let segmentsDrawn = 0;
+  let x = startX;
   while (segmentsDrawn < numSegments) {
     ellipse(x,startY,segmentRadius*2);
     x += segmentRadius * 1.5;
@@ -97,10 +97,10 @@ function drawCaterpillar() {
 ## We should draw more than one caterpillar!
 
 ```javascript
-var startX;
-var startY;
-var segmentRadius = 20;
-var numSegments = 10;
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
 function setup() {
   createCanvas(640,480);
@@ -149,8 +149,8 @@ function draw() {
 
 ```javascript
 function drawCaterpillar(x,y) {
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < numSegments) {
     ellipse(nextX,y,segmentRadius*2);
     nextX += segmentRadius * 1.5;
@@ -167,8 +167,8 @@ function drawCaterpillar(x,y) {
 
 ```javascript
 function drawCaterpillar(x,y) {
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < numSegments) {
     ellipse(nextX,y,segmentRadius*2);
     nextX += segmentRadius * 1.5;
@@ -186,8 +186,8 @@ function drawCaterpillar(x,y) {
 
 ```javascript
 function drawCaterpillar(x,y) {
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < numSegments) {
     ellipse(nextX,y,segmentRadius*2);
     nextX += segmentRadius * 1.5;
@@ -213,8 +213,8 @@ function drawCaterpillar(x,y) {
 
 ```javascript
 function drawCaterpillar(x,y) {
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < numSegments) {
     ellipse(nextX,y,segmentRadius*2);
     nextX += segmentRadius * 1.5;
@@ -275,8 +275,8 @@ function draw() {
 }
 
 function drawCaterpillar(x,y) {
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < numSegments) {
     ellipse(nextX,y,segmentRadius*2);
     nextX += segmentRadius * 1.5;
@@ -307,8 +307,8 @@ function drawCaterpillar(x,y) {
   if (y === undefined) {
     y = 100; // Set y to the default of 100 if it's not specified
   }
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < numSegments) {
     ellipse(nextX,y,segmentRadius*2);
     nextX += segmentRadius * 1.5;
@@ -350,9 +350,9 @@ function draw() {
 ```javascript
 function draw() {
   background(200,250,200);
-  for (var i = 0; i < 10; i++) {
-    var x = random(0,width);
-    var y = random(0,height);
+  for (let i = 0; i < 10; i++) {
+    let x = random(0,width);
+    let y = random(0,height);
     drawCaterpillar(x,y);
   }
   noLoop();
@@ -379,8 +379,8 @@ function draw() {
 
 ```javascript
 function drawCaterpillar(x,y,segments,radius) {
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < segments) {
     ellipse(nextX,y,radius*2);
     nextX += radius * 1.5;
@@ -396,8 +396,8 @@ function drawCaterpillar(x,y,segments,radius) {
 ```javascript
 function drawCaterpillar(x,y,segments,radius,fillColor) {
   fill(fillColor);
-  var segmentsDrawn = 0;
-  var nextX = x;
+  let segmentsDrawn = 0;
+  let nextX = x;
   while (segmentsDrawn < segments) {
     ellipse(nextX,y,radius*2);
     nextX += radius * 1.5;
@@ -414,12 +414,12 @@ function drawCaterpillar(x,y,segments,radius,fillColor) {
 ```javascript
 function draw() {
   background(200,250,200);
-  for (var i = 0; i < 10; i++) {
-    var x = random(0,width);
-    var y = random(0,height);
-    var segments = random(1,20);
-    var radius = random(10,20);
-    var fillColor = color(random(255),random(255),random(255));
+  for (let i = 0; i < 10; i++) {
+    let x = random(0,width);
+    let y = random(0,height);
+    let segments = random(1,20);
+    let radius = random(10,20);
+    let fillColor = color(random(255),random(255),random(255));
     drawCaterpillar(x,y,segments,radius,fillColor);
   }
 }
@@ -435,7 +435,7 @@ function setup() {
 }
 
 function draw() {
-  var temperature = 23;
+  let temperature = 23;
   convertFahrenheitToCelcius(temperature);
   textAlign(CENTER,CENTER);
   textSize(24);
@@ -465,7 +465,7 @@ function setup() {
 }
 
 function draw() {
-  var temperature = 23;
+  let temperature = 23;
   convertFahrenheitToCelcius(temperature);
   textAlign(CENTER,CENTER);
   textSize(24);
@@ -485,7 +485,7 @@ function convertFahrenheitToCelcius(temperature) {
 - That is, it's converting the __argument__ `temperature` that only exists in the function definition, not outside it
 - This is that idea of __scope__ we talked about with variables
 - If you declare a variable with `var` it will only exist inside any surrounding curly brackets
-- Because `var temperature = 23;` is inside the curly brackets of `draw()` it doesn't exist for `convertFahrenheitToCelcius()`
+- Because `let temperature = 23;` is inside the curly brackets of `draw()` it doesn't exist for `convertFahrenheitToCelcius()`
 
 ---
 
@@ -497,7 +497,7 @@ function setup() {
 }
 
 function draw() {
-  var temperature = 23;
+  let temperature = 23;
   convertFahrenheitToCelcius(temperature);
   textAlign(CENTER,CENTER);
   textSize(24);
@@ -542,7 +542,7 @@ function convertFahrenheitToCelcius(temperature) {
 
 ```javascript
 function convertFahrenheitToCelcius(temperature) {
-  var result = (temperature - 32) / 1.8;
+  let result = (temperature - 32) / 1.8;
   return result;
 }
 ```
@@ -561,7 +561,7 @@ function setup() {
 }
 
 function draw() {
-  var temperature = 23;
+  let temperature = 23;
   convertFahrenheitToCelcius(temperature);
   textAlign(CENTER,CENTER);
   textSize(24);
@@ -569,7 +569,7 @@ function draw() {
 }
 
 function convertFahrenheitToCelcius(temperature) {
-  var result = (temperature - 32) / 1.8;
+  let result = (temperature - 32) / 1.8;
   return result;
 }
 ```
@@ -591,15 +591,15 @@ function setup() {
 }
 
 function draw() {
-  var temperature = 23;
-  var temperatureInFahrenheit = convertFahrenheitToCelcius(temperature);
+  let temperature = 23;
+  let temperatureInFahrenheit = convertFahrenheitToCelcius(temperature);
   textAlign(CENTER,CENTER);
   textSize(24);
   text("Today's temperature is " + temperatureInFahrenheit,width/2,height/2);
 }
 
 function convertFahrenheitToCelcius(temperature) {
-  var result = (temperature - 32) / 1.8;
+  let result = (temperature - 32) / 1.8;
   return result;
 }
 ```
@@ -617,14 +617,14 @@ function setup() {
 }
 
 function draw() {
-  var temperature = 23;
+  let temperature = 23;
   textAlign(CENTER,CENTER);
   textSize(24);
   text("Today's temperature is " + convertFahrenheitToCelcius(temperature),width/2,height/2);
 }
 
 function convertFahrenheitToCelcius(temperature) {
-  var result = (temperature - 32) / 1.8;
+  let result = (temperature - 32) / 1.8;
   return result;
 }
 ```

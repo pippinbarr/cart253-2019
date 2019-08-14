@@ -45,7 +45,7 @@ We constantly need to __debug__ our work
 ## ReferenceErrors from typos
 
 ```javascript
-var meaningOfLife = 42;
+let meaningOfLife = 42;
 console.log(meaningOfLif);
 ```
 
@@ -62,7 +62,7 @@ backgroun(0);
 ## Object-oriented ReferenceErrors
 
 ```javascript
-var car = new Car();
+let car = new Car();
 ```
 
 .hi[Uncaught ReferenceError: Car is not defined]
@@ -117,7 +117,7 @@ background("a nice sea green");
 ## Type mismatch
 
 ```javascript
-var meaningOfLife = 3.14159;
+let meaningOfLife = 3.14159;
 meaningOfLife = "Be excellent to each other.";
 meaningOfLife = false;
 ```
@@ -131,7 +131,7 @@ meaningOfLife = false;
 ## Non-existent methods
 
 ```javascript
-var meaningOfLife = 42;
+let meaningOfLife = 42;
 meaningOfLife.tellMeWhatYouAreInADream();
 ```
 
@@ -144,7 +144,7 @@ meaningOfLife.tellMeWhatYouAreInADream();
 ## Missing opening curly brackets
 
 ```javascript
-var curlyMissing = true;
+let curlyMissing = true;
 if (curlyMissing)
   console.log("Oopsie-daisy!");
 }
@@ -161,7 +161,7 @@ if (curlyMissing)
 
 
 ```
-var curlyMissing = true;
+let curlyMissing = true;
 if (curlyMissing) {
   console.log("Oopsie-daisy!");
 ```
@@ -234,7 +234,7 @@ background(random(0,1);
 ## `=` instead of `===`
 
 ```javascript
-var x = 0;
+let x = 0;
 if (x = 0) {
  console.log("I feel good about this.");
 }
@@ -253,7 +253,7 @@ if (x = 0) {
 ## `===` instead of `=`
 
 ```javascript
-var x === 0;
+let x === 0;
 if (x === 0) {
  console.log("I feel good about this.");
 }
@@ -264,7 +264,7 @@ if (x === 0) {
 - Because you can't have `===` when __declaring__ a variable
 
 ```javascript
-var x;
+let x;
 x === 0;
 if (x === 0) {
  console.log("I feel good about this.");

@@ -10,7 +10,7 @@
 - So far we've used them as a way to store a bunch of properties together:
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   vx: 0,
@@ -29,7 +29,7 @@ var circle = {
 - In fact, JavaScript Objects can also have __functions__ in their properties!
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   vx: 0,
@@ -76,7 +76,7 @@ circle.sayGoodbye();
 ???
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   vx: 0,
@@ -102,7 +102,7 @@ var circle = {
 - Because we might want an object's __functions__ to use that object's __properties__, we need a way to refer to them inside those functions
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   vx: 0,
@@ -128,7 +128,7 @@ var circle = {
 ???
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   vx: 0,
@@ -152,7 +152,7 @@ var circle = {
 - So if we have the circle variable with the object from the last slide then we can __call__ its functions using dot notation as well!
 
 ```javascript
-var circle = { ... }; // As above
+let circle = { ... }; // As above
 
 function setup() {
   createCanvas(500,500);

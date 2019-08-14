@@ -68,7 +68,7 @@ function draw() {
 - So we want to be able to do something like...
 
 ```javascript
-for (var i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
   ball number i = new Ball(10*i,10,2,2,10,2);
 }
 ```
@@ -108,7 +108,7 @@ for (var i = 0; i < 100; i++) {
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - This is some of our new syntax
@@ -125,7 +125,7 @@ var numbers = [];
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - First we have .hi[`var`]
@@ -136,7 +136,7 @@ var numbers = [];
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - Next we have .hi[`numbers`]
@@ -149,7 +149,7 @@ var numbers = [];
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - Now we have .hi[`=`]
@@ -160,7 +160,7 @@ var numbers = [];
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - Then we get .hi[`[]`]
@@ -172,7 +172,7 @@ var numbers = [];
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - Finally we have .hi[`;`]
@@ -183,7 +183,7 @@ var numbers = [];
 ## An array of numbers
 
 ```javascript
-var numbers = [];
+let numbers = [];
 ```
 
 - So this line creates a new empty array, and puts that array into the variable called `numbers`
@@ -195,7 +195,7 @@ var numbers = [];
 - We can also create a new array with numbers __already in it__ like this:
 
 ```javascript
-var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+let numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 ```
 
 - That is, we __list__ the numbers the array should have in it inside the square brackets, separated by commas. We can imagine something like this;
@@ -210,7 +210,7 @@ var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 ## How do I get at them numbers?
 
 ```javascript
-var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+let numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 ```
 
 - It's great that we now have all these (prime) numbers stored in an array, but how can we do anything with them?
@@ -224,7 +224,7 @@ var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 ---
 
 ```javascript
-var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+let numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 ```
 
 ![](images/numberedArray.png)
@@ -271,7 +271,7 @@ numbers[5]
 - So if I want to refer to the __value at index__ `5` I would write
 
 ```javascript
-arrayOfIntegers[5]
+numbers[5]
 ```
 
 - Which is which one? Right.
@@ -293,7 +293,7 @@ arrayOfIntegers[5]
 ## Array elements are like variables
 
 ```javascript
-var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+let numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 
 console.log(numbers[5]);
 ```
@@ -305,7 +305,7 @@ Gives us `11`
 ## Array elements are like variables
 
 ```javascript
-var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+let numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 
 if (numbers[2] < numbers[3]) {
   console.log("Element at index 2 is less than element at index 3");
@@ -324,7 +324,7 @@ else {
 ## Array elements are like variables
 
 ```javascript
-var numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+let numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 
 numbers[2] = numbers[2] * numbers[4];
 
@@ -354,7 +354,7 @@ else {
 - So we could also set up the same `numbers` like this
 
 ```javascript
-var numbers = [];
+let numbers = [];
 
 numbers[0] = 1;
 numbers[1] = 2;
@@ -375,13 +375,13 @@ numbers[9] = 23;
 ## Arrays can store any kind of value in them!
 
 ```javascript
-var arrayOfFloats = [3.14159, 1.222222, 1.01];
+let arrayOfFloats = [3.14159, 1.222222, 1.01];
 
-var songLyrics = ["This", "is", "the", "song", "that", "doesn't", "end"];
+let songLyrics = ["This", "is", "the", "song", "that", "doesn't", "end"];
 
-var backgroundColors = [color(255,0,0), color(0,255,0), color(0,0,255)];
+let backgroundColors = [color(255,0,0), color(0,255,0), color(0,0,255)];
 
-var images = [loadImage("image1.png"),loadImage("image2.png"),loadImage("image3.png")];
+let images = [loadImage("image1.png"),loadImage("image2.png"),loadImage("image3.png")];
 ```
 
 ---
@@ -389,7 +389,7 @@ var images = [loadImage("image1.png"),loadImage("image2.png"),loadImage("image3.
 ## Arrays can store objects in them!
 
 ```javascript
-var balls = [
+let balls = [
   new Ball(10,10,2,2,10,2),
   new Ball(20,10,2,2,10,2),
   new Ball(30,10,2,2,10,2),
@@ -400,7 +400,7 @@ var balls = [
 - Note that you can declare an array like the above with each element of the array on a new line, which can make your code more readable. Compare that to:
 
 ```javascript
-var balls = [new Ball(10,10,2,2,10,2),new Ball(20,10,2,2,10,2),new Ball(30,10,2,2,10,2),new Ball(40,10,2,2,10,2)];
+let balls = [new Ball(10,10,2,2,10,2),new Ball(20,10,2,2,10,2),new Ball(30,10,2,2,10,2),new Ball(40,10,2,2,10,2)];
 ```
 
 ---
@@ -410,7 +410,7 @@ var balls = [new Ball(10,10,2,2,10,2),new Ball(20,10,2,2,10,2),new Ball(30,10,2,
 - We can now create an array of Balls instead of individual variables...
 
 ```javascript
-var balls = [];
+let balls = [];
 balls[0] = new Ball(10,10,2,2,10,2);
 balls[1] = new Ball(20,10,2,2,10,2);
 balls[2] = new Ball(30,10,2,2,10,2);
@@ -430,7 +430,7 @@ balls[99] = new Ball(1000,10,2,2,10,2);
 - We use it like this:
 
 ```javascript
-var balls = [];
+let balls = [];
 balls.push(new Ball(10,10,2,2,10,2));
 balls.push(new Ball(20,10,2,2,10,2));
 balls.push(new Ball(30,10,2,2,10,2));
@@ -445,7 +445,7 @@ balls.push(new Ball(30,10,2,2,10,2));
 ## 100 Balls!
 
 ```javascript
-var balls = [];
+let balls = [];
 
 balls.push(new Ball(10,10,2,2,10,2));
 balls.push(new Ball(20,20,2,2,10,2));
@@ -468,9 +468,9 @@ balls.push(new Ball(1000,30,2,2,10,2));
 ## 100 Balls with a `for` loop!
 
 ```javascript
-var balls = [];
+let balls = [];
 
-for (var i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
   balls.push(new Ball(10*i,10,2,2,10,2));
 }
 ```
@@ -484,9 +484,9 @@ for (var i = 0; i < 100; i++) {
 ## 100 Balls with a `for` loop!
 
 ```javascript
-var balls = [];
+let balls = [];
 
-for (var i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
   balls.push(new Ball(random(0,width),random(0,height),2,2,10,2));
 }
 ```
@@ -496,9 +496,9 @@ for (var i = 0; i < 100; i++) {
 - Or with random velocities...
 
 ```javascript
-var balls = [];
+let balls = [];
 
-for (var i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
   balls.push(width/2,height/2,random(-5,5),random(-2,2),10,5));
 }
 ```
@@ -511,7 +511,7 @@ for (var i = 0; i < 100; i++) {
 
 ```javascript
 function draw() {
-  for (var i = 0; i < 100; i++) {
+  for (let i = 0; i < 100; i++) {
     balls[i].update();
     balls[i].display();
   }
@@ -527,7 +527,7 @@ function draw() {
 
 ```javascript
 function draw() {
-  for (var i = 0; i < balls.length; i++) {
+  for (let i = 0; i < balls.length; i++) {
     balls[i].update();
     balls[i].display();
   }
@@ -550,12 +550,12 @@ function draw() {
 - And we'd need to update all the methods called in our `draw()` loop to use the `for` loop through the array of `balls`
 
 ```javascript
-var balls = [];
-var numBalls = 100;
+let balls = [];
+let numBalls = 100;
 
 function setup() {
     createCanvas(640,480);
-    for (var i = 0; i < numBalls; i++) {
+    for (let i = 0; i < numBalls; i++) {
       balls.push(new Ball(width/2,height/2,random(-5,5),random(-5,5),10,5));
     }
     rightPaddle = new Paddle(width-10,height/2,10,60,10,DOWN_ARROW,UP_ARROW);
@@ -571,7 +571,7 @@ function draw() {
   leftPaddle.update();
   rightPaddle.update();
 
-  for (var i = 0; i < balls.length; i++) {
+  for (let i = 0; i < balls.length; i++) {
     balls[i].update();
     if (balls[i].isOffScreen()) {
       balls[i].reset();
@@ -594,7 +594,7 @@ function draw() {
 - As in:
 
 ```javascript
-var array = [1,2,9,2,5,7,4,23,2];
+let array = [1,2,9,2,5,7,4,23,2];
 console.log(array);
 ```
 

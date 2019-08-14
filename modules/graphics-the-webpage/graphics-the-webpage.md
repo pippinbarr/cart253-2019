@@ -31,7 +31,7 @@ canvas {
 - In p5 we can use the function `fullscreen()`
 
 ```javascript
-var isFullscreen = fullscreen(); // On its own, it returns whether or not the project is fullscreen
+let isFullscreen = fullscreen(); // On its own, it returns whether or not the project is fullscreen
 
 fullscreen(true); // If passed true as an argument, it puts the project into fullscreen
 
@@ -44,12 +44,12 @@ fullscreen(false); // If passed false as an argument, it takes the project out o
 
 `script.js`
 ```javascript
-var isFullScreen = false;
+let isFullScreen = false;
 
 function setup() {
   createCanvas(displayWidth,displayHeight);
   background(255,0,0);
-  for (var i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     line(0,random(height),width,random(height));
   }
 }
@@ -80,11 +80,11 @@ canvas {
 
 ```javascript
 // Track whether we're in fullscreen
-var isFullScreen = false;
+let isFullScreen = false;
 // Track the ratio of width to height for the canvas
-var canvasRatio;
+let canvasRatio;
 // Track the canvas element
-var canvas;
+let canvas;
 
 function setup() {
   // When we create our canvas we'll store a reference to it in a cariable
@@ -96,7 +96,7 @@ function setup() {
 
   // Now we just display some stuff so there's something to see
   background(255,0,0);
-  for (var i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     line(0,random(height),width,random(height));
   }
 }
@@ -108,7 +108,7 @@ function mousePressed() {
   fullscreen(isFullScreen);
   // Now we calculate the desired height of the canvas based on whether we're
   // in fullscreen (and want displayHeight) or not (and want the regular height)
-  var newHeight = 0;
+  let newHeight = 0;
   if (isFullScreen) {
     newHeight = displayHeight;
   }
@@ -153,7 +153,7 @@ function mousePressed() {
 ???
 
 ```javascript
-var canvas;
+let canvas;
 
 function setup() {
   // Create a canvas the size of the window
@@ -169,7 +169,7 @@ function setup() {
 // Draw something so we can see it in the background
 function draw() {
   background(255);
-  for (var i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     line(0,random(height),width,random(height));
   }
 }
@@ -185,7 +185,7 @@ function draw() {
 ???
 
 ```javascript
-var canvas;
+let canvas;
 
 function setup() {
   // Create a canvas the size of the window
@@ -201,7 +201,7 @@ function setup() {
 // Draw something so we can see it in the background
 function draw() {
   background(255);
-  for (var i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     line(0,random(height),width,random(height));
   }
 }

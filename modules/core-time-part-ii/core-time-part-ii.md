@@ -59,7 +59,7 @@ function keyTyped() {
 ## Actually using time
 
 ```javascript
-var myImage;
+let myImage;
 
 function preload() {
   myImage = loadImage("assets/images/myImage.png");
@@ -72,8 +72,8 @@ function setup() {
 function draw() {
   noStroke();
   fill(255);
-  var x = random(0,width);
-  var y = random(0,height);
+  let x = random(0,width);
+  let y = random(0,height);
   rect(x,y,50,50);
 }
 

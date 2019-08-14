@@ -26,12 +26,12 @@
 ---
 
 ```javascript
-var x;
-var y;
-var vx;
-var vy;
-var radius = 25;
-var maxSpeed = 1;
+let x;
+let y;
+let vx;
+let vy;
+let radius = 25;
+let maxSpeed = 1;
 
 function setup() {
   createCanvas(500,500);
@@ -65,7 +65,7 @@ function draw() {
 ## A JavaScript Object
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   maxSpeed: 1,
@@ -84,7 +84,7 @@ var circle = {
 ## A JavaScript Object
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   maxSpeed: 1,
@@ -94,14 +94,14 @@ var circle = {
 }
 ```
 
-- We can see that we start with a standard variable declaration: .hi[`var circle`]
+- We can see that we start with a standard variable declaration: .hi[`let circle`]
 
 ---
 
 ## A JavaScript Object
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   maxSpeed: 1,
@@ -118,7 +118,7 @@ var circle = {
 ## A JavaScript Object
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   maxSpeed: 1,
@@ -137,7 +137,7 @@ var circle = {
 ## A JavaScript Object
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   maxSpeed: 1,
@@ -161,7 +161,7 @@ var circle = {
 - That is, we write the __name of the variable__, then a __period__, then the __name of the property__
 
 ```javascript
-var circle = {
+let circle = {
   x: 0,
   y: 0,
   maxSpeed: 1,
@@ -182,15 +182,15 @@ ellipse(circle.x, circle.y, circle.radius * 2);
 - We were able to get the dimensions of an image using dot notation
 
 ```javascript
-var myImage;
+let myImage;
 
 function preload() {
   myImage = loadImage("assets/images/myImage.png");
 }
 
 function setup() {
-  var myImageWidth = myImage.width;
-  var myImageHeight = myImage.height;
+  let myImageWidth = myImage.width;
+  let myImageHeight = myImage.height;
   console.log("Width of myImage is " + myImageWidth);
   console.log("Height of myImage is " + myImageHeight);
 }
@@ -213,7 +213,7 @@ function setup() {
 - To use properties inside a nested JavaScript object, we just continue to use __dot notation__...
 
 ```javascript
-var circle = {
+let circle = {
   position: {
     x: 0,
     y: 0

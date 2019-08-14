@@ -152,7 +152,7 @@ A variable has three key qualities:
 
 ---
 
-## `var meaningOfLife = 42;`
+## `let meaningOfLife = 42;`
 
 - This is a __variable declaration__ in JavaScript
 - When we __create__ a variable we call it __declaring a variable__
@@ -174,7 +174,7 @@ A variable has three key qualities:
 
 ---
 
-## `var ` .hi[`meaningOfLife`] ` = 42;`
+## `let ` .hi[`meaningOfLife`] ` = 42;`
 
 - Next we have the __name__ of the variable
 - Here we have called it `meaningOfLife`
@@ -197,7 +197,7 @@ There are more technical rules for writing variable names:
 
 ---
 
-## `var meaningOfLife ` .hi[`=`] ` 42;`
+## `let meaningOfLife ` .hi[`=`] ` 42;`
 
 - Next we have the __assignment operator__, an equals sign
 - This is because we are putting a __value__ in our variable
@@ -206,17 +206,17 @@ There are more technical rules for writing variable names:
 
 ---
 
-## `var meaningOfLife = ` .hi[`42`]`;`
+## `let meaningOfLife = ` .hi[`42`]`;`
 
 - Next we have the __value__ of the variable, `42`
 - Importantly, `42` is the `meaningOfLife`, and so the variable name makes sense (see: Douglas Adams)
 - Note that because JavaScript __doesn't check types__ you could put __any__ type of thing in this variable:
 
 ```javascript
-var meaningOfLife = 42;
-var meaningOfLife = "Be excellent to each other.";
-var meaningOfLife = 42.0000001;
-var meaningOfLife = true;
+let meaningOfLife = 42;
+let meaningOfLife = "Be excellent to each other.";
+let meaningOfLife = 42.0000001;
+let meaningOfLife = true;
 ```
 
 - These are all fine as far as JavaScript is concerned
@@ -224,7 +224,7 @@ var meaningOfLife = true;
 
 ---
 
-## `var meaningOfLife = 42`.hi[`;`]
+## `let meaningOfLife = 42`.hi[`;`]
 
 - Just like any line of code that is an __instruction__, we end with a semicolon to say we're done
 - If you're a polite kind of person, you could think of it as saying "thanks" perhaps...
@@ -246,9 +246,9 @@ var meaningOfLife = true;
 - For right now there are just __two types of data__ we will think about: numbers and strings
 
 ```JavaScript
-var thisIsANumber = 4;
-var thisIsAlsoANumber = 3.14159;
-var thisIsAString = "Hello, World!";
+let thisIsANumber = 4;
+let thisIsAlsoANumber = 3.14159;
+let thisIsAString = "Hello, World!";
 ```
 
 - A __number__ is made of digits and can have a decimal point
@@ -268,7 +268,7 @@ var thisIsAString = "Hello, World!";
 - Later on, when we work out the value (like the meaning of life hopefully), we can use the __assignment operator__ in the same way as in the declarations earlier to put the value in
 
 ```javascript
-var meaningOfLife;
+let meaningOfLife;
 // Do some stuff here to calculate the meaning of life...
 ...
 ...
@@ -285,9 +285,9 @@ meaningOfLife = 42;
 - So you can use a variable with number in it anywhere you might use a hardcoded number, a and variable with a string in it anywhere you would have put a string:
 
 ```javascript
-var meaningOfLife = 42;
+let meaningOfLife = 42;
 rect(meaningOfLife,meaningOfLife,50,50);
-var anotherMeaningOfLife = "Be excellent to each other!";
+let anotherMeaningOfLife = "Be excellent to each other!";
 console.log(anotherMeaningOfLife);
 ```
 
@@ -320,21 +320,21 @@ console.log(anotherMeaningOfLife);
 YES:
 
 ```javascript
-var age = 30;
-var dayOfTheWeek = "Friday";
-var pi = 3.14159;
-var theLetterE = "E";
-var theNumber1 = 1;
+let age = 30;
+let dayOfTheWeek = "Friday";
+let pi = 3.14159;
+let theLetterE = "E";
+let theNumber1 = 1;
 ```
 
 NO:
 
 ```
-var foo = 30;
-var WhatDayIsIt? = "Friday";
-var 314159 = 3.14159;
-var var = 1;
-var the_letter_a = 'A';
+let foo = 30;
+let WhatDayIsIt? = "Friday";
+let 314159 = 3.14159;
+let let = 1;
+let the_letter_a = 'A';
 ```
 
 ???
@@ -369,16 +369,16 @@ var the_letter_a = 'A';
 ## Pop-quiz, hotshots!
 
 ```
-var 127LevelGrey = 127;
-var what??? = "What did you say???";
-var theLetterC = "c"
+let 127LevelGrey = 127;
+let what??? = "What did you say???";
+let theLetterC = "c"
 variable myLuckyNumber = 4.7;
 number theNumberPi = 3.14159;
-var mouseX = 21;
-var myName = "Pippin";
-var thetruemeaningoflife = 1;
-var exampleFloat = 22.2.2;
-var foo = `1`;
+let mouseX = 21;
+let myName = "Pippin";
+let thetruemeaningoflife = 1;
+let exampleFloat = 22.2.2;
+let foo = `1`;
 ```
 
 ???
@@ -408,16 +408,16 @@ Now we can rewrite him with variables to get our benefits of readability and sli
 ## Shocked face with variables!
 
 ```javascript
-var avatarX = 250;
-var avatarY = 250;
-var avatarSize = 300;
-var avatarEyeSize = 50;
-var avatarPupilSize = 20;
-var avatarLeftEyeX = 200;
-var avatarRightEyeX = 300;
-var avatarEyeY = 200;
-var avatarMouthY = 300;
-var avatarMouthSize = 100;
+let avatarX = 250;
+let avatarY = 250;
+let avatarSize = 300;
+let avatarEyeSize = 50;
+let avatarPupilSize = 20;
+let avatarLeftEyeX = 200;
+let avatarRightEyeX = 300;
+let avatarEyeY = 200;
+let avatarMouthY = 300;
+let avatarMouthSize = 100;
 
 function setup() {
   createCanvas(500,500);

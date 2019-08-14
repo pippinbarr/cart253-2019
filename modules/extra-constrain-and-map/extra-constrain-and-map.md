@@ -156,10 +156,10 @@ function map(value,startLow,startHigh,endLow,endHigh) {
   // Work out what fraction the value is along the starting range
   // taking account for the fact the starting value might not be 0
   // and so functions as an offset
-  var fractionOfStart = (value - startLow) / (startHigh - startLow);
+  let fractionOfStart = (value - startLow) / (startHigh - startLow);
   // Calculate the result by using the same fraction in the new range
   // again taking account for the fact the starting value might not be 0
-  var result = endLow + fractionOfStart * (endHigh - endLow);
+  let result = endLow + fractionOfStart * (endHigh - endLow);
   // Return the result
   return result;
 }
@@ -172,21 +172,21 @@ function map(value,startLow,startHigh,endLow,endHigh) {
 Set the variable to a greyscale value based on where the mouse is on the x axis of the canvas
 
 ```javascript
-var fillGrey = map(mouseX,0,width,0,255)
+let fillGrey = map(mouseX,0,width,0,255)
 ```
 
 Set the size of an ellipse relative to its distance from the centre of the canvas:
 
 ```javascript
-var d = dist(mouseX,mouseY,width/2,height/2);
-var radius = map(d,0,width,10,100);
+let d = dist(mouseX,mouseY,width/2,height/2);
+let radius = map(d,0,width,10,100);
 ellipse(mouseX,mouseY,radius);
 ```
 
 Set the alpha of an enemy agent based on its health variable
 
 ```javascript
-var enemyAlpha = map(enemyHealth,0,100,0,255);
+let enemyAlpha = map(enemyHealth,0,100,0,255);
 fill(255,0,0,enemyAlpha);
 ```
 
@@ -198,9 +198,9 @@ But really it comes down to seeing opportunities to use `map()` and remembering 
 - Which is:
 
 ```javascript
-var d = dist(mouseX,mouseY,width/2,height/2);
-var maxDistance = sqrt(width**2 + height**2);
-var radius = map(d,0,maxDistance,10,100);
+let d = dist(mouseX,mouseY,width/2,height/2);
+let maxDistance = sqrt(width**2 + height**2);
+let radius = map(d,0,maxDistance,10,100);
 ellipse(mouseX,mouseY,radius);
 ```
 
