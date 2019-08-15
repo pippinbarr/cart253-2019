@@ -178,25 +178,28 @@ function setup() {
 ---
 
 ```javascript
-function Ball() {
-  this.size = 10;
-  this.speed = 5;
-  this.x = 0;
-  this.y = 0;
-  this.vx = 0;
-  this.vy = 0;
-}
+class Ball {
 
-Ball.prototype.update = function () {
-  // Move the ball here
-}
+  constructor () {
+    this.size = 10;
+    this.speed = 5;
+    this.x = 0;
+    this.y = 0;
+    this.vx = 0;
+    this.vy = 0;
+  }
 
-Ball.prototype.display = function () {
-  // Display the ball here
-}
+  update () {
+    // Move the ball here
+  }
 
-Ball.prototype.reset = function () {
-  // Reset the ball here
+  display () {
+    // Display the ball here
+  }
+
+  reset () {
+    // Reset the ball here
+  }
 }
 ```
 
@@ -206,10 +209,24 @@ Ball.prototype.reset = function () {
 
 ---
 
+## Class definition
+
+```javascript
+class Ball {
+
+  ...
+
+}
+```
+
+- SAY SOMETHING
+
+---
+
 ## Constructor
 
 ```javascript
-function Ball() {
+constructor () {
   this.size = 10;
   this.speed = 5;
   this.x = 0;
@@ -258,56 +275,49 @@ this.vy = 0;
 ## Methods
 
 ```javascript
-Ball.prototype.update = function () {
+update () {
   // Move the ball here
 }
 
-Ball.prototype.display = function () {
+display () {
   // Display the ball here
 }
 
-Ball.prototype.reset = function () {
+reset () {
   // Reset the ball here
 }
 ```
 
 - We can see there are three __methods__ like `update` and `display` and `reset`
-- Each method is a __function__ that we define in the special way as above
-- For now it's probably best to just mimic this syntax rather than dive too deep into JavaScript and prototypes, but do read about it online if you want to
-
-???
-
-- As we can see, each method is a __property__ that is assigned a function
-- However these properties are not directly on our __Ball__ class
-- Instead they are defined on a property of the Ball class called `prototype`
-- This is because JavaScript secretly isn't quite a true object-oriented language
-- There is a lot of information online you can read about prototypes and JavaScript
-- But it's also okay to not pay attention for now
+- Each method is a __function__ that we define in the slightly special way as above (no `function` keyword is needed)
 
 ---
 
 ## A Ball class
 
 ```javascript
-function Ball() {
-  this.x = 0;
-  this.y = 0;
-  this.vx = 0;
-  this.vy = 0;
-  this.size = 10;
-  this.speed = 5;
-}
+class Ball {
 
-Ball.prototype.update = function () {
-  // Move the ball here
-}
+  constructor () {
+    this.size = 10;
+    this.speed = 5;
+    this.x = 0;
+    this.y = 0;
+    this.vx = 0;
+    this.vy = 0;
+  }
 
-Ball.prototype.display = function () {
-  // Display the ball here
-}
+  update () {
+    // Move the ball here
+  }
 
-Ball.prototype.reset = function () {
-  // Reset the ball here
+  display () {
+    // Display the ball here
+  }
+
+  reset () {
+    // Reset the ball here
+  }
 }
 ```
 
@@ -434,25 +444,28 @@ __Slide notes (`P` in slide view) have all three files updated in this way__
 
 `js/Ball.js`
 ```javascript
-function Ball() {
-  this.size = 10;
-  this.speed = 5;
-  this.x = 0;
-  this.y = 0;
-  this.vx = 0;
-  this.vy = 0;
-}
+class Ball {
 
-Ball.prototype.update = function () {
-  // Move the ball here
-}
+  constructor () {
+    this.size = 10;
+    this.speed = 5;
+    this.x = 0;
+    this.y = 0;
+    this.vx = 0;
+    this.vy = 0;
+  }
 
-Ball.prototype.display = function () {
-  // Display the ball here
-}
+  update () {
+    // Move the ball here
+  }
 
-Ball.prototype.reset = function () {
-  // Reset the ball here
+  display () {
+    // Display the ball here
+  }
+
+  reset () {
+    // Reset the ball here
+  }
 }
 ```
 
@@ -501,7 +514,7 @@ __Define the three methods of the `Ball` class__
 ???
 
 ```javascript
-function Ball() {
+constructor () {
   this.size = 10;
   this.speed = 5;
   this.x = 0;
@@ -510,16 +523,16 @@ function Ball() {
   this.vy = 0;
 }
 
-Ball.prototype.update = function () {
+update () {
   this.x += this.vx;
   this.y += this.vy;
 }
 
-Ball.prototype.display = function () {
+display () {
   rect(this.x,this.y,this.size,this.size);
 }
 
-Ball.prototype.reset = function () {
+reset () {
   this.x = width/2;
   this.y = height/2;
 }
@@ -553,7 +566,7 @@ __Set more interesting starting properties in the `Ball` class__
 ???
 
 ```javascript
-function Ball() {
+constructor () {
   this.size = 10;
   this.speed = 5;
   this.x = width/2;
@@ -562,16 +575,16 @@ function Ball() {
   this.vy = this.speed;
 }
 
-Ball.prototype.update = function () {
+update () {
   this.x += this.vx;
   this.y += this.vy;
 }
 
-Ball.prototype.display = function () {
+display () {
   rect(this.x,this.y,this.size,this.size);
 }
 
-Ball.prototype.reset = function () {
+reset () {
   this.x = width/2;
   this.y = height/2;
 }
@@ -605,7 +618,7 @@ __Improve the `update` method to include Pong behaviour__
 ???
 
 ```javascript
-Ball.prototype.update = function () {
+update () {
   this.x += this.vx;
   this.y += this.vy;
 
@@ -632,7 +645,7 @@ __Complete Ball.js code to this point is in the notes__ (`P` in slide view)
 `Ball.js`:
 
 ```javascript
-function Ball() {
+constructor () {
   this.size = 10;
   this.speed = 10;
   this.x = width/2;
@@ -641,7 +654,7 @@ function Ball() {
   this.vy = this.speed;
 }
 
-Ball.prototype.update = function () {
+update () {
   this.x += this.vx;
   this.y += this.vy;
 
@@ -654,11 +667,11 @@ Ball.prototype.update = function () {
   }
 }
 
-Ball.prototype.display = function () {
+display () {
   rect(this.x,this.y,this.size,this.size);
 }
 
-Ball.prototype.reset = function () {
+reset () {
   this.x = width/2;
   this.y = height/2;
 }
@@ -733,7 +746,7 @@ __Add the arguments to the Ball constructor and assign them to the correct prope
 ???
 
 ```javascript
-function Ball(x,y,vx,vy,size,speed) {
+constructor (x,y,vx,vy,size,speed) {
   this.size = size;
   this.speed = speed;
   this.x = x;
@@ -818,23 +831,26 @@ __They both act like bouncing balls!__
 ## Basic paddle class
 
 ```javascript
-function Paddle(x,y,w,h,speed) {
-  this.x = x;
-  this.y = y;
-  this.vx = 0;
-  this.vy = 0;
-  this.w = w;
-  this.h = h;
-  this.speed = speed;
-}
+class Paddle {
 
-Paddle.prototype.handleInput = function() {
-}
+  constructor (x,y,w,h,speed) {
+    this.x = x;
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.w = w;
+    this.h = h;
+    this.speed = speed;
+  }
 
-Paddle.prototype.update = function() {
-}
+  handleInput () {
+  }
 
-Paddle.prototype.display = function() {
+  update () {
+  }
+
+  display() {
+  }
 }
 ```
 
@@ -847,7 +863,7 @@ Paddle.prototype.display = function() {
 ## Defining input keys
 
 ```javascript
-function Paddle(x,y,w,h,speed,downKey,upKey) {
+constructor (x,y,w,h,speed,downKey,upKey) {
   this.x = x;
   this.y = y;
   this.vx = 0;
@@ -879,7 +895,7 @@ function Paddle(x,y,w,h,speed,downKey,upKey) {
 ## `handleInput` definition
 
 ```javascript
-Paddle.prototype.handleInput = function() {
+handleInput () {
   if (keyIsDown(this.upKey)) {
     this.vy = -this.speed;
   }
@@ -911,7 +927,7 @@ move.
 ## `update` definition
 
 ```javascript
-Paddle.prototype.update = function() {
+update () {
   this.y += this.vy;
   this.y = constrain(this.y,0,height-this.h);
 }
@@ -936,7 +952,7 @@ display it using a shape (or an image).
 ## `display` definition
 
 ```javascript
-Paddle.prototype.display = function() {
+display () {
   fill(255);
   rect(this.x,this.y,this.w,this.h);
 }
@@ -1003,7 +1019,7 @@ function draw() {
 
 In `Ball.js`:
 ```javascript
-Ball.prototype.handleCollision = function(paddle) {
+handleCollision (paddle) {
   if (this.x + this.size > paddle.x && this.x < paddle.x + paddle.w) {
     if (this.y + this.size > paddle.y && this.y < paddle.y + paddle.h) {
       this.x -= this.vx;
