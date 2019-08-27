@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Why and how?
 
@@ -90,7 +90,7 @@
 
 - Programming can be intimidating because it's easy for things to go wrong
 - That can scare us away from just playing around with it
-- But playing around with code is extremely fun, and a great way to learn what's possible
+- But playing around with code is fun, and a great way to learn what's possible
 - When you're just starting you can't really just "make stuff up", but you can definitely play around with __numbers__, for example
 - Whenever we use a number, why not try using some ridiculous numbers instead and see what happens?
 - It's a great way to learn more about how programming behaves in the real world
@@ -182,7 +182,7 @@
 ## So... why?
 
 - Because knowing how to program is probably one of the single most important skills you can have today
-- Because making art and interactive experiences and websites and videogames is incredibly fun and rewarding
+- Because making art and interactive experiences and websites and videogames is fun and rewarding
 
 ---
 

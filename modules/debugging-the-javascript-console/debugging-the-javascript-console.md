@@ -8,8 +8,8 @@
 
 - You will notice that when you write programs they don't work
 - You will notice this happens all the time
-- You will notice that the default state of a program is: not working
-- And if it's working its default state is: not doing what you wanted
+- You will notice that the default state of a program is: "not working"
+- And if it's "working" its default state is: "not the way you wanted"
 
 --
 
@@ -23,12 +23,17 @@ __We constantly need to _debug_ our work__
 - Many of them are _syntax errors_ where we've typed something that doesn't make sense to JavaScript in some way
 - But the worst ones of all are the errors in _behaviour_, where the program itself "works" (it runs), but it doesn't do what you thought it would
 
+???
+
+- The story goes that they're called "bugs" from back in the day when moths used to fly into the vacuum tubes of Ye Olde Computers and cause them to stop working or work incorrectly
+- Debugging meant literally finding and removing a real physical insect from the hardware!
+
 ---
 
 ## Debugging!
 
 - Debugging is the process of going through our code and getting rid of all the bugs
-- Controversial: __Debugging is actually pretty fun__ once you get used to it
+- Controversial opinion: __Debugging is actually pretty fun__ once you get used to it
 - It's like solving a puzzle or, you know, hunting for a fugitive in a dark forest with only a flashlight and your wits to guide you
 - One big part of debugging is just knowing the kinds of things that can go wrong
 - Another big part of debugging is having strategies for finding where those things are
@@ -84,7 +89,7 @@ function draw() {
 - In Atom, select your script and let's break it a bit
 - Misspell `background` as `bckground`
 
-```
+```javascript
 function setup() {
   createCanvas(500,500);
   bckground(255,200,200);
@@ -117,7 +122,8 @@ Uncaught ReferenceError: bckground is not defined
 ```]
 
 - This is a key use of the JavaScript Console: it reports errors in our code
-- For that reason we should __always check the console every time we run our code__!
+- For that reason we should __always open the console every time we run our code__!
+- Seriously, don't even bother looking at your program without the console!
 
 ---
 

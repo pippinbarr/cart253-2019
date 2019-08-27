@@ -1,4 +1,4 @@
-### Tools / CART 253 / Fall 2018 / Pippin Barr
+### Tools / CART 253 / Pippin Barr
 
 # The tools of the trade
 
@@ -52,7 +52,7 @@
 - That's called __text editing__!
 --
 
-- Programming is just fancy text editing with special words, right?
+- Programming is just fancy text editing with special words
 
 ---
 
@@ -71,7 +71,6 @@
 - We want to open the template project in Atom, so
   - In Atom go to `File > Open...` and select the __folder__ called `template-p5-project` wherever you put it and choose `Open` (you want to select the __folder__, not a single file)
   - Or _drag_ the folder onto the Atom icon in the Dock at the bottom of your screen (Mac)
-  - Or _drag_ the folder into the Atom window itself
 
 ???
 
@@ -184,7 +183,7 @@ Hello, World!
 - We have a local server for testing our work (atom-live-server)
 - We have a browser to view our work (Chrome)
 
-Make friends with and come to love them all!
+Make friends with and learn to love them all!
 
 ---
 

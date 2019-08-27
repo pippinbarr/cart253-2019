@@ -1,4 +1,4 @@
-### Graphics / CART 253 / Fall 2018 / Pippin Barr
+### Graphics / CART 253 / Pippin Barr
 
 # Drawing shapes
 
@@ -23,7 +23,7 @@
 
 - What does 'pixel' stand for? _Picture Element_!
 - On a Mac you can go to the Accessibility Settings and activate Zoom
-- On canvass you can use the _Magnifier_ application
+- On Windows you can use the _Magnifier_ application
 
 ---
 
@@ -59,6 +59,10 @@ _top_ of the screen (or canvas) and goes from top to bottom
 --
 
 - And we count pixels along the axes from _zero_
+
+?
+
+- The y-axis is a bit confusing because in math we're used to drawing graphs where the y axis goes _up_ rather than down.
 
 ---
 
@@ -212,7 +216,7 @@ function setup() {
 - Inside the parentheses we give the function the first piece of information it needs to draw the point, the first _parameter_
 - In this case it's the _x coordinate_ of our point
 - We would need to replace this `x` with an actual number, like `10`
-- I'm writing it as `x` here because it better shows us what the nature of this parameter is and it's pretty common practice in documentation you'll see
+- I'm writing it as `x` here because it better shows us what the nature of this parameter is and it's common practice in documentation you'll see
 
 ---
 
@@ -249,7 +253,7 @@ function setup() {
 
 - Okay, real talk: JavaScript doesn't __actually__ always need you to put a semicolon at the end of instructions
 - There are rules for when you have to and when it's optional
-- But __other programming languages require them__ so it's much better to build up the habit now
+- But __many other programming languages require them__ so it's much better to build up the habit now
 - Use semicolons
 
 ---
@@ -257,7 +261,7 @@ function setup() {
 ## `point(x,y);`
 
 - That was a lot, but the beauty of it is that that's _always_ how we call a function in JavaScript
-- (And in most other programming languages, too)
+- (And in plenty of other programming languages, too)
 - We give its __name__, specify the __parameters__ inside __parentheses__, and end with a __semicolon__
 - So now we can read something like `point(10,15);` and know that it means...
 --
@@ -272,9 +276,7 @@ function setup() {
 - That's kind of small
 --
 
-- Fortunately we can specify the size of canvas we want with a function called...
---
- `createCanvas();`
+- Fortunately we can specify the size of canvas we want with a function called `createCanvas`
 --
 
 - We use it like this:
@@ -282,10 +284,12 @@ function setup() {
 `createCanvas(w,h);`
 
 - Where `w` is the width of the canvas we want, and `h` is the height of the canvas we want
+- Try it!
 
 ???
 
 - Try out a new canvas size...
+- Bear in mind you should create the canvas _before_ drawing anything
 - Like `createCanvas(640,480);`
 - or `createCanvas(1,1000);`!
 - Where we're going, we don't need aspect ratios...
@@ -308,7 +312,7 @@ function setup() {
 
 --
 
-`line()`
+`line`
 --
 
 - And what parameters does it need?
@@ -325,6 +329,10 @@ function setup() {
 
 `line(0,0,100,100);`
 
+???
+
+- You could also imagine a `line` function that could take a starting point, an angle, and a length, but that's perhaps conceptually a bit harder to think about, so it's not super common
+
 ---
 
 ## So you would also like to draw a rectangle...
@@ -338,7 +346,7 @@ function setup() {
 ???
 
 - Sorry if you thought it would be `rectangle()`
-- It probably should be!
+- It probably should be, but programmers often like brevity!
 
 --
 
@@ -377,6 +385,10 @@ function setup() {
 
 - The (x,y) coordinates of the _centre_ of the ellipse, and then its _width_ and _height_
 
+???
+
+- So `rect` defaults to drawing from the top left corner and `ellipse` default to drawing from the centre. Not consistent, and a good reason to read the documentation when you're not sure.
+
 ---
 
 ## And so on!
@@ -403,7 +415,7 @@ function setup() {
 --
 
 - And you might even have a preference!
-- p5 gives us functions for us to _tell_ it which style we like...
+- p5 gives us functions for us to _tell_ it which style we want right now...
 
 ---
 
@@ -439,22 +451,22 @@ Specify the top-left and bottom-right 'corners' of the ellipse
 
 - Why does `rect(0,0,50,50)` look the same with both `rectMode(CORNERS)` and `rectMode(CORNER)`?
 
-- How can we draw a rectangle in the center of the canvas?
+- How can we most easily draw a rectangle in the center of the canvas?
 
 - How can we draw an ellipse centered on the bottom-right corner of the canvas?
 
 ???
 
-- `rect(0,0,50,50)` looks the same in both modes because because with `CORNERS` activated it draws the top-left at (0,0) and the bottom-right at (50,50), yielding a rectangle with it's top-left at (0,0) that is 50x50 - exactly what the `CORNER` mode specifies
+- `rect(0,0,50,50)` looks the same in both modes because because with `CORNERS` activated it draws the top-left at (0,0) and the bottom-right at (50,50), yielding a rectangle with its top-left at (0,0) that is 50x50 - exactly what the `CORNER` mode specifies
 - To draw a rectangle in the center we need to know where it is - either by using `createCanvas()` or remembering the default size is 100x100
-- It it's 500x500 then we could use:
+- If the canvas is 500x500 then we could use:
 
 ```javascript
 rectMode(CENTER);
 rect(250,250,100,100);
 ```
 
-- To center an ellipse at the bottom-right of the same canvas
+- To center an ellipse at the bottom-right of the same 500x500 canvas
 
 ```javascript
 ellipse(500,500);
@@ -505,6 +517,7 @@ Let's try!
 
 - An important thing to notice and to remember is that like `rectMode()` and `ellipseMode()` these 'stay on' until you change them
 - So if you set a `fill()` then _every_ shape will have that fill until you set something else
+- Also importantly, you put the colouring instructions _before_ the drawing instructions they will apply to
 
 ---
 
@@ -575,12 +588,17 @@ fill(255,100,100);
 
 ## Hexadecimal colours
 
-- You might notice in many color selectors you see colour values displayed as a set of letters and numbers after a hash sign, like  `#12FF08`.
+- You might notice in many color selectors you see colour values displayed as a set of letters and numbers after a hash sign, like `#12FF08`.
 - This is called the _hexadecimal_ representation of the colour and you can use it in your code too if you want, as in:
 
 `background("#00FF00");` sets a pure green background
 
 - Note how the hexadecimal code is __inside double quotes__, that's important
+
+???
+
+- In hexadecimal you count from 0 to f, which is weird. That is, you count 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, e, d, f.
+- So `f` is the highest "number" and 0 is still the lowest.
 
 ---
 
@@ -614,7 +632,7 @@ fill(255,100,100);
 ## Pop-quiz
 
 - What will we see on our screen with this code?
-- (Try not to cheat by typing it in, reason through it!)
+- (Try not to find out by just typing it in, reason through it line by line!)
 
 ```javascript
 createCanvas(500,500);

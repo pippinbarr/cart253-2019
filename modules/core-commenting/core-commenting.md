@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Commenting
 
@@ -36,7 +36,7 @@ function draw() {
 ## Comments
 
 - A comment is an addition to our code that lets us write notes in plain language
-- A comment is written in our code by beginning a line with two forward-slashes: `//`
+- A comment is written in our code by beginning a line with two forward slashes: `//`
 
 ```javascript
 // The next line draws an ellipse (this is a comment)
@@ -85,9 +85,9 @@ ellipse(0,0,100,100);
 
 ---
 
-```
+```javascript
 // Face Drawing Machine
-// Pippin Barr, 17 August 2018
+// Pippin Barr
 //
 // Draws a simple face on the canvas.
 // Should probably have a nose?
@@ -120,9 +120,9 @@ function draw() {
 
 ---
 
-```
+```javascript
 // Face Drawing Machine
-// Pippin Barr, 17 August 2018
+// Pippin Barr
 //
 // Draws a simple face on the canvas.
 // Should probably have a nose?
@@ -158,13 +158,13 @@ function draw() {
 
 - This one is a little more subjective
 - The idea is to add comments to your code that explain what it does
-- But you generally don't want to add a comment to _every single line_ because it would be exhausting for everyone
+- But you generally don't want or need to add a comment to _every single line_ because it would be exhausting for everyone
 - As such, you need to think about your code and imagine what would need explaining to someone who has never seen it before
 - This is an art form and you will get better at it with practice
 
 ---
 
-```
+```javascript
 // Create our canvas
 createCanvas(500,500);
 
@@ -176,7 +176,6 @@ ellipseMode(CENTER);
 ellipse(250,250,200,200);
 
 // Draw the eyes
-// The eyes are black
 fill(0);
 // Left eye
 ellipse(200,225,20,20);
@@ -202,7 +201,7 @@ line(200,275,300,275);
 
 - One important guideline with comments is that you don't want to just write what the code literally does
 
-```
+```javascript
 // Set the ellipse mode to center
 ellipseMode(CENTER);
 // Draw an ellipse at 250,250 with a width and height of 200
