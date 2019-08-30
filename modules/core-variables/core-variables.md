@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Variables
 
@@ -156,21 +156,21 @@ A variable has three key qualities:
 
 - This is a __variable declaration__ in JavaScript
 - When we __create__ a variable we call it __declaring a variable__
-- So this line is saying "I want to create __variable__ called `meaningOfLife`, and put the number `42` in it to start with, thanks"
+- So this line is saying "I want to create a __variable__ called `meaningOfLife`, and put the number `42` in it to start with, thanks"
 - Let's go through the syntax of this
 
 ---
 
-## .hi[`var`] `meaningOfLife = 42;`
+## .hi[`let`] `meaningOfLife = 42;`
 
-- First we write the special word `var`
-- Just like `function` means we're going to make a function, `var` means we're __declaring a variable__
+- First we write the special word `let`
+- Just like `function` means we're going to make a function, `let` means we're __declaring a variable__
 - This tells JavaScript we need it to create a new variable (and that we're about to tell it the information it needs to do this)
-- We __only use `var` when we're declaring the variable__ - when we use the variable later, we don't need to write `var` in front of it
+- We __only use `let` when we're declaring the variable__ - when we use the variable later, we don't need to write `let` in front of it
 
 ???
 
-- JavaScript is under constant development and so these days there is __another__ way to declare variables called `let` - look it up if you're interested, but we probably won't get into it in this class
+- In the Olde Days we used to declare variables in JavaScript with the word `var` instead of `let`, but those days are over.
 
 ---
 
@@ -203,13 +203,14 @@ There are more technical rules for writing variable names:
 - This is because we are putting a __value__ in our variable
 - It means "I am about to tell you what to put inside this variable"
 - Frustratingly, notice that `=` does __not__ mean "check for equality", it means "assign the following value to this variable"!
+- It kind of means __make__ this variable equal this value, it's very confident.
 
 ---
 
 ## `let meaningOfLife = ` .hi[`42`]`;`
 
 - Next we have the __value__ of the variable, `42`
-- Importantly, `42` is the `meaningOfLife`, and so the variable name makes sense (see: Douglas Adams)
+- Importantly, `42` is supposedly the meaning of life, and so the variable name makes sense (see: Douglas Adams)
 - Note that because JavaScript __doesn't check types__ you could put __any__ type of thing in this variable:
 
 ```javascript
@@ -275,7 +276,7 @@ let meaningOfLife;
 meaningOfLife = 42;
 ```
 
-- Notice that when we put the value in we don't need `var` anymore, because JavaScript knows we have already created the `meaningOfLife` variable earlier
+- Notice that when we put the value in we don't need `let` anymore, because JavaScript knows we have already created the `meaningOfLife` variable earlier
 
 ---
 
@@ -379,6 +380,7 @@ let myName = "Pippin";
 let thetruemeaningoflife = 1;
 let exampleFloat = 22.2.2;
 let foo = `1`;
+var age = 27;
 ```
 
 ???

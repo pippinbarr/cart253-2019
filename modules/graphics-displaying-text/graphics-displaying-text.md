@@ -1,4 +1,4 @@
-### Graphics / CART 253 / Fall 2018 / Pippin Barr
+### Graphics / CART 253 / Pippin Barr
 
 # Displaying text
 
@@ -58,6 +58,7 @@ text(helloWorld, width/2, height/2);
 
 - `textSize()` takes __one argument__, the size of the text to display
 - The number you use here reflects the __height in pixels__ of the text
+- As with colours for shapes, you put the size _before_ the `text` instruction
 
 ---
 

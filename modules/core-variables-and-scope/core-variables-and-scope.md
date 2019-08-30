@@ -82,9 +82,9 @@ function draw() {
 
 ---
 
-## Declaring variables without `var`
+## Declaring variables without `let`
 
-- Very unfortunately, JavaScript lets us declare variables __without__ using `var`
+- Very unfortunately, JavaScript lets us declare variables __without__ using `let`
 
 ```javascript
 function setup() {
@@ -101,7 +101,7 @@ function draw() {
 }
 ```
 
-- That's because if you don't use `var` to create a new variable, JavaScript creates it as a __global variable__ (like the ones declared at the top of the script)
+- That's because if you don't use `let` to create a new variable, JavaScript creates it as a __global variable__ (like the ones declared at the top of the script)
 - __Don't do this__, it can lead to a lot of confusion
 
 ---

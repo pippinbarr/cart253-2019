@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Time
 
@@ -67,7 +67,7 @@ In a game, for example, every frame we need to run the physics simulation, anima
 
 ## Handle events
 
-- While a program is running, we want to be able to react to input either from the person using it, or from other sources
+- While a program is running, we want to be able to react to the person using it, or other important sources of events
 - Sometimes we can do this in the __update loop__ and sometimes we have special functions called __event handlers__ which run only when a specific kind of event happens (like a mouse click, say)
 
 In our game, for example, we need to react whenever the player clicks the mouse button by making the avatar swing its sword, and we also need to react when the player is within 10 meters of an orc by having the orc run after them, etc.

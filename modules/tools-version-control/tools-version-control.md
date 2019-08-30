@@ -1,4 +1,4 @@
-### Tools / CART 253 / Fall 2018 / Pippin Barr
+### Tools / CART 253 / Pippin Barr
 
 # Version control
 
@@ -17,13 +17,13 @@
 ## Why version control?
 
 - Version control is an industry standard used to make sure software projects are maintained systematically
-- In CART253 version control will allow us to:
+- In this class version control will allow us to:
   - Submit our assignments easily
   - Keep our files backed up in the cloud (on github.com)
   - Go back to a previous version of our work if we make a horrible mistake
   - Have our work be open source and publicly available
   - Track the progress of our projects step by step over time
-  - (Collaborate successfully with other in larger projects - though this is not something we'll be doing in CART253)
+  - (Collaborate successfully with other in larger projects)
 
 ---
 
@@ -52,7 +52,7 @@
 
 ---
 
-## Create a cart253-2018 repository
+## Create a cart253 repository
 
 - Let's create our repository!
 --
@@ -63,7 +63,7 @@
 - Once you're logged in click on the green "New repository" button
 --
 
-- Name your repository __`cart253-2018`__ (note the lowercase, the hyphen, etc.)
+- Name your repository __`cart253`__ (note the lowercase, the hyphen, etc.)
 --
 
 - Make sure it's set to __public__
@@ -79,7 +79,7 @@
 
 ## Cloning a repository!
 
-- You now have a repository called `cart253-2018`
+- You now have a repository called `cart253`
 - Right now it exists __only on GitHub__ though, and not on your computer
 - We need to __clone__ it to our local computer (cloning just means __downloading__)
 --
@@ -93,7 +93,7 @@
 - Select the `GitHub.com` tab at the top of the window that appears
 --
 
-- Select your `cart253-2018` repository (it will be the only one there if you haven't used GitHub before)
+- Select your `cart253` repository (it will be the only one there if you haven't used GitHub before)
 --
 
 - For now select your __Desktop__ as the __Local Path__
@@ -114,8 +114,8 @@
 
 ## Ready to work!
 
-- Now that we have our `cart253-2018` repository on our computer we're ready to work
-- When we do work we just create and edit our class projects etc. inside that `cart253-2018` folder
+- Now that we have our `cart253` repository on our computer we're ready to work
+- When we do work we just create and edit our class projects etc. inside that `cart253` folder
 - And we keep it synchronised with the version on GitHub
 
 ---
@@ -143,16 +143,16 @@ Let's try it...
 
 ## 1. Make some changes
 
-- Go to the `cart253-2018` folder on your desktop and open it
+- Go to the `cart253` folder on your desktop and open it
 - You should see a file called `README.md` that was created when you created the repository
 - __Open `README.md` in Atom__
-- Right now it probably just says `## cart253-2018`
+- Right now it probably just says `## cart253`
 - Under the name of the repository write a simple description of it
 
 ---
 
 ```
-## cart253-2018
+## cart253
 
 This is the repository for the course CART 253 for Pippin Barr.
 It is going to contain __exciting exercises__, __passionate projects__,
@@ -254,7 +254,7 @@ and a __succulent sandbox__.
 ## Check GitHub
 
 - Just to make sure this first time, let's go back to [github.com](https://www.github.com/) in our browser
-- Navigate to your account and click on your `cart253-2018` repository if it's not already loaded
+- Navigate to your account and click on your `cart253` repository if it's not already loaded
 - If it's already loaded then __reload the page__
 --
 
@@ -275,7 +275,7 @@ and a __succulent sandbox__.
 
 - So that's the basic process of using version control
 
-1. __Make changes locally__ (in your `cart253-2018` repository folder)
+1. __Make changes locally__ (in your `cart253` repository folder)
 2. __Commit changes to the local repository with a message__ (using GitHub Desktop)
 3. __Push changes to the remote repository__ (using GitHub Desktop)
 
@@ -308,7 +308,7 @@ and a __succulent sandbox__.
 ## Working on a different computer
 
 - GitHub makes it possible for you to do your work on different computers as needed!
-- Whenever you want to work on a computer you just need to __Clone__ the `cart253-2018` repository again, as we did at the start of this module
+- Whenever you want to work on a computer you just need to __Clone__ the `cart253` repository again, as we did at the start of this module
 - Cloning will download the latest version of the folder to that computer and you can just start working (assuming you have all the right software of course)
 - Then when you __push__ from that computer, it will update GitHub and you can clone it somewhere else, etc. etc.
 
@@ -318,19 +318,19 @@ and a __succulent sandbox__.
 
 - In fact, because of the way CDA computers work, this will be necessary
 - __CDA computers erase all local data every night__
-- This means when you come in the next day it will have __deleted the `cart253-2018` folder from your desktop__
+- This means when you come in the next day it will have __deleted the `cart253` folder from your desktop__
 - And it will have __deleted your GitHub Desktop settings__! Argh!
 --
 
 - Basically you'll have to
   - __Sign in to GitHub Desktop__ again
-  - __Clone your `cart253-2018` repository__ again
+  - __Clone your `cart253` repository__ again
   - And get back to work
 
 ???
 
 - If you work on your own computer then this won't happen to you and you'll be able to just keep using the same folder as if nothing had happened
-- You __could__ try keeping your `cart253-2018` repository folder inside your hosted folder on the CDA computers, which would mean it won't be deleted
+- You __could__ try keeping your `cart253` repository folder inside your hosted folder on the CDA computers, which would mean it won't be deleted
 - __But__ your GitHub Desktop settings __will__ still be deleted and so it's probably just easier to clone your repository each time you sit down to work
 
 ---
@@ -347,7 +347,7 @@ and a __succulent sandbox__.
 ## Ignore `.DS_Store`
 
 - In __GitHub Desktop__
-- Make sure you `cart253-2018` repository is the Current Repository selected in the top left
+- Make sure you `cart253` repository is the Current Repository selected in the top left
 - Go to `Repository > Repository Settings...`
 - Selected the `Ignored Files` tab
 - Type `.DS_Store` in the text field
@@ -362,7 +362,7 @@ and a __succulent sandbox__.
 Given that we have done [Exercise 0](../../exercises/Exercise-0.md) (RIGHT?) we have a JavaScript project we could put into our repository! So:
 
 1. Find your Exercise 0 folder and rename it to `exercise0`
-2. Create a folder called `exercises` inside your `cart253-2018` repository folder
+2. Create a folder called `exercises` inside your `cart253` repository folder
 3. Put the `exercise0` folder into the `exercises` folder
 4. Go to GitHub Desktop and check that it sees the changes
 5. Write a commit message like "Added exercise 0 to the repository"

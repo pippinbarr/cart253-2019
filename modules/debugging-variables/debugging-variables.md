@@ -1,4 +1,4 @@
-### Debugging / CART 253 / Fall 2018 / Pippin Barr
+### Debugging / CART 253 / Pippin Barr
 
 # Variables
 
@@ -69,7 +69,7 @@ console.log("meaningOfLife: " + meaningOfLife);
 
 ## "When in doubt, `console.log()` it out"
 
-- Seriously, printing messages with `console.log()` is the single most useful way to debug your code (especially while it's relatively simple)
+- Seriously, printing messages with `console.log()` is a very useful way to debug your code (especially while it's relatively simple)
 - It lets you know __if things are happening__
 - It lets you know __when things are happening__
 - It lets you know __what value variables have__
