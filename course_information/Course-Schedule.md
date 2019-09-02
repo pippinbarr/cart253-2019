@@ -15,6 +15,9 @@ __The beginning.__ _In which we encounter programming for the first time and fal
 - Core - Commenting ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-commenting/index.html), [Notes](../modules/core-commenting/core-commenting.md))
 - Debugging - The JavaScript console ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-the-javascript-console/index.html), [Notes](../modules/debugging-the-javascript-console/debugging-the-javascript-console.md))
 
+## Activity
+- Basic Drawing ([Slides](https://pippinbarr.github.io/cart253-2019/modules/activity-basic-drawing/index.html))
+
 ## Homework
 - [Exercise 0](../exercises/Exercise-0.md) - Spiritual Self-Portrait
 - [Register for an account on GitHub](https://github.com/join) (please use your real name as your username or at least set your real name in Profile)

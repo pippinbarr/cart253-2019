@@ -2,8 +2,10 @@
 
 ## Some basic rules for debugging
 
-1. __Is it a typo?__ - Did you type a variable name or a function name slightly wrong? `rndom` instead of `random`?
+1. __Is it a typo?__ - Did you type a variable, function, or class name slightly wrong? `rndom()` instead of `random()`? Make sure the names you use _match_ the documentation or your own definition of it elsewhere.
 1. __Is it capitalization?__ - Did you type a variable name or a function name with the wrong capitalization? `Random()` instead of `random()`?
+1. __Are your brackets matched?__ - Are all your sets of parentheses, square brackets, and curly brackets correctly matched? Are they matched in the right order? Are they matched in a way that makes sense?
+1. __Did you save your files?__ - Is your code not doing what you expected because you haven't saved it and are looking at an old version in the browser?
 1. __Is your code running?__ - Sometimes it can be hard to tell if some specific code is even running, consider putting a `console.log()` there to see if it shows up.
 1. __Have you asked someone else?__ - It can be great to ask for help. Even explaining your problem to someone may lead you to solve it yourself!
 1. __Are you tired?__ - It's okay to stop debugging if you've been going for a long time, sometimes you just need a break.

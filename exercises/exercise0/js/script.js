@@ -1,6 +1,5 @@
 // Exercise 0 - Spiritual Self-Portrait
 // Pippin Barr
-// 20 August 2018
 //
 // Uses p5's set of shape and colour functions to draw a head
 // wearing a hat that Pippin claims is spiritually just like him.

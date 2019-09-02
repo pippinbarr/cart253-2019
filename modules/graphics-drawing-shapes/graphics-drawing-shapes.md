@@ -126,7 +126,7 @@ function draw() {
 
 ## Writing instructions in `setup()`
 
-- For now, we're going to write our code _inside_ the `setup()` function
+- For now, we're going to write our code _inside_ the `setup()` function so it runs _once_
 - By "inside" we mean _inside the curly brackets_
 
 ```
@@ -402,7 +402,23 @@ function setup() {
 
 ???
 
-- Let's try these out just to make sure we get this idea of typing in instructions (calling functions) and getting results!
+- Try these out just to make sure we get this idea of typing in instructions (calling functions) and getting results!
+
+---
+
+## Order matters
+
+- The order you have your drawing instructions is important
+- p5 will draw the shapes the the order specified, like creating layers in Photoshop
+
+```javascript
+rect(0,0,100,100);
+ellipse(0,0,100,100); // This ellipse is over the rectangle
+rect(0,0,50,50); // This rectangle is over the other rectangle and the ellipse
+ellipse(0,0,50,50); // etc.
+```
+
+- This means you need to think about the order of instructions, especially when shapes overlap, so you can choose what you want to happen
 
 ---
 
@@ -430,6 +446,8 @@ Instead of the top-left corner the `x` and `y` in `rect(x,y,w,h)` now specify th
 `rectMode(CORNERS);`
 Now you write it `rect(x1,y1,x2,y2)` where the first coordinates are the top-left corner and the second coordinates are the bottom-right corner
 
+These `rectMode()` instructions apply to all rectangles drawn _after_ them
+
 ---
 
 ## `ellipseMode()`
@@ -444,6 +462,8 @@ Specify the top-left 'corner' of the ellipse, then the width and height
 
 `ellipseMode(CORNERS);`  
 Specify the top-left and bottom-right 'corners' of the ellipse
+
+These `ellipseMode()` instructions apply to all ellipses drawn _after_ them
 
 ---
 
@@ -487,6 +507,7 @@ ellipse(500,500);
 
 `stroke(shade);` sets the line shade (includes the lines around the edges of shapes)
 
+- The coloring instructions `fill` and `stroke` apply to all drawing instructions _after_ them
 ---
 
 ## Two-hundred and fifty-six shades of grey
@@ -610,6 +631,8 @@ fill(255,100,100);
 `noFill();` means have transparent fill
 
 `noStroke();` means have transparent stroke
+
+- As with `stroke()` and `fill()`, these instructions apply to all drawing done _after_ them
 
 ---
 

@@ -23,7 +23,7 @@ Office: EV 6.743
 Office hours: tbd.
 
 
-## TAs
+## TA
 
 Enric Llagostera <email to come>
 
@@ -80,12 +80,12 @@ Additionally, students will create their own repository on GitHub to save, track
 
 Specific evaluation requirements will be provided when assigned.
 
-* Weekly exercises (20%)
-   * 8 exercises worth 2.5% each
-* Projects (60%)
+* Weekly exercises (10%)
+   * 8 exercises worth 1.25% each
+* Projects (70%)
   * Project 1 (10%)
   * Project 2 (20%)
-  * Project 3 (30%)
+  * Project 3 (40%)
 * Participation (20%)
    * Participation includes attendance, asking questions, asking for help, contributing to discussions, editing the wiki to share ideas, participating in critiques, and coming to office hours (even if it's just to show off your work!)
 
