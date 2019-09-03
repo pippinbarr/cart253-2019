@@ -8,15 +8,15 @@
 
 - The grid
 - Points, lines, and shapes
-- Greys and colours
+- Greys and colors
 
 ---
 
 ## The grid
 
 - Computer screens are divided up into _pixels_
-- Everything we see on the screen involves setting the colours of the pixels
-- By changing the colours of pixels over time, things appear to move!
+- Everything we see on the screen involves setting the colors of the pixels
+- By changing the colors of pixels over time, things appear to move!
 - If you can zoom your screen, you can even see the individual pixels!
 
 ???
@@ -36,7 +36,7 @@ background-style: contain
 
 ## Where on the grid?
 
-- In a graphics application you specify what pixel you want to change the colour of by just clicking on it with a pencil or paintbrush...
+- In a graphics application you specify what pixel you want to change the color of by just clicking on it with a pencil or paintbrush...
 - But if you're programming you're working in text...
 - ... so how would you refer to a specific pixel?
 --
@@ -97,6 +97,7 @@ background-style: contain
 
 - It's time to start telling our computers what to do
 - When it comes to programming, that means typing in line of code
+- We call a line of code that tells the computer to do something specific an __instruction__
 - The heart of programming is knowing how to give instructions that a computer will understand
 - Which can be a challenge because we have to get them _exactly right_
 - But when we get them right, we can do magical things
@@ -110,17 +111,17 @@ background-style: contain
 
 ```
 function setup() {
-  // put setup code here
+
 }
 
 function draw() {
-  // put drawing code here
+
 }
 ```
 
 - These two functions called `setup()` and `draw()` are _specific to p5_
-- Put simply, `setup()` is run _once_ when your program starts, and `draw()` is run _over and over_, once per frame
-- We'll get back to that
+- Put simply, the code in `setup()` is run _once_ when your program starts, and `draw()` is run _over and over_, once per frame
+- We'll get back to all this later
 
 ---
 
@@ -131,23 +132,22 @@ function draw() {
 
 ```
 function setup() {
-  // put setup code here
   // WE ARE GOING TO WRITE STUFF IN HERE!!!
 }
 
 function draw() {
-  // put drawing code here
+
 }
 ```
 
 - We will come back to the various words and symbols used
-- For now, just remember we're writing code inside the curly brackets of `setup()` and this means it will run _once_ at the beginning of our program
+- For now, just remember we're writing instructions inside the curly brackets of `setup()` and this means it will run _once_ at the beginning of our program
 
 ---
 
 ## Getting to the `point()`
 
-- Follow along in the version of the template project you downloaded earlier, editing the `setup()` function inside `script.js`
+- __Follow along__ in the version of the template project you downloaded earlier, editing the `setup()` function inside `script.js`
 - Let's use the `point()` function to tell p5 to draw a single pixel in a specific location
 - Here's some code to draw a pixel at (5,2) in a tiny little canvas!
 
@@ -193,8 +193,8 @@ function setup() {
 
 - First we have the _name_ of the function, which is `point`
 - In a perfect world the name of the function tells us what it does!
-- The name of a function is _case sensitive_ and _spelling sensitive_
-- Welcome to programming, where the tiniest inaccuracy will break everything!
+- The name of a function is, like all names in programming, _case sensitive_ and _spelling sensitive_
+- Even the tiniest inaccuracy will break everything! Sigh.
 
 ---
 
@@ -262,7 +262,8 @@ function setup() {
 
 - That was a lot, but the beauty of it is that that's _always_ how we call a function in JavaScript
 - (And in plenty of other programming languages, too)
-- We give its __name__, specify the __parameters__ inside __parentheses__, and end with a __semicolon__
+- So we'll get used to it over time
+- So it's: __name__, specify the __parameters__ inside __parentheses__, and end with a __semicolon__
 - So now we can read something like `point(10,15);` and know that it means...
 --
 
@@ -285,11 +286,11 @@ function setup() {
 
 - Where `w` is the width of the canvas we want, and `h` is the height of the canvas we want
 - Try it!
+- Bear in mind you should create the canvas _before_ drawing anything
 
 ???
 
 - Try out a new canvas size...
-- Bear in mind you should create the canvas _before_ drawing anything
 - Like `createCanvas(640,480);`
 - or `createCanvas(1,1000);`!
 - Where we're going, we don't need aspect ratios...
@@ -538,7 +539,7 @@ Let's try!
 
 - An important thing to notice and to remember is that like `rectMode()` and `ellipseMode()` these 'stay on' until you change them
 - So if you set a `fill()` then _every_ shape will have that fill until you set something else
-- Also importantly, you put the colouring instructions _before_ the drawing instructions they will apply to
+- Also importantly, you put the coloring instructions _before_ the drawing instructions they will apply to
 
 ---
 
@@ -561,10 +562,10 @@ ellipse(250,250,100,100);
 
 ---
 
-## Colourful nights
+## Colorful nights
 
 - We're not actually limited to making arthouse movie-style things in black and white
-- If we use _three_ numbers to specify our `background()`, `stroke()` and `fill()` instead of one, we can set colours instead:
+- If we use _three_ numbers to specify our `background()`, `stroke()` and `fill()` instead of one, we can set colors instead:
 
 ```javascript
 background(255,0,0);
@@ -575,8 +576,8 @@ fill(255,100,100);
 - What do you think the three numbers refer to?
 --
 
-- Exactly, the _red_, _green_, and _blue_ amounts for our colour
-- That is, we're using the _RGB colour model_
+- Exactly, the _red_, _green_, and _blue_ amounts for our color
+- That is, we're using the _RGB color model_
 
 ---
 
@@ -598,19 +599,19 @@ fill(255,100,100);
 
 ---
 
-## Finding colours
+## Finding colors
 
-- You probably already have a way of finding out the RGB values of a colour
-- Maybe you use an application like Photoshop, which may also give you an 'eyedropper' to pick colours from your screen
-- You can also just Google 'RGB colour picker' and it will bring one up
-- Plenty of ways to find the RGB values for colours
+- You probably already have a way of finding out the RGB values of a color
+- Maybe you use an application like Photoshop, which may also give you an 'eyedropper' to pick colors from your screen
+- You can also just Google 'RGB color picker' and it will bring one up
+- Plenty of ways to find the RGB values for colors
 
 ---
 
-## Hexadecimal colours
+## Hexadecimal colors
 
-- You might notice in many color selectors you see colour values displayed as a set of letters and numbers after a hash sign, like `#12FF08`.
-- This is called the _hexadecimal_ representation of the colour and you can use it in your code too if you want, as in:
+- You might notice in many color selectors you see color values displayed as a set of letters and numbers after a hash sign, like `#12FF08`.
+- This is called the _hexadecimal_ representation of the color and you can use it in your code too if you want, as in:
 
 `background("#00FF00");` sets a pure green background
 
@@ -623,9 +624,9 @@ fill(255,100,100);
 
 ---
 
-## Losing colours
+## Losing colors
 
-- You might want to make things transparent sometimes - e.g. give them _no colour at all_
+- You might want to make things transparent sometimes - e.g. give them _no color at all_
 - You can do this with the following functions:
 
 `noFill();` means have transparent fill
@@ -636,10 +637,10 @@ fill(255,100,100);
 
 ---
 
-## See-through colours
+## See-through colors
 
-- On computers colours often have an _alpha_ value which refers to how transparent the colour should be
-- In p5 we can set this by adding yet another number to our RGB colours, bringing the total to four
+- On computers colors often have an _alpha_ value which refers to how transparent the color should be
+- In p5 we can set this by adding yet another number to our RGB colors, bringing the total to four
 - `0` means completely transparent, `255` means completely opaque
 - So `fill(255,0,0,127);` will give us...
 --
@@ -652,34 +653,11 @@ fill(255,100,100);
 
 ---
 
-## Pop-quiz
-
-- What will we see on our screen with this code?
-- (Try not to find out by just typing it in, reason through it line by line!)
-
-```javascript
-createCanvas(500,500);
-background(100,0,0);
-fill(255);
-rect(0,0,250,250);
-noStroke();
-fill(0,0,250,250);
-ellipse(250,250,250,250);
-background(0,100,0);
-```
-
-???
-
-- It's a traaaap!
-- That final `background()` will overwrite everything on the screen with a dark green!
-
----
-
 ## Food for thought
 
 - We're now able to see "behind the scenes" of software
 - We are writing lines of code that make actual stuff happen in a browser
-- We see the Matrix!
+- We see the Matrix! Or at least a layer deeper into than usual.
 - We know, for instance, that p5 doesn't really know about "rectangles", it just knows how to set a particular set of pixels to a particular color...
 - We know that p5 represents colors as numbers...
 - As Spiderman's uncle said, "_With great power comes an excruciating amount of time and effort!_"

@@ -21,7 +21,8 @@ __The beginning.__ _In which we encounter programming for the first time and fal
 ## Homework
 - [Exercise 0](../exercises/Exercise-0.md) - Spiritual Self-Portrait
 - [Register for an account on GitHub](https://github.com/join) (please use your real name as your username or at least set your real name in Profile)
-- [Install GitHub Desktop](https://desktop.github.com/) if you are using your own computer for this class
+- If you are using your own computer for this class make sure to install all course software according to the [Course Software Setup](Course-Software-Setup.md) page.
+
 
 ---
 
