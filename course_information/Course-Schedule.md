@@ -3,6 +3,21 @@
 - [Debugging Cheatsheet](../cheatsheets/debugging-cheatsheet.md)
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
 
+### Contents
+- [1. The beginning](#week-1---week-of-2-september-2019)
+- [2. Change](#week-2---week-of-9-september-2019)
+- [3. Input](#week-3---week-of-16-september-2019)
+- [4. Repetition](#week-4---week-of-23-september-2019)
+- [5. Functions](#week-5---week-of-30-september-2019)
+- [6. Project 1](#week-6---week-of-7-october-2019)
+- [7. Object Oriented Programming](#week-7---week-of-14-october-2019)
+- [8. Arrays](#week-8---week-of-21-october-2019)
+- [9. Inheritance and Polymorphism](#week-9---week-of-28-october-2019)
+- [10. Project 2](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-10---week-of-4-november-2019)
+- [11. Libraries](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-11---week-of-11-november-2019)
+- [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-12---week-of-18-november-2019)
+- [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-13---week-of-25-november-2019)
+
 # Week 1 - Week of 2 September 2019
 
 __The beginning.__ _In which we encounter programming for the first time and fall in love with the majesty of code._
