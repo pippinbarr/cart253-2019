@@ -7,6 +7,8 @@
 
 __The beginning.__ _In which we encounter programming for the first time and fall in love with the majesty of code._
 
+## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
+
 ## Topics
 - Introductions ([Slides](https://pippinbarr.github.io/cart253-2019/modules/introductions/index.html), [Notes](../modules/introductions/introductions.md))
 - Core - Why and how? ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-why-and-how/index.html), [Notes](https://github.com/pippinbarr/cart253-2019/blob/master/modules/core-why-and-how/core-why-and-how.md))
