@@ -123,6 +123,6 @@ You are of course welcome to use your own laptops and computers to the extent th
 (Click through for week-by-week information about what we will cover in the course.)
 
 
-## [Design and Computation Arts Syllabus](http://www.concordia.ca/content/dam/finearts/design/docs/DCART_Syllabus_2019%20Final.pdf)
+## [Design and Computation Arts Syllabus](dcart-syllabus-2019.pdf)
 
 (Click through for the standard information from D/CART that is to be included as part of all course outlines.)

@@ -47,11 +47,17 @@ __The beginning.__ _In which we encounter programming for the first time and fal
 
 __Change.__ _In which we learn about how time passes in a program and how our program can remember things over time in variables._
 
+## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
+
 ---
 
 # Week 3 - Week of 16 September 2019
 
 __Input.__ _In which our programs start reacting to their users._
+
+## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
+
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ---
 
@@ -59,11 +65,15 @@ __Input.__ _In which our programs start reacting to their users._
 
 __Repetition.__ _In which we leverage one of the computer's key super powers: never getting bored._
 
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
 ---
 
 # Week 5 - Week of 30 September 2019
 
 __Structure.__ _In which we learn to break our programs and data into easy-to-understand parts.__
+
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ---
 
@@ -71,11 +81,15 @@ __Structure.__ _In which we learn to break our programs and data into easy-to-un
 
 __Project 1.__ _In which we hand in project 1._
 
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
 ---
 
 # Week 7 - Week of 14 October 2019
 
 __Objection!__ _In which we learn the basics of Object Oriented Programming, a hugely influential programming paradigm._
+
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ---
 
@@ -83,11 +97,15 @@ __Objection!__ _In which we learn the basics of Object Oriented Programming, a h
 
 __Little boxes.__ _In which we harness the power of arrays to store lots of related data in one place._
 
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
 ---
 
 # Week 9 - Week of 28 October 2019
 
 __We are family.__ _In which we extend Object-Oriented Programming with the ideas of inheritance and polymorphism._
+
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ---
 
@@ -95,11 +113,15 @@ __We are family.__ _In which we extend Object-Oriented Programming with the idea
 
 __Project 2.__ _In which we hand in project 2_
 
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
 ---
 
 # Week 11 - Week of 11 November 2019
 
 __Libraries.__ _In which we open our eyes to a larger reality of programming: people have already done a lot of the things we need done._
+
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ---
 ## Pippin goes on paternity leave here.
@@ -109,10 +131,14 @@ __Libraries.__ _In which we open our eyes to a larger reality of programming: pe
 
 __tbd.__
 
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
 ---
 
 # Week 13 - Week of 25 November 2019
 
 __tbd.__
+
+## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ---
