@@ -14,7 +14,7 @@
 
 ## Why text?
 
-- They say a thousand words is worth a picture...
+- They say a thousand words is worth a picture... or something...
 - Also being able to display text means we can display __language__
 - Which can be a pretty important way to convey information in a program
 --
@@ -44,6 +44,20 @@ text(helloWorld, width/2, height/2);
 
 ---
 
+## Color...
+
+- The text you display with `text()` gets its color from the current `fill()`
+
+```javascript
+let helloWorld = "Hello, Word!";
+fill(255,0,0);
+text(helloWorld, width/2, height/2); // Hello, World in red
+fill(0,0,255);
+text(helloWorld, width/2 - 5, height/2 - 5); // Hello, World offset in blue
+```
+
+---
+
 ## `textSize()`
 
 - We probably want to be able to control how big the text we're displaying is
@@ -64,7 +78,7 @@ text(helloWorld, width/2, height/2);
 
 ## `textAlign()`
 
-- By default, text is displays with its __bottom left corner__ at the position we specify
+- By default, text is displayed with its __bottom left corner__ at the position we specify
 - But we probably want to be able to change this, and we can
 
 ```javascript

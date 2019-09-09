@@ -49,6 +49,20 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 
 ## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
 
+## Topics
+- Core - Time ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-time/index.html), [Notes](../modules/core-time/core-time.md))
+- Core - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables/index.html), [Notes](../modules/core-variables/core-variables.md))
+- Core - Variables and change ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-and-change/index.html), [Notes](../modules/core-variables-and-change/core-variables-and-change.md))
+- Core - Variables and scope  ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-and-scope/index.html), [Notes](../modules/core-variables-and-scope/core-variables-and-scope.md))
+- Debugging - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-variables/index.html), [Notes](../modules/debugging-variables/debugging-variables.md))
+- Graphics - Displaying images  ([Slides](https://pippinbarr.github.io/cart253-2019/modules/graphics-displaying-images/index.html), [Notes](../modules/graphics-displaying-images/graphics-displaying-images.md))
+- Graphics - Displaying text  ([Slides](https://pippinbarr.github.io/cart253-2019/modules/graphics-displaying-text/index.html), [Notes](../modules/graphics-displaying-text/graphics-displaying-text.md))
+- Tools - Version control ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-version-control/index.html), [Notes](../modules/tools-version-control/tools-version-control.md))
+
+## Homework
+### [Exercise 1](../exercises/Exercise-1.md) - Moving Pictures
+
+## _Visit from Sabine Rosenberg, coordinator of the [C-LAB](http://clab.concordia.ca/)_
 ---
 
 # Week 3 - Week of 16 September 2019

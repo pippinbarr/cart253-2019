@@ -20,9 +20,9 @@
 - In this class version control will allow us to:
   - Submit our assignments easily
   - Keep our files backed up in the cloud (on github.com)
-  - Go back to a previous version of our work if we make a horrible mistake
   - Have our work be open source and publicly available
   - Track the progress of our projects step by step over time
+  - (With a little work) Go back to a previous version of our work if we make a horrible mistake
   - (Collaborate successfully with other in larger projects)
 
 ---
@@ -30,7 +30,7 @@
 ## Git, GitHub, and GitHub Desktop
 
 - There are many forms of version control and many version control applications
-- We will be using a very popular tool called __Git__ and a very popular Git server called __GitHub__
+- We will be using a very popular tool called __Git__ and a very popular Git remote host called __GitHub__
 - To make things simpler, we will use an application called __GitHub Desktop__ to interface with Git, so that we don't have to use scary command-line tools
 
 ???
@@ -48,7 +48,7 @@
 - On your computer the repository for this course will just be a __folder__ containing all your course work
 - Using Git and GitHub Desktop we will keep that folder __synchronised__ with an online version on GitHub
 - For this course we'll just use __one repository__ the whole time, as if the whole course is a project
-- But usually people have a repository for __each project__ they do
+- But usually people have a repository for __each project__
 
 ---
 
@@ -57,7 +57,7 @@
 - Let's create our repository!
 --
 
-- Go to [github.com](https://www.github.com/) and log in (you've already have registered, RIGHT?)
+- Go to [github.com](https://www.github.com/) and log in
 --
 
 - Once you're logged in click on the green "New repository" button
@@ -72,7 +72,7 @@
 - Select __Initialize this repository with a README__
 --
 
-- Ignore the `.gitignore` and license options for now
+- Ignore the `.gitignore` (ha ha) and license options for now
 - Click the green `Create repository` button
 
 ---
@@ -81,10 +81,10 @@
 
 - You now have a repository called `cart253`
 - Right now it exists __only on GitHub__ though, and not on your computer
-- We need to __clone__ it to our local computer (cloning just means __downloading__)
+- We need to __clone__ it to our local computer ("cloning" just means __downloading__)
 --
 
-- Launch __GitHub Desktop__ (log in to GitHub here)
+- Launch __GitHub Desktop__ (log in to GitHub when it asks you to)
 --
 
 - Go to `File > Clone Repository...`
@@ -267,7 +267,7 @@ and a __succulent sandbox__.
 
 ???
 
-- You can use the fact that the file called `README.md` is automatically displayed in any folder to add READMEs to other folders if you want to
+- You can use the fact that any file called `README.md` is automatically displayed in any folder to add READMEs to other folders if you want to
 
 ---
 
@@ -357,9 +357,17 @@ and a __succulent sandbox__.
 
 ---
 
+## No mega-files!
+
+- Please, please try to avoid putting really large files into your repository
+- GitHub has size limits and things can get really frustrating if you hit them
+- It's better just not to include that 400MB mp3 you were thinking of using, consider compressing it a bit more...
+
+---
+
 ## Activity
 
-Given that we have done [Exercise 0](../../exercises/Exercise-0.md) (RIGHT?) we have a JavaScript project we could put into our repository! So:
+Given that we have done [Exercise 0](../../exercises/Exercise-0.md) we have a JavaScript project we could put into our repository! So:
 
 1. Find your Exercise 0 folder and rename it to `exercise0`
 2. Create a folder called `exercises` inside your `cart253` repository folder

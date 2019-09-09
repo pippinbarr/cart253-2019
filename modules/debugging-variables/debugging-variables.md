@@ -20,12 +20,12 @@
 - We can also use it to print out the values of variables
 
 ```javascript
-let meaningOfLife = 42;
-console.log(meaningOfLife);
+let x = 42;
+console.log(x);
 ```
 --
 
-- Pop quiz: what would happen if we _didn't_ give a value to `meaningOfLife` and then tried to `console.log()` it?
+- Pop quiz: what would happen if we _didn't_ give a value to `x` and then tried to `console.log()` it?
 
 ???
 
@@ -33,12 +33,12 @@ console.log(meaningOfLife);
 
 ```javascript
 function setup() {
-  let meaningOfLife;
-  console.log(meaningOfLife);
+  let x;
+  console.log(x);
 }
 ```
 
-- So `meaningOfLife` is `undefined`
+- So `x` is `undefined`
 - Aside from being a great name for what happened, this is another __type__ of thing that can be inside a variable
 - It means that the variable is... not defined yet!
 
@@ -52,8 +52,8 @@ function setup() {
 - So it can be good to add a message like this
 
 ```javascript
-let meaningOfLife = 42;
-console.log("meaningOfLife: " + meaningOfLife);
+let x = 42;
+console.log("x: " + meaningOfLife);
 ```
 --
 
@@ -62,7 +62,7 @@ console.log("meaningOfLife: " + meaningOfLife);
 
 ???
 
-- This is an instance where JavaScript's __implicit conversion__ is great - it converts the number inside `meaningOfLife` to a string, then it adds that string onto the end of the other string
+- This is an instance where JavaScript's __implicit conversion__ is great - it converts the number inside `x` to a string, then it adds that string onto the end of the other string
 - Of course this can also go wrong in other circumstances, so we need to be vigilant when we're using variables with different types of value together
 
 ---
@@ -81,8 +81,8 @@ console.log("meaningOfLife: " + meaningOfLife);
 
 - Chrome (and other browsers) comes with a serious set of debugging tools that can be used to check variables as well
 - In particular you can _watch_ variables to maintain a live updating view of their values
-- We won't go into it right now
-- But if you're really curious you can begin your journey with the Google documentation here:
+- We can take a quick look now if people are interested
+- And if you're really curious you can continue your journey with the Google documentation here:
 
 https://developers.google.com/web/tools/chrome-devtools/javascript/reference#watch
 

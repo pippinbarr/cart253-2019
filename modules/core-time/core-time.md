@@ -19,9 +19,10 @@
 - Processing carries out our instructions from the top to the bottom and that's that
 - But that's not going to lead to especially interesting programming
 - And in particular we're not going to be able to make something __interactive__ this way
---
 
-- __So what do we need?__
+...
+
+__So what do we need?__
 
 ???
 
@@ -47,7 +48,7 @@
 
 - Before a program really gets going, we often want to set some starting conditions that will help to define how it runs
 
-In a game, for example, we might need to create the player's avatar, position it in front of the door of the dungeon, load the sound effects of the player's footsteps, configure the physics parameters that will be applied during play, etc.
+_In a game, for example, we might need to create the player's avatar, position it in front of the door of the dungeon, load the sound effects of the player's footsteps, configure the physics parameters that will be applied during play, etc._
 
 - These are all things we want to do __once__ at the __start__ of the program
 
@@ -56,21 +57,25 @@ In a game, for example, we might need to create the player's avatar, position it
 ## Update
 
 - Once the program is ready, we want it to keep running until it's time to stop
-- The way we tend to do this is with an __update loop__, which runs code for making the program work over and over again
-- We usually think about this update loop running __once per frame__
+- The way we tend to do this is with an __update loop__, which runs some code over and over again
+- We can think about this update loop running __once per frame__
 
-In a game, for example, every frame we need to run the physics simulation, animate the avatar, play a footstep sound if the player's foot hit the ground, check if the player has made contact with the door so we can open it for them, etc.
+_In a game, for example, every frame we need to run the physics simulation, animate the avatar, play a footstep sound if the player's foot hit the ground, check if the player has made contact with the door so we can open it for them, etc._
 
 - These are all things we want to do __every frame__ that the program runs
+
+???
+
+- Clearly this is tying us to a kind of animation or movie-like understanding of a program, which is fine because we're generally writing visual programs that update their visual element (and other elements) over time
 
 ---
 
 ## Handle events
 
 - While a program is running, we want to be able to react to the person using it, or other important sources of events
-- Sometimes we can do this in the __update loop__ and sometimes we have special functions called __event handlers__ which run only when a specific kind of event happens (like a mouse click, say)
+- Sometimes we can do this in the __update loop__ but sometimes we have special functions called __event handlers__ which run only when a specific kind of event happens (like a mouse click, say)
 
-In our game, for example, we need to react whenever the player clicks the mouse button by making the avatar swing its sword, and we also need to react when the player is within 10 meters of an orc by having the orc run after them, etc.
+_In our game, for example, we need to react whenever the player clicks the mouse button by making the avatar swing its sword, and we also need to react when the player is within 10 meters of an orc by having the orc run after them, etc._
 
 - These are things we want to do __in reaction to events__
 
@@ -84,8 +89,8 @@ So, one more time
 2. We __update__ the state of our program every frame
 3. We __handle events__ that occur while our program is running
 
-- That's the secret to writing interactive software!
-- p5 has already got specific ways of dealing with these things!
+- That's the secret to writing interactive software
+- p5 has already got built-in ways of dealing with these things
 
 ---
 
@@ -101,7 +106,7 @@ function setup() {
 
 - This is the p5 `setup()` function
 - It's where we write what we want to happen at the __start__ of our program
-- We've been using it so far to draw things, but really it's for __setting up__
+- We've been using it so far to draw things, but really it's for getting our program ready to run
 - So let's look at this piece by piece...
 
 ---
@@ -117,7 +122,7 @@ function setup() {
 ```
 
 - First we have the special word .hi[`function`]
-- This word tells JavaScript that we're going to be specifying... well, a function
+- This word tells JavaScript that we're going to be specifying... a function
 - At its most basic, __a function is a set of instructions grouped together and given a name__ so that we can "call" that name and have those instructions run
 
 ---
@@ -153,7 +158,7 @@ function setup() {
 
 - Next we have empty parentheses, .hi[`()`]
 - We know from __calling__ functions like `rect()` that this is where the parameters go
-- When we're __writing__ or __specifying__ a function this is where we say __what parameters this function will expect when it is called__
+- When we're __writing__ or __specifying__ a function this is where we list the __parameters this function will expect when it is called__
 - `setup()` has __no parameters__, but we still need these empty parentheses here to __tell JavaScript there are no parameters__
 
 ---
@@ -218,7 +223,7 @@ function draw() {
 - This is another function that p5 __already knows about__
 - It's where we write what we want to happen __every frame__ of our program
 - As you can see, it's __syntactically identical__ to the `setup()` function except for its name
-- In this case the program will draw a rectangle every frame! Exciting!
+- In this case the program will draw a rectangle at (0,0) every frame! Exciting!
 
 ---
 
@@ -237,7 +242,7 @@ function draw() {
 ```
 
 - So here is an actual p5 JavaScript program that runs over time!
-- What happens?! ... ...
+- What does it do?!
 --
 
 - Kind of a downer - it's a bit like __nothing__ happens!
@@ -359,8 +364,6 @@ function draw() {
 
 ---
 
-
-
 ```javascript
 function setup() {
   createCanvas(640,640);
@@ -381,11 +384,11 @@ function draw() {
 ## Food for thought
 
 - We've gone from writing programs that run their code once and then completely stop...
-- ... to writing programs that _exist over time_
-- We now have to practice thinking about the code in our program not as something _static_, but as something _dynamic_
+- ... to writing programs that __exist over time__
+- We now have to practice thinking about the code in our program not as something __static__, but as something __dynamic__
 - This introduces so many possibilities!
 - And so many problems!
-- We have to look at a page full of code and _see time_, we have to learn to __feel time__ in relation to our lines of code
+- We have to look at a page full of code and __see time__, we have to learn to __feel time__ in relation to our lines of code
 - It's fun!
 
 ---

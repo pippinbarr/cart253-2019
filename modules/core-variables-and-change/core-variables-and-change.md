@@ -13,43 +13,44 @@
 
 ## Arithmetic!
 
-- You can do arithmetic on numbers in Processing, and also on variables with numbers in them
+- You can do arithmetic on numbers in p5, and also on variables with numbers in them
 - It uses __operators__ you probably already know from calculators and so on
 
 ```javascript
-let meaningOfLife = 21 + 21; // addition
-stroke(meaningOfLife - 2); // subtraction
-fill(meaningOfLife * 5,0,0); // multiplication
-rect(meaningOfLife/2,0,50,50); // division
+let a = 21 + 21; // addition
+let b = a - 2; // subtraction
+let c = b * 5; // multiplication
+let d = c/2; // division
 ```
 
 - There are some other operators too, which you can look up in the reference
-- What will the above code actually do?
+- What is the value inside `d`?
 
 ???
 
 - Here is a handy JavaScript operator reference
 https://www.w3schools.com/jsref/jsref_operators.asp
-- Notice how JavaScript __does not care__ that you are using a variable called `meaningOfLife` for all these calculations
-- This is a bad name for this kind of variable (unless you're writing a program about the geometry of the meaning of life, perhaps)
+- Notice how JavaScript __does not care__ that you are using a variable called `a` or `bigTommySezHello` or `pi` for all these calculations
+- Names matter to humans, though, so we try to give good names!
 
 ---
 
 ## More arithmetic!
 
-- In programming the arithmetic follows the standard order of precedence for operators (BEDMAS = Brackets, Exponents, Division, Multiplication, Addition, Subtraction)
+- In programming the arithmetic follows the standard order of precedence for operators
+- BEDMAS = Brackets, Exponents, Division, Multiplication, Addition, Subtraction
 - But you can use parentheses to prioritise parts of your arithmetic, just like in math class...
 
 So:
 
 ```javascript
-let meaningOfLife = (42 + 42) / 2;
+let a = (42 + 42) / 2;
 ```
 
 is not the same as
 
 ```javascript
-let meaningOfLife = 42 + 42 / 2;
+let a = 42 + 42 / 2;
 ```
 
 ???
@@ -57,8 +58,8 @@ let meaningOfLife = 42 + 42 / 2;
 - Remember that parenthesis in arithmetic give __precedence__ to the things in parentheses
 - The things in parentheses are calculated __first__
 - This can matter when you also have standard arithmetic precedence going on
-- (42 + 42) / 2 === (84) / 2 === 42
-- 42 + 42 / 2 === 42 + 21 === 63
+- `(42 + 42) / 2 === (84) / 2 === 42`
+- `42 + 42 / 2 === 42 + 21 === 63`
 
 ---
 
@@ -68,19 +69,19 @@ let meaningOfLife = 42 + 42 / 2;
 - These are equivalent:
 
 ```javascript
-let meaningOfLife=(42+42)/2;
+let a=(42+42)/2;
 ```
 
 ```javascript
-let meaningOfLife = (42 + 42) / 2;
+let a = (42 + 42) / 2;
 ```
 
 - But the second one is easier to read, right?
 
 ???
 
-- Remember that you __cannot__ remove the space between `var` and `meaningOfLife` here because your program will break
-- This is because if you do that, JavaScript can no longer tell where the special word `var` ends and the __variable name__ begins
+- Remember that you __cannot__ remove the space between `let` and `a` here because your program will break
+- This is because if you do that, JavaScript can no longer tell where the special word `let` ends and the __variable name__ `a` begins
 
 ---
 
@@ -94,35 +95,31 @@ __Sense__. We can __label__ values with their meaning instead of hard-coding the
 
 __Change__. We can __change__ the values in variables
 
-???
-
-- Changing variables is especially interesting if we change them __while the program is running__
-
 ---
 
 ## Shocked face with variables again!
 
 ```javascript
-let avatarX = 250;
-let avatarY = 250;
-let avatarSize = 300;
-let avatarEyeSize = 50;
-let avatarEyeXOffset = 50;
-let avatarEyeYOffset = 50;
-let avatarMouthYOffset = 50;
-let avatarMouthSize = 100;
+let faceX = 250;
+let faceY = 250;
+let faceSize = 300;
+let faceEyeSize = 50;
+let faceEyeXOffset = 50;
+let faceEyeYOffset = 50;
+let faceMouthYOffset = 50;
+let faceMouthSize = 100;
 
 function setup() {
   createCanvas(500,500);
 }
 
 function draw() {
-  ellipse(avatarX,avatarY,avatarSize,avatarSize);
-  ellipse(avatarX-avatarEyeXOffset,avatarY-avatarEyeYOffset,avatarEyeSize,avatarEyeSize);
-  ellipse(avatarX-avatarEyeXOffset,avatarY-avatarEyeYOffset,avatarEyeSize/2,avatarEyeSize/2);
-  ellipse(avatarX+avatarEyeXOffset,avatarY-avatarEyeYOffset,avatarEyeSize,avatarEyeSize);
-  ellipse(avatarX+avatarEyeXOffset,avatarY-avatarEyeYOffset,avatarEyeSize/2,avatarEyeSize/2);
-  ellipse(avatarX,avatarY+avatarMouthYOffset,avatarMouthSize,avatarMouthSize);
+  ellipse(faceX,faceY,faceSize,faceSize);
+  ellipse(faceX-faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize,faceEyeSize);
+  ellipse(faceX-faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize/2,faceEyeSize/2);
+  ellipse(faceX+faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize,faceEyeSize);
+  ellipse(faceX+faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize/2,faceEyeSize/2);
+  ellipse(faceX,faceY+faceMouthYOffset,faceMouthSize,faceMouthSize);
 }
 ```
 
@@ -130,6 +127,7 @@ function draw() {
 
 - Notice how we can define the size of the pupils based on the size of the eye - a pupil is __half the size of the surrounding eye__ - now when we change the eye size, the pupil will be adjusted automatically!
 - Notice how we define only one x offset for the eyes - they're symmetrical! This way we change only one number to make the eyes move closer to the centre or further away
+- Notice how this ends up encoding __rules__ about how this face works, though, which might be restrictive of creativity?
 
 ---
 
@@ -138,7 +136,7 @@ function draw() {
 Notice how we can
 
 - Understand the code significantly better __just because of the names__
-- Easily adjust the way the avatar appears by changing the variables at the top
+- Easily adjust the way the face appears by changing the variables at the top
 - Set up our variables and use them such that some things happen __automatically__ (like the pupil size)
 
 ---
@@ -149,19 +147,20 @@ __What if we added something to the `draw()` function that changed one of the va
 
 --
 
-`avatarX = avatarX + 1;`
+`faceX = faceX + 1;`
 
+- Whhooooooaaaaa....
 - That is, we can do arithmetic __using variables__, remember that they just stand in for the __value__ inside them
 - So we can even change a variable __relative to itself__
-- The above means: "make `avatarX` equal to itself plus `1`"
-- Or, more simply: "add `1` to `avatarX`"
+- The above means: "make `faceX` equal to itself plus `1`"
+- Or, more simply: "add `1` to `faceX`"
 
 ???
 
-- Again, remember that when we __use__ a variable after having __declared__ it, we don't use `var` anymore
-- One option would be to add `avatarX = avatarX + 1;`
-- Which can be written as `avatarX += 1;`
-- Which can also be written as `avatarX++;` (add one to `avatarX`)
+- Again, remember that when we __use__ a variable after having __declared__ it, we don't use `let` anymore
+- One option would be to add `faceX = faceX + 1;`
+- Which can be written as `faceX += 1;`
+- Which can also be written as `faceX++;` (add one to `faceX`)
 - But there are others of course!
 - Q: __Why does it leave a trail?__
 
@@ -172,26 +171,32 @@ __What if we added something to the `draw()` function that changed one of the va
 - As always, programmers like brevity, so they think having to do this is too long
 
 ```javascript
-avatarX = avatarX + 1;
+faceX = faceX + 1;
 ```
 
 - Instead you can write
 
 ```javascript
-avatarX += 1;
+faceX += 1; // += adds the value after it to the variable before it
 ```
 
-- That is, `+=` adds the value after it to the variable
-- There is also `-=`, `*=`, and `/=`;
+- Or even
+
+```javascript
+faceX++; // ++ adds exactly one to the variable before it
+```
+
+- There is also `-=`, `*=`, `/=`, and `--`;
 
 
 ---
 
 ## This is a pretty big deal
 
-- We have created _life itself_!
+- We have created __life itself__!
 - Well, we have created movement at the very least...
-- Effectively we have the start of _code-based animation_
+- Effectively we have the start of __code-based animation__
+- Part of how we make things happen in our program is by changing the values in variables over time!
 
 ???
 
@@ -204,7 +209,7 @@ avatarX += 1;
 
 ## Let's get `random()`
 
-- Let's meet my favourite function in all of programming: `random()`
+- Let's meet my favorite function in all of programming: `random()`
 - Most programming languages have a version of this and it does what you might expect...
 --
 
@@ -214,11 +219,11 @@ avatarX += 1;
 - In p5 it works like this:
 
 ```javascript
-let randomNumber = random(n);
+let randomNumber = random(10);
 ```
 
-- This will put a random number between 0 and `n` (not including `n`) into our `randomNumber` variable
-- `random(10)` gives us a random number between `0` and `10`
+- This will put a random number between 0 and `10` (not including `10`) into our `randomNumber` variable
+- Naturally you can use other numbers than `10`
 
 ???
 
@@ -226,6 +231,7 @@ let randomNumber = random(n);
 - This is the first time we've seen the idea of a function that __returns a value__
 - When we __call__ `random()` it goes away, calculates a random number, and then __gives it back__
 - We store the result inside our __variable__
+- We'll talk more about this when we start defining our own functions
 
 ---
 
@@ -234,7 +240,7 @@ let randomNumber = random(n);
 - You can also specify a __range__ for your random number by giving a low and high value
 
 ```javascript
-let numberBetweenZeroAndTen = random(0,10);
+let numberBetweenFiveAndTen = random(5,10);
 ```
 
 - This is useful if you need numbers in particular ranges, of course
@@ -251,13 +257,6 @@ background(red,green,blue);
 ???
 
 - This gives us a random background color each time we run the program
-- You can even cut out the middle-person like this
-
-```javascript
-background(random(0,255),random(0,255),random(0,255));
-```
-
-- But that's significantly harder to read, I think you'll agree
 - What if you put that line inside `draw()`?
 
 ---
@@ -268,8 +267,8 @@ background(random(0,255),random(0,255),random(0,255));
 - What would this do in the `draw()` loop of our avatar code from earlier?
 
 ```javascript
-avatarX = random(0,width);
-avatarY = random(0,height);
+faceX = random(0,width);
+faceY = random(0,height);
 ```
 
 ---
@@ -282,11 +281,11 @@ avatarY = random(0,height);
 - That's right, we'd use those pre-existing variables called `mouseX` and `mouseY`
 
 ```javascript
-avatarX = mouseX;
-avatarY = mouseY;
+faceX = mouseX;
+faceY = mouseY;
 ```
 
-- If we put these lines in `draw()` it will update the position of the avatar to be the same as the mouse each frame
+- If we put these lines in `draw()` it will update the position of the face to be the same as the mouse each frame
 
 ---
 
@@ -295,10 +294,10 @@ avatarY = mouseY;
 - What if we wanted to make a shape move toward the mouse cursor over time instead of instantly?
 --
 
-- We'd need to know __where__ the shape is (and where it _starts_)
+- We'd need to know __where__ the shape is
 - We'd need to know __where__ the mouse is
 - Each time through `draw()` we'd need to work out how to change the shape location based on the mouse location
-- One way would be to add a fraction of the distance between the shape's x and y and the mouse's x and y...
+- One way would be to add a fraction of the distance between the shape's position and the mouse's position...
 - See the notes for two ways of doing this and don't fret if you don't get it right now
 
 ???
@@ -381,7 +380,7 @@ function draw() {
 - Man variables are cool
 - They store data
 - They have relevant names
-- They can change over time to create dynamic behaviour
+- They can change over time to create dynamic behavior
 - Not bad at all
 
 ---

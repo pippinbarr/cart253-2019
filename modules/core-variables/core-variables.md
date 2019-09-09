@@ -55,17 +55,13 @@ ellipse(250,300,100,100);
 - How would I make my avatar move around on the screen?
 --
 
-- I'd need to __change the numbers__ representing its location, but I _can't_, because...
-
---
-
-__Once the program is running, "hardcoded" numbers cannot change__
+- I'd need to __change the numbers__ representing its location, but I _can't_, because __once the program is running, "hardcoded" numbers cannot change__
 
 ???
 
-- By "hardcoded" we just mean that you write the __actual number__ directly into your program
+- By "hardcoded" we just mean when you write the __actual number__ directly into your program
 - Once you write it like that, it will never change while the program is running
-- Not to mention how inconvenient it would be to go through changing every single number relative to the others to move the face, god forbid I want to change its size!
+- Not to mention how inconvenient it would be to go through changing every single number relative to the others to move the face...
 
 ---
 
@@ -111,16 +107,8 @@ A variable has three key qualities:
 ## A name
 
 - Variables have names - otherwise what would you call them?
-- Names have __meanings__. "Thomas" means "twin" (via Aramaic), "Jeanne" means "Yahweh is merciful" (via Hebrew)
---
-
+- Names have __meanings__
 - `mouseX` means "the pixel on the x-axis that the mouse is over right now"
---
-
-- `avatarX` probably means "the location of the avatar on the x-axis right now"
-
-???
-
 - Crucially, you should be able to work out what a variable is for by its name as often as possible!
 
 ---
@@ -138,16 +126,16 @@ A variable has three key qualities:
 ???
 
 - Not having to specify what __type__ a variable must take is very convenient and flexible
-- But it's also pretty __dangerous__ because it allows us to make mistakes more easily
+- But it's also potentially frustrating because it allows us to make mistakes more easily
 - Importantly, we have to be careful not to accidentally put the __wrong type of thing__ into a variable, because JavaScript won't tell us!
 
 ---
 
 ## A value
 
-- A variable has a value in it: it is the thing that variable is storing
+- A variable has a value in it: the thing that variable is storing
 - This value will be of a specific __type__, as above
-- The variable will keep it safe until we need to __use it or change it__
+- The variable will keep it safe (and warm?) until we need to __use it or change it__
 - Ah, change!
 
 ---
@@ -156,7 +144,7 @@ A variable has three key qualities:
 
 - This is a __variable declaration__ in JavaScript
 - When we __create__ a variable we call it __declaring a variable__
-- So this line is saying "I want to create a __variable__ called `meaningOfLife`, and put the number `42` in it to start with, thanks"
+- So this line is saying "I want to create a __variable__ called `meaningOfLife`, and put the number `42` in it to start with"
 - Let's go through the syntax of this
 
 ---
@@ -165,12 +153,14 @@ A variable has three key qualities:
 
 - First we write the special word `let`
 - Just like `function` means we're going to make a function, `let` means we're __declaring a variable__
+- It's like "__Let__ there be light!" except it's for making storage places for data instead of making the sun
 - This tells JavaScript we need it to create a new variable (and that we're about to tell it the information it needs to do this)
-- We __only use `let` when we're declaring the variable__ - when we use the variable later, we don't need to write `let` in front of it
+- We __only use `let` when we're declaring the variable__ - when we __use__ the variable later, we don't need to write `let` in front of it
 
 ???
 
 - In the Olde Days we used to declare variables in JavaScript with the word `var` instead of `let`, but those days are over.
+- In particular, in this class we're using ES6, the newest (for now) version of the language
 
 ---
 
@@ -181,7 +171,7 @@ A variable has three key qualities:
 - Just like with functions, the name should __explain__ what the variable is for, what it __means__
 - Notice the way the variable name is written
   - __No spaces__
-  - If there are multiple words, the __first word is lowercase__ and the __remaining words start with a capital__ to make it easier to read
+  - If there are multiple words, the __first word is lowercase__ and the __remaining words start with a capital__ to make it easier to read (Camel Case)
 
 ???
 
@@ -203,14 +193,14 @@ There are more technical rules for writing variable names:
 - This is because we are putting a __value__ in our variable
 - It means "I am about to tell you what to put inside this variable"
 - Frustratingly, notice that `=` does __not__ mean "check for equality", it means "assign the following value to this variable"!
-- It kind of means __make__ this variable equal this value, it's very confident.
+- It kind of means "__make__ this variable equal this value" (it's very confident).
 
 ---
 
 ## `let meaningOfLife = ` .hi[`42`]`;`
 
 - Next we have the __value__ of the variable, `42`
-- Importantly, `42` is supposedly the meaning of life, and so the variable name makes sense (see: Douglas Adams)
+- Importantly, `42` is the meaning of life (in The Hitchhiker's Guide to the Galaxy), and so the variable name makes sense
 - Note that because JavaScript __doesn't check types__ you could put __any__ type of thing in this variable:
 
 ```javascript
@@ -233,7 +223,7 @@ let meaningOfLife = true;
 
 ???
 
-- Yes, yes, we know the terrible truth is that many line of code in JavaScript __don't actually need a semicolon__!
+- Yes, yes, again, we know the terrible truth is that many line of code in JavaScript __don't actually need a semicolon__!
 - In particular, a simple instruction like a function call or a variable declaration is fine without a semicolon
 - But let's __always use them__ and avoid trouble
 - Thus preparing ourselves to learn other programming language where semicolons are __not optional__
@@ -244,7 +234,7 @@ let meaningOfLife = true;
 
 - JavaScript allows us to specify a range of different types
 - These are the different kinds of __data__ that we can use in our program
-- For right now there are just __two types of data__ we will think about: numbers and strings
+- For right now there are just __two types of data__ we will think about: __numbers__ and __strings__
 
 ```JavaScript
 let thisIsANumber = 4;
@@ -259,7 +249,7 @@ let thisIsAString = "Hello, World!";
 
 - __There are more types of variable/data in JavaScript__
 - But we won't worry about them just yet, we'll get there!
-- With regard to strings, note that you can put them inside __either__ double __or__ single quotes and they will still work - I'll default to double quotes for now
+- With regard to strings, note that you can put them inside __either__ double __or__ single quotes __or__ back-ticks and they will still work - I'll default to double quotes for now
 
 ---
 
@@ -276,39 +266,36 @@ let meaningOfLife;
 meaningOfLife = 42;
 ```
 
-- Notice that when we put the value in we don't need `let` anymore, because JavaScript knows we have already created the `meaningOfLife` variable earlier
+- Notice that when we put the value in we don't need `let` anymore, because JavaScript knows we have already created the `meaningOfLife` variable earlier - we __only create it once__
 
 ---
 
 ## Using variables...
 
 - A very important thing about variable is that you can use them __as if they are the value inside them__
-- So you can use a variable with number in it anywhere you might use a hardcoded number, a and variable with a string in it anywhere you would have put a string:
+- So you can use a variable with number in it anywhere you might use a hardcoded number, and a variable with a string in it anywhere you would have put a string:
 
 ```javascript
-let meaningOfLife = 42;
-rect(meaningOfLife,meaningOfLife,50,50);
-let anotherMeaningOfLife = "Be excellent to each other!";
-console.log(anotherMeaningOfLife);
+let x = 0;
+let y = 100;
+let size = 50;
+rect(x,y,size,size);
+
+let meaningOfLife = "Be excellent to each other!";
+console.log(meaningOfLife);
 ```
 
-- `rect()` expects __numbers__ so we can use a variable with a __number__ in it
+- `rect()` expects __numbers__ so we can use variables with __numbers__ in them
 - `console.log()` expects a __string__ so we can use a variable with a __string__ in it
-
-???
-
-- Note how variable names are important?
-- p5 doesn't care that you're positioning a rectangle with its top-left corner at coordinates (`meaningOfLife`,`meaningOfLife`)
-- But anyone reading your code would find it rather confusing!
 
 ---
 
 ## Variable names, again
 
 - Remember that there are __rules__ for naming variables
-- They __must__ be unique and should not already be in use by p5 (e.g. not `mouseX`)
-- In this class they __must__ be meaningful so that they don't confuse you and others
-- In this class they __must__ use "camelCase" where you start with a lowercase letter and then use capital letters to indicate word breaks
+  - They __must__ be unique and should not already be in use by p5 (e.g. not `mouseX`)
+  - In this class they __must__ be meaningful so that they don't confuse you and others
+  - In this class they __must__ use "camelCase" where you start with a lowercase letter and then use capital letters to indicate word breaks
 
 ???
 
@@ -324,8 +311,8 @@ YES:
 let age = 30;
 let dayOfTheWeek = "Friday";
 let pi = 3.14159;
-let theLetterE = "E";
-let theNumber1 = 1;
+let myFavouriteLetter = "E";
+let myLuckyNumber = 7;
 ```
 
 NO:
@@ -354,16 +341,13 @@ let the_letter_a = 'A';
 
 ## Built-in variables
 
-- We met `mouseX` and `mouseY` earlier - they are _built-in variables_ that store the current coordinates of the mouse
+- We met `mouseX` and `mouseY` earlier - they are variables __built in to p5__ that store the current coordinates of the mouse
 - p5 has other helpful variables like this, including:
 
-- `width` and `height`: the width and height of the window
+- `width` and `height`: the width and height of the canvas
+- `windowWidth` and `windowHeight`: the width and height of the window
 - `frameCount`: the number of frames the code has run for
-
-???
-
-- There are many more of these in the p5 reference
-- Look for things listed in the reference __without__ parentheses after them (things that aren't _functions_)
+- ... and more! See the [Reference](https://p5js.org/reference/) and look for entries __without__ parentheses after them, these are variables
 
 ---
 

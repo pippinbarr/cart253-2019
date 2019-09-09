@@ -48,7 +48,7 @@ let exampleImage = loadImage("assets/images/exampleImage.png");
 - Now the variable `exampleImage` has our image stored inside it
 - This is __another__ kind of value that can go inside a variable, an image
 - Note that in this example our image file is stored in the `assets/images` folder to keep everything nicely organised
-- Note that when we specify where the image is we're using a __relative path__ that gives the folders __relative to the project folder__
+- Note that when we specify where the image is we're using a __relative path__ that gives the folders __relative to the project folder__ (where `index.html` is)
 
 ???
 
@@ -61,7 +61,7 @@ let exampleImage = loadImage("assets/images/exampleImage.png");
 - But wait, it's not quite as simple as we thought
 - When we load from files, there's a __delay__ while the file loads
 - This could ruin our program if it is running before the file is ready!
-- To avoid this, we __load files inside a special function called `preload()`__
+- So it's good to __load files inside a special function called `preload()`__
 
 ```javascript
 let exampleImage;
@@ -131,7 +131,7 @@ console.log("The height of the image is " + exampleImage.height);
 
 ## Proportional scaling with `.width` and `.height`
 
-- With access to the original width and height of an image, we can scale it and maintain its proportions
+- With access to the original width and height of an image, we could scale it and maintain its proportions
 
 ```javascript
 let exampleImage;
