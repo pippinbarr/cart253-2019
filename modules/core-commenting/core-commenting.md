@@ -210,6 +210,7 @@ ellipse(250,250,200,200);
 
 - This is clearly not helpful because it doesn't tell us what the code _means_
 - That is the code for drawing the head, but you would never know that from these comments
+- Also these kinds of comments go _out of date_ very quickly as you change your code, they're too specific
 - So remember you're _explaining_, not just restating
 
 ---
