@@ -1,4 +1,4 @@
-### Activity / CART 253 / Fall 2018 / Pippin Barr
+### Activity / CART 253 / Pippin Barr
 
 # Basic drawing
 
