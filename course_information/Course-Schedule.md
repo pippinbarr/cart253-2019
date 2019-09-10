@@ -60,6 +60,9 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 - Graphics - Displaying text  ([Slides](https://pippinbarr.github.io/cart253-2019/modules/graphics-displaying-text/index.html), [Notes](../modules/graphics-displaying-text/graphics-displaying-text.md))
 - Tools - Version control ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-version-control/index.html), [Notes](../modules/tools-version-control/tools-version-control.md))
 
+## Activity
+- Movement ([Slides](https://pippinbarr.github.io/cart253-2019/modules/activity-movement/index.html))
+
 ## Homework
 ### [Exercise 1](../exercises/Exercise-1.md) - Moving Pictures
 
