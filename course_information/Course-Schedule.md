@@ -50,6 +50,7 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 ## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
 
 ## Topics
+- [Cheatsheets](../cheatsheets/) experiment!
 - Core - Time ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-time/index.html), [Notes](../modules/core-time/core-time.md))
 - Core - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables/index.html), [Notes](../modules/core-variables/core-variables.md))
 - Core - Variables and change ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-and-change/index.html), [Notes](../modules/core-variables-and-change/core-variables-and-change.md))

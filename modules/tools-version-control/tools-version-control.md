@@ -141,69 +141,36 @@ Let's try it...
 
 ---
 
-## 1. Make some changes
+## 0. Setup
 
-- Go to the `cart253` folder on your desktop and open it
-- You should see a file called `README.md` that was created when you created the repository
-- __Open `README.md` in Atom__
-- Right now it probably just says `## cart253`
-- Under the name of the repository write a simple description of it
-
----
-
-```
-## cart253
-
-This is the repository for the course CART 253 for Pippin Barr.
-It is going to contain __exciting exercises__, __passionate projects__,
-and a __succulent sandbox__.
-
-- [My homepage](https://www.pippinbarr.com/)
-- [Twitter](https://www.twitter.com/pippinbarr)
-- [Instagram](https://www.instagram.com/pippinbarr)
-```
-
-- This file with extension `.md` is written in a very neat format called __[Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)__
-- It's a plain text file with special symbols that allow us to insert formatting when it's displayed on GitHub and in other situations
-- For example in Markdown the two hash symbols (`##`) mean a level-two heading
-- When you surround text with two underscores on either side it makes the text inside __bold__
-- You can see how we write hyperlinks above, too!
-
-???
-
-- In fact, the __slides for this course are written in Markdown too!__
-- In fact, Pippin writes almost everything he ever does in Markdown!
-- It's that good!
+- Find the folder for your `exercise0` exercise project from last week (if you don't have it, download the starter version on the course website)
+- Rename the folder to `exercise0` if you haven't already, since it's a better name and names matter
+- In your `cart253` folder (repository) create an `exercises` folder
+- Move your `exercise0` folder into the `exercises` folder
 
 ---
 
-## GitHub Desktop knows what you did (last summer)
+## 1. Change
 
-- __Save__ your `README.md` if you haven't already
-- Go back to GitHub Desktop
+- You have now made a __change__ to your repository (it is considered changed if you add, delete, or alter any file or folder in the repository folder)
+- Go to GitHub Desktop
 - Notice how the interface has changed!
 --
 
 - The left-hand pane should be showing you a list of __changes__ detected in your repository (if it's not selected, select the __Changes__ tab on the left!)
---
+- In particular, it shows you you've added a bunch of __new__ files (hence the little green plus sign)
 
-- The right-hand pane is probably showing you the changes made to the only file we've changed, `README.md` (it shows insertions in green and deletions in red)
---
+## 2. Commit
 
-- If there were more changed files we could select them on the left and see the changes on the right, which can be very helpful
-
----
-
-## 2. Commit your changes
-
-- Let's assume we want to keep the edits to `README.md`
+- We want to __store__ these changes officially in the repository (so it remembers them)
+- Therefore we want to __commit__ the changes
 --
 
 - At the bottom of the left pane you can see the interface for __committing__ changes
 --
 
 - There's a __Summary__ which you use to describe the changes you made
-- So __write what you did__ in there, e.g. "Wrote first version of README"
+- So __write what you did__ in there, e.g. "Added exercise0"
 --
 
 - There's also a __Description__ where you can write more detailed notes about what you did if you want to expand on it (this can be super helpful to other people)
@@ -212,9 +179,7 @@ and a __succulent sandbox__.
 - Finally there's the blue __Commit to master__ button
 - Click it
 
----
-
-## Committed
+## Committed!
 
 - Now the __Changes__ area goes blank because there are __no new changes__ to the repository since our last commit (just now)
 - That means those changes are __stored in the local repository__
@@ -233,15 +198,15 @@ and a __succulent sandbox__.
 
 ---
 
-## Push your changes
+## 3. Push
 
 - In order to upload our updated repository to the cloud on GitHub we need to __push__ the changes
 - Notice that there's a __Push origin__ button at the top of the window
-- It should have a little number 1 with an up arrow next to it, indicating there is one commit to be pushed
+- It should have a little number with an up arrow next to it, indicating there are commits to be pushed to the remove server
 - Click it
 --
 
-- You'll see a few updating messages appear on the button as GitHub Desktop uploads the repository
+- You'll see a few updating messages appear on the button as GitHub Desktop uploads the changes to the repository
 - And the messages about it fetching the repository again to synchronise it...
 - And then it's done and the name has changed to __Fetch origin__ because there's nothing to push
 
@@ -251,27 +216,90 @@ and a __succulent sandbox__.
 
 ---
 
-## Check GitHub
+## Check
 
-- Just to make sure this first time, let's go back to [github.com](https://www.github.com/) in our browser
+- Just to make sure , let's go back to [github.com](https://www.github.com/) in our browser
 - Navigate to your account and click on your `cart253` repository if it's not already loaded
 - If it's already loaded then __reload the page__
 --
 
-- You should see your `README.md` file sitting in the list of files
-- And because `README.md` is automatically displayed by GitHub, you should see the changes you made listed below the file list!
-- You can also click the file name in the file list to display the file
+- You should see your changes reflected in the repository
+- That is, there should be an `exercises` folder in the top level, an `exercise0` folder within that, and all your project files within that
 --
 
 - It worked!
-
-???
-
-- You can use the fact that any file called `README.md` is automatically displayed in any folder to add READMEs to other folders if you want to
+- This is the process you would follow whenever you started a __new project__ in your repository - You add the project folder to the appropriate location in the repository and then commit and push it
 
 ---
 
-## That workflow again
+## Again!
+
+- That process __is__ how we work with Git
+- However __most__ of the time you'll actually be working on the project, not setting it up
+- So let's repeat the process by pretending to make some changes to our project
+
+---
+
+## 0. Open the project
+
+- To work on our `exercise0` project we want to open that folder in Atom (__not__ the entire repository, just the `exercise0`) folder
+- So open it in Atom (by dragging it to the Atom icon, or going to `File > Open...` inside Atom)
+
+---
+
+## 1. Make some changes
+
+- Go into `script.js` and make a change
+- Maybe just change the background colour, or a shape, or anything else
+- This is what we do when we work on our projects, after all, we make changes to the code
+
+---
+
+## GitHub Desktop knows what you did
+
+- __Save__ your work if you haven't already
+- Go back to GitHub Desktop
+- Again, notice how the interface has changed
+- The left-hand pane shows you a list of __changes__ detected by listing the files that have changed __since your last commit__ (in this case probably just `script.js`)
+- If you click on the file name, the right-hand pane will show you the changes made through highlighting (green means addition, red means deletion)
+
+---
+
+## 2. Commit your changes
+
+- Let's assume we want to keep the work we just did
+- Write a __summary__ in the commit area at the bottom left that describes what you did!
+- e.g. "Changed background colour" or "Added a third eye" or something
+- Then click the blue __Commit to master__ button
+
+---
+
+## Committed
+
+- The __Changes__ area goes blank because there are __no new changes__ to the repository since our last commit (just now) - the repository is __up to date__
+- Again, that means those changes are __stored in the local repository__
+- Again, this history is especially great for keeping track of a project when you're working with other people
+- Again, in this course we will be using the commit messages and history to __evaluate whether you're following good version control and development practices__
+---
+
+## 3. Push your changes
+
+- We still need to __push__ the changes to GitHub
+- Click the __Push origin__ button at the top of the window
+- All going to plan, the repository is now __up to date__ on GitHub as well
+- All your work is safe!
+
+---
+
+## Check GitHub
+
+- One more time, let's go back to [github.com](https://www.github.com/) in our browser
+- If you go to your repository you should see your commit message showing up next to the related folders/files that you changed
+- If you go to the file itself, you'll see it's up to date with your local copy
+
+---
+
+## Workflow
 
 - So that's the basic process of using version control
 
@@ -299,7 +327,8 @@ and a __succulent sandbox__.
 
 ## Working offline
 
-- Note that it's possible to commit to your local repository __without pushing to the remote repository__
+- You can't __push__ to the remote repository if you're not online
+- However you can still __commit__ to your local repository __without pushing to the remote repository__
 - This means that if you aren't online you can do you work and keep __committing__ locally
 - Then when you connect to the internet again you can __Push to origin__ in GitHub Desktop to synchronise all that work to GitHub
 
@@ -309,7 +338,7 @@ and a __succulent sandbox__.
 
 - GitHub makes it possible for you to do your work on different computers as needed!
 - Whenever you want to work on a computer you just need to __Clone__ the `cart253` repository again, as we did at the start of this module
-- Cloning will download the latest version of the folder to that computer and you can just start working (assuming you have all the right software of course)
+- Cloning will download the latest version of the folder to that computer and you can just start working
 - Then when you __push__ from that computer, it will update GitHub and you can clone it somewhere else, etc. etc.
 
 ---
@@ -322,7 +351,7 @@ and a __succulent sandbox__.
 - And it will have __deleted your GitHub Desktop settings__! Argh!
 --
 
-- Basically you'll have to
+- Basically each day on a CDA computer you will
   - __Sign in to GitHub Desktop__ again
   - __Clone your `cart253` repository__ again
   - And get back to work
@@ -362,22 +391,6 @@ and a __succulent sandbox__.
 - Please, please try to avoid putting really large files into your repository
 - GitHub has size limits and things can get really frustrating if you hit them
 - It's better just not to include that 400MB mp3 you were thinking of using, consider compressing it a bit more...
-
----
-
-## Activity
-
-Given that we have done [Exercise 0](../../exercises/Exercise-0.md) we have a JavaScript project we could put into our repository! So:
-
-1. Find your Exercise 0 folder and rename it to `exercise0`
-2. Create a folder called `exercises` inside your `cart253` repository folder
-3. Put the `exercise0` folder into the `exercises` folder
-4. Go to GitHub Desktop and check that it sees the changes
-5. Write a commit message like "Added exercise 0 to the repository"
-6. Commit the changes
-7. Push the changes
-
-(Normally our changes won't be adding a whole project at once, they'll be more incremental.)
 
 ---
 
