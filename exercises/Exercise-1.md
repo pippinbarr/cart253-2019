@@ -5,7 +5,7 @@ __Deadline__: 11:59PM on the day of class on week of 16 September 2019.
 
 ## Brief
 
-Add to the wonderful world of moving shapes with your own ideas, including at least one image!
+Add to the wonderful world of moving shapes with your own ideas. If you're feeling frisky, add an image! Add some text!
 
 ## Learning objectives
 
@@ -20,15 +20,15 @@ Add to the wonderful world of moving shapes with your own ideas, including at le
 This is the only time we will present the steps for an exercise in so much detail, just to give you the idea of a good workflow that will be easy for us to grade and will meet the requirements. It will help you remember to do things like: comment your code, proceed in sensible steps and commit your work as you go, use good commit messages that include the name of the exercise you're working on at the start for clarity.
 
 1. __Download__ the exercise starter and unzip it: [exercise1.zip](exercise1.zip)
-2. __Move__ the exercise project folder called `exercise1` into the `cart253-2018/exercises/` folder of your local copy of your class repository
+2. __Move__ the exercise project folder called `exercise1` into the `cart253/exercises/` folder of your local copy of your class repository
 3. __Commit__ this work in GitHub Desktop with a descriptive message like "Ex1: Added starter code project"
 4. __Push__ your commit, just to be safe
 5. __Open__ the starter code project folder in Atom, __read__ the script all the way through, __run__ it with atom-live-server to observe its behavior
-6. __Add an image or shape__ to the code that starts off the left side of the canvas and moves from left to right across the canvas when the program runs.
+6. __Add an image or shape or text__ to the code that starts off the left side of the canvas and moves from left to right across the canvas when the program runs.
 7. __Comment__ your added code with explanatory comments
 8. __Commit__ this work in GitHub Desktop with a descriptive message like "Ex1: Added shape moving left to right"
 8. __Push__ your commit
-9. __Add an image__ that is always displayed at the current mouse location.
+9. __Add an image or shape or text__ that is always displayed at the current mouse location.
 10. __Comment__ your added code with explanatory comments
 11. __Commit__ this work in GitHub Desktop with a descriptive message like "Ex1: Added image under that follows the mouse"
 12. __Push__ your commit
