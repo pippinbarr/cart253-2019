@@ -26,6 +26,13 @@ We can also print out the values inside variables with `console.log()`.
 
 ```javascript
 let x = 10;
+console.log(x); // Prints "10" to the JavaScript Console
+```
+
+This works for multiple comma-separated values, too.
+
+```javascript
+let x = 10;
 let y = "Hello";
 let z = true;
 console.log(x,y,z); // Prints "10 Hello true" to the JavaScript Console

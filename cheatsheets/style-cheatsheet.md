@@ -1,6 +1,11 @@
 # Style Cheatsheet
 
-## Commenting syntax
+- [Commenting](#commenting)
+- [Naming](#naming)
+
+## Commenting
+
+### Commenting syntax
 
 We can write text in our program that will _not_ be part of the program, this is called a comment. The simplest comment style uses two forward slashes.
 
@@ -39,9 +44,7 @@ and therefore cannot break.
 **************************/
 ```
 
----
-
-## Commenting rules
+### Commenting rules
 
 You should include comments
 
@@ -50,3 +53,33 @@ You should include comments
 1. __Before or beside complex lines of code__ - Write a comment to explain any line or lines of code that are slightly complicated and might confuse someone else (or a future you).
 
 When you write comments __don't just restate the code itself__. Your objective should always be to _explain_ what the code is for, not just say exactly what it does in a technical sense.
+
+## Naming
+
+### Variables
+
+Variable names should
+
+Describe the __meaning__ or __purpose__ of the value inside them...
+
+```javascript
+let myName = "Pippin"; // Good
+let blurgh = "Pippin"; // Bad
+```
+
+Use __camelCase__
+
+```javascript
+let myName = "Pippin"; // Good
+let myname = "Pippin"; // Bad
+```
+
+Only consist of letters and numbers (but not begin with numbers)
+
+```javascript
+let myName = "Pippin"; // Good
+let ##myName## = "Pippin"; // Bad
+
+let my1stName = "Pippin"; // Good (but kind of gross)
+let 1stName = "Pippin"; // Bad
+```

@@ -1,6 +1,110 @@
 # Syntax Cheatsheet
 
-## Function calls
+- [p5 Programs](#p5-programs)
+- [Variables](#variables)
+- [Functions](#functions)
+
+## p5 Programs
+
+The most basic p5 program has two key functions that are __automatically called__ when your program runs. They are `setup()` which will execute __once__ at the start of your program, and `draw()` which will execute __every frame__ that your program runs. They are written like this:
+
+```javascript
+function setup() {
+  // Code in here executes once
+}
+
+function draw() {
+  // Code in here executes every frame
+}
+```
+
+## Variables
+
+### Types, declaring and assigning
+
+Variables let us __store data__ over time. They are basically storage boxes with names. There are a number of __types__ of data that can go into a variable. For now that is:
+
+- Numbers
+- Strings
+
+We __declare__ a variable __once__ to bring it into existence with the special word `let`.
+
+```javascript
+let myAge; // Now a variable called myAge exists
+let myName; // Now a variable called myName exists
+```
+
+To store information in a variable we __assign__ a __value__ to the variable with the __assignment operator__ which is a single equals sign.
+
+```javascript
+myAge = 12; // Number are written as numbers!
+myName = "Kasper"; // Strings are written in quotation marks
+```
+
+We can also assign a value to a variable at the same time as declaring it.
+
+```javascript
+let myAge = 12; // Now myAge contains the value 12
+let myName = "Kasper"; // Now myName contains the value "Kasper"
+```
+
+### Arithmetic
+
+We can perform arithmetic on numbers using the appropriate symbols.
+
+```javascript
+let x = 10;
+let y = 5;
+let a = x + y; // Now a is 15
+let b = x - y; // Now b is 5
+let c = x * y; // Now c is 50
+let d = x / y; // Now d is 2
+```
+
+We can use parentheses to prioritize operations (things inside parentheses are evaluated first).
+
+```javascript
+let x = 10 + 10 / 2; // x is 15 because division happens before addition
+let y = (10 + 10) / 2; // x is 10 because of the parentheses
+```
+
+We can abbreviate specific operations that are meant to apply to the value in a variable.
+
+```javascript
+let x = 10;
+x += 5; // Now x is 15
+x -= 5; // Now x is 10
+x *= 10; // Now x is 100
+x /= 2; // Now x is 50
+x++; // Now x is 51
+x--; // Now x is 50
+```
+
+### "Using" variables
+
+A variable can be used wherever we want to use the __value__ inside the variable. This could be in arithmetic...
+
+```javascript
+let x = 10;
+let y = 5;
+let z = x + y; // Now z is 15
+```
+
+In function parameters...
+
+```javascript
+let x = 10;
+let y = 5;
+let size = 100;
+rect(x,y,size,size); // Draws a square at (10,5) with sides of length 100
+
+let message = "Hello!";
+console.log(message); // Prints "Hello!" to the JavaScript Console
+```
+
+## Functions
+
+### Function calls
 
 A function call is an _instruction_ that tells a particular function to _execute_ whatever code it contains.
 
