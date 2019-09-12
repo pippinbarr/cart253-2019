@@ -9,6 +9,7 @@
 - Why version control?
 - Git, GitHub, and GitHub Desktop
 - Creating a repository
+- Starting a project in the repository
 - A version control workflow
 - Using [GitHub Desktop](https://desktop.github.com/) and [GitHub](https://www.github.com)
 
@@ -120,39 +121,22 @@
 
 ---
 
-## A version control workflow
+## Starting a project
 
-The simplest workflow using Git and GitHub is this:
---
+- To start a project (or exercise) in our repository we need to
 
-1. You __make some changes to your project in your local folder__. Something like an hour's work, say, reaching some sort of defined goal perhaps. (Mostly in Atom, but also includes adding files, renaming folders, etc.)
---
-
-2. You __commit your changes to the local repository__ using GitHub Desktop. This stores this newest version of the project in the repository.
---
-
-3. You __push your changes to the remote repository__ on github.com using GitHub Desktop. This makes sure your newest version is also safe in the "cloud".
-
---
-
-So basically you develop a rhythm of doing a chunk of work, committing and pushing it, doing another chunk of work, committing and pushing it, etc.
-
-Let's try it...
+1. Put all the starting files in the right place (probably by copying the __template folder__ into the repository folder)
+1. __Commit this starting template__ to the local repository in GitHub Desktop so that the changes are up to date
+1. __Push the commit__ to the remote repository on github.com so that the changes are up to date "in the cloud" as well
 
 ---
 
-## 0. Setup
+## 1. Setup
 
-- Find the folder for your `exercise0` exercise project from last week (if you don't have it, download the starter version on the course website)
+- Find the folder for your `exercise0` project from last week (if you don't have it, download the [starter version](https://pippinbarr.github.io/cart253-2018/exercises/exercise0.zip) on the course website and unzip it)
 - Rename the folder to `exercise0` if you haven't already, since it's a better name and names matter
-- In your `cart253` folder (repository) create an `exercises` folder
-- Move your `exercise0` folder into the `exercises` folder
-
----
-
-## 1. Change
-
-- You have now made a __change__ to your repository (it is considered changed if you add, delete, or alter any file or folder in the repository folder)
+- In your `cart253` folder (the local repository) create an `exercises` folder
+- Move your `exercise0` folder into the new `exercises` folder
 - Go to GitHub Desktop
 - Notice how the interface has changed!
 --
@@ -172,10 +156,10 @@ Let's try it...
 --
 
 - There's a __Summary__ which you use to describe the changes you made
-- So __write what you did__ in there, e.g. "Added exercise0"
+- So __write what you did__ in there, e.g. "Ex0: Added template"
 --
 
-- There's also a __Description__ where you can write more detailed notes about what you did if you want to expand on it (this can be super helpful to other people)
+- There's also a __Description__ where you can write more detailed notes about what you did if you want to expand on it (this can be super helpful and is encouraged)
 --
 
 - Finally there's the blue __Commit to master__ button
@@ -204,67 +188,89 @@ Let's try it...
 
 ## 3. Push
 
-- In order to upload our updated repository to the cloud on GitHub we need to __push__ the changes
+- In order to synchronize our updated repository with github.com we need to __push__ the changes
 - Notice that there's a __Push origin__ button at the top of the window
 - It should have a little number with an up arrow next to it, indicating there are commits to be pushed to the remove server
 - Click it
 --
 
-- You'll see a few updating messages appear on the button as GitHub Desktop uploads the changes to the repository
-- And the messages about it fetching the repository again to synchronise it...
+- You'll see a few updating messages appear on the button as GitHub Desktop uploads the changes
+- And the messages about it fetching the repository again to synchronize it...
 - And then it's done and the name has changed to __Fetch origin__ because there's nothing to push
-
-???
-
-- It is hopefully obvious that if you're not connected to the internet, you can't __push__
 
 ---
 
 ## Check
 
-- Just to make sure , let's go back to [github.com](https://www.github.com/) in our browser
+- Just to make sure, let's go back to [github.com](https://www.github.com/) in our browser
 - Navigate to your account and click on your `cart253` repository if it's not already loaded
 - If it's already loaded then __reload the page__
 --
 
 - You should see your changes reflected in the repository
-- That is, there should be an `exercises` folder in the top level, an `exercise0` folder within that, and all your project files within that
+- That is, there should be an `exercise0` folder with all your project files (exactly like it is on your computer)
 --
 
 - It worked!
-- This is the process you would follow whenever you started a __new project__ in your repository - You add the project folder to the appropriate location in the repository and then commit and push it
+- So that is the process you will follow whenever you start a __new project__ in your repository  
+  - You add the project folder to the appropriate location in the local repository
+  - commit with a message
+  - and push
 
 ---
 
-## Again!
+## Getting to work
 
-- That process __is__ how we work with Git
-- However __most__ of the time you'll actually be working on the project, not setting it up
+- __Most__ of the time you're not starting a new project
+- Most of the time you'll actually be __working__ on the project
+- The process for keeping everything up to date is... the same!
 - So let's repeat the process by pretending to make some changes to our project
+
+---
+
+## A version control workflow
+
+The standard workflow using Git and GitHub is:
+--
+
+1. You __make some changes to your project in your local folder__. Something like an hour's work, say, reaching some sort of defined goal perhaps. (Mostly in Atom, but can also include adding files, renaming folders, etc.)
+--
+
+2. You __commit your changes to the local repository__ using GitHub Desktop with a descriptive message. This stores this newest version of the project in the repository.
+--
+
+3. You __push your changes to the remote repository__ on github.com using GitHub Desktop. This makes sure your newest version is also safe in the "cloud".
+
+--
+
+So basically you develop a rhythm of doing a chunk of work, committing and pushing it, doing another chunk of work, committing and pushing it, etc.
+
+Let's do it...
 
 ---
 
 ## 0. Open the project
 
-- To work on our `exercise0` project we want to open that folder in Atom (__not__ the entire repository, just the `exercise0`) folder
-- So open it in Atom (by dragging it to the Atom icon, or going to `File > Open...` inside Atom)
+- To work on our `exercise0` project we would open that folder in Atom
+- Remember we only want to open the `exercise0` folder, __not__ the entire repository
+- So open the folder in Atom (by dragging it to the Atom icon, or going to `File > Open...` inside Atom)
 
 ---
 
 ## 1. Make some changes
 
 - Go into `script.js` and make a change
-- Maybe just change the background colour, or a shape, or anything else
+- Maybe just change the background color, or a shape, or anything else
 - This is what we do when we work on our projects, after all, we make changes to the code
-
+- For now do something relatively minor, since we're just playing pretend
+- __Save__ your work
 ---
 
 ## GitHub Desktop knows what you did
 
-- __Save__ your work if you haven't already
 - Go back to GitHub Desktop
 - Again, notice how the interface has changed
-- The left-hand pane shows you a list of __changes__ detected by listing the files that have changed __since your last commit__ (in this case probably just `script.js`)
+- The left-hand pane shows you a list of __changes__ detected by listing the files that have changed __since your last commit__ (in this case it's just `script.js`)
 - If you click on the file name, the right-hand pane will show you the changes made through highlighting (green means addition, red means deletion)
 
 ---
@@ -273,7 +279,7 @@ Let's try it...
 
 - Let's assume we want to keep the work we just did
 - Write a __summary__ in the commit area at the bottom left that describes what you did!
-- e.g. "Changed background colour" or "Added a third eye" or something
+- e.g. "Changed background color" or "Added a third eye" or something
 - Then click the blue __Commit to master__ button
 
 ---
@@ -303,9 +309,9 @@ Let's try it...
 
 ---
 
-## Workflow
+## Done.
 
-- So that's the basic process of using version control
+So that's the basic process of using version control
 
 1. __Make changes locally__ (in your `cart253` repository folder)
 2. __Commit changes to the local repository with a message__ (using GitHub Desktop)
@@ -324,7 +330,7 @@ Let's try it...
 ## "When should I commit?"
 
 - There's no single answer to the question of __when__ you should commit and push changes
-- A simple answer is just to commit __when you've made some important change__ that was work to do and you want to save it as part of the history of development
+- A simple answer is just to commit __when you've made an important change__ that was work to do and you want to save it as part of the history of development
 - Another answer is that __you probably can't commit too often__, it's almost always a good thing to do and you're more likely to do it too little than too much
 
 ---
@@ -333,7 +339,7 @@ Let's try it...
 
 - You can't __push__ to the remote repository if you're not online
 - However you can still __commit__ to your local repository __without pushing to the remote repository__
-- This means that if you aren't online you can do you work and keep __committing__ locally
+- This means that if you aren't online you can do your work and keep __committing__ locally
 - Then when you connect to the internet again you can __Push to origin__ in GitHub Desktop to synchronise all that work to GitHub
 
 ---

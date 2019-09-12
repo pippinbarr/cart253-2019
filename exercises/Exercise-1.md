@@ -59,6 +59,6 @@ Grading for exercises is pass/fail. Passing requires __all__ of the following to
 
 - __Runs__ and __implements the challenges required__
 - Has __suitable commenting for all added/changed code__
-- Includes a minimum of __one initial commit of the template code__, and __one commit message per substantive change (such as completing one element)__, all commits must have a __descriptive message__
+- Includes a minimum of __one initial commit of the template code__, and __one commit message per substantive change (such as completing one element)__, all commits must have a __descriptive message__ that __includes the exercise number as a prefix__
 - Uses __good naming__ for added variables
 - Is __well structured__, with new code added in sensible places in sensible orders
