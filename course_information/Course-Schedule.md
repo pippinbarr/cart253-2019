@@ -4,7 +4,7 @@
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
 
 ### Contents
-- [1. The beginning](#week-1---week-of-2-september-2019)
+- [~~1. The beginning~~](#week-1---week-of-2-september-2019)
 - [2. Change](#week-2---week-of-9-september-2019)
 - [3. Input](#week-3---week-of-16-september-2019)
 - [4. Repetition](#week-4---week-of-23-september-2019)
@@ -18,7 +18,7 @@
 - [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-12---week-of-18-november-2019)
 - [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-13---week-of-25-november-2019)
 
-# Week 1 - Week of 2 September 2019
+# ~~Week 1 - Week of 2 September 2019~~
 
 __The beginning.__ _In which we encounter programming for the first time and fall in love with the majesty of code._
 
@@ -52,7 +52,7 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 ## Topics
 - [Cheatsheets](../cheatsheets/) experiment!
 - Core - Time ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-time/index.html), [Notes](../modules/core-time/core-time.md))
-- Core - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables/index.html), [Notes](../modules/core-variables/core-variables.md))
+- __New!__ Core - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-v2/index.html), [Notes](../modules/core-variables-v2/core-variables.md)) (__Old!__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables/index.html), [Notes](../modules/core-variables/core-variables.md)))
 - Core - Variables and change ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-and-change/index.html), [Notes](../modules/core-variables-and-change/core-variables-and-change.md))
 - Core - Variables and scope  ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-and-scope/index.html), [Notes](../modules/core-variables-and-scope/core-variables-and-scope.md))
 - Debugging - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-variables/index.html), [Notes](../modules/debugging-variables/debugging-variables.md))
