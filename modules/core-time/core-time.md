@@ -13,7 +13,7 @@
 ## Dead code
 
 - So far the code we've written just runs once and stops
-- Processing carries out our instructions from the top to the bottom and that's that
+- JavaScript carries out our instructions from the top to the bottom and that's that
 - But that's not going to lead to especially interesting programming
 - And in particular we're not going to be able to make something __interactive__ this way
 - We need __time__, because time allows __change__, and change allows __interaction__

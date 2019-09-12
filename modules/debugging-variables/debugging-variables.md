@@ -68,7 +68,7 @@ console.log(x,y,z);
 
 ```javascript
 let x = 42;
-console.log("x: " + meaningOfLife); // Prints "x: 42" to the console
+console.log("x: " + x); // Prints "x: 42" to the console
 ```
 
 - That is, we write the text we want before the variable in __quotation marks__, followed by the plus sign, followed by the variable name
