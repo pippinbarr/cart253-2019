@@ -160,6 +160,8 @@ Let's try it...
 - The left-hand pane should be showing you a list of __changes__ detected in your repository (if it's not selected, select the __Changes__ tab on the left!)
 - In particular, it shows you you've added a bunch of __new__ files (hence the little green plus sign)
 
+---
+
 ## 2. Commit
 
 - We want to __store__ these changes officially in the repository (so it remembers them)
@@ -178,6 +180,8 @@ Let's try it...
 
 - Finally there's the blue __Commit to master__ button
 - Click it
+
+---
 
 ## Committed!
 

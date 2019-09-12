@@ -339,7 +339,7 @@ function draw() {
 
 ---
 
-# `mouseX` and `mouseY`
+## `mouseX` and `mouseY`
 
 ```javascript
 function setup() {
