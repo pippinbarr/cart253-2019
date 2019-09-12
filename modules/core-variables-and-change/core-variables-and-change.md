@@ -6,32 +6,25 @@
 
 ## In this module
 
-- Arithmetic
+- Math!
 - Ch-ch-changes
 
 ---
 
-## Arithmetic!
+## Math!
 
 - You can do arithmetic on numbers in p5, and also on variables with numbers in them
 - It uses __operators__ you probably already know from calculators and so on
 
 ```javascript
-let a = 21 + 21; // addition
-let b = a - 2; // subtraction
-let c = b * 5; // multiplication
-let d = c/2; // division
+let a = 10 + 2; // addition
+let b = 10 - 2; // subtraction
+let c = 10 * 2; // multiplication
+let d = 10 / 2; // division
 ```
 
-- There are some other operators too, which you can look up in the reference
-- What is the value inside `d`?
-
-???
-
-- Here is a handy JavaScript operator reference
-https://www.w3schools.com/jsref/jsref_operators.asp
-- Notice how JavaScript __does not care__ that you are using a variable called `a` or `bigTommySezHello` or `pi` for all these calculations
-- Names matter to humans, though, so we try to give good names!
+- In all these cases the __result__ of the math is calculated and then stored in the variable
+- There are some other operators too, which you can look up [here](https://www.w3schools.com/jsref/jsref_operators.asp) for instance
 
 ---
 
@@ -78,36 +71,32 @@ let a = (42 + 42) / 2;
 
 - But the second one is easier to read, right?
 
-???
+---
 
-- Remember that you __cannot__ remove the space between `let` and `a` here because your program will break
-- This is because if you do that, JavaScript can no longer tell where the special word `let` ends and the __variable name__ `a` begins
+## Variables with numbers in them are just like numbers
+
+- We can do all the same math stuff, but substituting variables for numbers
+- It's like algebra in a way
+
+```javascript
+let a = 10;
+let b = 2;
+let c = a * b; // Equivalent to let c = 10 * 2
+```
+
+- This means we can store a value in one variable based on __other__ variables, which allows us to do more interesting calculation
 
 ---
 
-## Variables FTW!
-
-Variables give us a lot of power in programming.
-
-__Memory__. We can __remember__ values over time.
-
-__Sense__. We can __label__ values with their meaning instead of hard-coding them.
-
-__Change__. We can __change__ the values in variables
-
----
-
-## Shocked face with variables again!
+## Relativity
 
 ```javascript
 let faceX = 250;
 let faceY = 250;
 let faceSize = 300;
-let faceEyeSize = 50;
-let faceEyeXOffset = 50;
-let faceEyeYOffset = 50;
-let faceMouthYOffset = 50;
-let faceMouthSize = 100;
+let eyeXOffset = 50;
+let eyeYOffset = 50;
+let mouthYOffset = 50;
 
 function setup() {
   createCanvas(500,500);
@@ -115,53 +104,41 @@ function setup() {
 
 function draw() {
   ellipse(faceX,faceY,faceSize,faceSize);
-  ellipse(faceX-faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize,faceEyeSize);
-  ellipse(faceX-faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize/2,faceEyeSize/2);
-  ellipse(faceX+faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize,faceEyeSize);
-  ellipse(faceX+faceEyeXOffset,faceY-faceEyeYOffset,faceEyeSize/2,faceEyeSize/2);
-  ellipse(faceX,faceY+faceMouthYOffset,faceMouthSize,faceMouthSize);
+  ellipse(faceX - eyeXOffset,faceY - eyeYOffset,faceSize/4);
+  ellipse(faceX + eyeXOffset,faceY - eyeYOffset,faceSize/4);
+  ellipse(faceX,faceY + mouthYOffset,faceSize/3);
 }
 ```
 
+- We can use variables and math to define the parts of this face __relative__ to each other
+- It makes the face much more __consistent__, more like a single object
+
 ???
 
-- Notice how we can define the size of the pupils based on the size of the eye - a pupil is __half the size of the surrounding eye__ - now when we change the eye size, the pupil will be adjusted automatically!
 - Notice how we define only one x offset for the eyes - they're symmetrical! This way we change only one number to make the eyes move closer to the centre or further away
+- Notice how we set the sizes of the eyes and the mouth relative to the overall face size, which maintains proportions
 - Notice how this ends up encoding __rules__ about how this face works, though, which might be restrictive of creativity?
-
----
-
-## Variables save the day
-
-Notice how we can
-
-- Understand the code significantly better __just because of the names__
-- Easily adjust the way the face appears by changing the variables at the top
-- Set up our variables and use them such that some things happen __automatically__ (like the pupil size)
 
 ---
 
 ## Variables can change
 
-__What if we added something to the `draw()` function that changed one of the variables?__
+__What could do in the `draw()` function to change the face's position over time?__
 
 --
 
 `faceX = faceX + 1;`
 
 - Whhooooooaaaaa....
-- That is, we can do arithmetic __using variables__, remember that they just stand in for the __value__ inside them
-- So we can even change a variable __relative to itself__
-- The above means: "make `faceX` equal to itself plus `1`"
-- Or, more simply: "add `1` to `faceX`"
+- Clearly we can change a variable __relative to itself__
+- This basically means "add `1` to `faceX`"
+- And because it's changing __over time__ (in `draw()`), the face __moves__
+- And the __whole face__ moves because we defined its part relative to each other
+
 
 ???
 
 - Again, remember that when we __use__ a variable after having __declared__ it, we don't use `let` anymore
-- One option would be to add `faceX = faceX + 1;`
-- Which can be written as `faceX += 1;`
-- Which can also be written as `faceX++;` (add one to `faceX`)
-- But there are others of course!
 - Q: __Why does it leave a trail?__
 
 ---
@@ -195,8 +172,7 @@ faceX++; // ++ adds exactly one to the variable before it
 
 - We have created __life itself__!
 - Well, we have created movement at the very least...
-- Effectively we have the start of __code-based animation__
-- Part of how we make things happen in our program is by changing the values in variables over time!
+- A big part of how we make things happen in a program is by changing the values in variables over time!
 
 ???
 
@@ -207,23 +183,46 @@ faceX++; // ++ adds exactly one to the variable before it
 
 ---
 
-## Let's get `random()`
+## Control!
+
+- Essentially, we can use variables to control the values used in a program
+- For now, the most obvious thing is that we can control the __number parameters__ that are being used in our various drawing instructions
+- So one way to think of this is that if we replaced every parameter with a variable we could __change the variable over time__ and create effects
+- We can control positions (x and y), sizes, colors, transparencies, line weights, and anything else we can lay our hands on!
+
+---
+
+## Take control!
+
+```javascript
+function setup() {
+  createCanvas(500,500);
+}
+
+function draw() {
+  background(255);
+  fill(255,0,0);
+  stroke(0);
+  ellipse(250,250,100,100);
+}
+```
+
+- What can we control if we replace all the numbers in `draw()` with variables and change them over time?
+
+---
+
+## Surprise!
 
 - Let's meet my favorite function in all of programming: `random()`
 - Most programming languages have a version of this and it does what you might expect...
---
-
-- It __gives you a random number__.
---
-
-- In p5 it works like this:
+- It __generates a random number__
 
 ```javascript
-let randomNumber = random(10);
+let randomNumber = random(0,10);
 ```
 
-- This will put a random number between 0 and `10` (not including `10`) into our `randomNumber` variable
-- Naturally you can use other numbers than `10`
+- This will put a random number between `0` and `10` (not including `10`) into our `randomNumber` variable
+- Naturally you can use other numbers than `0` and `10`
 
 ???
 
@@ -231,54 +230,31 @@ let randomNumber = random(10);
 - This is the first time we've seen the idea of a function that __returns a value__
 - When we __call__ `random()` it goes away, calculates a random number, and then __gives it back__
 - We store the result inside our __variable__
-- We'll talk more about this when we start defining our own functions
-
----
-
-## Let's get more `random()`
-
-- You can also specify a __range__ for your random number by giving a low and high value
-
-```javascript
-let numberBetweenFiveAndTen = random(5,10);
-```
-
-- This is useful if you need numbers in particular ranges, of course
-
-```javascript
-let red = random(0,255);
-let green = random(0,255);
-let blue = random(0,255);
-background(red,green,blue);
-```
-
-- Which would do what?
-
-???
-
-- This gives us a random background color each time we run the program
-- What if you put that line inside `draw()`?
+- Note that we can call `random()` in two other ways
+- With __no parameters__ it defaults to a number between 0 and 1
+- `let r = random();` gives back a number between 0 and 1
+- With __one parameters__ it defaults to a number between 0 and the number you specify
+- `let r = random(10);` gives back a number between 0 and 10
 
 ---
 
 ## Ah, `random()`!
 
-- Random numbers are a source of endless joy.
-- What would this do in the `draw()` loop of our avatar code from earlier?
-
-```javascript
-faceX = random(0,width);
-faceY = random(0,height);
-```
+- My momma always said, `random()` is like a box of chocolates, you never know what you're gonna get!
+- We can use randomness to create surprising experiences not just for a user but for ourselves
+- We could set a random set of colors every time the program runs, or even every frame!
+- We could set a random starting position for elements on the canvas
+- We could set random sizes for our shapes
+- And much more...
 
 ---
 
 ## Follow that mouse!
 
-- What if we wanted to make the face follow our mouse around?
+- What if we wanted to make our intrepid face follow our mouse around?
 --
 
-- That's right, we'd use those pre-existing variables called `mouseX` and `mouseY`
+- That's right, we'd use those __pre-existing variables__ called `mouseX` and `mouseY`
 
 ```javascript
 faceX = mouseX;
@@ -287,9 +263,9 @@ faceY = mouseY;
 
 - If we put these lines in `draw()` it will update the position of the face to be the same as the mouse each frame
 
----
+???
 
-## (Advanced) Follow that mouse! Slower!
+#### (Advanced) Follow that mouse! Slower!
 
 - What if we wanted to make a shape move toward the mouse cursor over time instead of instantly?
 --
@@ -377,11 +353,10 @@ function draw() {
 
 ## Variable save the day
 
-- Man variables are cool
 - They store data
 - They have relevant names
-- They can change over time to create dynamic behavior
-- Not bad at all
+- They can __change over time to create dynamic behavior__
+- Not bad at all, variables. Not bad at all.
 
 ---
 
