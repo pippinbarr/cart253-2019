@@ -74,8 +74,23 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 __Input.__ _In which our programs start reacting to their users._
 
 ## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
-
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
+## Topics
+- Physics - Motion ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-motion/index.html), [Notes](../modules/physics-motion/physics-motion.md))
+- Core - Conditionals ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-conditionals/index.html), [Notes](../modules/core-conditionals/core-conditionals.md))
+- Input - Mouse input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-mouse/index.html), [Notes](../modules/input-mouse/input-mouse.md))
+- Game - Click the circle ([Game](https://pippinbarr.github.io/cart253-2019/games/game-click-the-circle/index.html), [Source Code](../games/game-click-the-circle/), [ZIP of Source Code](../games/game-click-the-circle.zip))
+- Input - Keyboard input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-keyboard/index.html), [Notes](../modules/input-keyboard/input-keyboard.md))
+- Game - The artful dodger ([Game](https://pippinbarr.github.io/cart253-2019/games/game-the-artful-dodger/index.html), [Source Code](../games/game-the-artful-dodger/), [ZIP of Source Code](../games/game-the-artful-dodger.zip))
+- Core - Time part II ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-time-part-ii/index.html), [Notes](../modules/core-time-part-ii/core-time-part-ii.md))
+- Debugging - Time ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-time/index.html), [Notes](../modules/debugging-time/debugging-time.md))
+- Input - Touch input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-touch/index.html), [Notes](../modules/input-touch/input-touch.md))
+- Tools - Committing (Refresher) ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-committing/index.html), [Notes](../modules/tools-committing/tools-committing.md))
+- Tools - GitHub Pages ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-github-pages/index.html), [Notes](../modules/tools-github-pages/tools-github-pages.md))
+
+## Homework
+- [Exercise 2](../exercises/Exercise-2.md) - The Artful Dodger Plus
 
 ---
 
