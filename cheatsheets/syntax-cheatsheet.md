@@ -2,6 +2,7 @@
 
 - [p5 Programs](#p5-programs)
 - [Variables](#variables)
+- [Conditionals](#conditionals) (`if`-statements)
 - [Functions](#functions)
 
 ## p5 Programs
@@ -100,6 +101,84 @@ rect(x,y,size,size); // Draws a square at (10,5) with sides of length 100
 
 let message = "Hello!";
 console.log(message); // Prints "Hello!" to the JavaScript Console
+```
+
+## Conditionals
+
+### `if`, `else` and `else if`
+
+We write a basic condition using the magic word `if`, followed by a __condition__ (something that can be `true` or `false` in parentheses, followed by what should be executed if the condition is __true__ in curly brackets:
+
+```javascript
+let x = 0;
+if (x < 10) {
+  console.log("x is less than 10"); // We will see this because the condition is true
+}
+```
+
+We can add instructions that will execute if the condition is __false__ by adding the magic word `else` followed by curly brackets around the instructions:
+
+```javascript
+let x = 20;
+if (x < 10) {
+  console.log("x is less than 10"); // We won't see this because the condition is false
+}
+else {
+  console.log("x is not less than 10"); // We will see this because the condition is false
+}
+```
+
+We can chain together multiple conditions using the combination `else if`:
+
+```javascript
+let x = 20;
+if (x < 10) {
+  console.log("x is less than 10"); // We won't see this because the condition is false
+}
+else if (x < 20) {
+  console.log("x is between 10 and 20"); // We will see this because the condition is true
+}
+else {
+  console.log("x is not less than 10"); // We will see this because the condition is false
+}
+```
+
+### Conditions
+
+A __condition__ (or "conditional expression") is any expression that can be __evaluated__ as `true` or `false`.
+
+```javascript
+10 < 20 // true
+20 < 10 // false
+```
+
+We most often use standard mathematical comparison operators to create conditions. All the following are `true`:
+
+```javascript
+10 === 10 // equal to
+10 !== 20 // not equal to
+10 < 20 // less than
+10 > 1 // greater than
+10 <= 20 // less than or equal to
+10 >= 1 // greater than or equal to
+```
+
+### Logic
+
+We can make more sophisticated conditionals by using logic operators to __combine__ basic conditional expressions. All the following are true:
+
+```javascript
+// && means AND and evaluates to true if both sides are true
+// otherwise it's false
+10 < 20 && 20 >= 10 // true
+
+// || means OR and evaluates to true if one or both sides are true
+// otherwise it's false
+10 < 20 || 20 < 10 // true
+
+// ! means NOT and evaluates to true if the expression AFTER it is false
+// otherwise it's true
+!(10 < 5) // true
 ```
 
 ## Functions
