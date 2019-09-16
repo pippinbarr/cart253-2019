@@ -1,4 +1,4 @@
-### Physics / CART 253 / Fall 2018 / Pippin Barr
+### Physics / CART 253 / Pippin Barr
 
 # Motion
 
@@ -40,7 +40,7 @@ function draw() {
 
 ## Physics!
 
-- This is basically the kind of mathematics involved in physics
+- This is exactly the kind of mathematics involved in physics
 - And there is a __name__ for the quantity you add to a position each time-step (frame) to make it move
 - That name is...
 --
@@ -48,7 +48,7 @@ function draw() {
 --
 
 - Each step of time (frame) we add the __velocity__ to the __position__ to create movement in space
-- __Velocity__ determines the __rate__ that an object's __position__ changes
+- __Velocity__ determines the __rate__ that an object's __position__ changes __over time__
 
 
 ---
@@ -56,17 +56,15 @@ function draw() {
 ## Velocity
 
 ```javascript
-let x;
-let y;
-let vx;
-let vy;
+let x = 0;
+let y = 0;
+let vx = 2;
+let vy = 2;
 
 function setup() {
   createCanvas(500,500);
   x = width/2;
   y = height/2;
-  vx = 2;
-  vy = 2;
 }
 
 function draw() {
@@ -89,7 +87,7 @@ function draw() {
 
 - Because positions on the grid of our canvas __increase to the right__ and __decrease to the left__ we use a __positive x velocity__ to move to the right and a __negative x velocity__ to move to the left
 - Similarly, we use a __positive y velocity__ to move down and a __negative y velocity__ to move up
-- Try inputting different velocities into the previous example in `setup()` and notice which direction the shape moves
+- Try inputting different velocities into the previous example and notice which direction the shape moves
 
 ---
 
@@ -104,10 +102,10 @@ function draw() {
 ## Velocity and speed
 
 ```javascript
-let x;
-let y;
-let vx;
-let vy;
+let x = 0;
+let y = 0;
+let vx = 0;
+let vy = 0;
 let speed = 2;
 
 function setup() {
@@ -129,18 +127,20 @@ function draw() {
 
 ## (Advanced-ish) Acceleration!
 
-- __Acceleration__ determines the __rate__ that an object's __velocity__ changes
+- __Acceleration__ determines the __rate__ that an object's __velocity__ changes over time
+- Implementing acceleration can make things look more "realistic" because most things in the real world don't change direction or start moving instantaneously
+- Except UFOs
 
 ---
 
 ## Acceleration
 
 ```javascript
-let x;
-let y;
+let x = 0;
+let y = 0;
 let speed = 2;
-let vx;
-let ax = 0.25;
+let vx = 0;
+let ax = 0.25; // Acceleration
 
 function setup() {
   createCanvas(500,500);
@@ -162,6 +162,7 @@ function draw() {
 
 - Note that we're limiting to the x-axis just to keep the code a little smaller
 - What happens if you start with a positive velocity and a negative acceleration?
+- Play around with these numbers!!
 
 ---
 
@@ -182,7 +183,8 @@ function setup() {
 }
 
 function draw() {
-  vx = constrain(vx + ax,-speed,speed);
+  vx = vx + ax;
+  vx = constrain(vx,-speed,speed);
   x = x + vx;
   ellipse(x,y,50,50);
 }
@@ -192,9 +194,13 @@ function draw() {
 
 - The `constrain()` function takes __three parameters__
 
-1. The __expression__ to constrain. It will calculate the number this expression results in, and then constrain it.
-2. The lower limit. This is the smallest possible value you want the expression to result in.
-3. The upper limit. This is the highest possible value you want the experience to result in.
+1. The __value__ to constrain - mostly likely a variable or an expression.
+2. The lower limit. This is the smallest possible value allowed.
+3. The upper limit. This is the highest possible value allowed.
+
+```javascript
+let x = constrain(y,0,100); // Guarantees x will be between 0 and 100, no matter what value y has
+```
 
 - By constraining our velocity calculation to be between `-speed` and `speed` we're guaranteeing that the the object won't accelerate to a velocity faster than its maximum speed
 
@@ -204,7 +210,10 @@ function draw() {
 
 - That is the basics of honest-to-goodness physics in programming
 - It's very satisfying to program your own physics, and also quite a good way to actually understand physics in the first place
-- Be aware, though, that much of the time when people make games (for example) they tend to use pre-programmed physics rather than programming it themselves (because it's kind of hard to get some of it just right)
+- There are limits, though
+- Most of the time when people make games or anything that has physics they tend to use pre-programmed physics rather than programming it themselves
+- Because it's hard to get some of it just right
+- Nonetheless, it's a great thing to understand at least the basics of
 
 
 ---

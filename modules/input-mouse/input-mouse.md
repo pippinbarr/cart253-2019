@@ -17,7 +17,7 @@
 
 - We've already seen that p5 always knows __where the mouse is__
 - We can use `mouseX` and `mouseY` any time to get the mouse location
-- But p5 has some special functions and variables that let us react to the __mouse button__
+- But p5 has some special functions and variables that let us react to the __mouse button__ too
 
 ---
 
@@ -29,31 +29,17 @@ function setup() {
 }
 
 function draw() {
-  console.log(mouseIsPressed);
+  if (mouseIsPressed) {
+    background(0);
+  }
+  else {
+    background(255);
+  }
 }
 ```
 
 - The variable `mouseIsPressed` is `true` when a mouse button is pressed down and `false` otherwise
 - It gives us a simple way of checking the mouse
-
----
-
-## `mouseIsPressed` example
-
-```javascript
-function setup() {
-  createCanvas(500,500);
-}
-
-function draw() {
-  if (mouseIsPressed) {
-    background(255);
-  }
-  else {
-    background(0);
-  }
-}
-```
 
 ---
 
@@ -65,11 +51,11 @@ function mousePressed() {
 }
 ```
 
-- If we include the function `mousePressed()` in our code then we can react when a mouse button is pressed down
-- This function is __called__ at the moment the user clicks a mouse button down
-- This kind of function is called an __event handler__ or __callback__ because it is called automatically when something happens
+- If we include the function `mousePressed()` in our code then we can react __when__ a mouse button is pressed down
+- This function is __called once__ at the __moment__ the user clicks a mouse button down
+- This kind of function is called an __event handler__ because it is called automatically when a particular event (like a mouse press) happens
 - Notice this is __different__ from `mouseIsPressed`, which is `true` or `false` at any moment
-- `mousePressed()` is called __when the press happens__...
+- `mousePressed()` is only called __at the moment the press happens__...
 
 ---
 
@@ -84,7 +70,7 @@ function setup() {
 }
 
 function draw() {
-
+  // Nothing...
 }
 
 function mousePressed() {
@@ -119,25 +105,30 @@ function mouseReleased() {
 ## `mouseReleased()` example
 
 ```javascript
+let on = false;
+
 function setup() {
   createCanvas(640,480);
 }
 
 function draw() {
-
+  if (on) {
+    background(255);
+  }
+  else {
+    background(0);
+  }
 }
 
 function mouseReleased() {
-  background(255,0,0);
+  on = !on; // Flips the value of on!
 }
 ```
 
 - What will this do?
 --
 
-- When we click __down__ nothing happens
-- But when we __let go__ of the mouse button, the screen goes red
-- It's a subtle distinction, but of course sometimes we want to make the distinction
+- When we click and release the "light" will go on or off
 
 ???
 
@@ -147,44 +138,36 @@ function mouseReleased() {
 
 ---
 
-## `mouseClicked()`
-
-```javascript
-function mouseClicked() {
-  // A mouse button was clicked...
-}
-```
-
-- `mouseClicked()` is called when the mouse is pressed and then released, a click
-- As you can read in the manual, this is handled less predictably by different browsers and only definitely works for the left mouse button
-- As such it can make sense to use `mousePressed()` and `mouseReleased()` if you want definite control
-
----
-
 ## `mouseButton`
 
 - We've been talking about "a button" being pressed and released, but how do you know which one?
 - The variable `mouseButton` has a string in it which indicates __which button was most recently pressed__
 - So when `mousePressed()` and `mouseReleased()` are called, `mouseButton` will tell you which mouse button is was
-- It will be either `"left"`, `"right"`, or `"center"`
-- You can also use the special variables `LEFT`, `RIGHT` and `CENTER` to check against...
+- It will be one of `LEFT`, `RIGHT` or `CENTER`...
 
 ---
 
 ## Checking for a left click specifically...
 
 ```javascript
+let on = false;
+
 function setup() {
   createCanvas(640,480);
 }
 
 function draw() {
-
+  if (on) {
+    background(255);
+  }
+  else {
+    background(0);
+  }
 }
 
 function mouseReleased() {
   if (mouseButton === LEFT) {
-    background(255,0,0);
+    on = !on; // Flips the value of on!
   }
 }
 ```
@@ -227,14 +210,14 @@ function mouseDragged() {
 ```javascript
 function mouseWheel(event) {
   // The mouse wheel was moved!
-  console.log("Mouse moved by " + event.delta);
+  console.log("Mouse moved by " + event.delta + " pixels.");
 }
 ```
 
 - `mouseWheel()` is called whenever the mouse wheel is moved
 - This __includes touch-based scrolling on a trackpad__
 - Notice that this function takes a __parameter__ called `event`
-- Inside the function, the variable `event.delta` tells us __how much the wheel moved in this frame__
+- Inside the function, we can use `event.delta` tells us __how much the wheel moved in this frame__
 - It's positive if it scrolled down and negative if it scrolled up
 
 ???

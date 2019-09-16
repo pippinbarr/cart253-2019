@@ -32,7 +32,7 @@
 
 ## From context to action
 
-- This idea of going from __knowing something__ to __doing something__ is at the heart of what makes programming and software interesting
+- This idea of going from __knowing something__ to __doing something__ is key to what makes programming and software interesting
 - This is a huge part of what makes programs __react to context__, instead of just doing the same thing every time
 - They might react to the weather, or the date, or the keyboard, or something else...
 - ... but in all cases they need to use these "__if__ this __then__ I'll do that" kinds of structures
@@ -41,9 +41,10 @@
 
 ## Some ifs...
 
+- If the circle is off the screen, move it back onto the screen
 - If the player presses the spacebar, do an amazing skateboard trick
 - If the date is the 25th of December, play a Christmas song
-- If the weather is cloudy, making the interface grey and hard to read
+- If the weather is cloudy, making the interface grey and depressing
 - If the user is shouting, making the screen vibrate
 - AND SO ON!
 
@@ -51,7 +52,7 @@
 
 ## What is `true`? What is `false`?
 
-- In programming we talk about things that can be `true` or `false` as _conditional expressions_ and they're often kind of like maths:
+- In programming we talk about things that can be `true` or `false` as _conditional expressions_ and they're very often just maths expressions about numbers:
 
 `23 < 24` is `true`  
 `1 + 1 === 3` is `false`
@@ -60,13 +61,13 @@
 - Usually it's better if we use variables!
 
 ```javascript
-avatarX > width
+faceX > width
 ```
 
 - When would this be true?
 --
 
-- When the avatar has gone off the right side of the screen...
+- When the face has gone off the right side of the screen...
 
 ---
 
@@ -79,12 +80,11 @@ avatarX > width
 2 > 1 // Greater than
 1 <= 2 // Less than or equal to
 2 >= 1 // Greater than or equal to
-1 === 1 // Equality
-1 !== 2 // Inequality
+1 === 1 // Equality (NOTE the THREE equals signs here)
+1 !== 2 // Inequality (NOT equal)
 ```
 
 - See? Maths. All the above are `true`
-- Note that this means we are very often checking __numbers__ with these operators
 
 ???
 
@@ -114,6 +114,37 @@ if (mouseX > width/2) {
 
 ???
 
+`if`
+- This is what tells our program we're creating an `if`-statement
+- It kind of means __we're about to ask a question__
+
+`(...)`
+- We've seen this before in _functions_ where we were saying "these are the parameters"
+- This time it's similar, but it means "__this is the condition__ I want you to check"
+- So parentheses tend to mean "here's the information to help you do your job"
+- As always: make sure they match correctly!
+
+`mouseX > width/2`
+- __Inside the parentheses__ we have our __condition__: .hi[`mouseX > width/2`]
+- This is __the thing we want to check__
+- We want to know if it's `true` or `false`
+- In English we're asking "is the mouse's x coordinate in the right-hand side of the window?"
+- This is also known as a __conditional expression__
+
+`{ ... }`
+- After our condition in its parentheses we have .hi[`{ ... }`], curly brackets with stuff inside them
+- Just like in a _function_ this means "here is __what to do__"
+- But in this case it specifically means "here is what to do __if the condition is `true`__"
+
+`background(0)`;
+- So inside the curly brackets we have the code to run __if the condition is true__
+- In this case we just want to make the background black with .hi[`background(0);`]
+- But we could do __anything__ in here!
+- __ANYTHING!!!__
+- And we can have __as many lines of code as we want in here__
+
+
+
 - If you put this into the a project template you should put it inside the `draw()` function
 - Why?
 - Because you want this "question" the `if` statement represents to be asked over and over, each frame, so that the program will react when the truth value of the expression changes
@@ -122,103 +153,19 @@ if (mouseX > width/2) {
 
 ---
 
-## A basic `if` statement
+## Brackets!
 
 ```javascript
 if (mouseX > width/2) {
   background(0);
 }
 ```
-
-- First we have the word .hi[`if`]
-- This is what tells our program we're creating an `if`-statement
-- It kind of means __we're about to ask a question__
-
----
-
-## A basic `if` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-```
-
-- Next we have .hi[`(...)`], opening and closing parentheses with stuff inside them
-- We've seen this before in _functions_ where we were saying "these are the parameters"
-- This time it's similar, but it means "__this is the condition__ I want you to check"
-- So parentheses tend to mean "here's the information to help you do your job"
-- As always: make sure they match correctly!
-
----
-
-## A basic `if` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-```
-
-- __Inside the parentheses__ we have our __condition__: .hi[`mouseX > width/2`]
-- This is __the thing we want to check__
-- We want to know if it's `true` or `false`
-- In English we're asking "is the mouse's x coordinate in the right-hand side of the window?"
-- This is also known as a __conditional expression__
-
----
-
-## A basic `if` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-```
-
-- After our condition in its parentheses we have .hi[`{ ... }`], curly brackets with stuff inside them
-- Just like in a _function_ this means "here is __what to do__"
-- But in this case it specifically means "here is what to do __if the condition is `true`__"
-
----
-
-## A basic `if` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-```
-
-- So inside the curly brackets we have the code to run __if the condition is true__
-- In this case we just want to make the background black with .hi[`background(0);`]
-- But we could do __anything__ in here!
-- __ANYTHING!!!__
-- And we can have __as many lines of code as we want in here__
-
----
-
-## A basic `if` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-```
-
-- And that's an `if` statement
-- You start with __`if`__
-- You specify the __conditional expression__ to check inside __parentheses__
-- Then you specify the __instructions__ to run if the condition is `true` inside __curly brackets__
-
-???
 
 - Now we have plenty of brackets to think about, both parentheses __and__ curly brackets
-- And these parentheses and curly brackets can belong to functions or to if statements (and later to other things)
+- And these parentheses and curly brackets can belong to `function` definitions or to `if` statements (and later to other things)
 - This means we need to get used to being careful about making sure they match correctly
-- The parentheses go around the __condition__ only, and then the curly brackets come __right after that__ and go around the __instructions__
-- Any slight mistakes here will break the program, so be careful when you're starting out
-- And forever after, to be honest
+- The parentheses go around the __condition__ only, and then the curly brackets go around the __instructions__
+- Slight mistakes here will break the program in frustrating ways, so be careful
 
 ---
 
@@ -241,81 +188,17 @@ else {
 }
 ```
 
-- Here we have the same `if` statement...
-- ... but now with a bit extra after the curly brackets of our original `if`
-
----
-
-## An `if else` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-else {
-  background(255);
-}
-```
-
-- __After__ the closing curly bracket of the `if` on a new line we have the word .hi[`else`]
-- This signals that we're going to deal with the case where the original condition in the `if` turns out to be `false`
-- In this case, that would be what?
+- Here we have the same `if` statement that executes its instructions if the condition is `true`
+- But now we have an `else` statement that executes its instructions if the same condition is `false`, which is when?
 --
 
 - When `mouseX <= width/2`
 - That is, when the mouse is on the __left-hand side__ the window
-- Practice __seeing__ the mathematical condition, but __thinking__ what it __means__
 
----
+???
 
-## An `if else` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-else {
-  background(255);
-}
-```
-
-- Then we have our friends .hi[`{ ... }`], a set of curly brackets
-- This time they mean "here's what to do if the condition is `false`"
-- Note that we __don't need parentheses__, because we __don't need to specify a new condition__
+- Note that we __don't need parentheses__ for the `else`, because we __don't need to specify a new condition__
 - We're still relying on the original condition
-
----
-
-## An `if else` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-else {
-  background(255);
-}
-```
-
-- Then we have the instructions we want to run when the condition is `false`
-- In this case .hi[`background(255);`] to make the background white
-
----
-
-## An `if else` statement
-
-```javascript
-if (mouseX > width/2) {
-  background(0);
-}
-else {
-  background(255);
-}
-```
-
-- So that's an `if else` statement
-- You specify what to do if the condition is `true`
-- __And__ what to do if the condition is `false`
 
 ---
 
@@ -334,7 +217,7 @@ else {
 if (mouseX < width/3) {
   background(0);
 }
-else if (mouseX < 2*width/3) {
+else if (mouseX < 2 * width/3) {
   background(255);
 }
 else {
@@ -344,32 +227,7 @@ else {
 
 - So we can have __another `if`__ after our `else` that will check __another condition__
 - Note that it will __only check that second condition if the first condition is `false`__
-- And note we can still have an `else` at the end that handles if __both the conditions are `false`__
-
----
-
-## An `if else if` statement
-
-```javascript
-if (mouseX < width/3) {
-  background(0);
-}
-else if (mouseX < 2*width/3) {
-  background(255);
-}
-else {
-  background(255,0,0);
-}
-```
-
-- So what would this do you figure this will do?
---
-
-- Yeah, it will make the background black if the mouse is one third of the canvas from from the left margin, white if it's between one third and two thirds from the left margin, and red if it's more than two thirds from the left margin...
---
-
-- It's interesting how the code is kind of __easier to read__ than that
-- Code is great for concisely expressing these kinds of technical ideas
+- And we can still have an `else` at the end that handles if __both the conditions are `false`__
 
 ---
 
@@ -404,10 +262,6 @@ else {
 
 - ... Including another `if` statement!
 
----
-
-## Nested `if`-statements
-
 ```javascript
 if (mouseX > width/2) {
   if (mouseY > height/2) {
@@ -416,13 +270,13 @@ if (mouseX > width/2) {
 }
 ```
 
-- Putting an `if` statement inside an `if` statement is called __nesting__ the `if`s
-- Now the `background(0);` instruction will only happen if __both conditions are `true`__
+- Yhe `background(0);` instruction will only happen if __both conditions are `true`__
 - So the mouse has to be in the right half of the window
-- __And__ it has to be in the bottom half of the window
+- __AND__ it has to be in the bottom half of the window
 
 ???
 
+- Putting an `if` statement inside an `if` statement is called __nesting__ the `if`s
 - This is getting kind of cool
 - It's clear we can check __really specific conditions__
 - Which helps give our program a kind of personality
@@ -430,17 +284,21 @@ if (mouseX > width/2) {
 
 ---
 
-## Cold, hard logic
+## Cold, hard logic...
 
-- Sometimes we need to check more complicated conditions than we can express in a math-style condition
+- Sometimes we need to check more complicated conditions
 - To help out, programming uses __logic operators__
 
-`&&` means AND  
-`||` means OR  
-`!` means NOT
+.hi[`(a && b)`] (AND)
+This is `true` if __both__ `a` and `b` are `true`, otherwise it is `false`.
+
+.hi[`(a || b)`]  (OR)
+This is `true` if __either__ `a` __or__ `b` are `true`, otherwise it is `false`.
+
+.hi[`(!a)`] (NOT)
+This is `true` if `a` is `false`, and `false` if it's `true`.
 
 - Kind of nice, since this is _literally_ how computers work at the circuitry level!
-- But how does this work in code?
 
 ???
 
@@ -448,19 +306,6 @@ if (mouseX > width/2) {
 - Among those are __and gates__, __or gates__, and __not gates__
 - In the circuitry they control the flow of electrons rather than programming instructions
 - (But those programming instructions we write are, ultimately, __expressed as electrons!!!__)
-
----
-
-## Logically speaking...
-
-.hi[`(a && b)`]  
-This is `true` if __both__ `a` and `b` are `true`, otherwise it is `false`.
-
-.hi[`(a || b)`]  
-This is `true` if __either__ `a` __or__ `b` are `true`, otherwise it is `false`.
-
-.hi[`(!a)`]  
-This is `true` if `a` is `false`, and `false` if it's `true`.
 
 ---
 
@@ -507,32 +352,31 @@ let y = 150;
 
 ## JavaScript, truth, and falsity
 
-- One thing JavaScript does secretly for you when it can is __convert values__ so they will work in the context you're using them
+- One thing JavaScript does secretly for you when it can is __convert values__ so they will work in the context you're using them (it's called "type coercion")
 - So when we write...
 
 ```javascript
 if (x - 10) {
-    console.log("Will we see this?");
+  console.log("Will we see this?");
 }
 ```
 
 JavaScript will:
   - Work out the condition is `10 - 10` by plugging in the value of `x`
   - Compute the expression and gets the result of `0`
-  - __Convert `0` to `false`__
+  - __Convert `0` to `false`__ (`0` is false, any other number is `true`, including negatives)
   - Evaluate the condition as being `false`
+  - And therefore __won't__ execute the `console.log()` instruction
 
 ---
 
 ## Basic boolean conversions
 
 - `0` is `false` and every other number is `true`
-- `""` is `false` and every other string of characters if `true`
 - `undefined` is `false`
 
 ???
 
-- When people talk about this conversion process it is usually called __coercion__
 - Read more here: https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/
 
 ---
@@ -575,7 +419,7 @@ if (!(10 > 0 && 9 < 10)) {
 
 ## Let's get variable...
 
-- So far we've mostly looked at conditions involve hardcoded numbers
+- So far we've mostly looked at conditions involving hardcoded numbers
 - But the true value of `if` statements is in checking the values of _variables_
 
 ---
@@ -597,15 +441,15 @@ function setup() {
 
 function draw() {
   background(255);
+
+  circleX += circleVX;
+
   if (circleX < width/2) {
     fill(255,0,0);
   }
   else {
     fill(0,255,0);
   }
-
-  circleX += circleVX;
-
   ellipse(circleX,circleY,circleSize,circleSize);
 }
 ```
@@ -655,14 +499,14 @@ if (avatarX < 0 || avatarX > width || avatarY < 0 || avatarY > height) {
 ```
 
 - This would whether an imagined avatar has gone off the screen
-- Maybe it should... die for this!
+- Maybe it should... __die__ for this!
 
 ---
 
 ## `true` and `false` are values
 
 - We've seen that conditional expressions evaluate as either `true` or `false`
-- And in fact `true` and `false` are __values__ we can store in __variables__
+- And in fact `true` and `false` are another kind of __value__ we can store in __variables__ (just like numbers)
 - This __type__ of value is called a __boolean__
 - Storing a boolean in a variable can be a useful way to track the state of things in a program...
 
@@ -684,7 +528,6 @@ function draw() {
   background(200);
 
   let d = dist(mouseX,mouseY,circleX,circleY);
-  console.log(d);
   if (d < circleRadius) {
     hasEnteredCircle = true;
   }

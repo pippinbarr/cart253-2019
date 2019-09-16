@@ -1,4 +1,4 @@
-### Input / CART 253 / Fall 2018 / Pippin Barr
+### Input / CART 253 / Pippin Barr
 
 # Keyboard input
 
@@ -29,31 +29,17 @@ function setup() {
 }
 
 function draw() {
-  console.log(keyIsPressed);
+  if (keyIsPressed) {
+    background(0);
+  }
+  else {
+    background(255);
+  }
 }
 ```
 
 - The variable `keyIsPressed` is `true` when any key is pressed down and `false` otherwise
 - It gives us a simple way of checking the keyboard
-
----
-
-## `keyIsPressed` example
-
-```javascript
-function setup() {
-  createCanvas(500,500);
-}
-
-function draw() {
-  if (keyIsPressed) {
-    background(255);
-  }
-  else {
-    background(0);
-  }
-}
-```
 
 ---
 
@@ -65,14 +51,11 @@ function keyPressed() {
 }
 ```
 
-- If we include the function `keyPressed()` in our code then we can react when a key is pressed down
-- This function is __called__ at the moment the user pressed a key down
-
----
-
-## `keyPressed()` example
+- If we include the function `keyPressed()` in our code then we can react at the moment a key is pressed down
 
 ```javascript
+let on = false;
+
 function setup() {
   createCanvas(640,480);
   rectMode(CENTER);
@@ -81,18 +64,24 @@ function setup() {
 }
 
 function draw() {
-
+  if (on) {
+    background(255);
+  }
+  else {
+    background(0);
+  }
 }
 
 function keyPressed() {
-  rect(random(width),random(height),10,10);
+  on = !on;
 }
 ```
 
 - What will this do?
---
 
-- When we press down a key, a little rectangle gets drawn in a random location on the canvas
+???
+
+- When we press down a key, the "light" goes on or off
 
 ---
 
@@ -105,14 +94,14 @@ function keyPressed() {
 - __Which key__ was pressed?
 --
 
-- There are a couple of variables that help with this, called `keyCode` and `key`
+- There are a two special variables that help with this, called `keyCode` and `key`
 
 ---
 
 ## `keyCode` and `key`
 
 - The variable `keyCode` always stores the __ASCII code__ of the most recently pressed key on the keyboard. It's a __number__
-- The variable `key` always stores the __character__ of the most recently pressed key on the keyboard. It's a __string__.
+- The variable `key` always stores the __character__ of the most recently pressed key on the keyboard. It's a __string__
 - Let's try this...
 
 ```javascript
@@ -125,29 +114,29 @@ function draw() {
 }
 
 function keyPressed() {
-  console.log("keyCode=" + keyCode + ", key=" + key);
+  console.log(keyCode, key);
 }
 ```
 
 ???
 
-- Note how this simple program is actually a pretty useful way to find out the keycodes of the various keys on the keyboard!
+- Note how this simple program is actually a pretty useful way to find out the key codes of the various keys on the keyboard!
 
 ---
 
 ## `keyCode` for special keys
 
 - The p5 Reference advises you to check `keyCode` when you're checking for a special key like alt, control, escape, return, an arrow key, etc.
-- That's because those keys don't have an obvious symbol associated with them
+- That's because those keys don't have an obvious textual symbol associated with them
 - Helpfully, p5 provides a bunch of variables you can use to check `keyCode` against like `CONTROL`, `ALT`, `ESCAPE`, `RETURN`, `LEFT_ARROW`, `RIGHT_ARROW` and so on, e.g.
 
 ```javascript
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
-    // Move the avatar left!
+    // Left arrow was just pressed!
   }
   else if (keyCode === RIGHT_ARROW) {
-    // Move the avatar right!
+    // Right arrow was just pressed!
   }
 }
 ```
@@ -163,8 +152,8 @@ function keyPressed() {
 ## `keyCode` and arrow keys
 
 ```javascript
-let x;
-let y;
+let x = 0;
+let y = 0;
 let vx = 0;
 let vy = 0;
 let speed = 2;
@@ -237,7 +226,7 @@ function draw() {
 }
 
 function keyTyped() {
-  typedText += key;
+  typedText = typedText + key;
 }
 ```
 
@@ -252,10 +241,12 @@ function keyTyped() {
 ```javascript
 function keyPressed() {
   if (keyCode === RETURN) {
-    typedText += "\n";
+    typedText = typedText + "\n";
   }
 }
 ```
+
+- `\n` is the special symbol for a new line
 
 ---
 
@@ -270,7 +261,7 @@ if (keyIsDown(LEFT_ARROW)) {
 - We can use `keyIsDown()` to __check whether a specific key is down right now__
 - The __parameter__ we give `keyIsDown()` is the __keyCode__ of the key we want to check
 - So we can use all those special variables like `LEFT_ARROW`, `RIGHT_ARROW`, `CONTROL`, `SHIFT`, etc. with this one
-- But it's hard to check letter keys without looking up their ASCII code
+- It's harder to check letter keys without looking up their ASCII code
 
 ---
 

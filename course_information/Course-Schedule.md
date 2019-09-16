@@ -5,7 +5,7 @@
 
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
-- [2. Change](#week-2---week-of-9-september-2019)
+- [~~2. Change~~](#week-2---week-of-9-september-2019)
 - [3. Input](#week-3---week-of-16-september-2019)
 - [4. Repetition](#week-4---week-of-23-september-2019)
 - [5. Functions](#week-5---week-of-30-september-2019)
@@ -43,7 +43,7 @@ __The beginning.__ _In which we encounter programming for the first time and fal
 
 ---
 
-# Week 2 - Week of 9 September 2019
+# ~~Week 2 - Week of 9 September 2019~~
 
 __Change.__ _In which we learn about how time passes in a program and how our program can remember things over time in variables._
 

@@ -1,4 +1,4 @@
-### Tools / CART 253 / Fall 2018 / Pippin Barr
+### Tools / CART 253 / Pippin Barr
 
 # Committing
 
@@ -6,17 +6,17 @@
 
 ## In this module
 
-- The version control workflow
+- Remembering the version control workflow
 - Committing and commit messages
 
 ---
 
 ## The version control workflow
 
-1. You __make some changes to your project in your local folder__. Something like an hour's work, say, reaching some sort of defined goal perhaps.
+1. You __make some changes to your project in your local folder__. Reaching some sort of defined goal perhaps, getting something specific working.
 --
 
-2. You __commit your changes to the local repository__ using GitHub Desktop. This stores this newest version of the project in the repository.
+2. You __write a descriptive message__ and then __commit your changes to the local repository__ using GitHub Desktop. This stores this newest version of the project in the repository.
 --
 
 3. You __push your changes to the remote repository__ on github.com using GitHub Desktop. This makes sure your newest version is also safe in the "cloud".

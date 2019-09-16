@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Time part II
 
@@ -27,24 +27,24 @@
 
 ```javascript
 function preload() {
-  console.log("preload()");
+  console.log("Preloading...");
 }
 
 function setup() {
-  console.log("setup()");
+  console.log("Setting up...");
   frameRate(1);
 }
 
 function draw() {
-  console.log("draw()");
+  console.log("Frame: " + frameCount);
 }
 
 function mousePressed() {
-  console.log("mousePressed()");
+  console.log("Clicked: " + mouseButton);
 }
 
 function keyTyped() {
-  console.log("keyTyped()");
+  console.log("Typed: " + key);
 }
 ```
 
@@ -59,10 +59,10 @@ function keyTyped() {
 ## Actually using time
 
 ```javascript
-let myImage;
+let myImage = undefined; // Not loaded yet!
 
 function preload() {
-  myImage = loadImage("assets/images/myImage.png");
+  myImage = loadImage("assets/images/myImage.png"); // Load the image
 }
 
 function setup() {
