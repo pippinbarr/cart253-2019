@@ -1,5 +1,6 @@
 ### Quick links
 - [Syntax Cheatsheet](../cheatsheets/syntax-cheatsheet.md)
+- [p5 Cheatsheet](../cheatsheets/p5-cheatsheet.md)
 - [Debugging Cheatsheet](../cheatsheets/debugging-cheatsheet.md)
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
 

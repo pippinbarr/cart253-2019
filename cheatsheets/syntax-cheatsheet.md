@@ -1,31 +1,10 @@
 # Syntax Cheatsheet
 
-- [p5 Programs](#p5-programs)
 - [Variables](#variables)
 - [Conditionals](#conditionals) (`if`-statements)
 - [Functions](#functions)
 
-## p5 Programs
-
-### `setup()` and `draw()`
-The most basic p5 program has two key functions that are __automatically called__ when your program runs. They are `setup()` which will execute __once__ at the start of your program, and `draw()` which will execute __every frame__ that your program runs. They are written like this:
-
-```javascript
-function setup() {
-  // Code in here executes once
-}
-
-function draw() {
-  // Code in here executes every frame
-}
-```
-
-### Mouse event handlers
-
-
-
-### Keyboard event handlers
-
+---
 
 ## Variables
 
