@@ -3,11 +3,11 @@
 - [p5 Cheatsheet](../cheatsheets/p5-cheatsheet.md)
 - [Debugging Cheatsheet](../cheatsheets/debugging-cheatsheet.md)
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
-
+- [Variables Examples](../examples/variables-examples.md)
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
 - [~~2. Change~~](#week-2---week-of-9-september-2019)
-- [3. Input](#week-3---week-of-16-september-2019)
+- [3. Ifs and Inputs](#week-3---week-of-16-september-2019)
 - [4. Repetition](#week-4---week-of-23-september-2019)
 - [5. Functions](#week-5---week-of-30-september-2019)
 - [6. Project 1](#week-6---week-of-7-october-2019)
@@ -72,7 +72,7 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 
 # Week 3 - Week of 16 September 2019
 
-__Input.__ _In which our programs start reacting to their users._
+__Ifs and Inputs.__ _In which our programs can react to context through conditionals and to our users through events and input._
 
 ## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
@@ -84,10 +84,9 @@ __Input.__ _In which our programs start reacting to their users._
 - Game - Click the circle ([Game](https://pippinbarr.github.io/cart253-2019/games/game-click-the-circle/index.html), [Source Code](../games/game-click-the-circle/), [ZIP of Source Code](../games/game-click-the-circle.zip))
 - Input - Keyboard input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-keyboard/index.html), [Notes](../modules/input-keyboard/input-keyboard.md))
 - Game - The artful dodger ([Game](https://pippinbarr.github.io/cart253-2019/games/game-the-artful-dodger/index.html), [Source Code](../games/game-the-artful-dodger/), [ZIP of Source Code](../games/game-the-artful-dodger.zip))
-- Core - Time part II ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-time-part-ii/index.html), [Notes](../modules/core-time-part-ii/core-time-part-ii.md))
 - Debugging - Time ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-time/index.html), [Notes](../modules/debugging-time/debugging-time.md))
-- Input - Touch input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-touch/index.html), [Notes](../modules/input-touch/input-touch.md))
-- Tools - Committing (Refresher) ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-committing/index.html), [Notes](../modules/tools-committing/tools-committing.md))
+- (Optional) Input - Touch input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-touch/index.html), [Notes](../modules/input-touch/input-touch.md))
+- (Optional) Tools - Committing ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-committing/index.html), [Notes](../modules/tools-committing/tools-committing.md))
 - Tools - GitHub Pages ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-github-pages/index.html), [Notes](../modules/tools-github-pages/tools-github-pages.md))
 
 ## Homework
