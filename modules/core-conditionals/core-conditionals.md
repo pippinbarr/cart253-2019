@@ -110,7 +110,6 @@ if (mouseX > width/2) {
 
 - This is an `if` statement that checks whether the mouse is in the right-hand side of the window
 - And if the mouse __is__ over there, it makes the background of the window black
-- Let's break it down...
 
 ???
 
@@ -400,13 +399,13 @@ What will this do?
 
 ```javascript
 if (2 > 0 || 10 < 9) {
-  println("Go Cowboys!");
+  console.log("Go Cowboys!");
 }
 else if (10 < 20 && 9 <= 9) {
-  println("Go Giants!");
+  console.log("Go Giants!");
 }
 if (!(10 > 0 && 9 < 10)) {
-  println("Go whoever!");
+  console.log("Go whoever!");
 }
 ```
 
@@ -472,7 +471,7 @@ function setup() {
 function draw() {
   background(255);
   let d = dist(mouseX,mouseY,circleX,circleY);
-  if (dist < circleSize/2) {
+  if (d < circleSize/2) {
     fill(255,0,0);
   }
   else {

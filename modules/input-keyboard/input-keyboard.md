@@ -53,6 +53,8 @@ function keyPressed() {
 
 - If we include the function `keyPressed()` in our code then we can react at the moment a key is pressed down
 
+---
+
 ```javascript
 let on = false;
 
