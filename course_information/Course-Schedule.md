@@ -78,6 +78,7 @@ __Ifs and Inputs.__ _In which our programs can react to context through conditio
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ## Topics
+- [Examples](../examples/) experiment!
 - Physics - Motion ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-motion/index.html), [Notes](../modules/physics-motion/physics-motion.md))
 - Core - Conditionals ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-conditionals/index.html), [Notes](../modules/core-conditionals/core-conditionals.md))
 - Input - Mouse input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-mouse/index.html), [Notes](../modules/input-mouse/input-mouse.md))
@@ -85,9 +86,10 @@ __Ifs and Inputs.__ _In which our programs can react to context through conditio
 - Input - Keyboard input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-keyboard/index.html), [Notes](../modules/input-keyboard/input-keyboard.md))
 - Game - The artful dodger ([Game](https://pippinbarr.github.io/cart253-2019/games/game-the-artful-dodger/index.html), [Source Code](../games/game-the-artful-dodger/), [ZIP of Source Code](../games/game-the-artful-dodger.zip))
 - Debugging - Time ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-time/index.html), [Notes](../modules/debugging-time/debugging-time.md))
+- Tools - GitHub Pages ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-github-pages/index.html), [Notes](../modules/tools-github-pages/tools-github-pages.md))
 - (Optional) Input - Touch input ([Slides](https://pippinbarr.github.io/cart253-2019/modules/input-touch/index.html), [Notes](../modules/input-touch/input-touch.md))
 - (Optional) Tools - Committing ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-committing/index.html), [Notes](../modules/tools-committing/tools-committing.md))
-- Tools - GitHub Pages ([Slides](https://pippinbarr.github.io/cart253-2019/modules/tools-github-pages/index.html), [Notes](../modules/tools-github-pages/tools-github-pages.md))
+- Extra - Controlling Numbers ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-controlling-numbers/index.html), [Notes](../modules/extra-controlling-numbers/extra-controlling-numbers.md))
 
 ## Homework
 - [Exercise 2](../exercises/Exercise-2.md) - The Artful Dodger Plus
