@@ -102,6 +102,8 @@ __Repetition.__ _In which we leverage one of the computer's key super powers: ne
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
+## [Exercise 1 Feedback](../exercises/Exercise-1-Feedback.md)
+
 ---
 
 # Week 5 - Week of 30 September 2019
