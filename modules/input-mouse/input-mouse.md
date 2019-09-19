@@ -183,7 +183,6 @@ function mouseMoved() {
 ```
 
 - `mouseMoved()` is called whenever the mouse moves... surprise!
-- Note that it is only called when the mouse moves __inside the canvas of your program__
 
 ---
 

@@ -201,7 +201,7 @@ function keyReleased() {
 
 ```javascript
 function keyTyped() {
-  // A key was types...
+  // A key was typed...
 }
 ```
 

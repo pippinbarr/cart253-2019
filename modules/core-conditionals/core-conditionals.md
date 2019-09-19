@@ -269,7 +269,7 @@ if (mouseX > width/2) {
 }
 ```
 
-- Yhe `background(0);` instruction will only happen if __both conditions are `true`__
+- The `background(0);` instruction will only happen if __both conditions are `true`__
 - So the mouse has to be in the right half of the window
 - __AND__ it has to be in the bottom half of the window
 
