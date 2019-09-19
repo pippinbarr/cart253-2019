@@ -120,13 +120,12 @@ We can chain together multiple conditions using the combination `else if`:
 ```javascript
 let x = 20;
 if (x < 10) {
-  console.log("x is less than 10"); // We won't see this because the condition is false
+  console.log("x is less than 10"); // We won't see this because its condition is false
 }
 else if (x < 20) {
-  console.log("x is between 10 and 20"); // We will see this because the condition is true
-}
+  console.log("x is between 10 and 20"); // We won't see this because its condition is false
 else {
-  console.log("x is not less than 10"); // We will see this because the condition is false
+  console.log("x is not less than 10"); // We will see this because all the previous conditions were false
 }
 ```
 
