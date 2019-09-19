@@ -77,6 +77,8 @@ __Ifs and Inputs.__ _In which our programs can react to context through conditio
 ## _♪♪♪ Log into your computer so you can follow alooooooong! ♪♪♪_
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
+
 ## Topics
 - [Examples](../examples/) experiment!
 - Physics - Motion ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-motion/index.html), [Notes](../modules/physics-motion/physics-motion.md))
