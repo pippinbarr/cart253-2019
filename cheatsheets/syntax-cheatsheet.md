@@ -276,3 +276,77 @@ rect(0,0,random(50,100),random(50,100));
 ```
 
 We can also use the return value of a function _directly_ as if the function actually represented that number. So here we can use the return value of the `random` function as a parameter for the `rect` function's height and width. This will result in a rectangle with a height and width selected randomly between `50` and `100` when it gets drawn.
+
+### Function definitions
+
+#### Simple functions
+
+##### Definition
+
+We can move blocks of related code into a __function__ so that we can keep our code nicely organized. A simple function is defined as follows:
+
+```javascript
+function nameOfFunction() {
+  // Code that the function executes when called goes here
+}
+```
+
+You start with the word `function` to indicate you are __defining__ a function. Then you write the __name__ of the function (`nameOfFunction`) followed by empty parentheses (`()`), followed by curly brackets (`{...}`) which contain the code the function executes when called.
+
+##### Problem
+
+We __can__ just include all our code in `setup()` and `draw()`, but it can get messy fast, and it's a little harder to read. Consider:
+
+```javascript
+let faceX = 0;
+let faceY = 0;
+function setup() {
+  createCanvas(500,500);
+  faceX = width/2;
+  faceY = height/2;
+}
+
+function draw() {
+  // Draw a face
+  // The head
+  ellipse(faceX,faceY,400,400);
+  // The eyes
+  ellipse(faceX - 100,faceY - 50,50,50);
+  ellipse(faceX + 100,faceY - 50,50,50);
+  // The mouth
+  ellipse(faceX,faceY + 100,100,100);
+}
+```
+
+##### Solution
+
+Given that we have a block of code that draws a face, we could consider moving all that code into a __function__ that would draw the face, and then just __call__ that function to draw the face.
+
+```javascript
+let faceX = 0;
+let faceY = 0;
+function setup() {
+  createCanvas(500,500);
+  faceX = width/2;
+  faceY = height/2;
+}
+
+function draw() {
+  drawFace(); // Draw the face by calling the function
+}
+
+// drawFace()
+//
+// Draws a face
+function drawFace() {
+  // The head
+  ellipse(faceX,faceY,400,400);
+  // The eyes
+  ellipse(faceX - 100,faceY - 50,50,50);
+  ellipse(faceX + 100,faceY - 50,50,50);
+  // The mouth
+  ellipse(faceX,faceY + 100,100,100);
+}
+```
+
+Both the two programs "do the same thing", but one is significantly better organized and arguably easier to read and modify (especially if there were more parts to the code and thus more functions to organize it).
