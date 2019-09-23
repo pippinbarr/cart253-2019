@@ -2,6 +2,7 @@
 
 - [Variables](#variables)
 - [Conditionals](#conditionals) (`if`-statements)
+- [Loops](#loops) (`while` and `for`)
 - [Functions](#functions)
 
 ---
@@ -124,8 +125,9 @@ if (x < 10) {
 }
 else if (x < 20) {
   console.log("x is between 10 and 20"); // We won't see this because its condition is false
+}
 else {
-  console.log("x is not less than 10"); // We will see this because all the previous conditions were false
+  console.log("x is not less than 10"); // We see this: all the previous conditions were false
 }
 ```
 
@@ -166,6 +168,62 @@ We can make more sophisticated conditionals by using logic operators to __combin
 // otherwise it's true
 !(10 < 5) // true
 ```
+
+## Loops
+
+### Counting `while` loops
+
+A while loop runs the code inside its curly brackets over and over for as long as the __condition__ is `true`. As soon as it becomes `false` it stops and the rest of the code continues on.
+
+```javascript
+let x = 0;
+while (x < 10) {
+  console.log(`x is ${x}`);
+  x = x + 1;
+}
+console.log("Done!");
+```
+
+The above loop executes the code in its curly brackets if the condition `x < 10` is true.
+
+So the above loop prints "x is 0", "x is 1", "x is 2", up to "x is 9", then stops (when `x` gets to `10`) and prints "Done!"
+
+### "Searching" `while` loops
+
+You can also use `while` loops to keep trying some task until a specific condition is met. Say you're trying to generate a position that isn't already taken...
+
+```javascript
+let takenX = 250;
+let takenY = 250;
+rect(takenX,takenY,250,250);
+
+let newX = random(0,width);
+let newY = random(0,height);
+while (newX === takenX && newY === takenY) {
+  newX = random(0,width);
+  newY = random(0,height);
+}
+
+rect(newX,newY,100,100);
+// The rectangle is guaranteed NOT to be drawn in exactly the same position as the first one
+```
+
+If we wanted something more sophisticated (like not even __overlapping__ the previous rectangle, we'd need to take that into account too).
+
+### `for` loops
+
+A for loop is just a specialized version of a counting-oriented `while` loop. It runs for as long as a counting variable stays within a limit, then stops. It's traditional to call the counting variable `i` (but you don't absolutely have to).
+
+```javascript
+for (let i = 0; i < 10; i++) {
+  console.log(`i is ${i}`);
+}
+console.log("Done!");
+```
+
+The loop executes if the condition (the middle part) is `true` (e.g. `i` is less than `10` above). The counting variable `i` goes up by one (`i++`) __after__ the code in the loop's curly brackets executes.
+
+So, the above loop prints "i is 0", "i is 1", "i is 2", up to "i is 9", then stops and prints "Done!"
 
 ## Functions
 
