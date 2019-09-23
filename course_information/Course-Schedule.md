@@ -1,9 +1,21 @@
+### Project dates
+- [__Project 1__](../projects/Project-1.md) (10%)
+  - Assigned: Class, week of 23 September 2019
+  - Due: Night of class, week of 7 October 2019 (two weeks)
+- __Project 2__ (20%)
+  - Assigned: Class, week of 14 October 2019
+  - Due: Night of class, week of 4 November 2019 (three weeks)
+- __Project 3__ (40%)
+  - Assigned: Class, week of 11 November
+  - Due: tbd. but ideally five weeks to submit
+
 ### Quick links
 - [Syntax Cheatsheet](../cheatsheets/syntax-cheatsheet.md)
 - [p5 Cheatsheet](../cheatsheets/p5-cheatsheet.md)
 - [Debugging Cheatsheet](../cheatsheets/debugging-cheatsheet.md)
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
 - [Variables Examples](../examples/variables-examples.md)
+
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
 - [~~2. Change~~](#week-2---week-of-9-september-2019)
