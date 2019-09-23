@@ -103,8 +103,24 @@ __Ifs and Inputs.__ _In which our programs can react to context through conditio
 __Repetition.__ _In which we leverage one of the computer's key super powers: never getting bored._
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ## [Exercise 1 Feedback](../exercises/Exercise-1-Feedback.md)
+
+## Topics
+- __Beauty and Brains__ - consider installing the `atom-beautify` and `p5snippets` packages in Atom (every session if on CDA machines, once if on your own computer - go to preferences/settings and find the Install option and search there for the package name, then install)
+- __Core - Strings__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-strings/index.html), [Notes](../modules/core-strings/core-strings.md))
+- __Core - `while` loops__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-while-loops/index.html), [Notes](../modules/core-while-loops/core-while-loops.md))
+- __Core - `for` loops__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-for-loops/index.html), [Notes](../modules/core-for-loops/core-for-loops.md))
+- __Game - Where's Sausage Dog?__ ([Game](https://pippinbarr.github.io/cart253-2019/games/game-wheres-sausage-dog/index.html), [Source Code](../games/game-wheres-sausage-dog/), [ZIP of Source Code](../games/game-wheres-sausage-dog.zip))
+- __Physics - Wraps and Overlaps__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-wraps-and-overlaps/index.html), [Notes](../modules/physics-wraps-and-overlaps/physics-wraps-and-overlaps.md))
+- __Core - Randomness, Probability and Perlin Noise__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-randomness-probability-and-perlin-noise/index.html), [Notes](../modules/core-randomness-probability-and-perlin-noise/core-randomness-probability-and-perlin-noise.md))
+- __Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions/index.html), [Notes](../modules/core-functions/core-functions.md))
+- __Game - Chaser__ ([Game](https://pippinbarr.github.io/cart253-2019/games/game-chaser/index.html), [Source Code](../games/game-chaser/), [ZIP of Source Code](../games/game-chaser.zip))
+
+## Homework
+- [Exercise 3](../exercises/Exercise-3.md) - Where's Sausage Dog Plus
+- [Project 1](../projects/Project-1.md) - Build a Better Chaser
 
 ---
 
@@ -113,6 +129,7 @@ __Repetition.__ _In which we leverage one of the computer's key super powers: ne
 __Structure.__ _In which we learn to break our programs and data into easy-to-understand parts.__
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ---
 
@@ -129,6 +146,7 @@ __Project 1.__ _In which we hand in project 1._
 __Objection!__ _In which we learn the basics of Object Oriented Programming, a hugely influential programming paradigm._
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ---
 
@@ -137,6 +155,7 @@ __Objection!__ _In which we learn the basics of Object Oriented Programming, a h
 __Little boxes.__ _In which we harness the power of arrays to store lots of related data in one place._
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ---
 
@@ -145,6 +164,7 @@ __Little boxes.__ _In which we harness the power of arrays to store lots of rela
 __We are family.__ _In which we extend Object-Oriented Programming with the ideas of inheritance and polymorphism._
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ---
 
@@ -153,6 +173,7 @@ __We are family.__ _In which we extend Object-Oriented Programming with the idea
 __Project 2.__ _In which we hand in project 2_
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ---
 
@@ -161,6 +182,7 @@ __Project 2.__ _In which we hand in project 2_
 __Libraries.__ _In which we open our eyes to a larger reality of programming: people have already done a lot of the things we need done._
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ---
 ## Pippin goes on paternity leave here.

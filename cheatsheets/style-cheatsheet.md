@@ -1,7 +1,51 @@
 # Style Cheatsheet
 
+- [Style Rules](#style-rules)
 - [Commenting](#commenting)
 - [Naming](#naming)
+
+## Style Rules
+
+### Formatting
+
+- Use a considerate amount of white-space in the code
+  - No huge gaps
+  - But add space between different "ideas" in the code
+- Respect the indentation rules (lines of code are progressively indented when inside curly brackets)
+  - Consider installing the `atom-beautify` package to make this automated
+- Care about what you code looks like
+
+### Commenting
+
+- Always comment:
+  - at the top of script files to explain the overall program
+  - before each function to explain its purpose and use
+  - before any moderately complex code to explain what it does
+- Comments should __explain__ code, not just restate the code
+
+### Naming
+
+- When naming variables, functions, properties, and classes
+  - Follow the basic rules (e.g. generally letters only, numbers if absolutely necessary)
+  - Choose a name that explains the purpose/meaning
+  - Use `camelCase` (variables, functions, properties) or `FirstLetterCapitalization` (classes) as appropriate
+
+### Committing
+
+- Always include a prefix for the current exercise or project before your commit message (e.g. `Ex1:` or `P1:`)
+- Always explain the changes made for the current commit in the summary field (and use the description field if you need to write a longer message)
+- Commit often, each time you get something significant working
+- Ideally commit only working code when possible
+
+### File management
+
+- Put your files in the appropriate location
+  - Script files go in the `js/` folder
+  - Images go in the `assets/images/` folder
+  - Sounds go in the `assets/sounds/` folder
+  - Etc.
+
+---
 
 ## Commenting
 
