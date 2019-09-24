@@ -75,7 +75,7 @@ function draw() {
   x = x + vx;
   y = y + vy;
 
-  if (x < 0 || x > width || y < 0 || y > width) {
+  if (x < 0 || x > width || y < 0 || y > height) {
     background(255,0,0);
   }
 
@@ -107,7 +107,7 @@ function draw() {
   x = x + vx;
   y = y + vy;
 
-  if (x + radius < 0 || x - radius > width || y + radius < 0 || y - radius > width) {
+  if (x + radius < 0 || x - radius > width || y + radius < 0 || y - radius > height) {
     background(255,0,0);
   }
 

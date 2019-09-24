@@ -21,7 +21,7 @@
 
 ```javascript
 let myName = "Pippin"; // Now "Pippin" is inside the variable myName
-console.log(name); // Prints "Pippin" to the JavaScript Console
+console.log(myName); // Prints "Pippin" to the JavaScript Console
 text(myName,100,100); // Displays "Pippin" on the canvas at position 100,100
 ```
 

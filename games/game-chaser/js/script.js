@@ -53,7 +53,7 @@ let preyEaten = 0;
 //
 // Sets up the basic elements of the game
 function setup() {
-  createCanvas(500,500);
+  createCanvas(500, 500);
 
   noStroke();
 
@@ -66,8 +66,8 @@ function setup() {
 //
 // Initialises prey's position, velocity, and health
 function setupPrey() {
-  preyX = width/5;
-  preyY = height/2;
+  preyX = width / 5;
+  preyY = height / 2;
   preyVX = -preyMaxSpeed;
   preyVY = preyMaxSpeed;
   preyHealth = preyMaxHealth;
@@ -77,8 +77,8 @@ function setupPrey() {
 //
 // Initialises player position and health
 function setupPlayer() {
-  playerX = 4*width/5;
-  playerY = height/2;
+  playerX = 4 * width / 5;
+  playerY = height / 2;
   playerHealth = playerMaxHealth;
 }
 
@@ -90,7 +90,7 @@ function setupPlayer() {
 // displays the two agents.
 // When the game is over, shows the game over screen.
 function draw() {
-  background(100,100,200);
+  background(100, 100, 200);
 
   if (!gameOver) {
     handleInput();
@@ -173,7 +173,7 @@ function updateHealth() {
   // Reduce player health
   playerHealth = playerHealth - 0.5;
   // Constrain the result to a sensible range
-  playerHealth = constrain(playerHealth;,0,playerMaxHealth);
+  playerHealth = constrain(playerHealth, 0, playerMaxHealth);
   // Check if the player is dead (0 health)
   if (playerHealth === 0) {
     // If so, the game is over
@@ -186,23 +186,23 @@ function updateHealth() {
 // Check if the player overlaps the prey and updates health of both
 function checkEating() {
   // Get distance of player to prey
-  let d = dist(playerX,playerY,preyX,preyY);
+  let d = dist(playerX, playerY, preyX, preyY);
   // Check if it's an overlap
   if (d < playerRadius + preyRadius) {
     // Increase the player health
     playerHealth = playerHealth + eatHealth;
     // Constrain to the possible range
-    playerHealth = constrain(playerHealth,0,playerMaxHealth);
+    playerHealth = constrain(playerHealth, 0, playerMaxHealth);
     // Reduce the prey health
-    preHealth = preyHealth - eatHealth;
+    preyHealth = preyHealth - eatHealth;
     // Constrain to the possible range
-    preyHealth = constrain(preyHealth,0,preyMaxHealth);
+    preyHealth = constrain(preyHealth, 0, preyMaxHealth);
 
     // Check if the prey died (health 0)
     if (preyHealth === 0) {
       // Move the "new" prey to a random position
-      preyX = random(0,width);
-      preyY = random(0,height);
+      preyX = random(0, width);
+      preyY = random(0, height);
       // Give it full health
       preyHealth = preyMaxHealth;
       // Track how many prey were eaten
@@ -224,13 +224,13 @@ function movePrey() {
     //
     // Use map() to convert from the 0-1 range of the random() function
     // to the appropriate range of velocities for the prey
-    preyVX = map(random(),0,1,-preyMaxSpeed,preyMaxSpeed);
-    preyVY = map(random(),0,1,-preyMaxSpeed,preyMaxSpeed);
+    preyVX = map(random(), 0, 1, -preyMaxSpeed, preyMaxSpeed);
+    preyVY = map(random(), 0, 1, -preyMaxSpeed, preyMaxSpeed);
   }
 
   // Update prey position based on velocity
   preyX = preyX + preyVX;
-  preyY = preyX + preyVY;
+  preyY = preyY + preyVY;
 
   // Screen wrapping
   if (preyX < 0) {
@@ -252,16 +252,16 @@ function movePrey() {
 //
 // Draw the prey as an ellipse with alpha based on health
 function drawPrey() {
-  fill(preyFill,preyHealth);
-  ellipse(preyX,preyY,preyRadius*2);
+  fill(preyFill, preyHealth);
+  ellipse(preyX, preyY, preyRadius * 2);
 }
 
 // drawPlayer()
 //
 // Draw the player as an ellipse with alpha value based on health
 function drawPlayer() {
-  fill(playerFill,playerHealth);
-  ellipse(playerX,playerY,playerRadius*2);
+  fill(playerFill, playerHealth);
+  ellipse(playerX, playerY, playerRadius * 2);
 }
 
 // showGameOver()
@@ -270,12 +270,12 @@ function drawPlayer() {
 function showGameOver() {
   // Set up the font
   textSize(32);
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER, CENTER);
   fill(0);
   // Set up the text to display
   let gameOverText = "GAME OVER\n"; // \n means "new line"
   gameOverText = gameOverText + "You ate " + preyEaten + " prey\n";
   gameOverText = gameOverText + "before you died."
   // Display it in the centre of the screen
-  text(gameOverText,width/2,height/2);
+  text(gameOverText, width / 2, height / 2);
 }
