@@ -120,7 +120,7 @@ __Repetition.__ _In which we leverage one of the computer's key super powers: ne
 ## [Exercise 1 Feedback](../exercises/Exercise-1-Feedback.md)
 
 ## Topics
-- __Beauty and Brains__ - consider installing the `atom-beautify` and `p5snippets` packages in Atom (every session if on CDA machines, once if on your own computer - go to preferences/settings and find the Install option and search there for the package name, then install)
+- __Beauty and Brains__ - consider installing the `atom-beautify` and `p5js-snippets` packages in Atom (every session if on CDA machines, once if on your own computer - go to preferences/settings and find the Install option and search there for the package name, then install)
 - __Core - Strings__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-strings/index.html), [Notes](../modules/core-strings/core-strings.md))
 - __Core - `while` loops__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-while-loops/index.html), [Notes](../modules/core-while-loops/core-while-loops.md))
 - __Core - `for` loops__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-for-loops/index.html), [Notes](../modules/core-for-loops/core-for-loops.md))
