@@ -1,5 +1,5 @@
 ### Project dates
-- [__Project 1__](../projects/Project-1.md) (10%)
+- __[Project 1](../projects/Project-1.md)__ (10%)
   - Assigned: Class, week of 23 September 2019
   - Due: Night of class, week of 7 October 2019 (two weeks)
 - __Project 2__ (20%)
@@ -19,7 +19,7 @@
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
 - [~~2. Change~~](#week-2---week-of-9-september-2019)
-- [3. Ifs and Inputs](#week-3---week-of-16-september-2019)
+- [~~3. Ifs and Inputs~~](#week-3---week-of-16-september-2019)
 - [4. Repetition](#week-4---week-of-23-september-2019)
 - [5. Functions](#week-5---week-of-30-september-2019)
 - [6. Project 1](#week-6---week-of-7-october-2019)
@@ -82,7 +82,7 @@ __Change.__ _In which we learn about how time passes in a program and how our pr
 ## _Visit from Sabine Rosenberg, coordinator of the [C-LAB](http://clab.concordia.ca/)_
 ---
 
-# Week 3 - Week of 16 September 2019
+# ~~Week 3 - Week of 16 September 2019~~
 
 __Ifs and Inputs.__ _In which our programs can react to context through conditionals and to our users through events and input._
 

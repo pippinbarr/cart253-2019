@@ -1,4 +1,4 @@
-### Physics / CART 253 / Fall 2018 / Pippin Barr
+### Physics / CART 253 / Pippin Barr
 
 # Wraps and overlaps
 
@@ -28,7 +28,7 @@ function setup() {
   x = width/2;
   y = height/2;
   vx = speed;
-  vy = -speed;
+  vy = 0;
 }
 
 function draw() {
@@ -76,7 +76,7 @@ function draw() {
   y = y + vy;
 
   if (x < 0 || x > width || y < 0 || y > width) {
-    console.log("Off-screen!");
+    background(255,0,0);
   }
 
   ellipse(x,y,radius * 2);
@@ -100,7 +100,7 @@ function setup() {
   x = width/2;
   y = height/2;
   vx = speed;
-  vy = -speed;
+  vy = 0;
 }
 
 function draw() {
@@ -108,7 +108,7 @@ function draw() {
   y = y + vy;
 
   if (x + radius < 0 || x - radius > width || y + radius < 0 || y - radius > width) {
-    console.log("Off-screen!");
+    background(255,0,0);
   }
 
   ellipse(x,y,radius * 2);
@@ -125,6 +125,9 @@ function draw() {
 ---
 
 ## Wrapping
+
+- We might want our shape to appear back on the other side of the screen!
+- So we check which side it went off, and then adjust its position accordingly
 
 ```javascript
 if (x + radius < 0) {
@@ -184,9 +187,9 @@ function draw() {
 ## Things overlap
 
 - That is, visually we see shapes and images pass over/through each other
-- And that is also something that could be significant in a game or other interactive situation
-- If one shape is controlled by the player it might mean they "collected" the other shape
-- If we're trying to make generative art, then the shapes might react to each other in some way
+- And that is also something that could be a significant __event__ in a game or other interactive situation
+  - If one shape is controlled by the player it might mean they "collected" the other shape
+  - If we're trying to make generative art, then the shapes might react to each other in some way
 - So we want to be able to __know__ when shapes/elements overlap
 --
 
@@ -198,7 +201,7 @@ function draw() {
 let d = dist(x,y,x2,y2);
 
 if (d < radius * 2) {
-  console.log("Overlap!");
+  // We have an overlap
 }
 ```
 

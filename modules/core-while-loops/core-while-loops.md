@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # While loops
 
@@ -9,13 +9,24 @@
 - Repetition
 - Repetition
 - Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
+- Repetition
 
 ---
 
 ## Repetition
 
-- We've seen how useful repetition is in __time__ to create a dynamic program using the `draw()` loop
+- We've seen how useful __repetition over time__ is to create a dynamic program using the `draw()` loop (which runs over and over, once per frame)
 - But repetition can also be useful when we just need to do the 'same kind of thing' over and over in our code
+- Chiefly as a way to avoid having to do boring stuff!
 
 ---
 
@@ -41,7 +52,7 @@ function draw() {
   ellipse(startX + segmentRadius*3,startY,segmentRadius*2);
   ellipse(startX + segmentRadius*4.5,startY,segmentRadius*2);
   ellipse(startX + segmentRadius*6,startY,segmentRadius*2);
-  ...
+  // aaaaaand so on...
 }
 ```
 --
@@ -51,7 +62,7 @@ And then you die of boredom.
 
 ## But I don't _want_ to die of boredom...
 
-- This feels too much like work, and computers are meant to do that!
+- This feels too much like repetitive, similar work, and computers are meant to do that!
 - Can't we just tell JavaScript how to draw __one__ segment of the caterpillar, and have it understand how to draw __all__ of them?
 - Yes, we can do that
 - And it's called a __loop__
@@ -62,21 +73,26 @@ And then you die of boredom.
 
 ```javascript
 while (condition) {
-  // Do something, like draw a caterpillar segment!
+  // Instructions to repeat while the condition is true
+  // go inside the curly brackets
 }
 ```
 
-- This will execute the code inside the curly brackets __over and over__ while the __condition is true__
-- It checks the condition, if it's true it runs the code, then it checks the condition again, if it's true it runs the code, and so on until the condition is __false__, then it's over.
+- This will execute the code inside the curly brackets __over and over__ for as long as the __condition is `true`__
+- So it checks the condition, if it's true it runs the code, then it checks the condition again, if it's true it runs the code, and so on until the condition is __false__, then it's over and the rest of the program continues
 - It's a lot like an `if` statement that runs its code over and over until the condition becomes false
+
+---
+
+![](images/while-loop.png)
 
 ---
 
 ## Drawing that caterpillar...
 
 ```javascript
-while (theCaterpillarIsNotFinished) {
-  // Add a segment
+while (the caterpillar is not fully drawn) {
+  // Add one extra segment of the caterpillar to the screen
 }
 ```
 
@@ -89,9 +105,9 @@ while (theCaterpillarIsNotFinished) {
 
 - There are three main things we need to know when we write a loop:
 
-- A ___starting condition___ that defines the way things are before the loop starts. (The caterpillar is not drawn.)
-- A ___stopping condition___ that defines when we should stop our loop. (The caterpillar is drawn.)
-- One or more ___actions___ that are carried out inside the loop that eventually cause it to stop. (Draw one segment.)
+- A ___starting condition___ that defines the way things are before the loop starts. (No segments of the caterpillar have been drawn yet.)
+- A ___stopping condition___ that defines when we should stop our loop. (All segments of the caterpillar have been drawn.)
+- One or more ___instructions___ that are carried out inside the loop that eventually cause it to stop. (Draw one segment.)
 
 ---
 
@@ -117,7 +133,7 @@ function draw() {
   let x = startX;
   while (segmentsDrawn < numSegments) {
     ellipse(x,startY,segmentRadius*2);
-    x += segmentRadius * 1.5;
+    x = x + (segmentRadius * 1.5);
     segmentsDrawn++;
   }
 }
@@ -127,8 +143,11 @@ function draw() {
 
 - Here we have a loop version of drawing the caterpillar!
 - The start conditions are the variables along with the size of the window
-- The stopping condition is when `segmentsDrawn` is equal to `numSegments` (e.g. we've drawn the caterpillar)
-- The actions are to draw a segment in the current location, and then __move__ the location to the right
+- The stopping condition is when `segmentsDrawn` is equal to `numSegments` (e.g. we've drawn all segments of the caterpillar)
+- The instructions are to
+  - __draw__ a segment in the current position,
+  - __move__ the drawing position to the right
+  - __increase__ the variable tracking the number of segments drawn
 
 ---
 
@@ -145,18 +164,26 @@ while (segmentsDrawn < numSegments) {
 - The loop __ends__ when `segmentsDrawn` is equal to `numSegments` (e.g. all the segments have been drawn)
 - Notice that we need to __change__ `segmentsDrawn` in the loop or it would __never end__
 - Because we need the condition to become __false__ at some point
-- Note we also change `x` each time through to move the drawing position of the segments
+- Note we also change `x` each time through the loop to move the drawing position of the segments
 
 ---
 
-## Cutening step
+## No animation
+
+- Notice that you don't __see__ each individual segment appear one after the other
+- That's because the `while` loop executes entirely within a single frame (one run through the `draw()` loop)
+- So it draws the whole caterpillar in a single frame
+- For this reason, `while` loops won't ever be "animated" when they execute, they effectively happen "instantly"
+
+---
+
+## Cute-ifying step
 
 - See slide notes for adding a face to the caterpillar
 
 ???
 
-- Code below
-- Note how we have the go __back__ by one step for `x` in order to get the right position
+- Code below to draw a face on the __first segment__ of the caterpillar (the leftmost one)
 
 ```javascript
 let startX;
@@ -181,18 +208,18 @@ function draw() {
     x += segmentRadius * 1.5;
     segmentsDrawn++;
   }
-  x -= segmentRadius * 1.5;
+  // Draw the face on the leftmost segment (the startX,startY one)
   fill(0);
   stroke(0);
-  ellipse(x - segmentRadius/2,startY,5);
-  ellipse(x + segmentRadius/2,startY,5);
-  line(x - segmentRadius/2,startY + segmentRadius/4,x + segmentRadius/2,startY + segmentRadius/4)
+  ellipse(startX - segmentRadius/2,startY,5);
+  ellipse(startX + segmentRadius/2,startY,5);
+  line(startX - segmentRadius/2,startY + segmentRadius/4,startX + segmentRadius/2,startY + segmentRadius/4)
 }
 ```
 
 ---
 
-## So what does this do?
+## So what might this do?
 
 ```javascript
 let x;
@@ -224,7 +251,7 @@ function draw() {
 
 - It draws a sphere!
 - Kind of.
-- It drawns diminishing circles that also change their fill color relative to their size (using `map`)
+- It draws diminishing circles that also change their fill color relative to their size (using `map`)
 - The result looks uncannily like a sphere, but we know better!
 - But when is a sphere a sphere, anyway?
 
@@ -276,33 +303,6 @@ while (true) {
 
 ---
 
-## Is this... okay?
-
-```javascript
-function setup() {
-  createCanvas(500,500);
-}
-
-function draw() {
-  let x = 0;
-  while (mouseX < 50) {
-    rect(x,mouseY,10,10);
-    x += 20;
-  }
-}
-```
-
-???
-
-- What happens here?
-- It kind of looks like it should be okay... like it should draw circles to the mouse location if the mouse is to the left of the canvas...
-- But there's a trap here, which is that `mouseX` will __never change__
-- `mouseX` will always be `0`, and so the `while` condition will always be `true`
-- `mouseX` never changes, because we __never escape from that `while` loop__... it goes on forever
-- It's called an __infinite loop__
-
----
-
 ## This is what infinite loops looks like
 
 ```javascript
@@ -346,7 +346,7 @@ function mousePressed() {
 
 ---
 
-## Star field
+## Oh starry starry night...
 
 ```javascript
 let numStars = 1000;
@@ -360,7 +360,8 @@ function setup() {
     let x = random(0,width);
     let y = random(0,height);
     let starSize = random(1,2);
-    stroke(random(100,255));
+    let shade = random(100,255);
+    stroke(shade);
     rect(x,y,starSize,starSize);
     starsDrawn += 1;
   }
@@ -380,7 +381,7 @@ function draw() {
 
 ---
 
-## Bonus wiggling
+## (Bonus) Wiggling
 
 - See slide notes
 
@@ -398,39 +399,38 @@ let numSegments = 10;
 let wiggleRange = 20;
 
 function setup() {
-  createCanvas(640,480);
-  startX = width/5;
-  startY = height/2;
+  createCanvas(640, 480);
+  startX = width / 5;
+  startY = height / 2;
 }
 
 function draw() {
-  background(200,250,200);
-  fill(80,200,80);
+  background(200, 250, 200);
+  fill(80, 200, 80);
   noStroke();
   let segmentsDrawn = 0;
   let x = startX;
+  let y = startY;
   // See in the loop for an explanation of this line - we're doing it here
   // to calculate the starting position of the caterpillar based on sine
-  let y = startY + (sin(theta) * wiggleRange);
   let theta = 0;
   while (segmentsDrawn < numSegments) {
     // Calculate y based on a sine wave
     // Remember that sin() gives back a number between -1 and 1
     // So we'll be adding a number between -wiggleRange and wiggleRange to the base startY position
-    ellipse(x,y,segmentRadius*2);
+    ellipse(x, y, segmentRadius * 2);
+    theta += 1;
     x += segmentRadius * 1.5;
     y = startY + (sin(theta) * wiggleRange);
     // By incrementing theta we're changing the angle we're calculating the sine of
     // that will change the output, and we'll see a sine wave
-    theta += 1;
     segmentsDrawn++;
   }
-  x -= segmentRadius * 1.5;
   fill(0);
   stroke(0);
-  ellipse(x - segmentRadius/2,y,5);
-  ellipse(x + segmentRadius/2,y,5);
-  line(x - segmentRadius/2,y + segmentRadius/4,x + segmentRadius/2,y + segmentRadius/4)
+  ellipse(startX - segmentRadius / 2, startY, 5);
+  ellipse(startX + segmentRadius / 2, startY, 5);
+  line(startX - segmentRadius / 2, startY + segmentRadius / 4, startX + segmentRadius / 2, startY + segmentRadius / 4)
 }
 ```
 
