@@ -251,7 +251,6 @@ let vx;
 let x2;
 let y2;
 let vx2;
-let y;
 let radius = 25;
 let speed = 2;
 let drawCircles = true;
