@@ -127,7 +127,7 @@ __Repetition.__ _In which we leverage one of the computer's key super powers: ne
 - __Game - Where's Sausage Dog?__ ([Game](https://pippinbarr.github.io/cart253-2019/games/game-wheres-sausage-dog/index.html), [Source Code](../games/game-wheres-sausage-dog/), [ZIP of Source Code](../games/game-wheres-sausage-dog.zip))
 - __Physics - Wraps and Overlaps__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-wraps-and-overlaps/index.html), [Notes](../modules/physics-wraps-and-overlaps/physics-wraps-and-overlaps.md))
 - __Core - Randomness, Probability and Perlin Noise__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-randomness-probability-and-perlin-noise/index.html), [Notes](../modules/core-randomness-probability-and-perlin-noise/core-randomness-probability-and-perlin-noise.md))
-- __Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions/index.html), [Notes](../modules/core-functions/core-functions.md))
+- __Functions preview__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions-preview/index.html), [Notes](../modules/core-functions-preview/core-functions-preview.md))
 - __Game - Chaser__ ([Game](https://pippinbarr.github.io/cart253-2019/games/game-chaser/index.html), [Source Code](../games/game-chaser/), [ZIP of Source Code](../games/game-chaser.zip))
 
 ## Homework
@@ -142,6 +142,23 @@ __Structure.__ _In which we learn to break our programs and data into easy-to-un
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
+## [Exercise 3](../exercises/Exercise-3.md) due before midnight on day of class
+
+## Notes
+- __Atom Git__ - [Notes](../examples/atom-git.md))
+- __Managing Drawing Settings__ - [Notes](../examples/managing-drawing-settings.md))
+
+
+## Topics
+- __Core - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions-with-arguments-and-return-values/index.html), [Notes](../modules/core-functions-with-arguments-and-return-values/core-functions-with-arguments-and-return-values.md))
+- __Debugging - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-functions/index.html), [Notes](../modules/debugging-functions/debugging-functions.md))
+- __Physics - Collisions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-collisions/index.html), [Notes](../modules/physics-collisions/physics-collisions.md))
+- __Core - JavaScript Objects__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-javascript-objects/index.html), [Notes](../modules/core-javascript-objects/core-javascript-objects.md))
+- __Sound - Basic sound__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/sound-basic-sound/index.html), [Notes](../modules/sound-basic-sound/sound-basic-sound.md))
+- __Game - Basic Pong__ ([Game](https://pippinbarr.github.io/cart253-2019/games/game-pong/index.html), [Source Code](../games/game-pong/), [ZIP of Source Code](../games/game-pong.zip))
+
+## Homework
+- Continue [Project 1](../projects/Project-1.md) (due next week)
 
 ---
 

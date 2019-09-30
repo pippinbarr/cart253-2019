@@ -1,4 +1,4 @@
-### Sound / CART 253 / Fall 2018 / Pippin Barr
+### Sound / CART 253 / Pippin Barr
 
 # Basic sound
 
@@ -27,30 +27,10 @@
 
 ---
 
-## `let mySound = new Audio('path/to/audio');`
+## Loading a sound
 
-- To play a sound we need to load it and store it in a variable
+- To play a sound we need to load it and store it in a variable, ideally in `preload()`
 - It is mercifully simple:
-
-```javascript
-let exampleSound = new Audio("assets/sounds/exampleSound.mp3");
-```
---
-
-- Now the variable `exampleSound` has our sound stored inside it
-- Note that in this example our sound file is stored in the `assets/sounds` folder to keep everything nicely organised
-- For now just use this syntax and don't worry about the `new` etc.
-- We will talk about that soon
-
-???
-
-- Actually when we store the sound in our variable what we are really storing is an __object__
-
----
-
-## `preload()`
-
-- As with images, it's a good idea to __load our files inside `preload()`__
 
 ```javascript
 let exampleSound;
@@ -59,6 +39,12 @@ function preload() {
   exampleSound = new Audio("assets/sounds/exampleSound.mp3");
 }
 ```
+--
+
+- Now the variable `exampleSound` has our sound stored inside it
+- Note that in this example our sound file is stored in the `assets/sounds` folder to keep everything nicely organised
+- For now just use this syntax and don't worry about the `new` etc.
+- We will talk about that soon enough
 
 ---
 
@@ -78,7 +64,9 @@ function setup() {
 }
 ```
 
-- As we now know, `exampleSound` must be an __object__
+???
+
+- As we know because of the use of dot notation, `exampleSound` must be an __object__
 - And `play()` is a __function defined in that object__
 - So we can call its `play()` function using dot notation
 
@@ -89,13 +77,45 @@ function setup() {
 - Many browsers restrict the playing of sounds (and videos) on webpages by requiring that the user of the page __interact__ (press a key, click the mouse) with it before a sound can be played
 - This means, for instance, that playing a sound in `setup()` won't work, because the user hasn't interacted with the page yet
 - The __solution__ to this is often to require some kind of interaction from the user before your program starts playing sounds
-- Something like a "Click to Start" screen at the beginning of the program could work this way. The user clicks, the program starts, and any soundfiles can now be played.
+- Something like a "Click to Start" screen at the beginning of the program could work this way. The user clicks, the program starts, and any sound files can now be played.
+
+---
+
+## Waiting for an interaction before playing sound
+
+```javascript
+let music;
+let started = false;
+
+function preload() {
+  music = new Audio("assets/sounds/music.mp3");
+}
+
+function setup() {
+  createCanvas(500,500);
+}
+
+function draw() {
+  background(255);
+  if (!started) {
+    text("CLICK TO PLAY",0,250);
+  }
+  else {
+    text("THE SOUND OF MUSIC!",0,250);
+  }
+}
+
+function mousePressed() {
+  music.play();
+}
+```
+
 
 ---
 
 ## `.pause()`
 
-- To __pause__ a playing sound we use... `pause()`
+- To __pause__ a playing sound we use `pause()`
 - So with the `exampleSound` that would be
 
 ```javascript
@@ -108,13 +128,14 @@ exampleSound.pause();
 
 ## `.currentTime`
 
-- To __rewind__ your sound so it plays from the beginning when you call `play()` use
+- To "__rewind__" your sound before playing it again you call `play()`:
 
 ```javascript
 exampleSound.currentTime = 0;
+exampleSound.play();
 ```
 
-- This will reset it so that the next time `play()` is called it plays from the start
+- This will reset the sound to the start
 - (You can also set `.currentTime` to other numbers - it represents the position in the sound file in __seconds__ to jump to.)
 
 ???
@@ -126,20 +147,22 @@ exampleSound.currentTime = 0;
 
 ## `.loop`
 
-- To __loop__ your sound so it plays over and over when you call `play()` use
+- To __loop__ your sound so it plays over and over when you call `play()`:
 
 ```javascript
 exampleSound.loop = true;
+exampleSound.play();
 ```
 
-- Now when you play the sound, it will loop forever
+- Now it will loop forever
 
 ---
 
 ## The JavaScript Audio Object
 
-- There are various other functions and properties available
-- We'll leave it at that for now and come back to more sophisticated audio later in the course
+- There are other functions and properties available for use with sounds
+- But this will get us started with simple tasks like playing music of sound effects
+- We'll leave it at that for now and might come back to more sophisticated audio later in the course
 
 ---
 

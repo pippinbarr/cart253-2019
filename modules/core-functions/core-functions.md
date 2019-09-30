@@ -6,97 +6,15 @@
 
 ## In this module
 
-- Program complexity and abstraction
-- Functions
+- Basic functions
+- Functions with parameters
+- Functions that return values
 
 ---
 
-## Programs get big
+## Basic functions are great!
 
-- As soon as we want to do something even slightly impressive our programs start to get pretty complicated
-- We have to write a lot of code to achieve what we want
-- We need some way to deal with this level of complexity
-
----
-
-## Yay! Abstraction!
-
-- Consider `rect(0,0,100,100);`
-- We understand this as "draw a rectangle with its top left corner at 0,0 and a width and height of 100"
-- But there's a __lot__ going on behind the scenes to transform that one line of code into an actual rectangle on our canvas...
-
----
-
-## `rect(0,0,100,100);`
-
-- We call `rect(0,0,100,100);`
-- In the p5 library it does some checking of the parameters...
-- ... checks the drawing modes...
-- ... calls __another__ function called `rect()`...
-- ... which starts to use the browser's "Drawing Context" setup...
-- ... which is used to draw individual parts of the rectangle...
-- ... and on and on!
---
-
-- Thank god we don't need to know all that and can just say "draw a rectangle"
-
----
-
-## We're on a need-to-know basis
-
-- In programming we only want to know as much as we __need__ to know to get our work done
-- Computation is all about __hiding__ the details when they're irrelevant
-- This ability to ignore those details frees us up to do more, better, and more creative work
-
----
-
-## It would be nice to hide things from ourselves!
-
-- Given how helpful it is to have all the details of `rect()` hidden...
-- ... it would be nice if we could use this trick of hiding stuff ourselves
-- We already do this with variables in some sense, "hiding" numbers inside names
-- But we could also think more clearly about our code if we could group instructions together based on what they're for
-
----
-
-## doThatThingYouDo();
-
-- It will not surprise you to learn that we __can__ hide things from ourselves
-- Just like we use the `rect()` function to draw a rectangle without know how it works...
-- ... we can define our __own__ functions to organize our code
-
----
-
-## Resetting the game
-
-- Consider the code for resetting the game in __The Artful Dodger__
-
-```javascript
-// Reset the enemy's position
-enemyX = 0;
-enemyY = random(0,height);
-// Reset the avatar's position
-avatarX = width/2;
-avatarY = height/2;
-// Reset the dodge counter
-dodges = 0;
-```
-
----
-
-## Resetting twice
-
-- The resetting instructions appear __twice__ in the code, and it's exactly the same both times
-- That's because each time we want to do the same thing: reset the game
-- Resetting the game is a kind of higher level __instruction__ for us
-- So it doesn't really make sense that we have to "spell it out" it twice like this
-- We should always be suspicious of doing the __same thing in more than one place__
-
----
-
-## Defining a function
-
-- Whenever we want to group a set of instructions together so we can use them in more than one place easily, we __define a function__
+- Last we we saw the idea of creating a function as a way to abstract away an idea in our code and give it a name, such as the idea of a `resetGame()` function
 
 ```javascript
 function resetGame() {
@@ -111,295 +29,428 @@ function resetGame() {
 }
 ```
 
-- Exactly the same code, but now __inside a function definition__
-
-???
-
-`function`
-- First we write .hi[`function`]. That makes sense, since we're defining a function!
-
-`resetGame`
-- Next we have the __name__ of the function, .hi[`resetGame`]
-- Note how this is a __good name__ for the function because it describes clearly __what it does__
-
-`()`
-- Next is .hi[`()`] - empty parentheses.
-- It means this function needs no extra information to do its job.
-
-`{ ... }`
-- Then we have .hi[`{ ... }`], curly brackets that contain what this function __does__
-- That is, this is where we write the __instructions__ to execute the function
-- In this case, resetting the enemy and avatar positions and the dodges counter
+- This allows us to call `resetGame()` anywhere its relevant in our code but only __change__ what it means to reset the game in __one place__
+- It also allows us to __hide the details__ of resetting the game inside the function, so we don't always have to see it
 
 ---
 
-## Calling a function
-
-- Now that we've __defined__ it, anywhere in our code that we want the instructions in `resetGame()` to be executed we can __call__ our `resetGame()` function
-- By just including the code
+## Drawing a caterpillar is so great!
 
 ```javascript
-resetGame();
-```
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
 
----
-
-## Where?
-
-- Generally speaking, when we define our own functions to our programs we'll define them __below `draw()`__
-- JavaScript itself doesn't mind, but it makes sense to keep `preload()`, `setup()`, and `draw()` at the top of the program file since they're the __main__ functions that run the whole thing
-
----
-
-## It works!
-
-- We have now __abstracted__ the idea of "reset the game" into a function
-- When we include it in the game code it looks __far more clear than before__
-- It literally says what it is going to do: __reset__ the __game__
-- Crucially, if we want to __change__ what resetting the game means, we only have to change it in __one place__
-- This idea of moving blocks of instructions into functions to make your programs clearer is a huge win
-
----
-
-## The rewritten script
-
-- See notes for the full script with the `reset()` function
-
-???
-
-```javascript
-/******************************************************
-
-Game - The Artful Dodger
-Pippin Barr
-
-A simple dodging game with keyboard controls
-
-******************************************************/
-
-// The position and size of our avatar circle
-let avatarX;
-let avatarY;
-let avatarSize = 50;
-
-// The speed and velocity of our avatar circle
-let avatarSpeed = 10;
-let avatarVX = 0;
-let avatarVY = 0;
-
-// The position and size of the enemy circle
-let enemyX;
-let enemyY;
-let enemySize = 50;
-
-// The speed and velocity of our enemy circle
-let enemySpeed = 5;
-let enemyVX = 5;
-
-// How many dodges the player has made
-let dodges = 0;
-
-// setup()
-//
-// Make the canvas, position the avatar and anemy
 function setup() {
-  // Create our playing area
-  createCanvas(500,500);
+  createCanvas(640,480);
+  startX = width/5;
+  startY = height/2;
+}
 
-  // Put the avatar in the centre
-  avatarX = width/2;
-  avatarY = height/2;
-
-  // Put the enemy to the left at a random y coordinate within the canvas
-  enemyX = 0;
-  enemyY = random(0,height);
-
-  // No stroke so it looks cleaner
+function draw() {
+  background(200,250,200);
   noStroke();
-}
-
-// draw()
-//
-// Handle moving the avatar and enemy and checking for dodges and
-// game over situations.
-function draw() {
-  // A pink background
-  background(255,220,220);
-
-  // Default the avatar's velocity to 0 in case no key is pressed this frame
-  avatarVX = 0;
-  avatarVY = 0;
-
-  // Check which keys are down and set the avatar's velocity based on its
-  // speed appropriately
-
-  // Left and right
-  if (keyIsDown(LEFT_ARROW)) {
-    avatarVX = -avatarSpeed;
+  fill(80,200,80);
+  let segmentsDrawn = 0;
+  let x = startX;
+  while (segmentsDrawn < numSegments) {
+    ellipse(x,startY,segmentRadius*2);
+    x += segmentRadius * 1.5;
+    segmentsDrawn++;
   }
-  else if (keyIsDown(RIGHT_ARROW)) {
-    avatarVX = avatarSpeed;
-  }
-
-  // Up and down (separate if-statements so you can move vertically and
-  // horizontally at the same time)
-  if (keyIsDown(UP_ARROW)) {
-    avatarVY = -avatarSpeed;
-  }
-  else if (keyIsDown(DOWN_ARROW)) {
-    avatarVY = avatarSpeed;
-  }
-
-  // Move the avatar according to its calculated velocity
-  avatarX = avatarX + avatarVX;
-  avatarY = avatarY + avatarVY;
-
-  // The enemy always moves at enemySpeed
-  enemyVX = enemySpeed;
-  // Update the enemy's position based on its velocity
-  enemyX = enemyX + enemyVX;
-
-  // Check if the enemy and avatar overlap - if they do the player loses
-  // We do this by checking if the distance between the centre of the enemy
-  // and the centre of the avatar is less that their combined radii
-  if (dist(enemyX,enemyY,avatarX,avatarY) < enemySize/2 + avatarSize/2) {
-    // Tell the player they lost
-    console.log("YOU LOSE!");
-    resetGame();
-  }
-
-  // Check if the avatar has gone off the screen (cheating!)
-  if (avatarX < 0 || avatarX > width || avatarY < 0 || avatarY > height) {
-    // If they went off the screen they lose in the same way as above.
-    console.log("YOU LOSE!");
-    resetGame();
-  }
-
-  // Check if the enemy has moved all the way across the screen
-  if (enemyX > width) {
-    // This means the player dodged so update its dodge statistic
-    dodges = dodges + 1;
-    // Tell them how many dodges they have made
-    console.log(dodges + " DODGES!");
-    // Reset the enemy's position to the left at a random height
-    enemyX = 0;
-    enemyY = random(0,height);
-  }
-
-  // Display the number of successful dodges in the console
-  console.log(dodges);
-
-  // The player is black
-  fill(0);
-  // Draw the player as a circle
-  ellipse(avatarX,avatarY,avatarSize,avatarSize);
-
-  // The enemy is red
-  fill(255,0,0);
-  // Draw the enemy as a circle
-  ellipse(enemyX,enemyY,enemySize,enemySize);
-
-}
-
-function resetGame() {
-  enemyX = 0;
-  enemyY = random(0,height);
-  avatarX = width/2;
-  avatarY = height/2;
-  dodges = 0;
 }
 ```
 
 ---
 
-## Flow...
-
-- Now we have added complexity to the __flow__ of our program
-- It starts in `setup()`, executes the code in there once
-- Moves to `draw()` and starts executing the instructions
-- When it eventually encounters our function it jumps to the `resetGame()` function definition
-- Executes the code in there
-- When it finishes in `resetGame()` it jumps back to where it was in `draw()`
-- When it finishes `draw()` it jumps back to the top of `draw()` for another frame
-- And so on!
-
----
-
-## All neat and tidy!
+## We should make it a function!
 
 ```javascript
-function setup() {
-  createCanvas(640,480);
-  setupAvatar();
-  setupEnemy();
+function drawCaterpillar() {
+  noStroke();
+  fill(80,200,80);
+  let segmentsDrawn = 0;
+  let x = startX;
+  while (segmentsDrawn < numSegments) {
+    ellipse(x,startY,segmentRadius*2);
+    x += segmentRadius * 1.5;
+    segmentsDrawn++;
+  }
 }
-
-function draw() {
-  handleInput();
-  updateAvatar();
-  updateEnemy();
-  checkCollision();
-  checkOffscreen();
-  checkDodge();
-  drawAvatar();
-  drawEnemy();
-}
-
-// Actual definitions of those functions would be down here...
 ```
-
-- We can imagine an Artful Dodger all broken into nice, meaningful functions!
-- `draw()` becomes a story of what happens in the program
 
 ---
 
-## All neat and tidy!
+## We should draw more than one caterpillar!
 
 ```javascript
+let startX;
+let startY;
+let segmentRadius = 20;
+let numSegments = 10;
+
 function setup() {
   createCanvas(640,480);
-  setupAvatar();
-  setupEnemy();
+  startX = width/5;
+  startY = height/2;
 }
 
 function draw() {
-  handleInput();
-  updateAvatar();
-  updateEnemy();
-  checkCollision();
-  checkOffscreen();
-  checkDodge();
-  drawAvatar();
-  drawEnemy();
+  background(200,250,200);
+  drawCaterpillar();
+  drawCaterpillar();
 }
 
-// Actual definitions of those functions would be down here...
+// Function definition is still down here (omitted for space)
 ```
+--
 
-- We also know better where to look for specific kinds of problems now
-- And we can comment out functions to check for issues
+Oh no. What went wrong?
+
+---
+
+## What went wrong?
+
+- The caterpillar function only knows how to draw the caterpillar according to a set of values we define __outside the function__
+- `startX`, `startY`, `segmentRadius`, `numSegments` are all defined at the top of the code
+- It would be nice to be able to tell `drawCaterpillar()` how to draw each caterpillar differently
 
 ???
 
-- The avatar isn't drawing properly? You should probably check `drawAvatar()` first!
-- Want to remove the enemy from play? Comment out all the functions that update and draw it
+- Note that you _could_ change the values in those variables before calling `drawCaterpillar()`, but this is frowned upon - it breaks the __modularity__ of the function as now it depends on you taking another action before even calling it.
 
 ---
 
-## Modularity!
+## Arguments
 
-Functions are __modular__.
-
-- We can tidy our code into separate, self-contained blocks that make sense as a unit.
-- Our code becomes more organised, more readable, easier to fix.
+- Lots of functions only make sense if you can give them __information__
+- We don't get a rectangle if we just call `rect();` because the computer wouldn't know where to draw it, or at what size
+- Instead, we call `rect(0,0,100,100);` to specify __where__ the rectangle should be and what __dimensions__ it should have
+- The numbers we "give" to `rect()` are called __arguments__
+- We want something like that for `drawCaterpillar()`
 
 ---
 
-## Food for thought
+## Defining functions with arguments
 
-- When we write functions it's like we suddenly have this team of different workers who we can ask to do specific things for us
-- But the weird thing is that these workers are all also... __us__.
-- Because we write those functions, right? Get it? Deep. Split personality.
+```javascript
+function drawCaterpillar(x,y) {
+  noStroke();
+  fill(80,200,80);
+  let segmentsDrawn = 0;
+  let nextX = x;
+  while (segmentsDrawn < numSegments) {
+    ellipse(nextX,y,segmentRadius*2);
+    nextX += segmentRadius * 1.5;
+    segmentsDrawn++;
+  }
+}
+```
+
+- Inside the parentheses we have a __comma-separated list of the information this function needs__
+- These are called the __parameters__ when we're defining a function
+- We can see that this function expects two parameters: `x` and a `y`
+- Because they're well-named, they're pretty self-explanatory, right?
+
+???
+
+- Note that other languages (like Java, C#, C++, and more) require that you specifies what __type__ of parameter the function takes - whether it's a number, a string, a truth value, etc.
+- But because JavaScript doesn't explicitly keep track of types in variables, it doesn't keep track here either - it's up to us to get it right
+
+---
+
+## Defining functions with arguments
+
+```javascript
+function drawCaterpillar(x,y) {
+  noStroke();
+  fill(80,200,80);
+  let segmentsDrawn = 0;
+  let nextX = x;
+  while (segmentsDrawn < numSegments) {
+    ellipse(nextX,y,segmentRadius*2);
+    nextX += segmentRadius * 1.5;
+    segmentsDrawn++;
+  }
+}
+```
+
+- After the parameters are defined inside the parentheses, we have the usual curly brackets containing the code of the function
+- Inside, we can see that we can __use the parameters like variables__
+- When the function is __called__ with actual values, the parameters will contain those values
+
+---
+
+## Calling a function with arguments
+
+```javascript
+function draw() {
+  background(200,250,200);
+  drawCaterpillar(100,100);
+}
+```
+
+- Voilà! Now we can draw a caterpillar at that location!
+
+---
+
+## The order matters
+
+```javascript
+function draw() {
+  background(200,250,200);
+  drawCaterpillar(100,100);
+}
+
+function drawCaterpillar(x,y) {
+  let segmentsDrawn = 0;
+  let nextX = x;
+  while (segmentsDrawn < numSegments) {
+    ellipse(nextX,y,segmentRadius*2);
+    nextX += segmentRadius * 1.5;
+    segmentsDrawn++;
+  }
+}
+```
+
+- When you call a function you've defined, you put your arguments in the __same order as the parameters in the definition__
+- This is actually the only way JavaScript knows which argument is intended for which parameter
+
+---
+
+## `undefined` parameters
+
+- It's actually possible to omit arguments and still have a function work
+- When you call a function with too few arguments, the remaining parameters are set to `undefined`
+- So if we call
+
+```javascript
+drawCaterpillar(100);
+```
+
+- Then the function will be called with `x` as `100` (because `x` is the first parameter) and with `y` as `undefined`
+- This will mean the caterpillar won't appear on the screen, because you can't draw ellipses with an `undefined` position coordinate
+- So make sure you provide all the required parameters!
+
+???
+
+- If you __wanted__ to be able to omit the `y` perhaps because you'll just have a default value for it, you have to write that into the function:
+
+```javascript
+function drawCaterpillar(x,y = 100) {
+  let segmentsDrawn = 0;
+  let nextX = x;
+  while (segmentsDrawn < numSegments) {
+    ellipse(nextX,y,segmentRadius*2);
+    nextX += segmentRadius * 1.5;
+    segmentsDrawn++;
+  }
+}
+```
+
+- Now if we call
+
+```javascript
+drawCaterpillar(100);
+```
+
+- The function will run with `x` as `100` and `y` as `100` (because it wasn't provided)
+
+---
+
+## Calling a function more than once with different arguments
+
+```javascript
+function draw() {
+  background(200,250,200);
+  drawCaterpillar(100,100);
+  drawCaterpillar(100,200);
+}
+```
+
+- Even better! We can draw __two__ caterpillars in different places using arguments!
+- Notice, too, how we don't need to be able to __see__ the `drawCaterpillar()` function definition itself to use it
+- So long as we __know how it works__, and we know the arguments it expects!
+- This is a strong case for __good documentation__ like sensible comments that explain your functions!
+
+---
+
+## As many parameters as you want!
+
+- Currently there are other aspects of drawing a caterpillar we probably want to control
+- Like how many segments it is, maybe what size the segments should be, ...
+- So we could add further parameters to the function definition for those...
+
+```javascript
+function drawCaterpillar(x,y,segments,radius) {
+  let segmentsDrawn = 0;
+  let nextX = x;
+  while (segmentsDrawn < segments) {
+    ellipse(nextX,y,radius*2);
+    nextX += radius * 1.5;
+    segmentsDrawn++;
+  }
+}
+```
+
+???
+
+- We could include the color too:
+
+```javascript
+function drawCaterpillar(x,y,segments,radius,fillColor) {
+  fill(fillColor);
+  let segmentsDrawn = 0;
+  let nextX = x;
+  while (segmentsDrawn < segments) {
+    ellipse(nextX,y,radius*2);
+    nextX += radius * 1.5;
+    segmentsDrawn++;
+  }
+}
+```
+
+- But now we need to be able to store a color as a single value
+- We could use a number between 0 and 255 to have greyscale caterpillars
+- But if we want colors we could either use hexadecimal colors (e.g. `"#aabbcc"`)
+- Or we could use p5's `color` function
+
+```javascript
+function draw() {
+  background(200,250,200);
+  for (let i = 0; i < 10; i++) {
+    let x = random(0,width);
+    let y = random(0,height);
+    let segments = random(1,20);
+    let radius = random(10,20);
+    let fillColor = color(random(255),random(255),random(255));
+    drawCaterpillar(x,y,segments,radius,fillColor);
+  }
+}
+```
+
+---
+
+## "Pass by value"
+
+- Something to remember is that when we provide arguments to a function as variables it passes the __value__ through, not the variable
+- The variable is replaced by its value __before__ the function is executed
+
+```javascript
+let myNumber = 10;
+
+function setup() {
+  console.log(`Before: ${myNumber}`); // 10
+  addTenTo(myNumber); // This is really like saying addTenTo(10);
+  console.log(`After: ${myNumber}`); // Still 10
+}
+
+function addTenTo(number) {
+  number = number + 10; // This does NOT add 10 to myNumber
+}
+```
+
+---
+
+## Functions with __results__
+
+- Sometimes we want to __calculate__ something with a function
+- In that case we want to give the function the information it needs, as __arguments__
+- But we also need the function to give information __back__
+
+---
+
+## Fahrenheit to Centigrade
+
+```javascript
+function setup() {
+  createCanvas(640,480);
+}
+
+function draw() {
+  let tempF = 23;
+  let tempC = convertFahrenheitToCelcius(tempF);
+  textAlign(CENTER,CENTER);
+  textSize(24);
+  text(`Today's temperature is ${tempC} degrees centigrade`,width/2,height/2);
+}
+
+function convertFahrenheitToCelcius(temperature) {
+  let result = (temperature - 32) / 1.8;
+  return result;
+}
+```
+
+- To send information back __out__ of a function we use `return` followed by the value we want to send out
+- It often makes sense to __assign__ the value returned by the function in a variable so we can use it later
+
+---
+
+## Fahrenheit to Centigrade
+
+```javascript
+function setup() {
+  createCanvas(640,480);
+}
+
+function draw() {
+  let tempF = 23;
+  textAlign(CENTER,CENTER);
+  textSize(24);
+  text(`Today's temperature is ${convertFahrenheitToCelcius(tempF)} degrees centigrade`,width/2,height/2);
+}
+
+function convertFahrenheitToCelcius(temperature) {
+  let result = (temperature - 32) / 1.8;
+  return result;
+}
+```
+
+- We can also just call the function directly wherever we want to use the __value it calculates__
+- Essentially we can imagine that function call is __replaced with the value it returns__
+
+---
+
+## Function that check things
+
+- It can be really helpful to write functions that check particular situations of interest in your program
+- You could check whether a specific position is off the canvas/screen for instance
+
+```javascript
+function isOffscreen(x,y) {
+  if (x < 0 || x > width || y < 0 || y > height) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+```
+
+- This saves you from writing that full `if` statement every time you want to check this quality
+
+???
+
+- In fact this can be abbreviated to:
+
+```javascript
+function isOffscreen(x,y) {
+  return (x < 0 || x > width || y < 0 || y > height);
+}
+```
+
+- The conditional expression will be evaluated and then the resulting truth value will be returned
+
+---
+
+## Modularity and reuse!
+
+Again, are two main reasons why functions are so great, and they have special names!
+
+Functions are ___modular___. We can tidy our code into separate, self-contained blocks that make sense as a unit. Our code becomes more organized, more readable, easier to fix. (Often we also talk about this as __encapsulation__.)
+
+Functions are ___reusable___. We can use a function over and over again without writing out all the code in it. This makes our programming more efficient and less lengthy. It's like free code!
 
 ---
 
