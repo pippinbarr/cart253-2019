@@ -142,11 +142,12 @@ __Structure.__ _In which we learn to break our programs and data into easy-to-un
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
-## [Exercise 3](../exercises/Exercise-3.md) due before midnight on day of class
 
 ## Notes
 - __Atom Git__ - [Notes](../examples/atom-git.md))
 - __Managing Drawing Settings__ - [Notes](../examples/managing-drawing-settings.md))
+- [Exercise 3](../exercises/Exercise-3.md) is due before midnight on day of class
+- [Exercise 2 Feedback](../exercises/Exercise-2-Feedback.md)
 
 
 ## Topics
