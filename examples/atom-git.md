@@ -12,6 +12,8 @@
 
 Now the changed files have been committed to the local repository
 
+__If you don't see anything in the Git window, try closing it with the x button in its tab and then reopening it, or worst case try restarting Atom__
+
 ## To Push
 
 1. Click the (tiny) "Push" button in the bottom right of Atom
