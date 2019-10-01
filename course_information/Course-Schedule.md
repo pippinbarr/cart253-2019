@@ -20,7 +20,7 @@
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
 - [~~2. Change~~](#week-2---week-of-9-september-2019)
 - [~~3. Ifs and Inputs~~](#week-3---week-of-16-september-2019)
-- [4. Repetition](#week-4---week-of-23-september-2019)
+- [~~4. Repetition~~](#week-4---week-of-23-september-2019)
 - [5. Functions](#week-5---week-of-30-september-2019)
 - [6. Project 1](#week-6---week-of-7-october-2019)
 - [7. Object Oriented Programming](#week-7---week-of-14-october-2019)
@@ -110,7 +110,7 @@ __Ifs and Inputs.__ _In which our programs can react to context through conditio
 
 ---
 
-# Week 4 - Week of 23 September 2019
+# ~~Week 4 - Week of 23 September 2019~~
 
 __Repetition.__ _In which we leverage one of the computer's key super powers: never getting bored._
 
