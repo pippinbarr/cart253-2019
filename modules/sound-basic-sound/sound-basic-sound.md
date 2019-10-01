@@ -107,6 +107,7 @@ function draw() {
 
 function mousePressed() {
   music.play();
+  let started = true;
 }
 ```
 

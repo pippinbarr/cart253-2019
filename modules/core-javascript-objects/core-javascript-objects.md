@@ -31,7 +31,7 @@ let y;
 let vx;
 let vy;
 let radius = 25;
-let maxSpeed = 1;
+let speed = 1;
 
 function setup() {
   createCanvas(500,500);
@@ -62,7 +62,7 @@ let y;
 let vx;
 let vy;
 let radius = 25;
-let maxSpeed = 1;
+let speed = 1;
 
 // Object 2's information
 let x2;
@@ -70,7 +70,7 @@ let y2;
 let vx2;
 let vy2;
 let radius2 = 50;
-let maxSpeed2 = 10;
+let speed2 = 10;
 ```
 
 Getting kind of hard to read.
@@ -92,7 +92,7 @@ Getting kind of hard to read.
 let circle = {
   x: 0,
   y: 0,
-  maxSpeed: 1,
+  speed: 1,
   vx: 0,
   vy: 0,
   radius: 25
@@ -119,7 +119,7 @@ let circle = {
 ```
 x: 0,
 y: 0,
-maxSpeed: 1,
+speed: 1,
 vx: 0,
 vy: 0,
 radius: 25
@@ -200,13 +200,13 @@ let circle = {
     x: 0,
     y: 0
   }
-  maxSpeed: 2,
+  speed: 2,
   size: 100
 };
 
 function setup() {
   createCanvas(500,500);
-  circle.velocity.x = circle.maxSpeed;
+  circle.velocity.x = circle.speed;
 }
 
 function draw() {
