@@ -151,7 +151,7 @@ __Structure.__ _In which we learn to break our programs and data into easy-to-un
 
 
 ## Topics
-- __Core - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions-with-arguments-and-return-values/index.html), [Notes](../modules/core-functions-with-arguments-and-return-values/core-functions-with-arguments-and-return-values.md))
+- __Core - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions/index.html), [Notes](../modules/core-functions/core-functions.md))
 - __Debugging - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-functions/index.html), [Notes](../modules/debugging-functions/debugging-functions.md))
 - __Physics - Collisions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-collisions/index.html), [Notes](../modules/physics-collisions/physics-collisions.md))
 - __Core - JavaScript Objects__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-javascript-objects/index.html), [Notes](../modules/core-javascript-objects/core-javascript-objects.md))
