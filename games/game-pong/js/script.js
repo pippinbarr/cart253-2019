@@ -81,6 +81,14 @@ function setup() {
   noStroke();
   fill(fgColor);
 
+  setupPaddles();
+  resetBall();
+}
+
+// setupPaddles()
+//
+// Sets the starting positions of the two paddles
+function setupPaddles() {
   // Initialise the left paddle position
   leftPaddle.x = 0 + leftPaddle.w;
   leftPaddle.y = height / 2;
@@ -88,38 +96,44 @@ function setup() {
   // Initialise the right paddle position
   rightPaddle.x = width - rightPaddle.w;
   rightPaddle.y = height / 2;
-
-  // Initialise the ball's position and velocity
-  ball.x = width / 2;
-  ball.y = height / 2;
-  ball.vx = ball.speed;
-  ball.vy = ball.speed;
 }
 
 // draw()
 //
 // Calls the appropriate functions to run the game
-// See how tidy it looks!!!
+// See how tidy it looks?!
 function draw() {
   // Fill the background
   background(bgColor);
 
   if (playing) {
+    // If the game is in play, we handle input and move the elements around
     handleInput(leftPaddle);
     handleInput(rightPaddle);
     updatePaddle(leftPaddle);
     updatePaddle(rightPaddle);
     updateBall();
 
-    checkBallOutOfBounds();
     checkBallWallCollision();
     checkBallPaddleCollision(leftPaddle);
     checkBallPaddleCollision(rightPaddle);
+
+    // Check if the ball went out of bounds and respond if so
+    // (Note how we can use a function that returns a truth value
+    // inside a conditional!)
+    if (ballIsOutOfBounds()) {
+      // If it went off either side, reset it
+      resetBall();
+      // This is where we would likely count points, depending on which side
+      // the ball went off...
+    }
   }
   else {
+    // Otherwise we display the message to start the game
     displayStartMessage();
   }
 
+  // We always display the paddles and ball so it looks like Pong!
   displayPaddle(leftPaddle);
   displayPaddle(rightPaddle);
   displayBall();
@@ -130,8 +144,6 @@ function draw() {
 // Checks the mouse and keyboard input to set the velocities of the
 // left and right paddles respectively.
 function handleInput(paddle) {
-  // MOVING THE PADDLES
-
   // Move the paddle based on its up and down keys
   // If the up key is being pressed
   if (keyIsDown(paddle.upKey)) {
@@ -166,16 +178,17 @@ function updateBall() {
   ball.y += ball.vy;
 }
 
-// checkBallOutOfBounds()
+// ballIsOutOfBounds()
 //
-// Check if the ball has gone off the left or right and respond
-function checkBallOutOfBounds() {
+// Checks if the ball has gone off the left or right
+// Returns true if so, false otherwise
+function ballIsOutOfBounds() {
   // Check for ball going off the sides
   if (ball.x < 0 || ball.x > width) {
-    // If it went off either side, reset it to the centre
-    ball.x = width / 2;
-    ball.y = height / 2;
-    // This is where we would count points!
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
@@ -192,15 +205,6 @@ function checkBallWallCollision() {
     // Play our bouncing sound effect by rewinding and then playing
     beepSFX.currentTime = 0;
     beepSFX.play();
-    // Reset the position of the ball based on top or bottom
-    if (ball.y < 0) {
-      // If it hit the top, reset the position so it's perfectly touching the top
-      ball.y = 0;
-    }
-    else if (ball.y > height) {
-      // If it hit the bottom, reset the position so it's perfectly touching the bottom
-      ball.y = height;
-    }
   }
 }
 
@@ -211,8 +215,7 @@ function checkBallPaddleCollision(paddle) {
   // VARIABLES FOR CHECKING COLLISIONS
 
   // We will calculate the top, bottom, left, and right of the
-  // paddle and the ball to make our conditionals easier to read
-
+  // paddle and the ball to make our conditionals easier to read...
   let ballTop = ball.y - ball.size / 2;
   let ballBottom = ball.y + ball.size / 2;
   let ballLeft = ball.x - ball.size / 2;
@@ -227,7 +230,8 @@ function checkBallPaddleCollision(paddle) {
   if (ballBottom > paddleTop && ballTop < paddleBottom) {
     // Then check if it is touching the paddle horizontally
     if (ballLeft < paddleRight && ballRight > paddleLeft) {
-      // Then the ball is touching the paddle so reverse its vx
+      // Then the ball is touching the paddle
+      // Reverse its vx so it starts travelling in the opposite direction
       ball.vx = -ball.vx;
       // Play our bouncing sound effect by rewinding and then playing
       beepSFX.currentTime = 0;
@@ -252,18 +256,32 @@ function displayBall() {
   rect(ball.x, ball.y, ball.size, ball.size);
 }
 
+// resetBall()
+//
+// Sets the starting position and velocity of the ball
+function resetBall() {
+  // Initialise the ball's position and velocity
+  ball.x = width / 2;
+  ball.y = height / 2;
+  ball.vx = ball.speed;
+  ball.vy = ball.speed;
+}
+
 // displayStartMessage()
 //
 // Shows a message about how to start the game
 function displayStartMessage() {
+  push();
   textAlign(CENTER, CENTER);
   textSize(32);
   text("CLICK TO START", width / 2, height / 2);
+  pop();
 }
 
 // mousePressed()
 //
 // Here to require a click to start playing the game
+// Which will help us be allowed to play audio in the browser
 function mousePressed() {
   playing = true;
 }
