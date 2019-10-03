@@ -102,7 +102,7 @@ function draw() {
   drawCaterpillar();
 }
 
-// Function definition is still down here (omitted for space)
+// Function definition omitted for space
 ```
 --
 
@@ -118,7 +118,7 @@ Oh no. What went wrong?
 
 ???
 
-- Note that you _could_ change the values in those variables before calling `drawCaterpillar()`, but this is frowned upon - it breaks the __modularity__ of the function as now it depends on you taking another action before even calling it.
+- Note that you _could_ change the values in those variables __before__ calling `drawCaterpillar()`, but this is frowned upon - it breaks the __modularity__ of the function as now it depends on you taking another action before even calling it.
 
 ---
 
@@ -127,12 +127,12 @@ Oh no. What went wrong?
 - Lots of functions only make sense if you can give them __information__
 - We don't get a rectangle if we just call `rect();` because the computer wouldn't know where to draw it, or at what size
 - Instead, we call `rect(0,0,100,100);` to specify __where__ the rectangle should be and what __dimensions__ it should have
-- The numbers we "give" to `rect()` are called __arguments__
+- Those numbers we "give" to `rect()` are called __arguments__
 - We want something like that for `drawCaterpillar()`
 
 ---
 
-## Defining functions with arguments
+## Defining functions to take arguments
 
 ```javascript
 function drawCaterpillar(x,y) {
@@ -150,13 +150,8 @@ function drawCaterpillar(x,y) {
 
 - Inside the parentheses we have a __comma-separated list of the information this function needs__
 - These are called the __parameters__ when we're defining a function
-- We can see that this function expects two parameters: `x` and a `y`
+- We can see that this function expects to be given two arguments, an `x` and a `y`
 - Because they're well-named, they're pretty self-explanatory, right?
-
-???
-
-- Note that other languages (like Java, C#, C++, and more) require that you specifies what __type__ of parameter the function takes - whether it's a number, a string, a truth value, etc.
-- But because JavaScript doesn't explicitly keep track of types in variables, it doesn't keep track here either - it's up to us to get it right
 
 ---
 
@@ -187,7 +182,7 @@ function drawCaterpillar(x,y) {
 ```javascript
 function draw() {
   background(200,250,200);
-  drawCaterpillar(100,100);
+  drawCaterpillar(100,200);
 }
 ```
 
@@ -200,7 +195,7 @@ function draw() {
 ```javascript
 function draw() {
   background(200,250,200);
-  drawCaterpillar(100,100);
+  drawCaterpillar(100,200);
 }
 
 function drawCaterpillar(x,y) {
@@ -238,7 +233,7 @@ drawCaterpillar(100);
 - If you __wanted__ to be able to omit the `y` perhaps because you'll just have a default value for it, you have to write that into the function:
 
 ```javascript
-function drawCaterpillar(x,y = 100) {
+function drawCaterpillar(x, y = 100) {
   let segmentsDrawn = 0;
   let nextX = x;
   while (segmentsDrawn < numSegments) {
@@ -334,7 +329,7 @@ function draw() {
 
 ## "Pass by value"
 
-- Something to remember is that when we provide arguments to a function as variables it passes the __value__ through, not the variable
+- Something to remember is that when we provide arguments to a function __as variables__ it passes the __value__ through, not the variable
 - The variable is replaced by its value __before__ the function is executed
 
 ```javascript
@@ -383,11 +378,11 @@ function convertFahrenheitToCelcius(temperature) {
 ```
 
 - To send information back __out__ of a function we use `return` followed by the value we want to send out
-- It often makes sense to __assign__ the value returned by the function in a variable so we can use it later
+- It often makes sense to __assign__ the value returned by the function to a variable so we can use it later
 
----
+???
 
-## Fahrenheit to Centigrade
+- We can also just call the function directly wherever we want to use the __value it calculates__
 
 ```javascript
 function setup() {
@@ -407,7 +402,6 @@ function convertFahrenheitToCelcius(temperature) {
 }
 ```
 
-- We can also just call the function directly wherever we want to use the __value it calculates__
 - Essentially we can imagine that function call is __replaced with the value it returns__
 
 ---
