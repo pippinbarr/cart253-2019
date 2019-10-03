@@ -11,7 +11,7 @@
 
 ---
 
-## Complicated data
+## Related data
 
 - A lot of the time the kinds of data we want to track in our programs are __related to each other__
 - For example, when we have some object that moves around on the screen it has
@@ -21,7 +21,7 @@
   - A y velocity
   - A size
   - ... and so on
-- But so far we've tracked this in separate variables
+- But so far we've always tracked this in separate variables
 
 ---
 
@@ -53,7 +53,7 @@ function draw() {
 
 ---
 
-This gets ugly if we have more than one object we want to track this kind of information for, since we need new variables for each one...
+This starts to get ugly if we have more than one object we want to track this kind of information for, since we need new variables for each one...
 
 ```javascript
 // Object 1's information
@@ -73,7 +73,7 @@ let radius2 = 50;
 let speed2 = 10;
 ```
 
-Getting kind of hard to read.
+Getting kind of hard to read...
 
 ---
 
@@ -140,7 +140,7 @@ radius: 25
 let circle = {
   x: 250,
   y: 250,
-  size: 100
+  size: 200
 };
 
 function setup() {
@@ -186,9 +186,7 @@ function setup() {
 
 ---
 
-## A better JavaScript Object
-
-- To use properties inside a nested JavaScript object, we just continue to use __dot notation__...
+- To access deeper properties, we continue to use __dot notation__...
 
 ```javascript
 let circle = {
@@ -224,19 +222,20 @@ function draw() {
 
 ## JavaScript Objects as arguments
 
-Unlike other kinds of values, JavaScript objects __can__ be changed in a function when they are provided as an argument!
+Unlike all other kinds of values, JavaScript objects __can__ be changed in a function when they are provided as an argument!
 
 ```javascript
 let circle = {
   x: 0,
   y: 250,
   vx: 0,
+  vy: 0,
   size: 100
 }
 
 function setup() {
   createCanvas(250,250);
-  addVelocity(circle); // This WILL send the circle object to the function as an argument
+  setVelocity(circle,10); // This WILL send the circle object to the function as an argument
 }
 
 function draw() {
@@ -244,8 +243,8 @@ function draw() {
   ellipse(circle.x,circle.y,circle.size);
 }
 
-function addVelocity(shape) {
-  shape.vx = 10; // This WILL change the vx property of the object passed
+function addVelocity(shape,velocity) {
+  shape.vx = velocity; // This WILL change the vx property of the object passed
 }
 ```
 
