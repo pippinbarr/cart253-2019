@@ -149,10 +149,6 @@ __Structure.__ _In which we learn to break our programs and data into easy-to-un
 - [Exercise 3](../exercises/Exercise-3.md) is due before midnight on day of class
 - [Exercise 2 Feedback](../exercises/Exercise-2-Feedback.md)
 
-
-- __New!__ Core - Variables ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables-v2/index.html), [Notes](../modules/core-variables-v2/core-variables.md)) (__Old!__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-variables/index.html), [Notes](../modules/core-variables/core-variables.md)))
-
-
 ## Topics
 - __Core - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-functions/index.html), [Notes](../modules/core-functions/core-functions.md))
 - __Debugging - Functions__ ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-functions/index.html), [Notes](../modules/debugging-functions/debugging-functions.md))
