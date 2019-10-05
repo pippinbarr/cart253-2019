@@ -48,7 +48,7 @@ Grading for projects will consider the following categories:
 
 - __Implementation__ (40%)- the code runs, meets the challenges set, has no errors, is interesting/creative, etc.
 - __Structure__ (30%) - the code is well organized, does things in a sensible order, makes good use of variables and functions, has comments clearly indicating new code, etc.
-- __Style__ (30%) - Follow the style rules! e.g. the code is well-commented, well-formatted and indented, uses good names for variables, functions, classes, etc., and has a good number of commits with well-written commit messages (commits must include the prefix "P2:")
+- __Style__ (30%) - Follow the style rules! e.g. the code is well-commented, well-formatted and indented, uses good names for variables, functions, classes, etc., and has a good number of commits with well-written commit messages (commits must include the prefix "P1:")
 
 Each category for the project will be graded as follows:
 
