@@ -243,7 +243,7 @@ function draw() {
   ellipse(circle.x,circle.y,circle.size);
 }
 
-function addVelocity(shape,velocity) {
+function setVelocity(shape,velocity) {
   shape.vx = velocity; // This WILL change the vx property of the object passed
 }
 ```

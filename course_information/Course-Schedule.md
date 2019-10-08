@@ -168,6 +168,12 @@ __Project 1.__ _In which we hand in project 1._
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
+## Studio time
+
+## Homework
+- Submit [Project 1](../projects/Project-1.md) on the night of class
+- [Exercise 4](../exercises/Exercise-4.md)
+
 ---
 
 # Week 7 - Week of 14 October 2019
