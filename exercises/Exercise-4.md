@@ -53,6 +53,6 @@ Grading for exercises is pass/fail and will consider the following categories:
 
 - __Runs__ and __implements the challenges required__
 - Has __suitable commenting for all added/changed code and functions__
-- Includes a minimum of one initial commit of the starting code, and at least __one commit message per challenge addressed__, all commits must have a __descriptive message__ prefixed with "Ex3:"
+- Includes a minimum of one initial commit of the starting code, and at least __one commit message per challenge addressed__, all commits must have a __descriptive message__ prefixed with "Ex4:"
 - Uses __good naming__ for added variables and functions
 - Is __well structured__, with new code added in sensible places in sensible orders
