@@ -1,14 +1,6 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Object-Oriented Programming
-
----
-
-## Today
-
-- Today is about a key approach to organising code in software engineering
-- It's called Object Oriented Programming (OOP)
-- It's pretty great
 
 ---
 
@@ -20,9 +12,11 @@
 
 ???
 
-- Note that OOP is still not a particularly __natural__ way of interacting with a computer
+- Note that OOP is still not an entirely __natural__ way of interacting with a computer
 - But it does at least allow us to think in terms of __systems__ of objects and agents, which is something
+- It's arguably more intuitive
 - Also note that thinking of programs as a flow of control between __functions__ is also still a highly valued way of programming called __functional programming__
+- And in the end it's __still__ kind of how things work in OOP too - the flow of control still moves from one line to the next, it's just it jumps "into" objects as well
 
 ---
 
@@ -34,14 +28,14 @@
 - And they have particular __functions__ (a projector can be turned on, project an image, play a sound, ...)
 --
 
-- Objects in programming are the same except __we__ can define them
-- And which properties and functions we choose to include in our implementation depend on what we're doing
+- Objects in programming are the same idea
+- And which properties and functions we choose to include in our implementation depends on what we're doing
 
 ---
 
 ## "OOP Brave New World!"
 
-- So, we can start to think about programs as __worlds__ full of little __objects__ that have __properties__ and __functions__ and that can __interact__ with each other
+- The win is we can start to think about programs as __worlds__ full of little __objects__ that have __properties__ and __functions__ and that can __interact__ with each other
 - This is a big part of the solution to writing complicated code that interacts with itself and creates complex, interesting results
 - To actually implement this kind of programming we need some new notation/syntax
 - Which we will learn now!
@@ -52,850 +46,243 @@
 
 ---
 
-Imagine a world...
+## The game of life
 
---
-
-A little white square that lives in inky blackness...
-
---
-
-It moves through the world, bouncing off its top and bottom...
-
---
-
-It encounters strange elongated creatures that seek to collide with it...
-
---
-
-It bounces off them, asking itself... "why?"
-
---
-
-Yes, that's right, it's a Pong ball.
+- To get the idea of OOP, let's return to our favorite little simulation, the predator-prey relationship
 
 ---
 
-## Designing with objects
+## Designing with objects and classes
 
 - Thinking in objects can be a helpful way to design our programs
-- It allows to ask what __things__ there are in the program
-- And then to design __objects__ that will represent those things
-- And then to create the code for those __objects__ to bring them to life
+- We ask what __things__ there are in the program
+- We design and implement __classes__ that __describe__ those things
+- And then we create __objects__ out of those classes that __are__ those things in our program
 
 ???
 
-- Note that the objects don't have to represent visible, "solid" elements in our program, some of these things might be invisible.
+- Note that the classes don't have to describe visible, "solid" elements in our program, some of these things might be invisible.
 - Often we create objects whose entire job is to manage all the other objects, for example (in a videogame this is often called the `GameManager` object)
 
 ---
 
+## What are the "things" (classes) in our predator-prey simulation?
 
-## A Ball
-
-- So if we start with this idea of a ball that bounces off walls and want to make it with OOP we need to ask what its __properties__ and __functions__ are... so... well?
 --
 
-- In terms of properties it will at least need a __position__, a __velocity__, and a __size__
-- In terms of functions it will need to __move__ (including bouncing) and it will need to __display__ itself on the screen
+- A __Predator__
+- A __Prey__
+
+---
+
+## What does a Predator know?
+
+- What __properties__ must a Predator have? (These are like its variables)
 --
 
-- Note: In OOP we often call the __functions__ of an object its __methods__
-- But JavaScript is pretty keen on __functions__ so we can continue to use that term, just be aware you might hear people talk about "methods" and they mean the functions of an object
+  - A __position__
+  - A __velocity__
+  - A __speed__ (perhaps including the idea of sprinting)
+  - __Health__
+  - __Visual information__ like size and fill
+  - __Input keys__
 
 ---
 
-## Let there be Ball!
+## What does a Predator do?
 
-```javascript
-let ball;
-
-function setup() {
-  createCanvas(640,480);
-  ...
-}
-```
+- What can the Predator __do__? (These are like its functions)
 --
 
-- We want to make a Ball that knows how to do all that stuff in our program
-- Previous we would have created an explicit object, but they don't know how to __do__ anything, they just have properties (for now)
-- We want to be able tell our Ball to "move!" and "display yourself!"
-- This would be a new __type__ of value (or data), and we'd store it in a variable...
+  - __Handle input__ from the player
+  - __Move__ around (including __wrapping__ at the edges of the screen and __losing health__ when it moves)
+  - __Eat__ the Prey if they overlap (and __gain health__ when it does so)
+  - __Display__ itself on the screen
+
+- __Note__: in OOP we usually call these functions __methods__
 
 ---
 
-## Let there be Ball!
+## A Predator class
 
-```javascript
-let ball;
-
-function setup() {
-  createCanvas(640,480);
-  ball = new Ball();
-}
-```
-
-- This is what it looks like when we create a new __object__ in JavaScript (and many other languages) using OOP
-- Importantly we use the special word .hi[`new`] to say we want to make a __new object__
-- And we use a special function with the name of the __type__ of object, .hi[`Ball()`] to create it
-- That function is called the __constructor__ (it __creates__ a Ball in this case)
-- Note it is traditional for the constructor to start with a __capital letter__ (`Ball()` not `ball()`)
-
----
-
-## Let there be Ball! :(
-
-```javascript
-let ball;
-
-function setup() {
-  createCanvas(640,480);
-  ball = new Ball();
-}
-```
-
-- When we run this, the JavaScript console tells us something helpful:
-
-`Ball is not defined`
-
-- Because it isn't
-- Right now, our program doesn't know how to create a new Ball
-- Where previously we might have explicitly created an object with properties, now we're going to tell our program __how to create a new Ball__ instead
-
----
-
-## Ball? What Ball?
-
-- So, our program doesn't know what a `Ball` is
-- It knows about numbers, strings, booleans, images, Audio...
-- But it doesn't know about `Ball`
-- We need to tell JavaScript what a `Ball` is and how it works
-- We need to __define the how a Ball works__
-- In OOP this is called __defining a class__
-- A __class__ specifies how some type of object in our program, like a ball, can be created and used
-- So we need a `Ball` class
+- To create the "description" of our Predator we need to create a __class__
+- This involves some special syntax
 
 ---
 
 ```javascript
-class Ball {
-
-  constructor () {
-    this.size = 10;
-    this.speed = 5;
-    this.x = 0;
-    this.y = 0;
-    this.vx = 0;
-    this.vy = 0;
+class Predator { // A Predator class describes what a Predator is and does
+  constructor() {
+    // Sets up the Predator when it is created or "constructed"
   }
 
-  update () {
-    // Move the ball here
+  handleInput() {
+    // Check for player input and react appropriately
   }
 
-  display () {
-    // Display the ball here
+  move() {
+    // Move the predator based on velocity
+    // Lose health from movement
+    // Wrap at the canvas edges
   }
 
-  reset () {
-    // Reset the ball here
-  }
-}
-```
-
-- This is what a __class__ definition looks like in JavaScript
-- It's a __function__ that knows how to create a Ball with properties
-- And then a set of __methods__ that can tell the Ball to do things
-
----
-
-## Class definition
-
-```javascript
-class Ball {
-
-  ...
-
-}
-```
-
-- SAY SOMETHING
-
----
-
-## Constructor
-
-```javascript
-constructor () {
-  this.size = 10;
-  this.speed = 5;
-  this.x = 0;
-  this.y = 0;
-  this.vx = 0;
-  this.vy = 0;
-}
-```
-
-- This first part of our class definition is a function called the __constructor__
-- Any properties this kind of object is going to have should specified here
-- __Note how the properties have the special word `this` in front of them!__
-- When we're defining a __class__ like this, we refer to the object that will be created from the class as `this`
-- And so we set the properties of `this`
-
----
-
-## Constructor
-
-- In fact, we can now see that it's the constructor function `Ball()` we call when we want to make a new ball, e.g.
-
-```javascript
-let ball = new Ball();
-```
-
-- As we saw, it sets all the Ball's properties to default values right now
-
----
-
-## Properties
-
-```javascript
-this.size = 10;
-this.speed = 5;
-this.x = 0;
-this.y = 0;
-this.vx = 0;
-this.vy = 0;
-```
-
-- We can see there are __properties__ like speed, size, position and velocity
-- Again, note that they are all being set using the special `this` word because each of the properties is a variable that belongs to __this__ hypothetical object that would be created from the class
-
----
-
-## Methods
-
-```javascript
-update () {
-  // Move the ball here
-}
-
-display () {
-  // Display the ball here
-}
-
-reset () {
-  // Reset the ball here
-}
-```
-
-- We can see there are three __methods__ like `update` and `display` and `reset`
-- Each method is a __function__ that we define in the slightly special way as above (no `function` keyword is needed)
-
----
-
-## A Ball class
-
-```javascript
-class Ball {
-
-  constructor () {
-    this.size = 10;
-    this.speed = 5;
-    this.x = 0;
-    this.y = 0;
-    this.vx = 0;
-    this.vy = 0;
-  }
-
-  update () {
-    // Move the ball here
-  }
-
-  display () {
-    // Display the ball here
-  }
-
-  reset () {
-    // Reset the ball here
-  }
-}
-```
-
-- So, this is a definition of a `Ball` class with properties and methods
-
----
-
-## Where to put it?
-
-- This code is what we needed for `new Ball()` to work
-- Because we've defined `Ball()`, the __constructor__ function that creates Ball objects
-- We __can__ put this class definition in `script.js` as well
---
-
-- __But__ it's probably better to put it in a __new file__ with the name of the class - in this case `Ball.js`
-- If we do that we need to also go into `index.html` and add a script tag that includes `Ball.js` as well, so that our script can "see" it
-
----
-
-## Adding the class in a new file
-
-- Create a file in the `js/` folder called `Ball.js` (note the capital)
-- Put the Ball class code into that file and save it
-
-```
-project/
-  index.html
-  assets/
-  css/
-  js/
-    libraries/
-    Ball.js
-    script.js
-```
-
-- Add a `<script>` tag referencing the `Ball.js` into `index.html` __before__ `script.js`
-
-```html
-<!-- My script(s) -->
-<script src="js/Ball.js"></script>
-<script src="js/script.js"></script>
-```
-
----
-
-## Using the Ball class
-
-```javascript
-let ball;
-
-function setup() {
-  createCanvas(640,480);
-  ball = new Ball();
-}
-
-function draw() {
-  background(0);
-  ball.update();
-  ball.display();
-}
-```
-
-- We create our ball __object__ by using the Ball __class__'s __constructor__ function
-- Then we can call the ball's __methods__ (functions) using the same __dot notation__ we've used to access the __properties__ of objects before
-
----
-
-## For the record: Accessing objects' properties
-
-```javascript
-let ball;
-
-function setup() {
-  createCanvas(640,480);
-  ball = new Ball();
-}
-
-function draw() {
-  background(0);
-  ball.size = ball.size + 1;
-  ball.update();
-  ball.display();
-}
-```
-
-- We __can__ directly access the ball's properties using standard dot notation too
-- Some people will tell you __not__ to do this kind of "meddling" inside an object
-- Instead they would suggest you should write a __method__ to handle anything you want to do with the object (like change its size)
-- We won't be that strict in this course, but be aware people can feel that way
-
----
-
-## All together...
-
-__Slide notes (`P` in slide view) have all three files updated in this way__
-
-???
-
-`index.html`
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-
-  <!-- CSS stylesheet(s) -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-
-  <!-- Library script(s) -->
-  <script src="js/libraries/p5.min.js"></script>
-
-  <!-- My script(s) -->
-  <script src="js/Ball.js"></script>
-  <script src="js/script.js"></script>
-</head>
-
-<body>
-  <!-- HTML would go here if needed. -->
-</body>
-
-</html>
-```
-
-`js/Ball.js`
-```javascript
-class Ball {
-
-  constructor () {
-    this.size = 10;
-    this.speed = 5;
-    this.x = 0;
-    this.y = 0;
-    this.vx = 0;
-    this.vy = 0;
-  }
-
-  update () {
-    // Move the ball here
-  }
-
-  display () {
-    // Display the ball here
-  }
-
-  reset () {
-    // Reset the ball here
-  }
-}
-```
-
-`js/script.js`
-```javascript
-let ball;
-
-function setup() {
-  createCanvas(640,480);
-  ball = new Ball();
-}
-
-function draw() {
-  background(0);
-  ball.update();
-  ball.display();
-}
-```
-
----
-
-## Let there be Ball!
-
-- If we run our code with `Ball()` added in...
---
-
-- Nothing happens.
-- Because...
---
-
-- Because the Ball we defined doesn't do anything and has no representation on the screen.
-- We need to improve the class so we get more interesting Balls.
-
----
-
-## Activity
-
-__Define the three methods of the `Ball` class__
-
-- The `update` method should update the position with the velocity
-- The `display` method should draw the Ball on screen as a rectangle using the position and size properties
-- The `reset` method should set the position to the centre of the canvas
-- Remember to use `this` whenever you refer to properties of the class
-- (Answer in the slide notes)
-
-???
-
-```javascript
-constructor () {
-  this.size = 10;
-  this.speed = 5;
-  this.x = 0;
-  this.y = 0;
-  this.vx = 0;
-  this.vy = 0;
-}
-
-update () {
-  this.x += this.vx;
-  this.y += this.vy;
-}
-
-display () {
-  rect(this.x,this.y,this.size,this.size);
-}
-
-reset () {
-  this.x = width/2;
-  this.y = height/2;
-}
-```
-
----
-
-## Go Ball!
-
-- Now when we run the program...
---
-
-- It displays, but nothing happens
-- Because...
---
-
-- The starting properties of the ball give it a velocity of 0
-- So it won't move
-
----
-
-## Activity
-
-__Set more interesting starting properties in the `Ball` class__
-
-- Set the starting x and y position to the centre of the canvas (you can use `width` and `height` safely)
-- Set the starting x and y velocity to be the `speed` property
-- Remember to this `this` whenever you refer to any property of the Ball class
-- (Answer in the slide notes)
-
-???
-
-```javascript
-constructor () {
-  this.size = 10;
-  this.speed = 5;
-  this.x = width/2;
-  this.y = height/2;
-  this.vx = this.speed;
-  this.vy = this.speed;
-}
-
-update () {
-  this.x += this.vx;
-  this.y += this.vy;
-}
-
-display () {
-  rect(this.x,this.y,this.size,this.size);
-}
-
-reset () {
-  this.x = width/2;
-  this.y = height/2;
-}
-```
-
----
-
-## Go Ball!
-
-- Now when we run the program...
---
-
-- The ball moves!!
-- And it keeps going...
-- Off the screen...
---
-
-- In Pong we want the ball to bounce on the upper and lower edges
-- And when the ball goes off the left or right edges we want to reset it
-
----
-
-## Activity
-
-__Improve the `update` method to include Pong behaviour__
-
-- Reverse the ball's y velocity if it touches the top or bottom of the screen
-- Reset the ball's position if it goes off the left or right of the screen (remember you can use the `reset` method, but you need to use `this` to call it)
-- (Example answer in the notes)
-
-???
-
-```javascript
-update () {
-  this.x += this.vx;
-  this.y += this.vy;
-
-  if (this.x < 0 || this.x > width) {
-    this.reset();
-  }
-
-  if (this.y < 0 || this.y > height) {
-    this.vy = -this.vy;
-  }
-}
-```
-
-- Again, notice how if we we want to call a method of a class from inside the class we put `this` in front of it because the method is a __method of the hypothetical object being created from the class__
-
----
-
-## All together now...
-
-__Complete Ball.js code to this point is in the notes__ (`P` in slide view)
-
-???
-
-`Ball.js`:
-
-```javascript
-constructor () {
-  this.size = 10;
-  this.speed = 10;
-  this.x = width/2;
-  this.y = height/2;
-  this.vx = this.speed;
-  this.vy = this.speed;
-}
-
-update () {
-  this.x += this.vx;
-  this.y += this.vy;
-
-  if (this.x < 0 || this.x > width) {
-    this.reset();
-  }
-
-  if (this.y < 0 || this.y > height) {
-    this.vy = -this.vy;
-  }
-}
-
-display () {
-  rect(this.x,this.y,this.size,this.size);
-}
-
-reset () {
-  this.x = width/2;
-  this.y = height/2;
-}
-```
-
----
-
-## It's a Ball!
-
-- So the Ball class is now defined enough that we can create a ball and call its methods to have it move and bounce on the screen
-- That is, we're back to where we were with a simpler version of a JavaScript Object where we defined all this stuff explicitly
-- But the true magic of Object Oriented Programming is the idea that we can have __more than one object of the same type__
-- Now that our program knows how to make a Ball, we can make __more than one__
-- Each time we make a new Ball __object__ from the Ball __class__ using `new`
-
----
-
-## Multiball action!
-
-```javascript
-let ball1;
-let ball2;
-
-function setup() {
-  createCanvas(640,480);
-  ball1 = new Ball();
-  ball2 = new Ball();
-}
-
-function draw() {
-  ball1.update();
-  ball2.update();
-  ball1.display();
-  ball2.display();
-}
-```
---
-
-__DANG IT!__
---
-
-What went wrong?
---
-
-Yeah. Both balls have the same position and velocity.
---
-
-How do we fix it?
---
-
-Yeah. Arguments in the `Ball()` function (the __constructor__) that tell the ball where to start.
-
----
-
-## Building a better constructor
-
-- It would make more sense to be able to pass some parameters to our `Ball()` constructor so we can say, for example, where we want our new ball to start and how fast it should be moving, and how big it is, etc...
-- We can add arguments to our constructor in the same way know already because it's just another function!
-
----
-
-## Activity
-
-__Add the arguments to the Ball constructor and assign them to the correct properties__
-
-- An x and y position
-- An x and y velocity
-- A size
-- A speed
-- (Answer in the slide notes)
-
-???
-
-```javascript
-constructor (x,y,vx,vy,size,speed) {
-  this.size = size;
-  this.speed = speed;
-  this.x = x;
-  this.y = y;
-  this.vx = this.speed;
-  this.vy = this.speed;
-}
-```
-
----
-
-## True multiball action!
-
-Now we can make our two `Ball` objects and give their constructors __different parameters__ so they behave distinctly...
-
-```javascript
-let ball1;
-let ball2;
-
-function setup() {
-  createCanvas(640,480);
-  ball1 = new Ball(width/3,height/2,5,5,10,5);
-  ball2 = new Ball(2*width/3,height/2,-5,-5,20,5);
-}
-
-function draw() {
-  background(0);
-  ball1.update();
-  ball2.update();
-  ball1.display();
-  ball2.display();
-}
-```
-
-__They both act like bouncing balls!__
-
----
-
-## Objects and Classes
-
-- Let's go over these ideas again now we know what they look like...
-- A `class` is the __abstract definition__ of what something (like a ball) can do, including properties and method
-- So the class `Ball` defines the __idea__ of a ball
-- We define classes in JavaScript by creating a __constructor function__ with the name of the class
-- An __object__ is a specific __instance__ of a class that exists in your running program
-- We create __instances__ or __objects__ of a __class__ using `new` and the __constructor__
-- So the variable `ball1` contains an __object__ that actually exists and does things in your program (like bounce around), so does `ball2`
-
----
-
-## Multiple classes and objects
-
-- Generally speaking when we're making a little world we probably want more than __one__ kind of thing
-- Pong, for example, has __two__ kinds of things...
-- Our current Ball has some of the behaviour of a Pong ball already, but what is it missing?
---
-
-- A Paddle, so...
-- We need to add __another class definition__, this time for a `Paddle`
-- Maybe it could have the option of being controller by the mouse or the arrow keys?
-- Let's do it?
-
-???
-
-- The Ball right now is missing the ability to bounce off paddles (in no small part because they don't exist yet!)
-- To add a Paddle we'll need to define a new class
-
----
-
-## Paddles
-
-- To get our game of Object-Oriented Pong working, we'll need a class that defines paddles
-- So, again, we need to think about what that kind of class would need...
---
-
-- Paddles have positions, velocities, and dimensions... (properties)
-- Paddles can be controlled by the player, move, and display on screen (methods)
-- Paddles also introduce the idea of bouncing Balls in the opposite direction if they collide (another method)
-
----
-
-## Basic paddle class
-
-```javascript
-class Paddle {
-
-  constructor (x,y,w,h,speed) {
-    this.x = x;
-    this.y = y;
-    this.vx = 0;
-    this.vy = 0;
-    this.w = w;
-    this.h = h;
-    this.speed = speed;
-  }
-
-  handleInput () {
-  }
-
-  update () {
+  handleEating(prey) {
+    // Check for an overlap with this prey
+    // And reduce its health if there is one
+    // Also increase the predator's health
   }
 
   display() {
+    // Draw the predator on the canvas
   }
 }
 ```
 
-- We'll actually add a `handleBounce()` method to our `Ball` class a bit later
-- For now, let's get the controls working.
-- How would we do that?
+???
+
+- Let's look at the pieces here
+
+`class`
+- This is the magic word that lets us create a class to describe a particular kind of object in our program
+
+`Predator`
+- After `class` we write the name of our class
+- It should start with a capital letter and then use camel case, so `MyWonderfulClass` for instance
+
+`{ ... }`
+- After the name of the class we have curly brackets
+- They enclose the entire description of the class (all its methods)
+
+`constructor() { ... }`
+- The `constructor` method is called whenever we create a __new__ object out of this class
+- It's like the `setup()` for an object, it runs once when the object starts to exist
+- We largely use it to set up the properties of the object
+- `constructor` is a __special word__ in JavaScript specifically for this kind of method, you can't call it anything else
+- __Notice__ how we don't write `function` before the names of __methods__ in a class, we just write the name of the method, the parentheses, and then the curly brackets with the instructions inside them
+
+```
+handleInput() { ... }
+move() { ... }
+handleEating(prey) { ... }
+display() { ... }
+```
+- The reset of the methods follow the same pattern
+- You have the name of the function (like `handleInput`), the parentheses containing any parameters, and then curly brackets with the instructions inside them
 
 ---
 
-## Defining input keys
+## Create a class file
+
+- While we __can__ put our class definition in our main `script.js` file, it's much better to create a new file specifically for our class
+- We will name the file `Predator.js`, using the __name__ of the class as the __name__ of the file (and adding `.js` because it's still JavaScript)
+- So we
+  - create a new file,
+  - put our (skeleton) class definition in it,
+  - save the file as `Predator.js` in the `js/` folder
+
+---
+
+## Include the class file in your `index.html`
+
+- For our program to be able to use our new class definition we have to tell the project about the `Predator.js` file
+- So in `index.html` we insert a `script` tag just like the one for `script.js` but for `Predator.js`
+- We'll put the `Predator.js` tag __before__ the `script.js` tag, so it will look like
+
+```html
+<script src="js/Predator.js"></script>
+<script src="js/script.js"></script>
+```
+
+- Now we're ready to use the `Predator` class
+- But first we need to actually fill in its __methods__
+
+---
+
+## `constructor()`
+
+- So if the `constructor()` method is for setting up our Predator, it needs to set up all its __properties__, which are...?
+--
+
+- Things like position, velocity, speed, health, fill color, radius, ...
+- All the information our Predator needs to know in order to "do its job"
+- Importantly, we __don't declare variables__ in the usual way
+- Instead we use one more special word, called `this` to define the __properties__ this class of object has...
+
+---
 
 ```javascript
-constructor (x,y,w,h,speed,downKey,upKey) {
+constructor() {
+  this.x = 0;
+  this.y = 0;
+  this.vx = 0;
+  this.vy = 0;
+  this.maxHealth = 100;
+  this.health = 100; // Must be AFTER defining this.maxHealth
+  this.healthLossPerMove = 0.1;
+  this.healthGainPerEat = 1;
+  this.speed = 5;
+  this.fillColor = color(255,255,0);
+  this.radius = 100;
+  this.upKey = UP_ARROW;
+  this.downKey = DOWN_ARROW;
+  this.leftKey = LEFT_ARROW;
+  this.rightKey = RIGHT_ARROW;
+}
+```
+
+- This is pretty good, but what if we wanted to be able to determine where the Predator starts or what its fill color is, etc.?
+--
+
+- We would need some __arguments__ for the constructor
+- And they work in just the same way as any function, luckily
+
+---
+
+```javascript
+constructor(x, y, speed, fillColor, radius) {
   this.x = x;
   this.y = y;
   this.vx = 0;
   this.vy = 0;
-  this.w = w;
-  this.h = h;
+  this.maxHealth = radius; // Maximum health is the starting radius
+  this.health = this.maxHealth; // Must be AFTER defining this.maxHealth
+  this.healthLossPerMove = 0.1;
+  this.healthGainPerEat = 1;
   this.speed = speed;
-  this.downKey = downKey;
-  this.upKey = upKey;
+  this.fillColor = fillColor;
+  this.radius = this.health; // Radius is matched to health
+  this.upKey = UP_ARROW;
+  this.downKey = DOWN_ARROW;
+  this.leftKey = LEFT_ARROW;
+  this.rightKey = RIGHT_ARROW;
 }
 ```
 
-- Since we'll make more than one Paddle, we should assign its control keys in the constructor
-- We'll need to decide whether this should be a key code or a character...
-- For this one we'll use a key code
+- This will allow us to specify some of the key properties of our Predator __when we create it__
+- Which gives us flexibility if we want it to start in different places, be different colors, move at different speeds, be different sizes...
 
 ---
 
-## Handling input
+## The other methods
 
-- Now we need to define the `handleInput` method that handles input for this paddle
-- What will it need to do?
---
-
-- It will need to check which keys are pressed and set the paddle's velocity accordingly
+- The rest of the methods can essentially be defined in the same way we have defined them in our previous programming
+- With the exception that when we want to refer to a __property__ of the class, we use `this.` in front of it
+- And if we want to call a __method__ of the class, we also use `this.` in front of that
 
 ---
-
-## `handleInput` definition
 
 ```javascript
-handleInput () {
+handleInput() {
+  if (keyIsDown(this.leftKey)) {
+    this.vx = -this.speed;
+  }
+  else if (keyIsDown(this.rightKey)) {
+    this.vx = this.speed;
+  }
+  else {
+    this.vx = 0;
+  }
+
   if (keyIsDown(this.upKey)) {
     this.vy = -this.speed;
   }
@@ -908,122 +295,91 @@ handleInput () {
 }
 ```
 
-- We can handle input in the way we've seen before
-- By using `keyDown()` to check whether this paddle's control keys are being pressed
-- And changing its velocity if so
+???
+
+- As you can see, this is the same code for handling input we've seen before
+- It's just using `this.` in front of any properties we want to refer to or change
+- Like `this.leftKey` and `this.downKey` for the position and `this.vx` and `this.vy` for the velocity
 
 ---
-
-## Updating
-
-- Now we need to define how the paddle gets updated each frame, just like the ball
-- Mostly that means it needs to...
---
-
-move.
-
----
-
-## `update` definition
 
 ```javascript
-update () {
+move() {
+  this.x += this.vx;
   this.y += this.vy;
-  this.y = constrain(this.y,0,height-this.h);
+
+  this.health = this.health - this.healthLossPerMove;
+  this.health = constrain(this.health,0,this.maxHealth);
+
+  if (this.x < 0) {
+    this.x += width;
+  }
+  else if (this.x > width) {
+    this.x -= width;
+  }
+  if (this.y < 0) {
+    this.y += height;
+  }
+  else if (this.y > height) {
+    this.y -= height;
+  }
 }
 ```
 
-- Our `update` method for our paddle moves it according to velocity
-- And while we're here we can `constrain()` the paddle so it doesn't go off the screen...
+???
+
+- Again, essentially the "same" code as we've seen for these ideas
+- Just using `this` everywhere to refer to properties
+- Notice that `width` and `height` are just written the same old way because they are `p5` variables, __not__ properties of our Predator
 
 ---
 
-## Displaying the paddle
-
-- Finally we need to actually be able to see our paddle on the screen
-- Otherwise the game will be a bit hard to play
-- So we need to...
---
-
-display it using a shape (or an image).
-
----
-
-## `display` definition
+## `move()` and `handleWrapping()`
 
 ```javascript
-display () {
-  fill(255);
-  rect(this.x,this.y,this.w,this.h);
+move() {
+  this.x += this.vx;
+  this.y += this.vy;
+
+  this.health = this.health - this.healthLossPerMove;
+  this.health = constrain(this.health,0,this.maxHealth);
+
+  this.handleWrapping(); // Calls the handleWrapping method, note the use of "this"
+}
+
+handleWrapping() {
+  if (this.x < 0) {
+    this.x += width;
+  }
+  else if (this.x > width) {
+    this.x -= width;
+  }
+  if (this.y < 0) {
+    this.y += height;
+  }
+  else if (this.y > height) {
+    this.y -= height;
+  }
 }
 ```
 
-- Just a rectangle will do nicely for now
+???
+
+- This is a nice improvement because it keeps the movement code and the wrapping code separate
+- It also shows us that we can __call other methods__ in our class by using `this` before them
 
 ---
-
-## Adding a paddle
 
 ```javascript
-let ball1;
-let ball2;
-let leftPaddle;
+handleEating(prey) {
+  let d = dist(this.x,this.y,prey.x,prey.y);
+  if (d < this.radius + prey.radius) {
+    this.health += this.healthGainPerEat;
+    this.health = constrain(this.health,0,this.maxHealth);
+    prey.health -= this.healthGainPerEat;
 
-function setup() {
-  createCanvas(640,480);
-  ball = new Ball(width/3,height/2,5,5,10,5);
-  ball2 = new Ball(2*width/3,height/2,-5,-5,20,5);
-  leftPaddle = new Paddle(0,height/2,10,60,10,DOWN_ARROW,UP_ARROW);
-}
-
-function draw() {
-  background(0);
-
-  leftPaddle.handleInput();
-
-  ball.update();
-  ball2.update();
-  leftPaddle.update();
-
-  ball.display();
-  ball2.display();
-  leftPaddle.display();
-}
-```
-
----
-
-## Ghost Pong!
-
-- Actually this game is a lot like Pippin's __Ghost Pong__ game
-- Because the ball doesn't bounce off the paddle!
-- This makes sense given that there's nowhere in our code that defines what should happen if the ball and paddle overlap
-- So we'll need to introduce another method to handle this situation
-
----
-
-## Bouncing
-
-- We should be able to check for collisions between a Ball and a Paddle
-- It's debatable whether the method to handle this should be in the Ball class or the Paddle class
-- But let's put it in the Ball class this time (I imagine it as being the Ball deciding how to bounce when it hits something)
-- It will need to do what?
---
-
-- Check whether the ball and paddle overlap, and reverse the x velocity of the ball if so
-- Primitive, but enough for now
-
----
-
-## `handleCollision` definition
-
-In `Ball.js`:
-```javascript
-handleCollision (paddle) {
-  if (this.x + this.size > paddle.x && this.x < paddle.x + paddle.w) {
-    if (this.y + this.size > paddle.y && this.y < paddle.y + paddle.h) {
-      this.x -= this.vx;
-      this.vx = -this.vx;
+    if (prey.health < 0) {
+      prey.reset();
     }
   }
 }
@@ -1031,14 +387,560 @@ handleCollision (paddle) {
 
 ???
 
-- Note that the line `this.x -= this.vx` is used to move the ball back to where it was in the previous frame so it's no longer intersecting with the paddle - this will help it not become embedded in the paddle!
-- (Though it's not perfect.)
+- Again all very similar with a couple of exceptions
+- You can see we're able to take a __parameter__ that will contain a __prey__ object
+- And you can see we're __assuming__ some things about the __prey__ object passed as a parameter to this method
+- In particular we assume that the prey has `x`, `y`, `radius`, and `health` properties which we access with `prey.x`, `prey.y`, `prey.radius` and `prey.health`
+- And we're assuming the Prey has a `reset()` method we can call if it dies
 
 ---
 
-## All together!!!
+```javascript
+display() {
+  push();
+  noStroke();
+  fill(this.fillColor,this.health);
+  this.radius = this.health;
+  ellipse(this.x,this.y,this.radius * 2);
+  pop();
+}
+```
 
-__See game code for "Basic OO Pong"__
+???
+
+- Again, just like the earlier versions, but with `this` everywhere
+- As always with OOP we use `this` __instead__ our class definition to access properties (and methods)
+
+---
+
+## We have a Predator!
+
+- See the slide notes for our full implementation
+
+???
+
+```javascript
+class Predator {
+  constructor(x, y, speed, fillColor, radius) {
+    this.x = x;
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.maxHealth = radius;
+    this.health = this.maxHealth; // Must be AFTER defining this.maxHealth
+    this.healthLossPerMove = 0.1;
+    this.healthGainPerEat = 1;
+    this.speed = speed;
+    this.fillColor = fillColor;
+    this.radius = this.health;
+    this.upKey = UP_ARROW;
+    this.downKey = DOWN_ARROW;
+    this.leftKey = LEFT_ARROW;
+    this.rightKey = RIGHT_ARROW;
+  }
+
+  handleInput() {
+    if (keyIsDown(this.leftKey)) {
+      this.vx = -this.speed;
+    }
+    else if (keyIsDown(this.rightKey)) {
+      this.vx = this.speed;
+    }
+    else {
+      this.vx = 0;
+    }
+
+    if (keyIsDown(this.upKey)) {
+      this.vy = -this.speed;
+    }
+    else if (keyIsDown(this.downKey)) {
+      this.vy = this.speed;
+    }
+    else {
+      this.vy = 0;
+    }
+  }
+
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    this.health = this.health - this.healthLossPerMove;
+    this.health = constrain(this.health, 0, this.maxHealth);
+
+    this.handleWrapping(); // Calls the handleWrapping method, note the use of "this"
+  }
+
+  handleWrapping() {
+    if (this.x < 0) {
+      this.x += width;
+    }
+    else if (this.x > width) {
+      this.x -= width;
+    }
+    if (this.y < 0) {
+      this.y += height;
+    }
+    else if (this.y > height) {
+      this.y -= height;
+    }
+  }
+
+  handleEating(prey) {
+    let d = dist(this.x, this.y, prey.x, prey.y);
+    if (d < this.radius + prey.radius) {
+      this.health += this.healthGainPerEat;
+      this.health = constrain(this.health, 0, this.maxHealth);
+      prey.health -= this.healthGainPerEat;
+
+      if (prey.health < 0) {
+        prey.reset();
+      }
+    }
+  }
+
+  display() {
+    push();
+    noStroke();
+    fill(this.fillColor);
+    this.radius = this.health;
+    ellipse(this.x, this.y, this.radius * 2);
+    pop();
+  }
+}
+```
+
+---
+
+## Ready to create a new Predator
+
+- Now that we have __described__ how a Predator behaves through its `class` definition we can actually __create__ a Predator using the `new` keyword
+
+```javascript
+let predator; // This will contain our Predator object
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  predator = new Predator(0, 0, 5, color(255, 0, 0), 25);
+}
+```
+
+- That is, we __create__ an __object__ from a __class__ by using `new` and then its __constructor__
+- But note that when we __call__ the constructor we write the __name of the class__, `Predator`, instead of `constructor`
+- And we pass the various arguments through to the constructor so it can in turn set up the properties of the Predator we're creating
+
+---
+
+## Ready to use our new Predator
+
+- For the Predator to "do its thing" we still need to call its various __methods__ in our main program's `draw()` function so that it can move around, wrap, display, etc.
+
+```javascript
+function draw() {
+  background(0);
+  predator.handleInput();
+  predator.move();
+  predator.display();
+}
+```
+
+- You can see that to call the Predator's __methods__ from the __outside__ we use the name of the variable containing the Predator object, followed by a period/dot, follow by the appropriate method call (remember this is called __dot notation__)
+
+???
+
+__For the record__: you can access an object's properties directly
+
+```javascript
+let predator;
+
+function setup() {
+  createCanvas(windowWidth,windowHeight);
+  predator = new Predator(0, 0, 5, color(255, 0, 0), 25);
+}
+
+function draw() {
+  background(0);
+  predator.handleInput();
+  predator.move();
+  predator.radius = predator.radius + 1;
+  predator.display();
+}
+```
+
+- We __can__ directly access an object's __properties__ using dot notation too
+- Some people will tell you __not__ to do this kind of "meddling" inside an object
+- We won't be that strict in this course, but be aware people can feel that way
+
+---
+
+## More than one!
+
+- So the Predator class is now defined enough that we can create a Predator and drive it around on the screen with the arrow keys
+- That is, we're back to where we were with a simpler version where we described all the properties in a simple JavaScript Object and the methods as functions in our main program
+- But part of the true magic of Object Oriented Programming is the idea that we can have __more than one object of the same type__
+- Now that our program knows how to make a Predator, we can make __more than one__
+- Each time we make a new Predator __object__ from the Ball __class__ using `new`
+
+---
+
+## Snow leopards and Tigers oh my!
+
+```javascript
+let snowLeopard;
+let tiger;
+
+let predator;
+
+function setup() {
+  createCanvas(windowWidth,windowHeight);
+  snowLeopard = new Predator(0, 0, 5, color(255, 255, 255), 25);
+  tiger = new Predator(100, 100, 5, color(255, 255, 0), 50); // Note the different position and size
+}
+
+function draw() {
+  background(0);
+  snowLeopard.handleInput();
+  tiger.handleInput();
+  snowLeopard.move();
+  tiger.move();
+  snowLeopard.display();
+  tiger.display();
+}
+```
+--
+
+- Hopefully unsurprisingly, the lion and the snow leopard move in exactly same way because they have the same keys defined for input
+- If we wanted to separate them out we would have to include the four movement keys as further parameters in the constructor!
+
+---
+
+## Objects and Classes
+
+- Let's go over these ideas again now we know what they look like...
+- A `class` is the __description__ of what something (like a Predator) can do, including properties and methods
+- So the class `Predator` describes or defines the __idea__ of a Predator
+- We define classes in JavaScript by using the `class` keyword
+- An __object__ is an __instance__ of a class that exists in your running program
+- We create __instances__ or __objects__ from a __class__ using `new` and the __constructor__
+- So the variable `tiger` contains an __object__ that actually exists and does things in your program (like bounce around), so does `snowLeopard`
+
+---
+
+## You better Prey?
+
+- We're currently missing something in our predator-prey simulation
+- The __Prey__ that the Predator chases around and eats
+- So we need __another class__ that defines how a Prey works, and we need to create a `new` Prey in our main program and call its methods so that it exists in our little world
+
+---
+
+## Activity: Create a skeleton Prey class definition
+
+- Just as with the Predator...
+- Make a file called `Prey.js` and save it in your `js/` folder
+- Add a `script` tag to your `index.html` to include `Prey.js` in your program
+- Add a skeleton class definition for `Prey` that includes __empty__ methods for:
+  - `constructor()`
+  - `move()`
+  - `handleWrapping()`
+  - `display()`
+  - `reset()`
+- (Veeeery similar to the Predator)
+
+???
+
+`Prey.js`
+```javascript
+class Prey {
+  constructor() {
+    // This will set up the Prey's properties
+  }
+
+  move() {
+    // This will move the Prey based on noise()
+  }
+
+  handleWrapping() {
+    // This will handle the Prey's wrapping on the canvas
+  }
+
+  display() {
+    // This will display the Prey as an ellipse
+  }
+
+  reset() {
+    // This will reset the prey to its starting conditions
+    // in a random location
+  }
+}
+```
+
+`index.html`
+Our script tags should now look like this:
+```html
+<script src="js/Predator.js"></script>
+<script src="js/Prey.js"></script>
+<script src="js/script.js"></script>
+```
+
+---
+
+## Activity: Define the `constructor`
+
+- Add parameters to the constructor so a Prey can be start with an `x`, `y` position, a `speed`, a `fillColor` and a `radius`
+- Set the Prey's properties for `x`, `y`, `speed`, `fillColor`, `radius`, `maxHealth`, `health`, `tx`, and `ty` (use random values for `tx` and `ty`)
+- Remember to use `this.` in front of the properties when you're setting them
+
+???
+
+```javascript
+constructor(x, y, speed, fillColor, radius) {
+  this.x = x;
+  this.y = y;
+  this.vx = 0;
+  this.vy = 0;
+  this.tx = random(0, 1000); // To make x and y noise different
+  this.ty = random(0, 1000); // we use random starting values
+  this.maxHealth = radius;
+  this.health = this.maxHealth; // Must be AFTER defining this.maxHealth
+  this.speed = speed;
+  this.fillColor = fillColor;
+  this.radius = this.health;
+}
+
+```
+
+---
+
+## Activity: define the `move()` method
+
+- Write the instructions in the `move()` method
+- Update the Prey's velocity using `noise()` (including updating the time properties)
+
+```javascript
+this.vx = map(noise(this.tx),0,1,-this.speed,this.speed);
+this.vy = map(noise(this.ty),0,1,-this.speed,this.speed);
+
+this.x += this.vx;
+this.y += this.vy;
+
+this.tx += 0.01;
+this.ty += 0.01;
+```
+
+- Call the `handleWrapping()` method (don't forget to use `this` in front of it)
+
+???
+
+```javascript
+move() {
+  this.vx = map(noise(this.tx), 0, 1, -this.speed, this.speed);
+  this.vy = map(noise(this.ty), 0, 1, -this.speed, this.speed);
+
+  this.x += this.vx;
+  this.y += this.vy;
+
+  this.tx += 0.01;
+  this.ty += 0.01;
+
+  this.handleWrapping();
+}
+```
+
+---
+
+## Activity: define the `handleWrapping()` method
+
+- Copy over the `handleWrapping()` method of the `Predator`, since it's exactly what we want
+
+???
+
+```javascript
+handleWrapping() {
+  if (this.x < 0) {
+    this.x += width;
+  }
+  else if (this.x > width) {
+    this.x -= width;
+  }
+  if (this.y < 0) {
+    this.y += height;
+  }
+  else if (this.y > height) {
+    this.y -= height;
+  }
+}
+```
+
+---
+
+## Activity: define the `display()` method
+
+- Again, this will be the same as the `Predator` version, so we could just copy it
+- Or you can do something a bit different if you like
+
+???
+
+```javascript
+display() {
+  push();
+  noStroke();
+  fill(this.fillColor, this.health);
+  this.radius = this.health;
+  ellipse(this.x, this.y, this.radius * 2);
+  pop();
+}
+```
+
+---
+
+## Activity: define the `reset()` method
+
+- The reset method should:
+  - Set the Prey's health property back to the maximum
+  - Set the Prey's position to a random `x` (between `0` and `width`) and `y` (between `0` and `height`)
+
+???
+
+```javascript
+reset() {
+  this.x = random(0, width);
+  this.y = random(0, height);
+  this.health = this.maxHealth;
+  this.radius = this.health;
+}
+```
+
+---
+
+## Activity: create a new Prey in the main script
+
+- Define a variable called `antelope` (or some other prey name) at the top of the script
+- Create a `new` `Prey` object in `setup()` with parameters, much as for `Predator`
+- Call the `move()` and `display()` methods of the `antelope` in `draw()`
+
+???
+
+```javascript
+let tiger;
+let antelope; // NEW
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  tiger = new Predator(100, 100, 5, color(255, 255, 0), 25);
+  antelope = new Prey(100, 100, 10, color(0, 255, 0), 25); // NEW
+}
+
+function draw() {
+  background(0);
+  tiger.handleInput();
+  tiger.move();
+  antelope.move(); // NEW
+  tiger.display();
+  antelope.display(); // NEW
+}
+```
+
+---
+
+## Eating
+
+- The last thing we want to do is use the Predator's `handleEating(prey)` method to see if either of our Predators have eaten the prey, so we add it to `draw()`:
+
+```javascript
+function draw() {
+  background(0);
+  tiger.handleInput();
+  tiger.move();
+  antelope.move();
+  tiger.handleEating(antelope); // NEW
+  tiger.display();
+  antelope.display();
+}
+```
+
+---
+
+## We have a Prey!
+
+- That concludes a pretty good definition and use of a Prey class
+- A full version is in the slide notes
+
+???
+
+`Prey.js`
+```javascript
+class Prey {
+  constructor(x, y, speed, fillColor, radius) {
+    this.x = x;
+    this.y = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.tx = random(0, 1000); // To make x and y noise different
+    this.ty = random(0, 1000); // we use random starting values
+    this.maxHealth = radius;
+    this.health = this.maxHealth; // Must be AFTER defining this.maxHealth
+    this.speed = speed;
+    this.fillColor = fillColor;
+    this.radius = this.health;
+  }
+
+  move() {
+    this.vx = map(noise(this.tx), 0, 1, -this.speed, this.speed);
+    this.vy = map(noise(this.ty), 0, 1, -this.speed, this.speed);
+
+    this.x += this.vx;
+    this.y += this.vy;
+
+    this.tx += 0.01;
+    this.ty += 0.01;
+
+    this.handleWrapping();
+  }
+
+  handleWrapping() {
+    if (this.x < 0) {
+      this.x += width;
+    }
+    else if (this.x > width) {
+      this.x -= width;
+    }
+    if (this.y < 0) {
+      this.y += height;
+    }
+    else if (this.y > height) {
+      this.y -= height;
+    }
+  }
+
+  display() {
+    push();
+    noStroke();
+    fill(this.fillColor);
+    this.radius = this.health;
+    ellipse(this.x, this.y, this.radius * 2);
+    pop();
+  }
+
+  reset() {
+    this.x = random(0, width);
+    this.y = random(0, height);
+    this.health = this.maxHealth;
+    this.radius = this.health;
+  }
+}
+```
+
+---
+
+## We have a Predator-Prey simulation!
+
+- At this point we have a (primitive) simulation of a world of predators and prey
+- We could create new Predators and give them different control keys to create a version where players compete with each other to eat limited resources (maybe even each other???)
+- We could create different numbers of Prey and Predators to create different ecosystems
+- We could create "AI" Predators that move around like Prey (but eat Prey), or even that target the Prey and hunt them automatically...
+
+Full commented code for a version with one Predator and three Prey is available as [game-oop-predator-prey.zip](https://github.com/pippinbarr/cart253-2019/raw/master/games/game-oop-predator-prey.zip) in the course website's `games/` folder.
 
 ---
 
@@ -1047,12 +949,13 @@ __See game code for "Basic OO Pong"__
 - A __class__ is a definition of how some kind of object behaves
 - A class defines this behaviour via __properties__ (which are like variables specifically for that thing) and __methods__ (which are like functions specifically for that thing)
 - An __object__ is a specific __instance__ of a class that is created when your program runs, it is a "real thing" in the program with proper values in its properties and which can meaningfully have its methods called to make something happen
-- `Paddle` is a __class__ (the idea of a how a paddle words), but `leftPaddle` and `rightPaddle` are __objects__ or __instances__ of the `Paddle` class - they actually exist when the program runs
+- `Predator` is a __class__ (the idea of a how a predator works), but `snowLeopard` and `tiger` are __objects__ or __instances__ of the `Predator` class - they actually exist and do things when the program runs
+
+???
+
 - The __objects__ we create with a __class__ are in fact __JavaScript__ objects, it's "just" a special and incredibly organised way of creating them
 
----
-
-## Other people's objects
+Also: __Other people's objects are amazing__
 
 - Finally, objects are also amazing because __other people__ can define them __for__ us to save us work
 - For example when we use `new Audio()` we're creating an object that represents an audio file in our code, which we can then `.play()` and `.pause()` and set the `.loop` property of...

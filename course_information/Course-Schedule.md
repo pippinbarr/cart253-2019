@@ -2,7 +2,7 @@
 - __[Project 1](../projects/Project-1.md)__ (10%)
   - Assigned: Class, week of 23 September 2019
   - Due: Night of class, week of 7 October 2019 (two weeks)
-- __Project 2__ (20%)
+- __[Project 2](../projects/Project-2.md__ (20%)
   - Assigned: Class, week of 14 October 2019
   - Due: Night of class, week of 4 November 2019 (three weeks)
 - __Project 3__ (40%)
@@ -21,8 +21,8 @@
 - [~~2. Change~~](#week-2---week-of-9-september-2019)
 - [~~3. Ifs and Inputs~~](#week-3---week-of-16-september-2019)
 - [~~4. Repetition~~](#week-4---week-of-23-september-2019)
-- [5. Functions](#week-5---week-of-30-september-2019)
-- [6. Project 1](#week-6---week-of-7-october-2019)
+- [~~5. Functions~~](#week-5---week-of-30-september-2019)
+- [~~6. Project 1~~](#week-6---week-of-7-october-2019)
 - [7. Object Oriented Programming](#week-7---week-of-14-october-2019)
 - [8. Arrays](#week-8---week-of-21-october-2019)
 - [9. Inheritance and Polymorphism](#week-9---week-of-28-october-2019)
@@ -136,7 +136,7 @@ __Repetition.__ _In which we leverage one of the computer's key super powers: ne
 
 ---
 
-# Week 5 - Week of 30 September 2019
+# ~~Week 5 - Week of 30 September 2019~~
 
 __Structure.__ _In which we learn to break our programs and data into easy-to-understand parts.__
 
@@ -162,7 +162,7 @@ __Structure.__ _In which we learn to break our programs and data into easy-to-un
 
 ---
 
-# Week 6 - Week of 7 October 2019
+# ~~Week 6 - Week of 7 October 2019~~
 
 __Project 1.__ _In which we hand in project 1._
 
@@ -182,6 +182,17 @@ __Objection!__ _In which we learn the basics of Object Oriented Programming, a h
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
+
+## Topics
+- Core - Object Oriented Programming ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-object-oriented-programming/index.html), [Notes](../modules/core-object-oriented-programming/core-object-oriented-programming.md))
+- Core - Style Guide ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-style-guide/index.html), [Notes](../modules/core-style-guide/core-style-guide.md))
+- Game - OOP Predator-Prey ([Game](https://pippinbarr.github.io/cart253-2019/games/game-oop-predator-prey/index.html), [Source Code](../games/game-basic-oop-pong/), [ZIP of Source Code](../games/game-oop-predator-prey.zip))
+- Game - Basic OOP Pong ([Game](https://pippinbarr.github.io/cart253-2019/games/game-basic-oop-pong/index.html), [Source Code](../games/game-basic-oop-pong/), [ZIP of Source Code](../games/game-basic-oop-pong.zip))
+
+## Homework
+### [Exercise 5](../exercises/Exercise-5.md) - .....
+### [Project 2](../projects/Project-2.md) - .....
+
 
 ---
 

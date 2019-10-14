@@ -1,4 +1,4 @@
-### Core / CART 253 / Fall 2018 / Pippin Barr
+### Core / CART 253 / Pippin Barr
 
 # Style guide
 
@@ -79,8 +79,8 @@ function draw() {
 
 - In order to maintain proper indenting of your code you can either
 
+  - Use a package like __Atom Beautify__ to take care of it (__recommended__)
   - Do it yourself (which is a bit tedious)
-  - Use a package that takes care of it (__Atom Beautify__ is one, but note this won't work on CDA computers unless you install it every day)
   - Select all your code and use `Edit > Lines > Auto Indent`
   - Select all your code and use `Command-Shift-P` then type "auto" to bring up the auto-indent option and hit enter
 
@@ -102,7 +102,7 @@ function draw() {
 
 - In programming we have many opportunities to name things
 - This most notably includes variables, properties, functions, and classes
-- And this includes remembering conventions such as `camelCase` for variable, property, and function names, and `FirstLetterCapitalization` for class filenames and constructor functions
+- And this includes remembering conventions such as `camelCase` for variable, property, and function names, and `FirstLetterCapitalization` for class names and filenames
 - As with other matters of style, we try to use good names for these things because it helps us and everyone else understand how the program works, it makes everyone's life easier
 
 ---
