@@ -2,7 +2,7 @@
 - __[Project 1](../projects/Project-1.md)__ (10%)
   - Assigned: Class, week of 23 September 2019
   - Due: Night of class, week of 7 October 2019 (two weeks)
-- __[Project 2](../projects/Project-2.md__ (20%)
+- __[Project 2](../projects/Project-2.md)__ (20%)
   - Assigned: Class, week of 14 October 2019
   - Due: Night of class, week of 4 November 2019 (three weeks)
 - __Project 3__ (40%)
@@ -186,12 +186,12 @@ __Objection!__ _In which we learn the basics of Object Oriented Programming, a h
 ## Topics
 - Core - Object Oriented Programming ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-object-oriented-programming/index.html), [Notes](../modules/core-object-oriented-programming/core-object-oriented-programming.md))
 - Core - Style Guide ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-style-guide/index.html), [Notes](../modules/core-style-guide/core-style-guide.md))
-- Game - OOP Predator-Prey ([Game](https://pippinbarr.github.io/cart253-2019/games/game-oop-predator-prey/index.html), [Source Code](../games/game-basic-oop-pong/), [ZIP of Source Code](../games/game-oop-predator-prey.zip))
-- Game - Basic OOP Pong ([Game](https://pippinbarr.github.io/cart253-2019/games/game-basic-oop-pong/index.html), [Source Code](../games/game-basic-oop-pong/), [ZIP of Source Code](../games/game-basic-oop-pong.zip))
+- Game - OOP Predator-Prey ([Game](https://pippinbarr.github.io/cart253-2019/games/game-oop-predator-prey/index.html), [Source Code](../games/game-oop-predator-prey/), [ZIP of Source Code](../games/game-oop-predator-prey.zip))
+- Game - OOP Pong ([Game](https://pippinbarr.github.io/cart253-2019/games/game-oop-pong/index.html), [Source Code](../games/game-oop-pong/), [ZIP of Source Code](../games/game-oop-pong.zip))
 
 ## Homework
-### [Exercise 5](../exercises/Exercise-5.md) - .....
-### [Project 2](../projects/Project-2.md) - .....
+### [Exercise 5](../exercises/Exercise-5.md) - Predators-Preys
+### [Project 2](../projects/Project-2.md) - Apex Predator-Prey
 
 
 ---
