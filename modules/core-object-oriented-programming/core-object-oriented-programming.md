@@ -583,8 +583,6 @@ function draw() {
 
 ---
 
-## Snow leopards and Tigers oh my!
-
 ```javascript
 let snowLeopard;
 let tiger;
@@ -609,8 +607,8 @@ function draw() {
 ```
 --
 
-- Hopefully unsurprisingly, the lion and the snow leopard move in exactly same way because they have the same keys defined for input
-- If we wanted to separate them out we would have to include the four movement keys as further parameters in the constructor!
+- Unsurprisingly, the lion and the snow leopard move in exactly same way because they have the same keys defined for input
+- If we want to separate them we would have to include the four movement keys as parameters in the constructor!
 
 ---
 
