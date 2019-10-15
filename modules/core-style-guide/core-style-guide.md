@@ -168,7 +168,7 @@ function draw() {
 - As projects grow in size, and particularly when we write multiple script files (such as when we're creating classes), it becomes important to make sure we manage our project structure well
 - This shouldn't be rocket science - we've all been using computers, we understand the idea of files and folders
 - All we need to do is preserve a sensible folder structure and put things in the right places!
-- We should also __avoid large file sizes__, especially any file 100MB or larger as GitHub will __reject__ them and it will lead to heartache and pain. Check your file sizes.
+- We should also __avoid large file sizes__, especially any file 100MB or larger as GitHub will __reject__ them and it will lead to heartache and pain. Check your file sizes.  
 
 ---
 
