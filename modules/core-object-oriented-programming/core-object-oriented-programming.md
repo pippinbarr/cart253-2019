@@ -686,7 +686,7 @@ Our script tags should now look like this:
 ## Activity: Define the `constructor`
 
 - Add parameters to the constructor so a Prey can be start with an `x`, `y` position, a `speed`, a `fillColor` and a `radius`
-- Set the Prey's properties for `x`, `y`, `speed`, `fillColor`, `radius`, `maxHealth`, `health`, `tx`, and `ty` (use random values for `tx` and `ty`)
+- Set the Prey's properties for `x`, `y`, `vx`, `vy`, `speed`, `fillColor`, `radius`, `maxHealth`, `health`, `tx`, and `ty` (use random values for `tx` and `ty`, use `0` for `vx` and `vy`)
 - Remember to use `this.` in front of the properties when you're setting them
 
 ???
