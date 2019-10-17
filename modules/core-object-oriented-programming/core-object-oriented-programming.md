@@ -399,7 +399,7 @@ handleEating(prey) {
 display() {
   push();
   noStroke();
-  fill(this.fillColor,this.health);
+  fill(this.fillColor);
   this.radius = this.health;
   ellipse(this.x,this.y,this.radius * 2);
   pop();
@@ -783,7 +783,7 @@ handleWrapping() {
 display() {
   push();
   noStroke();
-  fill(this.fillColor, this.health);
+  fill(this.fillColor);
   this.radius = this.health;
   ellipse(this.x, this.y, this.radius * 2);
   pop();
@@ -796,6 +796,7 @@ display() {
 
 - The reset method should:
   - Set the Prey's health property back to the maximum
+  - Set the Prey's radius back to the maximum (e.g. to its reset health)
   - Set the Prey's position to a random `x` (between `0` and `width`) and `y` (between `0` and `height`)
 
 ???
