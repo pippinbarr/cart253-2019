@@ -1,4 +1,4 @@
-### Debugging / CART 253 / Fall 2018 / Pippin Barr
+### Debugging / CART 253 / Pippin Barr
 
 # Debugging guide
 
@@ -110,7 +110,7 @@ background("a nice sea green");
 
 .hi[No error! Damn.]
 
-- You __can__ give a string to `background()` but it has to specify a correct colour name (like "red" or "cyan") to actually work
+- You __can__ give a string to `background()` but it has to specify a correct color name (like "red" or "cyan") to actually work
 
 ---
 
@@ -168,10 +168,9 @@ if (curlyMissing) {
 
 .hi[Uncaught SyntaxError: Unexpected end of input]
 
-- If you fail to close one of your curly brackets JavaScript won't notice until it reaches the __end of the file__, at which point it will realise that at some point you didn't close one of your curlies
+- If you fail to close one of your curly brackets JavaScript won't notice until it reaches the __end of the file__, at which point it will realize that at some point you didn't close one of your curlies
 - It doesn't know which one
 - You have to go back through your program to look for it!
-
 
 ---
 
@@ -182,8 +181,8 @@ if (curlyMissing) {
 --
 
 - But, if you do leave one out, your best friend is...
-- Auto Indenting your code
-- If you Auto Indent all your code you will likely be able to see visually where the indenting gets weird and unexpected - your problem is likely around there.
+- Auto Indenting your code with atom-beautify (or similar)
+- If you indent all your code you will likely be able to see visually where the indenting gets weird and unexpected - your problem is likely around there.
 
 ---
 
@@ -243,7 +242,7 @@ if (x = 0) {
 .hi[No error!]
 
 - This is because JavaScript will __evaluate__ `x = 0` in the conditional
-- It evaluates to the result of that operation, which is `0`
+- It evaluates to the result of that instruction, which is `0`
 - An `0` is __coerced__ (converted) to `false`
 - And so we just never see the message
 - Be careful!
@@ -273,7 +272,7 @@ if (x === 0) {
 
 .hi[No error!]
 
-- Because JavaScript evaluated `x === 0;`, it's false, and then it moves on.
+- Because JavaScript evaluated `x === 0;`, it's `false`, and then it moves on.
 
 ---
 
@@ -311,9 +310,8 @@ __... but it doesn't, you know... work.__
 - Because you write your own code, __testing__ is a little bit easier than it would be for someone else
 - You __know__ what your program is meant to do, so you __know__ when it's not doing that
 - As your programs get more complicated, though, you do need to be more __thorough__ with testing
-- And with __interactive__ media someone other than you will use it and they will do weird things you might not have thought of (like pressing every key at once, headbutting the microphone, ...)
+- And with __interactive__ media someone other than you will use it and they will do weird things you might not have thought of (like pressing every key at once, head-butting the microphone, ...)
 - This is why it's good to watch other people test your work
-- Or pretend to be someone else when you test your own work
 
 ---
 
@@ -322,8 +320,8 @@ __... but it doesn't, you know... work.__
 - Once you run into a problem in your code it's a good idea to think about what __kind__ of problem it is
 - Especially in relation to your own code
 - This will allow you to __find__ the location of the problem more easily
-- If it's a problem with the way a paddle is moving, you can probably start out looking in the `Paddle` class, maybe in the `handleInput()` or `update()` methods
-- If the ball is passing straight through your paddles, maybe it's in the `handleCollision()` method of the `Ball` class
+- If it's a problem with the way a Predator is moving, you can probably start out looking in the `Predator` class, maybe in the `handleInput()` or `move()` methods
+- If the Prey aren't being eaten, it should be something to do with the `handleEating()` method in the `Predator` class (including it not being called in the main program, for instance)
 - Be a detective
 
 ---
@@ -342,8 +340,8 @@ There are a few basic things you can do to make your life of debugging easier:
 ## Simplify
 
 - One beauty of the __modularity__ we get from functions and object-oriented programming is that we can more easily __simplify__ our work
-- For example, if we have a problem with our paddles, we could simplify the main program to __only__ include __one__ paddle that we could then test further
-- If removing everything else __solves__ the problem, we know the issue is somewhere in the code we removed
+- For example, if we have a problem with our Prey, we could simplify the main program to just have __no Prey__ at all
+- If removing the Prey __solves__ the problem, we know the issue is somewhere in the code we removed
 - If this __doesn't__ solve the problem, we've got __much less code to look at__ because it can only be in the code we've left in the program!
 - Repeating this process will eventually lead us to the truth!
 
@@ -355,23 +353,29 @@ There are a few basic things you can do to make your life of debugging easier:
 ---
 
 ```javascript
-void draw() {
-  background(backgroundColor);
+function draw() {
+  // Clear the background to black
+  background(0);
 
-  leftPaddle.update();
-  //rightPaddle.update();
-  //ball.update();
+  // Handle input for the tiger
+  tiger.handleInput();
 
-  //ball.handleCollision(leftPaddle);
-  //ball.handleCollision(rightPaddle);
+  // Move all the "animals"
+  tiger.move();
+  // antelope.move();
+  // zebra.move();
+  // bee.move();
 
-  //if (ball.isOffScreen()) {
-  //  ball.reset();
-  //}
+  // Handle the tiger eating any of the prey
+  // tiger.handleEating(antelope);
+  // tiger.handleEating(zebra);
+  // tiger.handleEating(bee);
 
-  leftPaddle.display();
-  //rightPaddle.display();
-  //ball.display();
+  // Display all the "animals"
+  tiger.display();
+  // antelope.display();
+  // zebra.display();
+  // bee.display();
 }
 ```
 
@@ -383,7 +387,7 @@ void draw() {
 - And then gradually add things back in __one by one__
 - Until the problem finally comes up
 - At that point you know that the thing you just added is __part of the problem__
-- e.g. You could start with nothing, then add the ball in, then one paddle, then both, etc.
+- e.g. You could start with nothing, then add the line that creates a Predator, then add the `background()` instruction, then add the `handleInput()` for the Predator, etc...
 
 ---
 
@@ -397,37 +401,44 @@ void draw() {
 
 ---
 
+`Prey.js`:
 ```javascript
-Ball.prototype.reset = function () {
-    console.log("Resetting the ball to the centre...")
-    this.x = width/2;
-    this.y = height/2;
-  }
+reset() {
+  console.log("Prey reset() called");
+  this.x = random(0, width);
+  this.y = random(0, height);
+  this.health = this.maxHealth;
+  this.radius = this.health;
+}
 ```
 
-- If something weird is happening with the ball not resetting properly one of the first things I would do is put a `console.log()` in the `reset()` method of the Ball class to see if it's being called
+- If something weird is happening with the Prey not resetting properly one of the first things I would do is put a `console.log()` in the `reset()` method of the Prey class to see if it's being called
 - If that message __does not appear__ when it should, we know the function is not being called
 - If that message __does appear__ then the resetting problem is somewhere else
 
 ---
 
 ```javascript
-Ball.prototype.isOffScreen = function () {
-  console.log("isOffScreen() called");
-  console.log("x is " + this.x);
-  if (this.x + this.size < 0 || this.x > width) {
-    console.log("Ball is offscreen");
-    return true;
-  }
-  else {
-    console.log("Ball is onscreen");
-    return false;
+handleEating(prey) {
+  console.log("Predator handleEating() called")
+  let d = dist(this.x, this.y, prey.x, prey.y);
+  console.log("Distance to Prey is " + d);
+  if (d < this.radius + prey.radius) {
+    console.log("Prey is in range!");
+    this.health += this.healthGainPerEat;
+    this.health = constrain(this.health, 0, this.maxHealth);
+    prey.health -= this.healthGainPerEat;
+    console.log("Prey health is now: " + prey.health);
+    if (prey.health < 0) {
+      console.log("Prey died!");
+      prey.reset();
+    }
   }
 }
 ```
 
-- Maybe the ball is not resetting because it's not being detected as off screen?
-- One way to monitor this is to put `console.log()` messages in the `isOffScreen()` method that constantly prints out the value of `x` and the result of the conditions for the ball being off the screen
+- Maybe the Prey is not resetting because of something in `handleEating()`?
+- One way to monitor this is to put `console.log()` messages in the `handleEating()` method that lets us know what is happening in there specifically
 - By running the game and monitoring these messages, we may be able to see a problem
 
 ---
@@ -436,8 +447,8 @@ Ball.prototype.isOffScreen = function () {
 
 - You're surrounded by people who know how to program to varying degrees
 - If you're totally stuck on a weird bug, show it to someone else
-- The process of __explaining__ what is going wrong will often trigger a realisation of how to fix it!
-- This also can work if you just verbally explain your code __to yourself__
+- The process of __explaining__ what is going wrong will often trigger a realization of how to __fix__ it!
+- This can even work if you just verbally explain your code __to yourself__
 
 ---
 
@@ -463,7 +474,7 @@ Ball.prototype.isOffScreen = function () {
 
 - One of the dark arts of programming is to sometimes decide that an element of your program that doesn't work the way you want is actually... __what you wanted__
 - This is probably only a good idea if you __understand__ why it doesn't work
-- But it can be an interesting design process to consider: __not all unexpected behaviour in your code is necessarily bad__
+- But it can be an interesting design process to consider: __not all unexpected behavior in your code is necessarily bad__
 - So long as you (eventually) understand it
 
 ---

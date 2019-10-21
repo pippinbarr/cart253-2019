@@ -23,7 +23,7 @@
 - [~~4. Repetition~~](#week-4---week-of-23-september-2019)
 - [~~5. Functions~~](#week-5---week-of-30-september-2019)
 - [~~6. Project 1~~](#week-6---week-of-7-october-2019)
-- [7. Object Oriented Programming](#week-7---week-of-14-october-2019)
+- [~~7. Object Oriented Programming~~](#week-7---week-of-14-october-2019)
 - [8. Arrays](#week-8---week-of-21-october-2019)
 - [9. Inheritance and Polymorphism](#week-9---week-of-28-october-2019)
 - [10. Project 2](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-10---week-of-4-november-2019)
@@ -176,7 +176,7 @@ __Project 1.__ _In which we hand in project 1._
 
 ---
 
-# Week 7 - Week of 14 October 2019
+# ~~Week 7 - Week of 14 October 2019~~
 
 __Objection!__ _In which we learn the basics of Object Oriented Programming, a hugely influential programming paradigm._
 
@@ -202,6 +202,17 @@ __Little boxes.__ _In which we harness the power of arrays to store lots of rela
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
+
+## Topics
+- Core - Arrays ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-arrays/index.html), [Notes](../modules/core-arrays/core-arrays.md))
+- Debugging - Guide ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-guide/index.html), [Notes](../modules/debugging-guide/debugging-guide.md))
+- Game - OOP Predator-Preys ([Game](https://pippinbarr.github.io/cart253-2019/games/game-oop-predator-preys/index.html), [Source Code](../games/game-oop-predator-preys/), [ZIP of Source Code](../games/game-oop-predator-preys.zip))
+- Broken Game - OOP Predator-Prey ([Game](https://pippinbarr.github.io/cart253-2019/games/broken-game-oop-predator-prey/index.html), [Source Code](../games/broken-game-oop-predator-prey/), [ZIP of Source Code](../games/broken-game-oop-predator-prey.zip))
+
+## Homework
+### [Exercise 6](../exercises/Exercise-6.md) - Debugging Predator-Prey
+### [Project 2](../projects/Project-2.md) (Apex Predator-Prey)
+
 
 ---
 
