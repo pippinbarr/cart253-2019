@@ -205,7 +205,7 @@ __Little boxes.__ _In which we harness the power of arrays to store lots of rela
 
 ## Notes
 - [Exercise 4 Feedback](../exercises/Exercise-4-Feedback.md)
-- [Exercise 5](../exercises/Exercise-3.md) is due before midnight on day of class
+- [Exercise 5](../exercises/Exercise-5.md) is due before midnight on day of class
 
 ## Topics
 - Core - Arrays ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-arrays/index.html), [Notes](../modules/core-arrays/core-arrays.md))
