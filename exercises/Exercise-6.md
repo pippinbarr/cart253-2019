@@ -32,7 +32,7 @@ This means you will have __one commit per error in the code__. __Make sure you c
 
 ## Starting Code
 
-[broken-game-predator-prey.zip](../games/broken-game-predator-prey.zip)
+[broken-game-predator-prey.zip](../games/broken-game-oop-predator-prey.zip)
 
 
 ## Submission

@@ -203,11 +203,14 @@ __Little boxes.__ _In which we harness the power of arrays to store lots of rela
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
+## Notes
+- [Exercise 4 Feedback](../exercises/Exercise-4-Feedback.md)
+- [Exercise 5](../exercises/Exercise-3.md) is due before midnight on day of class
+
 ## Topics
 - Core - Arrays ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-arrays/index.html), [Notes](../modules/core-arrays/core-arrays.md))
 - Debugging - Guide ([Slides](https://pippinbarr.github.io/cart253-2019/modules/debugging-guide/index.html), [Notes](../modules/debugging-guide/debugging-guide.md))
 - Game - OOP Predator-Preys ([Game](https://pippinbarr.github.io/cart253-2019/games/game-oop-predator-preys/index.html), [Source Code](../games/game-oop-predator-preys/), [ZIP of Source Code](../games/game-oop-predator-preys.zip))
-- Broken Game - OOP Predator-Prey ([Game](https://pippinbarr.github.io/cart253-2019/games/broken-game-oop-predator-prey/index.html), [Source Code](../games/broken-game-oop-predator-prey/), [ZIP of Source Code](../games/broken-game-oop-predator-prey.zip))
 
 ## Homework
 ### [Exercise 6](../exercises/Exercise-6.md) - Debugging Predator-Prey
