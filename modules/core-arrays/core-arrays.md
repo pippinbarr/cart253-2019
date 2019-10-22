@@ -19,7 +19,13 @@
 
 ???
 
-- "Secretly" an array in JavaScript is an __Object__, it just has some special syntax because it's so fundamental to programming in many, many programming languages
+- You could use all sorts of metaphors to think about arrays:
+  - They're like parking spaces for values!
+  - They're like post-office boxes!
+  - They're like numbered page s in a book!
+  - They're like...
+
+("Secretly" an array in JavaScript is an __Object__, it just has some special syntax because it's so fundamental to programming in many, many programming languages.)
 
 ---
 
