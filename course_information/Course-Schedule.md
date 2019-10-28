@@ -24,7 +24,7 @@
 - [~~5. Functions~~](#week-5---week-of-30-september-2019)
 - [~~6. Project 1~~](#week-6---week-of-7-october-2019)
 - [~~7. Object Oriented Programming~~](#week-7---week-of-14-october-2019)
-- [8. Arrays](#week-8---week-of-21-october-2019)
+- [~~8. Arrays~~](#week-8---week-of-21-october-2019)
 - [9. Inheritance and Polymorphism](#week-9---week-of-28-october-2019)
 - [10. Project 2](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-10---week-of-4-november-2019)
 - [11. Libraries](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-11---week-of-11-november-2019)
@@ -196,7 +196,7 @@ __Objection!__ _In which we learn the basics of Object Oriented Programming, a h
 
 ---
 
-# Week 8 - Week of 21 October 2019
+# ~~Week 8 - Week of 21 October 2019~~
 
 __Little boxes.__ _In which we harness the power of arrays to store lots of related data in one place._
 
@@ -225,6 +225,19 @@ __We are family.__ _In which we extend Object-Oriented Programming with the idea
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
+
+## Notes
+- [Exercise 5 Feedback](../exercises/Exercise-5-Feedback.md)
+- [Exercise 6](../exercises/Exercise-6.md) is due before midnight on day of class
+
+## Topics
+- Core - Inheritance and Polymorphism ([Slides](https://pippinbarr.github.io/cart253-2019/modules/core-inheritance-and-polymorphism/index.html), [Notes](../modules/core-inheritance-and-polymorphism/core-inheritance-and-polymorphism.md))
+- Game - Inheritance Pong ([Game](https://pippinbarr.github.io/cart253-2019/games/game-inheritance-pong/index.html), [Source Code](../games/game-inheritance-pong/), [ZIP of Source Code](../games/game-inheritance-pong.zip))
+- Extra - Graphics and Transformations ([Slides](https://pippinbarr.github.io/cart253-2019/modules/graphics-transformations/index.html), [Notes](../modules/graphics-transformations/graphics-transformations.md))
+
+## Homework
+### __No exercise this week!__
+### [Project 2](../projects/Project-2.md) (Apex Predator-Prey)
 
 ---
 
