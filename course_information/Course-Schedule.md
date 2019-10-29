@@ -227,7 +227,7 @@ __We are family.__ _In which we extend Object-Oriented Programming with the idea
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ## Notes
-- [Exercise 5 Feedback](../exercises/Exercise-5-Feedback.md)
+- Exercise 5 Feedback - nothing specific to draw attention to here, see your direct feedback
 - [Exercise 6](../exercises/Exercise-6.md) is due before midnight on day of class
 
 ## Topics
