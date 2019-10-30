@@ -33,11 +33,11 @@ class Dog {
   }
 
   eat() {
-    console.log("Nom nom nom")
+    console.log("Nom nom nom");
   }
 
   sleep() {
-    console.log("Zzz")
+    console.log("Zzz");
   }
 
   bark() {
@@ -60,11 +60,11 @@ class Cat {
   }
 
   eat() {
-    console.log("Nom nom nom")
+    console.log("Nom nom nom");
   }
 
   sleep() {
-    console.log("Zzz")
+    console.log("Zzz");
   }
 
   meow() {
@@ -97,11 +97,11 @@ class Animal {
   }
 
   eat() {
-    console.log("Nom nom nom")
+    console.log("Nom nom nom");
   }
 
   sleep() {
-    console.log("Zzz")
+    console.log("Zzz");
   }
 }
 ```
@@ -343,9 +343,11 @@ function draw() {
 ## Activity: `Line`
 
 - Write a `Line` class that extends `Shape`
-- The constructor should take the (x,y) coordinates of each end of the line, so the `Line` class will need two extra properties for the (x,y) coordinates of the second point (and it won't have a size - make the size `undefined` for the `super` call)
-- Both the endpoint coordinates should jiggle around via `update()` (one set in the parent class, the other set in our Line class's `update()`)
-- `display()` should draw the line on screen
+- The constructor should take as parameters the (x,y) coordinates of each end of the line, `x`, `y`, `x2`, `y2` - it doesn't need a `size` parameter (because lines don't have a size)
+- The constructor should call the `super` version of the constructor and pass through the first coordinate and `undefined` for the size parameter, then it should store the second coordinate in properties.
+- The `update()` method should call the `super` class's update, and then it should make the second set of coordinates jiggle in the same way.
+- `display()` should draw the line on screen between the two sets of points.
+- You should update the main script to create one of these lines and `update()` and `display()` it in `draw()`
 - (__Warning__: Don't call the variable you store your `Line` object `line` or it will interfere with p5's own `line()` function!)
 
 ???
