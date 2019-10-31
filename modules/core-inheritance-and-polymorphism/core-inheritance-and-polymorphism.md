@@ -247,7 +247,7 @@ class Square extends Shape {
 ## A note on ordering
 
 - Note that when we're working with inheritance it __matters what order we include our files__ in `index.html`
-- We need to include the parent class first, then the children, so:
+- We need to __include the parent class first__, then the children, so:
 
 ```html
 <script src="js/Shape.js"></script>
@@ -261,19 +261,23 @@ class Square extends Shape {
 ---
 
 ```javascript
-let mySquare;
+let mySquare1;
+let mySquare2;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  let squareX = random(0,width);
-  let squareY = random(0,width);
-  let squareSize = 100;
-  mySquare = new Square(squareX,squareY,squareSize);
+  mySquare1 = new Square(random(0,width),random(0,height),100);
+  mySquare2 = new Square(random(0,width),random(0,height),100);
 }
 
 function draw() {
-  mySquare.update();
-  mySquare.display();
+  background(255);
+
+  mySquare1.update();
+  mySquare2.update();
+
+  mySquare1.display();
+  mySquare2.display();
 }
 ```
 
@@ -281,14 +285,23 @@ function draw() {
 
 ---
 
-- We can make other shapes just as easily
-- They can have specialized versions of the parent's method (e.g. `update()`)
+## Activity: `Circle`
 
+1. Create a new file called `Circle.js` and save it in your `js/` folder
+2. Add `Circle.js` to your `index.html` using a `<script>` tag (remember to include it __after__ `Shape.js`)
+3. Define the `Circle` class to extend `Shape`
+4. Add a `constructor` that calls the `super` constructor, just like `Square`
+5. Add an `update` that calls `super.update()` __and__ causes `this.size` to jiggle too (by adding a random number between `-5` and `5` let's say)
+6. Add a `display` method like `Square`'s, but that draws an circle instead (choose a different `fill` color)
+7. Create at least one new `Circle` in the main script and `update` and `display` it
+
+???
+
+`Circle.js`
 ```javascript
 class Circle extends Shape {
-  constructor(x,y,size,fillColor) {
+  constructor(x,y,size) {
     super(x,y,size);
-    this.fillColor = fillColor; // Unlike a Square, a circle has a specified color
   }
 
   update() {
@@ -301,7 +314,7 @@ class Circle extends Shape {
   display() {
     push();
     ellipseMode(CENTER);
-    fill(this.fillColor);
+    fill(0,255,0);
     noStroke();
     ellipse(this.x,this.y,this.size);
     pop();
@@ -309,41 +322,107 @@ class Circle extends Shape {
 }
 ```
 
----
-
-## In action...
-
+`script.js`
 ```javascript
-let mySquare;
-let myCircle;
-let myOtherCircle;
+let mySquare1;
+let mySquare2;
+let myCircle1;
+let myCircle2;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  mySquare = new Square(random(0,width),random(0,height),100);
-  myCircle = new Circle(random(0,width),random(0,height),200,color(100,100,200));
-  myOtherCircle = new Circle(random(0,width),random(0,height),200,color(200,100,200));
+  mySquare1 = new Square(random(0,width),random(0,height),100);
+  mySquare2 = new Square(random(0,width),random(0,height),100);
+  myCircle1 = new Circle(random(0,width),random(0,height),100);
+  myCircle2 = new Circle(random(0,width),random(0,height),100);
 }
 
 function draw() {
   background(255);
 
-  mySquare.update();
-  myCircle.update();
-  myOtherCircle.update();
+  mySquare1.update();
+  mySquare2.update();
+  myCircle1.update();
+  myCircle2.update();
 
-  mySquare.display();
-  myCircle.display();
-  myOtherCircle.display();
+  mySquare1.display();
+  mySquare2.display();
+  myCircle1.display();
+  myCircle2.display();
 }
 ```
 
 ---
 
-## Activity: `Line`
+## Activity: Extra parameter for `Circle`
+
+1. Add another parameter to the `Circle` `constructor` so you can give it a `fillColor`
+2. In the `constructor` store the `fillColor` in a `this.fillColor` property
+3. In the `display` method, set the `fill` to `this.fillColor`
+4. In the main program, remember to add another parameter to your new Circles that specifies their color
+
+???
+
+`Circle.js`
+```javascript
+class Circle extends Shape {
+  constructor(x,y,size,fillColor) { // NEW
+    super(x,y,size);
+    this.fillColor = fillColor; // NEW
+  }
+
+  update() {
+    super.update();
+    this.size += random(-1,1);
+  }
+
+  display() {
+    push();
+    ellipseMode(CENTER);
+    fill(this.fillColor); // NEW
+    noStroke();
+    ellipse(this.x,this.y,this.size);
+    pop();
+  }
+}
+```
+
+`script.js`
+```javascript
+let mySquare1;
+let mySquare2;
+let myCircle1;
+let myCircle2;
+
+function setup() {
+  createCanvas(windowWidth,windowHeight);
+  mySquare1 = new Square(random(0,width),random(0,height),100);
+  mySquare2 = new Square(random(0,width),random(0,height),100);
+  myCircle1 = new Circle(random(0,width),random(0,height),100,color(0,0,255));
+  myCircle2 = new Circle(random(0,width),random(0,height),100,color(255,255,0));
+}
+
+function draw() {
+  background(255);
+
+  mySquare1.update();
+  mySquare2.update();
+  myCircle1.update();
+  myCircle2.update();
+
+  mySquare1.display();
+  mySquare2.display();
+  myCircle1.display();
+  myCircle2.display();
+}
+```
+
+---
+
+## Optional Activity: `Line`
 
 - Write a `Line` class that extends `Shape`
-- The constructor should take as parameters the (x,y) coordinates of each end of the line, `x`, `y`, `x2`, `y2` - it doesn't need a `size` parameter (because lines don't have a size)
+- The constructor should take as parameters the (x,y) coordinates of each end of the line, `x`, `y`, `x2`, `y2` - it doesn't need a `size` parameter
 - The constructor should call the `super` version of the constructor and pass through the first coordinate and `undefined` for the size parameter, then it should store the second coordinate in properties.
 - The `update()` method should call the `super` class's update, and then it should make the second set of coordinates jiggle in the same way.
 - `display()` should draw the line on screen between the two sets of points.
@@ -352,6 +431,7 @@ function draw() {
 
 ???
 
+`Line.js`
 ```javascript
 class Line extends Shape {
   constructor(x,y,x2,y2) {
@@ -375,10 +455,7 @@ class Line extends Shape {
 }
 ```
 
----
-
-## All together
-
+`script.js`
 ```javascript
 let mySquare;
 let myCircle;
@@ -439,14 +516,14 @@ let shapes = [];
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  let mySquare = new Square(random(0,width),random(0,height),100);
-  shapes.push(mySquare);
-  let myCircle = new Circle(random(0,width),random(0,height),200,color(100,100,200));
-  shapes.push(myCircle);
-  let myOtherCircle = new Circle(random(0,width),random(0,height),200,color(200,100,200));
-  shapes.push(myOtherCircle);
-  let myLine = new Line(random(0,width),random(0,height),random(0,width),random(0,height));
-  shapes.push(myLine);
+  let mySquare1 = new Square(random(0,width),random(0,height),100);
+  shapes.push(mySquare1);
+  let mySquare2 = new Square(random(0,width),random(0,height),200);
+  shapes.push(mySquare2);
+  let myCircle1 = new Circle(random(0,width),random(0,height),200,color(0,0,255));
+  shapes.push(myCircle1);
+  let myCircle2 = new Circle(random(0,width),random(0,height),200,color(255,255,0));
+  shapes.push(myCircle2);
 }
 
 function draw() {
@@ -459,7 +536,7 @@ function draw() {
 }
 ```
 
-- This works because we know that `Square`, `Circle` and `Line` all __extend__ the `Shape` class, they are children of that class and therefore can be relied on to have its methods and properties - __they are Shapes__!
+- This works because we know that `Square` and `Circle` both __extend__ the `Shape` class, they are children of that class and therefore can be relied on to have its methods and properties - __they are Shapes__!
 
 ???
 
