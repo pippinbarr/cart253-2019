@@ -292,7 +292,7 @@ function draw() {
 3. Define the `Circle` class to extend `Shape`
 4. Add a `constructor` that calls the `super` constructor, just like `Square`
 5. Add an `update` that calls `super.update()` __and__ causes `this.size` to jiggle too (by adding a random number between `-5` and `5` let's say)
-6. Add a `display` method like `Square`'s, but that draws an circle instead (choose a different `fill` color)
+6. Add a `display` method like `Square`'s, but that draws a circle instead (choose a different `fill` color)
 7. Create at least one new `Circle` in the main script and `update` and `display` it
 
 ???
