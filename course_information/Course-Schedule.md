@@ -15,6 +15,7 @@
 - [Debugging Cheatsheet](../cheatsheets/debugging-cheatsheet.md)
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
 - [Variables Examples](../examples/variables-examples.md)
+- [Arrays of Images Examples](../examples/arrays-of-images-examples.md)
 
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
