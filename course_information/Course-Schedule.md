@@ -17,7 +17,7 @@
 - Examples
   - [Variables](../examples/variables-examples.md)
   - [Arrays of Images](../examples/arrays-of-images.md)
-  - [Polymorphism and Arrays](../examples/arrays-of-images.md)
+  - [Polymorphism and Arrays](../examples/polymorphism-and-arrays.md)
 
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
