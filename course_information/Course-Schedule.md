@@ -28,7 +28,7 @@
 - [~~6. Project 1~~](#week-6---week-of-7-october-2019)
 - [~~7. Object Oriented Programming~~](#week-7---week-of-14-october-2019)
 - [~~8. Arrays~~](#week-8---week-of-21-october-2019)
-- [9. Inheritance and Polymorphism](#week-9---week-of-28-october-2019)
+- [~~9. Inheritance and Polymorphism~~](#week-9---week-of-28-october-2019)
 - [10. Project 2](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-10---week-of-4-november-2019)
 - [11. Libraries](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-11---week-of-11-november-2019)
 - [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-12---week-of-18-november-2019)
@@ -222,7 +222,7 @@ __Little boxes.__ _In which we harness the power of arrays to store lots of rela
 
 ---
 
-# Week 9 - Week of 28 October 2019
+# ~~Week 9 - Week of 28 October 2019~~
 
 __We are family.__ _In which we extend Object-Oriented Programming with the ideas of inheritance and polymorphism._
 
@@ -249,7 +249,15 @@ __We are family.__ _In which we extend Object-Oriented Programming with the idea
 __Project 2.__ _In which we hand in project 2_
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
-## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
+
+## Topics
+- New example: [Arrays of Images](../examples/arrays-of-images.md)
+- New example: [Polymorphism and Arrays](../examples/polymorphism-and-arrays.md)
+
+
+## Homework
+### [Exercise 7](../exercises/Exercise-7.md) - Project 3 Prototype 1
+### [Project 3](../projects/Project-3.md) - The Grande Finale
 
 ---
 
