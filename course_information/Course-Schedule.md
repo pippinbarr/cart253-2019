@@ -6,16 +6,18 @@
   - Assigned: Class, week of 14 October 2019
   - Due: Night of class, week of 4 November 2019 (three weeks)
 - __Project 3__ (40%)
-  - Assigned: Class, week of 11 November
-  - Due: tbd. but ideally five weeks to submit
+  - Assigned: Class, week of 4 November
+  - Due: Sunday, 8 December 2019 (roughly five weeks)
 
 ### Quick links
 - [Syntax Cheatsheet](../cheatsheets/syntax-cheatsheet.md)
 - [p5 Cheatsheet](../cheatsheets/p5-cheatsheet.md)
 - [Debugging Cheatsheet](../cheatsheets/debugging-cheatsheet.md)
 - [Style Cheatsheet](../cheatsheets/style-cheatsheet.md)
-- [Variables Examples](../examples/variables-examples.md)
-- [Arrays of Images Examples](../examples/arrays-of-images.md)
+- Examples
+  - [Variables](../examples/variables-examples.md)
+  - [Arrays of Images](../examples/arrays-of-images.md)
+  - [Polymorphism and Arrays](../examples/arrays-of-images.md)
 
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
