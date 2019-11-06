@@ -5,7 +5,7 @@
 - __[Project 2](../projects/Project-2.md)__ (20%)
   - Assigned: Class, week of 14 October 2019
   - Due: Night of class, week of 4 November 2019 (three weeks)
-- __Project 3__ (40%)
+- __[Project 3](../projects/Project-3.md)__ (40%)
   - Assigned: Class, week of 4 November
   - Due: Sunday, 8 December 2019 (roughly five weeks)
 
