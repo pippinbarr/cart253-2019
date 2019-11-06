@@ -18,6 +18,7 @@
   - [Variables](../examples/variables-examples.md)
   - [Arrays of Images](../examples/arrays-of-images.md)
   - [Polymorphism and Arrays](../examples/polymorphism-and-arrays.md)
+  - [Tracking State](../examples/tracking-state.md)
 
 ### Contents
 - [~~1. The beginning~~](#week-1---week-of-2-september-2019)
@@ -253,6 +254,7 @@ __Project 2.__ _In which we hand in project 2_
 ## Topics
 - New example: [Arrays of Images](../examples/arrays-of-images.md)
 - New example: [Polymorphism and Arrays](../examples/polymorphism-and-arrays.md)
+- New example: [Tracking State](../examples/tracking-state.md)
 
 
 ## Homework
