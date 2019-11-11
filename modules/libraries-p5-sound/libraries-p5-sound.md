@@ -1,4 +1,4 @@
-### Libraries / CART 253 / Fall 2018 / Pippin Barr
+### Libraries / CART 253 / Pippin Barr
 
 # p5.sound
 
@@ -23,26 +23,12 @@
 --
 
 - You already know and love it
---
-
 - You were told to use it
---
-
 - It's part of a suite of libraries associated with a library you already use
---
-
 - You heard about it from a friend
---
-
 - You saw it being used on a cool webpage and want to try it yourself
---
-
 - The code you are appropriating from someone else uses it
---
-
 - You did a Google search (say for "javascript sound libraries")
---
-
 - You found it under a stack of magazines (probably not)
 
 ---
@@ -62,7 +48,7 @@
 - So we find `p5.sound` on the p5 libraries page: https://p5js.org/libraries/
 - We read its description, which is
 
->>> _p5.sound extends p5 with Web Audio functionality including audio input, playback, analysis and synthesis._
+>>> _p5.sound extends p5 with Web Audio functionality including audio input, playback, analysis and synthesis. Created by: Jason Sigal_
 
 - We think that sounds pretty impressive, so we click through to its homepage: https://p5js.org/reference/#/libraries/p5.sound
 
@@ -75,7 +61,7 @@
 - Somewhat helpfully, we get short descriptions of each object the library provides, so we know that `p5.Oscillator` lets us "Generate Sine, Triangle, Square and Sawtooth waveforms" and `p5.Delay` gives us "A delay effect with parameters for feedback, delayTime, and lowpass filter" and `p5.SoundFile` allows us to "Load and play sound files"
 - So this is not a _bad_ library homepage, but it's not the most friendly either
 - Many library homepages will show you how to get the library installed and a basic example of its usage right away so you see the big picture
-- `p5.sound` is quite complex, so maybe this just wasn't seen as possible
+- `p5.sound` is quite complex, so maybe this just wasn't seen as possible?
 
 ---
 
@@ -102,20 +88,23 @@
 - If we want to investigate further, we probably want to actually add the library to our project so we can experiment with it
 - The key point to know here is that a library is (generally) just another __JavaScript file__ with the extension `.js`
 - Most libraries provide some kind of __download link__ to the library file on their homepage, but `p5.sound` __doesn't__, which is annoying
-- In fact, `p5.sound` is "built in" to the default p5 library distribution, so to get it we need to download p5
-- So we go to the __Download__ page on the p5 website
-- And we download `p5.js complete` because we can see in its notes that it includes `p5.sound`
+- In fact, `p5.sound` is "built in" to the default p5 library distribution, which is why it's already included in our template project for instance
 
 ---
 
 ## Adding a library to your project
 
+- If we _did_ want to download it, we'd
+  - Go to the __Download__ page on the p5 website
+  - Download `p5.js complete` because we can see in its notes that it includes `p5.sound`
 - Once we've downloaded `p5.zip` (which is the full `p5.js` distribution) we unzip it...
 - ... and inside the folder we find the `addons/` folder...
 - ... and inside that folder we find the files `p5.sound.js` and `p5.sound.min.js`
---
 
-- (Remember that these are the __same library__, but the `min` version is a smaller file size.)
+
+???
+
+- Remember that the `.min` version is the __same library__, just a smaller file size.)
 
 ---
 
@@ -133,7 +122,7 @@
 <script src="js/libraries/p5.sound.min.js"></script>
 ```
 
-- And now we're ready to __use__ the `p5.sound` library in our `script.js` (or other script files)
+- And then we're ready to __use__ the `p5.sound` library in our `script.js` (or other script files)
 
 ---
 
@@ -141,7 +130,7 @@
 
 - We find a library of interest (`p5.sound` in this case)
 - We go to its homepage and find out more generally about it
-- We learn about specific possibilities it facilitaties
+- We learn about specific possibilities it facilitates
 - We download the library file
 - We copy the library file into our project (in the `libraries/` folder)
 - We add a `<script>` tag to `index.html` to include the library in our project
@@ -254,7 +243,7 @@ function draw() {
 ## Bigger victories
 
 - That is already surprisingly evocative and fun to play around with!
-- Crucially this involves the combination of the __power of the library__ (to loop a sound and change its rate dynamically while it plays) with the __power of our programming__ (our knowledge of the `map()` function and how we can use it to convert from one kind of number to another)
+- Crucially this involves the combination of the __power of the library__ (to loop a sound and change its rate dynamically while it plays) and the __power of programming__ (our knowledge of the `map()` function and how we can use it to convert from one kind of number to another)
 - `rate()` is just __fun__
 
 ---
@@ -320,7 +309,7 @@ function draw() {
 
 ## Hearing test!
 
-- Just for fun
+- Just for fun...
 
 ```javascript
 let osc;
@@ -340,7 +329,7 @@ function draw() {
 }
 
 function keyPressed() {
-  frequency += 20;
+  frequency += 110;
   osc.freq(frequency);
 }
 ```

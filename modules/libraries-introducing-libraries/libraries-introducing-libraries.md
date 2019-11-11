@@ -1,4 +1,4 @@
-### Libraries / CART 253 / Fall 2018 / Pippin Barr
+### Libraries / CART 253 / Pippin Barr
 
 # Introducing libraries
 
@@ -27,7 +27,7 @@
 
 - We've been running all our JavaScript code in a __browser__
 - A browser is a piece of software that runs on our computer
-- The browser knows about keyboard input, mouse input, displaying HTML (with CSS), executing JavaScript, and more
+- The browser knows about keyboard input, mouse input, displaying HTML (including with the canvas and with CSS), executing JavaScript, and more
 - In other words, the browser is a bridge to the human using our program
 - We want to be able to __use__ the things the browser can do in our program
 
@@ -57,7 +57,7 @@ window.setTimeout(function() {
 },10000);
 ```
 
-- (We can and normally do omit the `window` at the start because it is __assumed__ to apply to the current window)
+- (We can and often do omit the `window` at the start because it is __assumed__ to apply to the current window)
 - We can also scroll the window, move the window, open a new window, resize the window, close the window, and more... all using its methods
 
 ???
@@ -166,7 +166,7 @@ function draw() {
 ## Thanks, libraries!
 
 - That's what libraries are for: they make it easier to do what we want
-- They make it possible for us to achieve more complicated tasks like loading an image, or drawing a shape, or synthesising a sound, without needing to know how to do it from the ground up
+- They make it possible for us to achieve more complicated tasks like loading an image, or drawing a shape, or synthesizing a sound, without needing to know how to do it from the ground up
 - They hide scary things from us, and we love them for it
 
 ---
@@ -174,7 +174,7 @@ function draw() {
 ## What libraries are out there?
 
 - So many!
-- For now, we're going to stick with just thinking about libraries that are "endorsed" by p5
+- For now, we can stick with just thinking about libraries that are "endorsed" by p5
 - There's a list here: https://p5js.org/libraries/
 - Even this small set of libraries is quite exciting
 - And this is perhaps the greatest thing about libraries: it's not just that they support what you want to do, they can __inspire you to think of new ideas__

@@ -1,4 +1,4 @@
-### Physics / CART 253 / Fall 2018 / Pippin Barr
+### Physics / CART 253 / Pippin Barr
 
 # Polar coordinates and velocity
 
@@ -144,8 +144,11 @@ function drawShip() {
   push();
   translate(ship.x,ship.y);
   rotate(ship.angle);
-  ellipse(0,0,25,25);
-  line(0,0,25,0);
+  noStroke();
+  fill(255,0,0);
+  ellipse(0,0,50,50);
+  stroke(0);
+  line(0,0,50,0);
   pop();
 }
 ```

@@ -30,7 +30,7 @@
 - [~~7. Object Oriented Programming~~](#week-7---week-of-14-october-2019)
 - [~~8. Arrays~~](#week-8---week-of-21-october-2019)
 - [~~9. Inheritance and Polymorphism~~](#week-9---week-of-28-october-2019)
-- [10. Project 2](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-10---week-of-4-november-2019)
+- [~~10. Project 2~~](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-10---week-of-4-november-2019)
 - [11. Libraries](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-11---week-of-11-november-2019)
 - [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-12---week-of-18-november-2019)
 - [tbd.](https://github.com/pippinbarr/cart253-2019/blob/master/course_information/Course-Schedule.md#week-13---week-of-25-november-2019)
@@ -245,7 +245,7 @@ __We are family.__ _In which we extend Object-Oriented Programming with the idea
 
 ---
 
-# Week 10 - Week of 4 November 2019
+# ~~Week 10 - Week of 4 November 2019~~
 
 __Project 2.__ _In which we hand in project 2_
 
@@ -270,8 +270,22 @@ __Libraries.__ _In which we open our eyes to a larger reality of programming: pe
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
----
-## Pippin goes on paternity leave here.
+## Notes
+- [Exercise 7](../exercises/Exercise-7.md) is the night of class
+
+## Topics
+- Libraries - Introducing Libraries ([Slides](https://pippinbarr.github.io/cart253-2019/modules/libraries-introducing-libraries/index.html), [Notes](../modules/libraries-introducing-libraries/libraries-introducing-libraries.md))
+- Libraries - p5.sound ([Slides](https://pippinbarr.github.io/cart253-2019/modules/libraries-p5-sound/index.html), [Notes](../modules/libraries-p5-sound/libraries-p5-sound.md))
+- Game - Where's Invisible Sausage Dog? ([Game](https://pippinbarr.github.io/cart253-2019/games/game-wheres-invisible-sausage-dog/index.html), [Source Code](../games/game-wheres-invisible-sausage-dog/), [ZIP of Source Code](../games/game-wheres-invisible-sausage-dog.zip))
+- Extra - Polar coordinates and velocity ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-polar-coordinates-and-velocity/index.html), [Notes](../modules/physics-polar-coordinates-and-velocity/physics-polar-coordinates-and-velocity.md))
+- Game - Spacelove! ([Game](https://pippinbarr.github.io/cart253-2019/games/game-spacelove/index.html), [Source Code](../games/game-spacelove/), [ZIP of Source Code](../games/game-spacelove.zip))
+
+## Homework
+- [Exercise 8](../exercises/Exercise-8.md) - Project 3 Prototype 2
+- [Project 3](../projects/Project-3.md) - The Grande Finale
+
+## Pippin goes on paternity leave after this week.
+
 ---
 
 # Week 12 - Week of 18 November 2019
@@ -280,6 +294,12 @@ __tbd.__
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
+## Notes
+- [Exercise 8](../exercises/Exercise-8.md) is the night of class
+
+## Homework
+- [Project 3](../projects/Project-3.md) - The Grande Finale
+
 ---
 
 # Week 13 - Week of 25 November 2019
@@ -287,5 +307,8 @@ __tbd.__
 __tbd.__
 
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
+
+## Homework
+- [Project 3](../projects/Project-3.md) - The Grande Finale
 
 ---
