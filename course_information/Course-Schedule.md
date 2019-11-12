@@ -271,7 +271,8 @@ __Libraries.__ _In which we open our eyes to a larger reality of programming: pe
 ## [♪♪♪ Download the template to play along ♪♪♪](https://github.com/pippinbarr/cart253-2019/raw/master/templates/template-p5-project.zip)
 
 ## Notes
-- [Exercise 7](../exercises/Exercise-7.md) is the night of class
+- [Exercise 7](../exercises/Exercise-7.md) is due the night of class
+- Course Evaluations at [my.concordia.ca](http://my.concordia.ca), will give you time after the lecture portion and email a reminder too
 
 ## Topics
 - Libraries - Introducing Libraries ([Slides](https://pippinbarr.github.io/cart253-2019/modules/libraries-introducing-libraries/index.html), [Notes](../modules/libraries-introducing-libraries/libraries-introducing-libraries.md))
@@ -280,11 +281,15 @@ __Libraries.__ _In which we open our eyes to a larger reality of programming: pe
 - Extra - Polar coordinates and velocity ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-polar-coordinates-and-velocity/index.html), [Notes](../modules/physics-polar-coordinates-and-velocity/physics-polar-coordinates-and-velocity.md))
 - Game - Spacelove! ([Game](https://pippinbarr.github.io/cart253-2019/games/game-spacelove/index.html), [Source Code](../games/game-spacelove/), [ZIP of Source Code](../games/game-spacelove.zip))
 
+## Studio
+- Work on [Exercise 7](../exercises/Exercise-7.md)/[Project 3](../projects/Project-3.md)
+- Discuss your project ideas with Pippin and Enric
+
 ## Homework
 - [Exercise 8](../exercises/Exercise-8.md) - Project 3 Prototype 2
 - [Project 3](../projects/Project-3.md) - The Grande Finale
 
-## Pippin goes on paternity leave after this week.
+## Pippin goes on paternity leave from Monday!
 
 ---
 
@@ -295,7 +300,7 @@ __tbd.__
 ## _♪♪♪ Don't forget the [Computation Lab](http://clab.concordia.ca/) exiiiiiiists! ♪♪♪_
 
 ## Notes
-- [Exercise 8](../exercises/Exercise-8.md) is the night of class
+- [Exercise 8](../exercises/Exercise-8.md) is due the night of class
 
 ## Homework
 - [Project 3](../projects/Project-3.md) - The Grande Finale
