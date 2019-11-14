@@ -282,7 +282,7 @@ __Libraries.__ _In which we open our eyes to a larger reality of programming: pe
 - Game - Where's Invisible Sausage Dog? ([Game](https://pippinbarr.github.io/cart253-2019/games/game-wheres-invisible-sausage-dog/index.html), [Source Code](../games/game-wheres-invisible-sausage-dog/), [ZIP of Source Code](../games/game-wheres-invisible-sausage-dog.zip))
 - Extra - Polar coordinates and velocity ([Slides](https://pippinbarr.github.io/cart253-2019/modules/physics-polar-coordinates-and-velocity/index.html), [Notes](../modules/physics-polar-coordinates-and-velocity/physics-polar-coordinates-and-velocity.md))
 - Game - Spacelove! ([Game](https://pippinbarr.github.io/cart253-2019/games/game-spacelove/index.html), [Source Code](../games/game-spacelove/), [ZIP of Source Code](../games/game-spacelove.zip))
-- Experiment - Physical Texts ([Game](https://pippinbarr.github.io/cart253-2019/experiments/physical-texts/index.html), [Source Code](../experiments/physical-texts/), [ZIP of Source Code](../experiments/physical-texts.zip))
+- Experiment - Physical Texts ([Experiment](https://pippinbarr.github.io/cart253-2019/experiments/physical-texts/), [Source Code](../experiments/physical-texts/), [ZIP of Source Code](../experiments/physical-texts.zip))
 
 ## Studio
 - Work on [Exercise 7](../exercises/Exercise-7.md)/[Project 3](../projects/Project-3.md)
